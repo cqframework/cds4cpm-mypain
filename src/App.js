@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          MyPain Development Branch
+          MyPain Development Branch v2
         </p>
       </header>
     </div>
