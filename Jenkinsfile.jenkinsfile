@@ -7,9 +7,18 @@ pipeline {
      
     stage('Build') {
       steps {
-        sh 'npm install'
+        sh 'yarn install'
+        sh 'yarn build'
       }
     }  
+
+    stage('Publish') {
+        steps {
+            withAWS(region:'us-west-2', credentials:'jasonevans') {
+                s3Upload(bucket: 'cds4cpm-mypain-develop', workingDir: 'build', includePathPattern: '**/*')
+            }
+        }
+    }
 
   }
 }
