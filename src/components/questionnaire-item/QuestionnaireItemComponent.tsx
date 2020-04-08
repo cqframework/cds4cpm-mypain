@@ -6,6 +6,7 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
   return (
     <div className="questionnaire-item">
       { props.QuestionnaireItem.text }
+      { JSON.stringify(props.QuestionnaireItem) }
     </div>
   );
 }
