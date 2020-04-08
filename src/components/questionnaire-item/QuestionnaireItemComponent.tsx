@@ -1,8 +1,8 @@
 import React from 'react';
-import { QuestionnaireItem } from '../../fhir-types/fhir-stu3';
+import { QuestionnaireItem, QuestionnaireResponseItemAnswer } from '../../fhir-types/fhir-stu3';
 import './QuestionnaireItemComponent.css';
 
-function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem }) {
+function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer: QuestionnaireResponseItemAnswer[]) => void }) {
   return (
     <div className="questionnaire-item">
       <div>{ props.QuestionnaireItem.linkId }. { props.QuestionnaireItem.prefix } { props.QuestionnaireItem.text }</div>
@@ -11,12 +11,12 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
         {
           props.QuestionnaireItem.type === "boolean" ?
             <div>
-              <input type="radio" name={props.QuestionnaireItem.linkId} /> Yes
-              <input type="radio" name={props.QuestionnaireItem.linkId} /> No
+              <input type="radio" name={props.QuestionnaireItem.linkId} onChange={() => props.onChange(props.QuestionnaireItem, [{ valueBoolean: true }])} /> Yes
+              <input type="radio" name={props.QuestionnaireItem.linkId} onChange={() => props.onChange(props.QuestionnaireItem, [{ valueBoolean: false }])} /> No
             </div>
           : props.QuestionnaireItem.type === "choice" ?
             <div>
-              <select>
+              <select onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString: event.target.value }])}>
                 <option>One</option>
                 <option>Two</option>
                 <option>Three</option>
@@ -24,7 +24,7 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
             </div>
           : props.QuestionnaireItem.type === "quantity" ?
             <div>
-              <input type="text" /> days
+              <input type="text" onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueQuantity: { value: parseFloat(event.target.value) }}])}  /> days
             </div>
           : <div>Unrecognized QuestionnaireItem type: { props.QuestionnaireItem.type }</div>
         }
@@ -33,7 +33,7 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
       <div>
         {
           props.QuestionnaireItem.item ? props.QuestionnaireItem.item.map((item, key) => 
-            <QuestionnaireItemComponent QuestionnaireItem={item} key={key} />
+            <QuestionnaireItemComponent QuestionnaireItem={item} key={key} onChange={props.onChange} />
           ) : null
         }
       </div>

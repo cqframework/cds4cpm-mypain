@@ -1,15 +1,16 @@
 {
     "resourceType": "Questionnaire",
+    "id": "test-questionnaire",
     "title": "Test Questionnaire",
     "status": "completed",
     "item": [
       {
-        "linkId": "link",
+        "linkId": "1",
         "type": "choice",
         "text": "item 1"
       },
       {
-        "linkId": "link",
+        "linkId": "2",
         "type": "choice",
         "text": "item 2"
       }
