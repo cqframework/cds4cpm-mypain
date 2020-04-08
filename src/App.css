@@ -23,15 +23,6 @@
   color: white;
 }
 
-.app-link {
-  color: #61dafb;
-}
-
-@keyframes app-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app .options, .app .options button {
+  margin: 5px;
 }

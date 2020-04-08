@@ -6,7 +6,7 @@ import QuestionnaireItemComponent from '../questionnaire-item/QuestionnaireItemC
 function QuestionnaireComponent(props: { Questionnaire: Questionnaire }) {
   return (
     <div className="questionnaire">
-      Questionnaire:
+      <div>{ props.Questionnaire.title }</div>
         {
           props.Questionnaire.item ? props.Questionnaire.item.map((item, key) => 
             <QuestionnaireItemComponent QuestionnaireItem={item} key={key} />
