@@ -27761,7 +27761,8 @@ export interface QuestionnaireResponseItemAnswer {
      */
     _valueDecimal?: Element;
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to
+     * the question.
      */
     valueInteger?: integer;
     /**

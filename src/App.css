@@ -23,6 +23,18 @@
   color: white;
 }
 
+.submit-button {
+  background-color: #0099FF;
+  font-size: calc(4px + 2vmin);
+  color: white;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .app .options, .app .options button {
   margin: 5px;
 }
