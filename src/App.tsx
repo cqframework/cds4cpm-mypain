@@ -79,32 +79,7 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   submitAnswers(){
-      let newQuestionnaireResponse = JSON.stringify(this.state.QuestionnaireResponse);
-      let id:string | undefined = this.state.QuestionnaireResponse.questionnaire?.id;
-      returnResponse(newQuestionnaireResponse, id)
-          .then(response =>{console.log(response)});
-  }
-
-  responseToString(){
-      var newQuestionnaireResponse = this.state.QuestionnaireResponse;
-      if (newQuestionnaireResponse.item)
-      {
-          newQuestionnaireResponse.item.forEach(item => {
-              item.answer?.forEach(answer => {
-                  if (answer.valueBoolean === true ||answer.valueBoolean === false) {
-                      console.log("this was a bug");
-                      console.log(answer.valueBoolean);
-                  }
-                  if(answer.valueString){
-                      console.log(answer.valueString);
-                  }
-                  if(answer.valueQuantity){
-                      console.log(answer.valueQuantity);
-                  }
-              });
-          });
-      }
-      return "test";
+      returnResponse(this.state.QuestionnaireResponse);
   }
 
   public render(): JSX.Element {
