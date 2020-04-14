@@ -52,6 +52,7 @@ export default class App extends React.Component<AppProps, AppState> {
         item: []
       }
     });
+
   }
 
   handleChange(item: QuestionnaireItem, answer: QuestionnaireResponseItemAnswer[]): void {
@@ -83,8 +84,6 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   public render(): JSX.Element {
-      //<QuestionnaireComponent Questionnaire={this.state.SelectedQuestionnaire} QuestionnaireResponse ={this.state.QuestionnaireResponse} onChange={this.handleChange} />
-
   return (
       <div className="app">
         <header className="app-header">
@@ -106,7 +105,7 @@ export default class App extends React.Component<AppProps, AppState> {
           </div>
         <hr/>
         <div>
-            <QuestionnaireComponent Questionnaire={this.state.SelectedQuestionnaire} onChange={this.handleChange} />
+            <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire} questionnaireResponse={this.state.QuestionnaireResponse} onChange={this.handleChange} />
         </div>
         <hr/>
         <div>QuestionnaireResponse: { JSON.stringify(this.state.QuestionnaireResponse) }</div>
