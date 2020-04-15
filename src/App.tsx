@@ -55,7 +55,7 @@ export default class App extends React.Component<AppProps, AppState> {
 
   }
 
-  handleChange(item: QuestionnaireItem, answer: QuestionnaireResponseItemAnswer[]): void {
+  handleChange(item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]): void {
      //alert(JSON.stringify(item));
     // alert(answer);
     var newQuestionnaireResponse = this.state.QuestionnaireResponse;

@@ -2,7 +2,7 @@ import React from 'react';
 import { QuestionnaireItem, QuestionnaireResponseItemAnswer } from '../../fhir-types/fhir-stu3';
 import './QuestionnaireItemComponent.css';
 
-function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer: QuestionnaireResponseItemAnswer[]) => void }) {
+function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   return (
     <div className="questionnaire-item">
       <div>{ props.QuestionnaireItem.linkId }. { props.QuestionnaireItem.prefix } { props.QuestionnaireItem.text }</div>

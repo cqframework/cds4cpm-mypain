@@ -13,6 +13,39 @@
         "linkId": "2",
         "type": "choice",
         "text": "item 2"
+      },
+      {
+        "linkId": "3",
+        "type": "quantity",
+        "text": "item 3",
+        "enableWhen": [
+          {
+            "question": "1",
+            "answerString": "Three"
+          }
+        ]
+      },
+      {
+        "linkId": "4",
+        "type": "boolean",
+        "text": "item 4",
+        "enableWhen": [
+          {
+            "question": "2",
+            "answerString": "One"
+          }
+        ]
+      },
+      {
+        "linkId": "5",
+        "type": "boolean",
+        "text": "item 5",
+        "enableWhen": [
+          {
+            "question": "2",
+            "answerString": "One"
+          }
+        ]
       }
     ]
   }
