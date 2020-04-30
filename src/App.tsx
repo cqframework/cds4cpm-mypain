@@ -5,6 +5,7 @@ import { Questionnaire, QuestionnaireResponse, QuestionnaireItem, QuestionnaireR
 import ContentNaive from './content/example-naive.json';
 import ContentGeneral from './content/example-general.json';
 import ContentZika from './content/example-zika.json';
+import ContentMyPain from './content/mypain-opioid.json';
 import returnResponse from "./utils/returnResponse";
 
 interface AppProps {
@@ -21,7 +22,8 @@ export default class App extends React.Component<AppProps, AppState> {
   private options: { "value": Questionnaire, "text": string }[] = [
     { "value": ContentNaive, "text": ContentNaive.title },
     { "value": ContentGeneral, "text": ContentGeneral.title },
-    { "value": ContentZika, "text": ContentZika.title }
+    { "value": ContentZika, "text": ContentZika.title },
+    { "value": ContentMyPain, "text": ContentMyPain.title }
   ];
 
   constructor(props: AppProps) {

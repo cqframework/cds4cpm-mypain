@@ -5,7 +5,8 @@ import './QuestionnaireItemComponent.css';
 function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   return (
     <div className="questionnaire-item">
-      <div>{ props.QuestionnaireItem.linkId }. { props.QuestionnaireItem.prefix } { props.QuestionnaireItem.text }</div>
+        <div>{ props.QuestionnaireItem.prefix }</div>
+          <div>{ props.QuestionnaireItem.linkId }. { props.QuestionnaireItem.text }</div>
       <div>{ props.QuestionnaireItem.options?.reference }</div>
       <div>
         {
@@ -26,6 +27,10 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
             <div>
               <input type="text" onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueQuantity: { value: parseFloat(event.target.value) }}])}  /> days
             </div>
+          : props.QuestionnaireItem.type === "text" ?
+              <div>
+                  <input type="text" onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString:event.target.value}])}  />
+              </div>
           : <div>Unrecognized QuestionnaireItem type: { props.QuestionnaireItem.type }</div>
         }
       </div>
