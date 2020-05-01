@@ -5,7 +5,7 @@ import {
     QuestionnaireItem,
     QuestionnaireResponse,
     QuestionnaireResponseItemAnswer
-} from '../../fhir-types/fhir-stu3';
+} from '../../fhir-types/fhir-r4';
 import QuestionnaireItemComponent from '../questionnaire-item/QuestionnaireItemComponent';
 
 let questionnaireResponse:QuestionnaireResponse;

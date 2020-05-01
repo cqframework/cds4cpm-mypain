@@ -1,5 +1,5 @@
 import React from 'react';
-import { QuestionnaireItem, QuestionnaireResponseItemAnswer } from '../../fhir-types/fhir-stu3';
+import { QuestionnaireItem, QuestionnaireResponseItemAnswer } from '../../fhir-types/fhir-r4';
 import './QuestionnaireItemComponent.css';
 
 function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
@@ -7,7 +7,6 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
     <div className="questionnaire-item">
         <div>{ props.QuestionnaireItem.prefix }</div>
           <div>{ props.QuestionnaireItem.linkId }. { props.QuestionnaireItem.text }</div>
-      <div>{ props.QuestionnaireItem.options?.reference }</div>
       <div>
         {
           props.QuestionnaireItem.type === "boolean" ?
