@@ -50,107 +50,130 @@
     },
     {
       "linkId": "9",
-      "type": "choice",
-      "text": "How much did pain interfere with your day to day activities?"
-    },
-    {
-      "linkId": "10",
       "type": "boolean",
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
       "text": "Exercises at home (such as those assigned by a therapist) or outside (such as walking, jogging, swimming)?"
     },
     {
-      "linkId": "11",
+      "linkId": "10",
       "type": "boolean",
-      "text": "Did it work?",
-      "enableWhen": [
-        {
-          "question": "10",
-          "answerBoolean": true
-        }
-      ]
+      "text": "Did it work?"
     },
     {
-      "linkId": "12",
+      "linkId": "11",
       "type": "boolean",
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
       "text": "Sleep positioners or devices (such as additional pillows, padding, etc.)?"
     },
     {
-      "linkId": "13",
+      "linkId": "12",
       "type": "boolean",
-      "text": "Did it work?",
-      "enableWhen": [
-        {
-          "question": "12",
-          "answerBoolean": true
-        }
-      ]
+      "text": "Did it work?"
     },
     {
-      "linkId": "14",
+      "linkId": "13",
       "type": "boolean",
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
       "text": "Stretching?"
     },
     {
-      "linkId": "15",
-      "type": "boolean",
-      "text": "Did it work?",
-      "enableWhen": [
-        {
-          "question": "14",
-          "answerBoolean": true
-        }
-      ]
-    },
-    {
-      "linkId": "13",
-      "type": "boolean",
-      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
-      "text": "Setting and reaching activity goals?"
-    },
-    {
       "linkId": "14",
       "type": "boolean",
-      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
-      "text": "Ice or heat therapy?"
+      "text": "Did it work?"
     },
     {
       "linkId": "15",
       "type": "boolean",
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
-      "text": "Physical therapy?"
+      "text": "Weight loss or changes in  your diet?"
     },
     {
       "linkId": "16",
       "type": "boolean",
-      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
-      "text": "Acupuncture?"
+      "text": "Did it work?"
     },
     {
       "linkId": "17",
       "type": "boolean",
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
-      "text": "Chiropractic treatment?"
+      "text": "Setting and reaching activity goals?"
+    },
+    {
+      "linkId": "18",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "19",
+      "type": "boolean",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+      "text": "Ice or heat therapy?"
+    },
+    {
+      "linkId": "20",
+      "type": "boolean",
+      "text": "Did it work?"
     },
     {
       "linkId": "21",
+      "type": "boolean",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+      "text": "Physical therapy?"
+    },
+    {
+      "linkId": "22",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "23",
+      "type": "boolean",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+      "text": "Acupuncture?"
+    },
+    {
+      "linkId": "124",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "25",
+      "type": "boolean",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+      "text": "Chiropractic treatment?"
+    },
+    {
+      "linkId": "26",
       "type": "boolean",
       "prefix": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months: ",
       "text": "Pain relievers (such as Advil, Aleve, Aspirin, Ibuprofen, Motrin, Tylenol)?"
     },
     {
-      "linkId": "22",
+      "linkId": "27",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "28",
       "type": "boolean",
       "prefix": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months: ",
       "text": "Herbal or nutritional pain relievers (such as ginseng or kava kava)?"
     },
     {
-      "linkId": "23",
+      "linkId": "29",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "30",
       "type": "boolean",
       "prefix": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months: ",
       "text": "Cremes, lotions, gels or patches applied to the skin (for example bengay, tiger balm or biofreeze)?"
+    },
+    {
+      "linkId": "31",
+      "type": "boolean",
+      "text": "Did it work?"
     },
     {
       "linkId": "24",
@@ -161,94 +184,169 @@
     {
       "linkId": "25",
       "type": "boolean",
-      "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months (check all that apply)?:",
-      "text": "Cortisone injection (a shot to relieve inflammation)?"
+      "text": "Did it work?"
     },
     {
       "linkId": "26",
       "type": "boolean",
       "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months (check all that apply)?:",
-      "text": "Non-opioid medications as prescribed by a doctor (such as Celebrex, Cymbalta)?"
+      "text": "Cortisone injection (a shot to relieve inflammation)?"
     },
     {
       "linkId": "27",
       "type": "boolean",
-      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
-      "text": "Yoga?"
+      "text": "Did it work?"
     },
     {
       "linkId": "28",
       "type": "boolean",
-      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
-      "text": "Massage?"
+      "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months (check all that apply)?:",
+      "text": "Non-opioid medications as prescribed by a doctor (such as Celebrex, Cymbalta)?"
     },
     {
       "linkId": "29",
       "type": "boolean",
-      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
-      "text": "Meditation?"
+      "text": "Did it work?"
     },
     {
       "linkId": "30",
       "type": "boolean",
       "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
-      "text": "Relaxation or mindfulness-based training?"
+      "text": "Yoga?"
     },
     {
       "linkId": "31",
       "type": "boolean",
-      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
-      "text": "Group or individual therapy for pain?"
+      "text": "Did it work?"
     },
     {
       "linkId": "32",
       "type": "boolean",
       "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
-      "text": "Acceptance and commitment therapy?"
+      "text": "Massage?"
     },
     {
       "linkId": "33",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "34",
+      "type": "boolean",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
+      "text": "Meditation?"
+    },
+    {
+      "linkId": "35",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "36",
+      "type": "boolean",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
+      "text": "Relaxation or mindfulness-based training?"
+    },
+    {
+      "linkId": "37",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "38",
+      "type": "boolean",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
+      "text": "Group or individual therapy for pain?"
+    },
+    {
+      "linkId": "39",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "40",
+      "type": "boolean",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
+      "text": "Acceptance and commitment therapy?"
+    },
+    {
+      "linkId": "41",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "42",
       "type": "boolean",
       "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
       "text": "Sleep management (such as a sleep study or CPAP)?"
     },
     {
-      "linkId": "34",
+      "linkId": "43",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "44",
       "type": "boolean",
       "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
       "text": "Aromatherapy?"
     },
     {
-      "linkId": "35",
+      "linkId": "45",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "46",
       "type": "boolean",
       "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
       "text": "Crystals?"
     },
     {
-      "linkId": "36",
+      "linkId": "47",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "48",
       "type": "boolean",
       "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
       "text": "Essential oils?"
     },
     {
-      "linkId": "37",
+      "linkId": "49",
+      "type": "boolean",
+      "text": "Did it work?"
+    },
+    {
+      "linkId": "50",
       "type": "boolean",
       "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
       "text": "Music therapy?"
     },
     {
-      "linkId": "38",
-      "type": "text",
-      "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
-      "text": "Other, please specify?"
+      "linkId": "51",
+      "type": "boolean",
+      "text": "Did it work?"
     },
     {
-      "linkId": "39",
+      "linkId": "52",
+      "type": "boolean",
+      "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
+      "text": "Other?"
+    },
+    {
+      "linkId": "53",
+      "type": "text",
+      "text": "If so, please specify:"
+    },
+    {
+      "linkId": "54",
       "type": "text",
       "text": "We’d like to know more about you and your goals.  What are your most important  activity goals?  For example: I’d like to be able to walk without pain."
     },
     {
-      "linkId": "40",
+      "linkId": "55",
       "type": "text",
       "text": "What are the biggest barriers to achieving your activity goals?  For example: I have a lot of stress from work which makes my pain worse."
     }
