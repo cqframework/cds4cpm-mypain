@@ -35681,7 +35681,7 @@ export interface QuestionnaireItemEnableWhen {
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
-    answerBoolean: boolean;
+    answerBoolean?: boolean;
     /**
      * Contains extension information for property 'answerBoolean'.
      */
@@ -35689,7 +35689,7 @@ export interface QuestionnaireItemEnableWhen {
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
-    answerDecimal: decimal;
+    answerDecimal?: decimal;
     /**
      * Contains extension information for property 'answerDecimal'.
      */
@@ -35697,7 +35697,7 @@ export interface QuestionnaireItemEnableWhen {
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
-    answerInteger: integer;
+    answerInteger?: integer;
     /**
      * Contains extension information for property 'answerInteger'.
      */
@@ -35705,7 +35705,7 @@ export interface QuestionnaireItemEnableWhen {
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
-    answerDate: date;
+    answerDate?: date;
     /**
      * Contains extension information for property 'answerDate'.
      */
@@ -35713,7 +35713,7 @@ export interface QuestionnaireItemEnableWhen {
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
-    answerDateTime: dateTime;
+    answerDateTime?: dateTime;
     /**
      * Contains extension information for property 'answerDateTime'.
      */
@@ -35721,7 +35721,7 @@ export interface QuestionnaireItemEnableWhen {
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
-    answerTime: time;
+    answerTime?: time;
     /**
      * Contains extension information for property 'answerTime'.
      */
@@ -35729,7 +35729,7 @@ export interface QuestionnaireItemEnableWhen {
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
-    answerString: string;
+    answerString?: string;
     /**
      * Contains extension information for property 'answerString'.
      */
@@ -35737,15 +35737,15 @@ export interface QuestionnaireItemEnableWhen {
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
-    answerCoding: Coding;
+    answerCoding?: Coding;
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
-    answerQuantity: Quantity;
+    answerQuantity?: Quantity;
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
-    answerReference: Reference;
+    answerReference?: Reference;
 }
 /**
  * One of the permitted answers for a "choice" or "open-choice" question.

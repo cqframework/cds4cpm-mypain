@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import QuestionnaireComponent from './components/questionnaire/QuestionnaireComponent';
 import { Questionnaire, QuestionnaireResponse, QuestionnaireItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
+import ContentZika from './content/zika1-r4.json';
 import ContentMyPain from './content/mypain-opioid.json';
 import returnResponse from "./utils/returnResponse";
 
@@ -17,19 +18,19 @@ interface AppState {
 export default class App extends React.Component<AppProps, AppState> {
   
   private options: { "value": Questionnaire, "text": string }[] = [
-    { "value": ContentMyPain, "text": ContentMyPain.title }
+      { "value": ContentMyPain, "text": ContentMyPain.title }
   ];
 
   constructor(props: AppProps) {
       super(props);
-
-      this.state = 
+      this.state =
         {   
           SelectedQuestionnaire: this.options[0].value,
           QuestionnaireResponse: {
             resourceType: "QuestionnaireResponse",
             status: "in-progress",
-            questionnaire: { id: this.options[0].value.id },
+//            questionnaire: { id: this.options[0].value.id },
+            questionnaire: this.options[0].value.id ,
             item: []
           }
         };
@@ -44,7 +45,8 @@ export default class App extends React.Component<AppProps, AppState> {
       QuestionnaireResponse: {
         resourceType: "QuestionnaireResponse",
         status: "in-progress",
-        questionnaire: { id: selected.id },
+//        questionnaire: { id: selected.id },
+        questionnaire: selected.id,
         item: []
       }
     });

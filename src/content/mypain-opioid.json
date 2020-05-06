@@ -57,7 +57,14 @@
     {
       "linkId": "10",
       "type": "boolean",
-      "text": "Did it work?"
+      "text": "Did it work?",
+      "enableWhen": [
+        {
+          "question": "9",
+          "operator": "=",
+          "answerBoolean": true
+        }
+      ]
     },
     {
       "linkId": "11",
