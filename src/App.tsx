@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import QuestionnaireComponent from './components/questionnaire/QuestionnaireComponent';
 import { Questionnaire, QuestionnaireResponse, QuestionnaireItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
-import ContentZika from './content/zika1-r4.json';
 import ContentMyPain from './content/mypain-opioid.json';
 import returnResponse from "./utils/returnResponse";
 
