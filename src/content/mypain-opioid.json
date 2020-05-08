@@ -12,41 +12,48 @@
     {
       "linkId": "2",
       "type": "choice",
-      "text": "How intense was your pain at its worst?"
+      "text": "How intense was your pain at its worst?",
+      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-intensity"
     },
     {
       "linkId": "3",
       "type": "choice",
-      "text": "How intense was your average pain?"
+      "text": "How intense was your average pain?",
+      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-intensity"
     },
     {
       "linkId": "4",
       "type": "choice",
-      "text": "What is your level of pain right now?"
+      "text": "What is your level of pain right now?",
+      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-intensity"
     },
     {
       "linkId": "5",
       "type": "choice",
       "prefix": "In the past 7 days:",
-      "text": "How much did pain interfere with your day to day activities?"
+      "text": "How much did pain interfere with your day to day activities?",
+      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-interference"
     },
     {
       "linkId": "6",
       "type": "choice",
       "prefix": "In the past 7 days:",
-      "text": "How much did pain interfere with your work?"
+      "text": "How much did pain interfere with your work?",
+      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-interference"
     },
     {
       "linkId": "7",
       "type": "choice",
       "prefix": "In the past 7 days:",
-      "text": "How much did pain interfere with your ability to participate in social activities?"
+      "text": "How much did pain interfere with your ability to participate in social activities?",
+      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-interference"
     },
     {
       "linkId": "8",
       "type": "choice",
       "prefix": "In the past 7 days:",
-      "text": "How much did pain interfere with your household chores?"
+      "text": "How much did pain interfere with your household chores?",
+      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-interference"
     },
     {
       "linkId": "9",
