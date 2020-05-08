@@ -45,7 +45,7 @@ function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange:
     if(props.QuestionnaireItem.answerValueSet === 'http://rti.com/fhir/rti/ValueSet/pain-assessments-intensity'){
         return(
             <select onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString: event.target.value }])}>
-                <option></option>
+                <option> </option>
                 <option>no pain</option>
                 <option>mild pain</option>
                 <option>moderate pain</option>
@@ -57,7 +57,7 @@ function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange:
     if(props.QuestionnaireItem.answerValueSet === 'http://rti.com/fhir/rti/ValueSet/pain-assessments-interference'){
         return(
             <select onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString: event.target.value }])}>
-                <option></option>
+                <option> </option>
                 <option>Not at all</option>
                 <option>A little bit</option>
                 <option>Somewhat</option>
