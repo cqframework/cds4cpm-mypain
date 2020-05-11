@@ -274,7 +274,7 @@
     {
       "linkId": "21",
       "type": "boolean",
-      "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months (check all that apply)?:",
+      "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months?:",
       "text": "Opioid medications (such as hydrocodone, oxycodone, codeine, morphine and fentanyl)?"
     },
     {
@@ -292,7 +292,7 @@
     {
       "linkId": "22",
       "type": "boolean",
-      "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months (check all that apply)?:",
+      "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months ?:",
       "text": "Cortisone injection (a shot to relieve inflammation)?"
     },
     {
@@ -310,7 +310,7 @@
     {
       "linkId": "23",
       "type": "boolean",
-      "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months (check all that apply)?:",
+      "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months?:",
       "text": "Non-opioid medications as prescribed by a doctor (such as Celebrex, Cymbalta)?"
     },
     {
@@ -328,7 +328,7 @@
     {
       "linkId": "24",
       "type": "boolean",
-      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
       "text": "Yoga?"
     },
     {
@@ -346,7 +346,7 @@
     {
       "linkId": "25",
       "type": "boolean",
-      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months ?:",
       "text": "Massage?"
     },
     {
@@ -364,7 +364,7 @@
     {
       "linkId": "26",
       "type": "boolean",
-      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
       "text": "Meditation?"
     },
     {
@@ -382,7 +382,7 @@
     {
       "linkId": "27",
       "type": "boolean",
-      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
       "text": "Relaxation or mindfulness-based training?"
     },
     {
@@ -400,7 +400,7 @@
     {
       "linkId": "28",
       "type": "boolean",
-      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
       "text": "Group or individual therapy for pain?"
     },
     {
@@ -418,7 +418,7 @@
     {
       "linkId": "29",
       "type": "boolean",
-      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
       "text": "Acceptance and commitment therapy?"
     },
     {
@@ -436,7 +436,7 @@
     {
       "linkId": "30",
       "type": "boolean",
-      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months (check all that apply)?:",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
       "text": "Sleep management (such as a sleep study or CPAP)?"
     },
     {
