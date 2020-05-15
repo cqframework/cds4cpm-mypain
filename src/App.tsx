@@ -63,11 +63,14 @@ export default class App extends React.Component<AppProps, AppState> {
     var existingResponseIndex = newQuestionnaireResponse.item.findIndex((responseItem) => responseItem.linkId === item.linkId);
     if (existingResponseIndex >= 0) {
       newQuestionnaireResponse.item[existingResponseIndex].answer = answer;
+        newQuestionnaireResponse.item[existingResponseIndex].text = item.text;
     }
     else {
       newQuestionnaireResponse.item.push({
         linkId: item.linkId,
-        answer: answer
+        answer: answer,
+        text:item.text
+
       });
     }
 
@@ -78,6 +81,7 @@ export default class App extends React.Component<AppProps, AppState> {
 
   submitAnswers(){
       returnResponse(this.state.QuestionnaireResponse);
+      window.location.reload();
   }
 
   public render(): JSX.Element {
