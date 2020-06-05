@@ -1,0 +1,6 @@
+{
+    "clientId": "fake-client-id",
+    "scope": "patient/*.read launch/patient",
+    "completeInTarget": true
+  }
+  

@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import QuestionnaireComponent from './components/questionnaire/QuestionnaireComponent';
 import { Questionnaire, QuestionnaireResponse, QuestionnaireItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
 import ContentMyPain from './content/mypain-opioid.json';
 import returnResponse from "./utils/returnResponse";
+import PatientContainer from './components/patient/PatientContainer';
 
 interface AppProps {
 
@@ -92,6 +94,7 @@ export default class App extends React.Component<AppProps, AppState> {
             MyPain Development Branch v2
           </p>
         </header>
+        <PatientContainer />
         <div className="options">
           {
             this.options.map((option, key) => 

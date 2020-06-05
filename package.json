@@ -12,24 +12,28 @@
     "@types/node": "^13.11.0",
     "@types/react": "^16.9.32",
     "@types/react-dom": "^16.9.6",
+    "bootstrap": "^4.5.0",
     "fhirclient": "^2.3.0",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-breakpoint-fix": "^1.0.7",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
   "devDependencies": {
+    "@rescripts/cli": "^0.0.13",
+    "@rescripts/utilities": "^0.0.6",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "gh-pages": "^2.2.0",
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "react-scripts build",
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test",
+    "eject": "rescripts eject",
+    "predeploy": "rescripts build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
