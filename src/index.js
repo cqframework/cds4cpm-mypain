@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App basename={process.env.PUBLIC_URL} />
   </React.StrictMode>,
   document.getElementById('root')
 );
