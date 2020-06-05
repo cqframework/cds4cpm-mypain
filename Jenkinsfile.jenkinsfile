@@ -1,0 +1,37 @@
+pipeline {
+  agent any
+    
+  tools {nodejs "node11"}
+    
+  stages {
+
+    stage('Set environment') {
+      steps {
+        script {
+          def environment = 'staging'
+          if (env.GIT_BRANCH != 'origin/master') {
+            environment = env.GIT_BRANCH.split("/")[1]
+            println("Environment: ${environment}");
+          }
+          env.ENVIRONMENT_NAME = environment  
+        }
+      }
+    }
+     
+    stage('Build') {
+      steps {
+        sh 'yarn install'
+        sh 'yarn build'
+      }
+    }  
+
+    stage('Publish') {
+        steps {
+            withAWS(region:'us-west-2', credentials:'jasonevans') {
+                s3Upload(bucket: "cds4cpm-mypain-${env.ENVIRONMENT_NAME}", path: 'cds4cpm-mypain', workingDir: 'build', includePathPattern: '**/*')
+            }
+        }
+    }
+
+  }
+}
