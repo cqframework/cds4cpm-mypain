@@ -2,19 +2,39 @@
   "name": "cds4cpm-mypain",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://cqframework.github.io/cds4cpm-mypain",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/fhir": "^0.0.31",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.0",
+    "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
+    "bootstrap": "^4.5.0",
+    "fhirclient": "^2.3.0",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
+    "react-breakpoint-fix": "^1.0.7",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.13",
+    "@rescripts/utilities": "^0.0.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "gh-pages": "^2.2.0",
+    "typescript": "^3.8.3"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test",
+    "eject": "rescripts eject",
+    "predeploy": "rescripts build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
