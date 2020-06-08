@@ -2,7 +2,7 @@
   "name": "cds4cpm-mypain",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cqframework.github.io/cds4cpm-mypain",
+  "homepage": "https://mypain.rti.alphora.com",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
