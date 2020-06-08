@@ -15,10 +15,10 @@ pipeline {
           }
           env.ENVIRONMENT_NAME = environment  
 
-          if (env.ENVIRONMENT_NAME = 'staging') {
+          if (env.ENVIRONMENT_NAME == 'staging') {
             env.CLOUDFRONT_DISTRIBUTION = 'E3MM1APWOMZXHB'
           } 
-          else if (env.ENVIRONMENT_NAME = 'develop') {
+          else if (env.ENVIRONMENT_NAME == 'develop') {
             env.CLOUDFRONT_DISTRIBUTION = 'E241WF4QIREH4O'
           } 
         }
