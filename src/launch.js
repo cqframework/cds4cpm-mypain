@@ -8,8 +8,8 @@ let launchContextIn = JSON.parse(decodedLaunch);
 fetch(`${process.env.PUBLIC_URL}/launch-context.json`)
     .then((response)      => response.json())
     .then((launchContext) => {
+        console.log(JSON.stringify(launchContext));
         launchContext.patientId = launchContextIn.b;
-        launchContext.fhirServiceUrl = launchContextIn.q;
         return FHIR.oauth2.authorize(launchContext);
     })
     .catch((error)        => console.error(error));
