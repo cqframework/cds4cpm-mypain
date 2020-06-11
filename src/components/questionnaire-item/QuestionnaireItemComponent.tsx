@@ -42,30 +42,15 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
 }
 
 function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }){
-    if(props.QuestionnaireItem.answerValueSet === 'http://rti.com/fhir/rti/ValueSet/pain-assessments-intensity'){
-        return(
-            <select onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString: event.target.value }])}>
-                <option> </option>
-                <option>no pain</option>
-                <option>mild pain</option>
-                <option>moderate pain</option>
-                <option>severe pain</option>
-                <option>very severe pain</option>
-            </select>
-        );
-    }
-    if(props.QuestionnaireItem.answerValueSet === 'http://rti.com/fhir/rti/ValueSet/pain-assessments-interference'){
-        return(
-            <select onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString: event.target.value }])}>
-                <option> </option>
-                <option>Not at all</option>
-                <option>A little bit</option>
-                <option>Somewhat</option>
-                <option>Quite a bit</option>
-                <option>Very much</option>
-            </select>
-        );
-    }
-}
+  return(
+    <select onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])}>
+        {
+            props.QuestionnaireItem.answerOption?.map((answerOption) => {
+              return(<option key={JSON.stringify(answerOption.valueCoding)} value={JSON.stringify(answerOption.valueCoding)}>{answerOption.valueCoding?.display}</option>);
+            })
+        }
+    </select>
+  );
+ }
 
 export default QuestionnaireItemComponent;

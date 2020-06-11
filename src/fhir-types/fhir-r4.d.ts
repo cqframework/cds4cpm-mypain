@@ -35770,7 +35770,7 @@ export interface QuestionnaireItemAnswerOption {
     /**
      * A potential answer that's allowed as the answer to this question.
      */
-    valueInteger: integer;
+    valueInteger?: integer;
     /**
      * Contains extension information for property 'valueInteger'.
      */
@@ -35778,7 +35778,7 @@ export interface QuestionnaireItemAnswerOption {
     /**
      * A potential answer that's allowed as the answer to this question.
      */
-    valueDate: date;
+    valueDate?: date;
     /**
      * Contains extension information for property 'valueDate'.
      */
@@ -35786,7 +35786,7 @@ export interface QuestionnaireItemAnswerOption {
     /**
      * A potential answer that's allowed as the answer to this question.
      */
-    valueTime: time;
+    valueTime?: time;
     /**
      * Contains extension information for property 'valueTime'.
      */
@@ -35794,7 +35794,7 @@ export interface QuestionnaireItemAnswerOption {
     /**
      * A potential answer that's allowed as the answer to this question.
      */
-    valueString: string;
+    valueString?: string;
     /**
      * Contains extension information for property 'valueString'.
      */
@@ -35802,11 +35802,11 @@ export interface QuestionnaireItemAnswerOption {
     /**
      * A potential answer that's allowed as the answer to this question.
      */
-    valueCoding: Coding;
+    valueCoding?: Coding;
     /**
      * A potential answer that's allowed as the answer to this question.
      */
-    valueReference: Reference;
+    valueReference?: Reference;
     /**
      * Indicates whether the answer value is selected when the list of possible answers is initially shown.
      */

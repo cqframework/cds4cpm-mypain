@@ -2,7 +2,17 @@
   "resourceType": "Questionnaire",
   "id": "mypain-questionnaire",
   "title": "MyPain Questionnaire",
-  "status": "completed",
+  "status": "active",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7"
+    ],
+    "tag": [
+      {
+        "code": "lformsVersion: 23.0.0"
+      }
+    ]
+  },
   "item": [
     {
       "linkId": "1",
@@ -12,48 +22,271 @@
     {
       "linkId": "2",
       "type": "choice",
-      "text": "How intense was your pain at its worst?",
-      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-intensity"
+      "code": [
+        {
+          "code": "75262-6",
+          "display": "In the  past 7 days - How intense was your pain at its worst?"
+        }
+      ],
+      "text": "In the  past 7 days -  How intense was your pain at its worst?",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "LA13879-4",
+            "display": "Had no pain"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA6752-5",
+            "display": "Mild"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA6751-7",
+            "display": "Moderate"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA6750-9",
+            "display": "Severe"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13958-6",
+            "display": "Very Severe"
+          }
+        }
+      ]
     },
     {
       "linkId": "3",
       "type": "choice",
       "text": "How intense was your average pain?",
-      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-intensity"
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "LA13879-4",
+            "display": "Had no pain"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA6752-5",
+            "display": "Mild"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA6751-7",
+            "display": "Moderate"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA6750-9",
+            "display": "Severe"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13958-6",
+            "display": "Very Severe"
+          }
+        }
+      ]
     },
     {
       "linkId": "4",
       "type": "choice",
       "text": "What is your level of pain right now?",
-      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-intensity"
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "LA13879-4",
+            "display": "Had no pain"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA6752-5",
+            "display": "Mild"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA6751-7",
+            "display": "Moderate"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA6750-9",
+            "display": "Severe"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13958-6",
+            "display": "Very Severe"
+          }
+        }
+      ]
     },
     {
       "linkId": "5",
       "type": "choice",
       "prefix": "In the past 7 days:",
       "text": "How much did pain interfere with your day to day activities?",
-      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-interference"
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "LA6568-5",
+            "display": "Not at all"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13863-8",
+            "display": "A little bit"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13909-9",
+            "display": "Somewhat"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13902-4",
+            "display": "Quite a bit"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13914-9",
+            "display": "Very much"
+          }
+        }
+      ]
     },
     {
       "linkId": "6",
       "type": "choice",
       "prefix": "In the past 7 days:",
       "text": "How much did pain interfere with your work?",
-      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-interference"
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "LA6568-5",
+            "display": "Not at all"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13863-8",
+            "display": "A little bit"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13909-9",
+            "display": "Somewhat"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13902-4",
+            "display": "Quite a bit"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13914-9",
+            "display": "Very much"
+          }
+        }
+      ]
     },
     {
       "linkId": "7",
       "type": "choice",
       "prefix": "In the past 7 days:",
       "text": "How much did pain interfere with your ability to participate in social activities?",
-      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-interference"
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "LA6568-5",
+            "display": "Not at all"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13863-8",
+            "display": "A little bit"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13909-9",
+            "display": "Somewhat"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13902-4",
+            "display": "Quite a bit"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13914-9",
+            "display": "Very much"
+          }
+        }
+      ]
     },
     {
       "linkId": "8",
       "type": "choice",
       "prefix": "In the past 7 days:",
       "text": "How much did pain interfere with your household chores?",
-      "answerValueSet": "http://rti.com/fhir/rti/ValueSet/pain-assessments-interference"
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "LA6568-5",
+            "display": "Not at all"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13863-8",
+            "display": "A little bit"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13909-9",
+            "display": "Somewhat"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13902-4",
+            "display": "Quite a bit"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "LA13914-9",
+            "display": "Very much"
+          }
+        }
+      ]
     },
     {
       "linkId": "9",
