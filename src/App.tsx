@@ -3,8 +3,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuestionnaireComponent from './components/questionnaire/QuestionnaireComponent';
 import { Questionnaire, QuestionnaireResponse, QuestionnaireItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
-import ContentMyPain from './content/mypain-opioid.json';
-import returnResponse from "./utils/returnResponse";
+import ContentMyPain from './content/example-general.json';  //mypain-opioid.json';
+import { submitQuestionnaireResponse, getQuestionnaire } from './utils/fhirFacadeHelper';
 import PatientContainer from './components/patient/PatientContainer';
 
 interface AppProps {
@@ -17,7 +17,7 @@ interface AppState {
 }
 
 export default class App extends React.Component<AppProps, AppState> {
-  
+
   private options: { "value": Questionnaire, "text": string }[] = [
       { "value": ContentMyPain, "text": ContentMyPain.title }
   ];
@@ -25,7 +25,7 @@ export default class App extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
       super(props);
       this.state =
-        {   
+        {
           SelectedQuestionnaire: this.options[0].value,
           QuestionnaireResponse: {
             resourceType: "QuestionnaireResponse",
@@ -38,6 +38,13 @@ export default class App extends React.Component<AppProps, AppState> {
 
       this.handleChange = this.handleChange.bind(this);
       this.submitAnswers = this.submitAnswers.bind(this);
+  }
+
+  componentDidMount() {
+      getQuestionnaire()
+          .then(response => {
+              return  this.selectQuestionnaire(response);
+          })
   }
 
   selectQuestionnaire(selected: Questionnaire): void {
@@ -82,7 +89,7 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   submitAnswers(){
-      returnResponse(this.state.QuestionnaireResponse);
+      submitQuestionnaireResponse(this.state.QuestionnaireResponse);
       window.location.reload();
   }
 
@@ -95,18 +102,6 @@ export default class App extends React.Component<AppProps, AppState> {
           </p>
         </header>
         <PatientContainer />
-        <div className="options">
-          {
-            this.options.map((option, key) => 
-              <div key={key}>
-                <button onClick={() => this.selectQuestionnaire(option.value)}>{option.text}</button>
-              </div>
-            )
-          }
-        </div>
-          <div className="options">
-              <button className="submit-button" onClick={() => this.submitAnswers()}>Submit</button>
-          </div>
         <hr/>
         <div>
             <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire} questionnaireResponse={this.state.QuestionnaireResponse} onChange={this.handleChange} />
