@@ -6,6 +6,8 @@ import { Questionnaire, QuestionnaireResponse, QuestionnaireItem, QuestionnaireR
 import ContentMyPain from './content/example-general.json';  //mypain-opioid.json';
 import { submitQuestionnaireResponse, getQuestionnaire } from './utils/fhirFacadeHelper';
 import PatientContainer from './components/patient/PatientContainer';
+import FHIR from "fhirclient";
+import Client from "fhirclient/lib/Client";
 
 interface AppProps {
 
@@ -30,8 +32,6 @@ export default class App extends React.Component<AppProps, AppState> {
           QuestionnaireResponse: {
             resourceType: "QuestionnaireResponse",
             status: "in-progress",
-//            questionnaire: { id: this.options[0].value.id },
-            questionnaire: this.options[0].value.id ,
             item: []
           }
         };
@@ -41,20 +41,33 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   componentDidMount() {
+      let ptRef: string;
+      let ptDisplay;
       getQuestionnaire()
           .then(response => {
-              return  this.selectQuestionnaire(response);
+              FHIR.oauth2.ready()
+                  .then((client: Client) => client.patient.read())
+                  // then gather all the patient's relevant resource instances and send them in a bundle to the next step
+                  .then((patient) => {
+                      patient.id ? ptRef = patient.id : ptRef = " ";
+                      ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
+                      return this.selectQuestionnaire(response, ptRef, ptDisplay);
+                  })
           })
   }
 
-  selectQuestionnaire(selected: Questionnaire): void {
-    this.setState({ 
+  selectQuestionnaire(selected: Questionnaire, ptRef: string, ptDisplay: string): void {
+    this.setState({
       SelectedQuestionnaire: selected,
       QuestionnaireResponse: {
         resourceType: "QuestionnaireResponse",
         status: "in-progress",
 //        questionnaire: { id: selected.id },
         questionnaire: selected.id,
+          subject:{
+            reference:ptRef,
+            display:ptDisplay
+          },
         item: []
       }
     });
