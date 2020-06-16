@@ -5,7 +5,7 @@ import { properties } from './properties';
 
 
     export function submitQuestionnaireResponse(questionnaireResponse: QuestionnaireResponse){
-            const client = FHIR.client(properties.QUESTIONNAIRE_RESPONSE_URL)
+            const client = FHIR.client(properties.FHIR_FACADE_URL)
             // @ts-ignore
             return client.create(questionnaireResponse)
     }
