@@ -88,9 +88,9 @@ export default class App extends React.Component<AppProps, AppState> {
     });
   }
 
-  submitAnswers(){
+  submitAnswers(): void {
       submitQuestionnaireResponse(this.state.QuestionnaireResponse);
-      window.location.reload();
+      //window.location.reload();
   }
 
   public render(): JSX.Element {
@@ -104,7 +104,7 @@ export default class App extends React.Component<AppProps, AppState> {
         <PatientContainer />
         <hr/>
         <div>
-            <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire} questionnaireResponse={this.state.QuestionnaireResponse} onChange={this.handleChange} />
+            <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire} questionnaireResponse={this.state.QuestionnaireResponse} onChange={this.handleChange} onSubmit={this.submitAnswers} />
         </div>
         <hr/>
         <div>QuestionnaireResponse: { JSON.stringify(this.state.QuestionnaireResponse) }</div>

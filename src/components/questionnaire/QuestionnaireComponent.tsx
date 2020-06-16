@@ -11,17 +11,18 @@ import QuestionnaireItemComponent from '../questionnaire-item/QuestionnaireItemC
 let questionnaireResponse:QuestionnaireResponse;
 let selectedQuestionnaireItemsByLinkId = new Map();
 
-function QuestionnaireComponent(props: { questionnaire: Questionnaire, questionnaireResponse: QuestionnaireResponse, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
+function QuestionnaireComponent(props: { questionnaire: Questionnaire, questionnaireResponse: QuestionnaireResponse, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void, onSubmit: () => void }) {
     fillSelectedQuestionnaireItems(props.questionnaire);
     questionnaireResponse = props.questionnaireResponse;
   return (
     <div className="questionnaire">
-      <div>{ props.questionnaire.title }</div>
+        <div>{ props.questionnaire.title }</div>
         {
             props.questionnaire.item ? props.questionnaire.item.map((item, key) =>{
                 return item.enableWhen ? handleEnableWhen(item, key, props.onChange) : <QuestionnaireItemComponent QuestionnaireItem={item} key={key} onChange={props.onChange} />
             }) : null
-       }
+        }
+        <button type="button" onClick={props.onSubmit}>Submit</button>
     </div>
   );
 }
