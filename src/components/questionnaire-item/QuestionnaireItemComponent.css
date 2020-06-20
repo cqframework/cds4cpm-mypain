@@ -1,8 +1,18 @@
 .questionnaire-item {
-    color: #808080;
+    color: #333333;
     border: 1px solid #000000;
     padding: 10px;
     margin: 3px;
+}
+
+.btn-outline-secondary {
+    color: #000;
+    border-color: #000;
+}
+
+.btn-outline-secondary:focus {
+    outline: none;
+    box-shadow: none !important;
 }
 
 @media screen and (max-width: 400px) {

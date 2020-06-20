@@ -1,7 +1,7 @@
 import React from 'react';
 import { QuestionnaireItem, QuestionnaireResponseItemAnswer } from '../../fhir-types/fhir-r4';
 import './QuestionnaireItemComponent.css';
-import { Card } from 'react-bootstrap'
+import { Card, ButtonGroup, Button } from 'react-bootstrap'
 
 
 function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
@@ -14,20 +14,20 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
       <div>
         {
           props.QuestionnaireItem.type === "boolean" ?
-            <div>
+            <div className="boolean-type">
               <input type="radio" name={props.QuestionnaireItem.linkId} onChange={() => props.onChange(props.QuestionnaireItem, [{ valueBoolean: true }])} /> Yes
               <input type="radio" name={props.QuestionnaireItem.linkId} onChange={() => props.onChange(props.QuestionnaireItem, [{ valueBoolean: false }])} /> No
             </div>
             : props.QuestionnaireItem.type === "choice" ?
-              <div>
+              <div className="choice-type">
                 {populateChoice(props)}
               </div>
               : props.QuestionnaireItem.type === "quantity" ?
-                <div>
+                <div className="quantity-type">
                   <input type="text" onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueQuantity: { value: parseFloat(event.target.value) } }])} /> days
             </div>
                 : props.QuestionnaireItem.type === "text" ?
-                  <div>
+                  <div className="text-type">
                     <input type="text" onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString: event.target.value }])} />
                   </div>
                   : <div>Unrecognized QuestionnaireItem type: {props.QuestionnaireItem.type}</div>
@@ -47,13 +47,13 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
 
 function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   return (
-    <select onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])}>
+    <ButtonGroup>
       {
         props.QuestionnaireItem.answerOption?.map((answerOption) => {
-          return (<option key={JSON.stringify(answerOption.valueCoding)} value={JSON.stringify(answerOption.valueCoding)}>{answerOption.valueCoding?.display}</option>);
+          return (<Button key={JSON.stringify(answerOption.valueCoding)} size="sm" variant="outline-secondary" value={JSON.stringify(answerOption.valueCoding)} onClick={(event: any) => props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])}>{answerOption.valueCoding?.display}</Button>);
         })
       }
-    </select>
+    </ButtonGroup>
   );
 }
 

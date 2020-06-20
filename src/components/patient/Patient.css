@@ -8,6 +8,11 @@
     /* } */
 }
 
+.btn-outline-secondary {
+    color: #000;
+    border-color: #000;
+}
+
 .next-button {
     /* @media screen only and (max-width: 480px) { */
         width: 30%;
