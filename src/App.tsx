@@ -56,7 +56,7 @@ export default class App extends React.Component<AppProps, AppState> {
           ...this.state.QuestionnaireResponse,
         questionnaire: selectedQuestionnaire.id,
           subject:{
-            reference:ptRef,
+            reference:'Patient/' + ptRef,
             display:ptDisplay
           },
         item: []
@@ -88,8 +88,29 @@ export default class App extends React.Component<AppProps, AppState> {
     });
   }
 
+  formatDateItem(dateItem: number){
+      let returnDateItem : string;
+      dateItem < 10 ? returnDateItem = '0' + dateItem : returnDateItem = dateItem.toString();
+      return returnDateItem;
+  }
+  getCurrentDate(){
+      let date = new Date();
+      let day = date.getDate();
+      let month = date.getMonth();
+      let year = date.getFullYear();
+      let hours = date.getHours();
+      let min = date.getMinutes();
+      let sec = date.getSeconds();
+      let zone = date.getTimezoneOffset() / 60;
+//      "2020-06-19T12:05:43-06:00"
+      return year + '-' + this.formatDateItem(month) + '-' + this.formatDateItem(day) + 'T' +  this.formatDateItem(hours) + ':' + this.formatDateItem(min) + ':' + this.formatDateItem(sec) + '-' + this.formatDateItem(zone) + ':00';
+  }
+
   submitAnswers(): void {
-      submitQuestionnaireResponse(this.state.QuestionnaireResponse);
+      let returnQuestionnaireResponse = this.state.QuestionnaireResponse;
+      returnQuestionnaireResponse.authored = this.getCurrentDate();
+      returnQuestionnaireResponse.status = "completed";
+      submitQuestionnaireResponse(returnQuestionnaireResponse);
       //window.location.reload();
   }
 
