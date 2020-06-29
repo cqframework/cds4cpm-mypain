@@ -17,17 +17,29 @@
     {
       "linkId": "1",
       "type": "text",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1000",
+            "display": "Please describe the location(s) of any pain you have had in the past 7 days (e.g., lower back and left hip):"
+          }
+        ]
+      },
       "text": "Please describe the location(s) of any pain you have had in the past 7 days (e.g., lower back and left hip):"
     },
     {
       "linkId": "2",
       "type": "choice",
-      "code": [
-        {
-          "code": "75262-6",
-          "display": "In the  past 7 days - How intense was your pain at its worst?"
-        }
-      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1001",
+            "display": "In the  past 7 days -  How intense was your pain at its worst?"
+          }
+        ]
+      },
       "text": "In the  past 7 days -  How intense was your pain at its worst?",
       "answerOption": [
         {
@@ -65,6 +77,15 @@
     {
       "linkId": "3",
       "type": "choice",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1002",
+            "display": "How intense was your average pain?"
+          }
+        ]
+      },
       "text": "How intense was your average pain?",
       "answerOption": [
         {
@@ -102,6 +123,15 @@
     {
       "linkId": "4",
       "type": "choice",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1003",
+            "display": "What is your level of pain right now?"
+          }
+        ]
+      },
       "text": "What is your level of pain right now?",
       "answerOption": [
         {
@@ -139,6 +169,15 @@
     {
       "linkId": "5",
       "type": "choice",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1004",
+            "display": "How much did pain interfere with your day to day activities?"
+          }
+        ]
+      },
       "prefix": "In the past 7 days:",
       "text": "How much did pain interfere with your day to day activities?",
       "answerOption": [
@@ -177,6 +216,15 @@
     {
       "linkId": "6",
       "type": "choice",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1005",
+            "display": "In the past 7 days: How much did pain interfere with your work?"
+          }
+        ]
+      },
       "prefix": "In the past 7 days:",
       "text": "How much did pain interfere with your work?",
       "answerOption": [
@@ -215,6 +263,15 @@
     {
       "linkId": "7",
       "type": "choice",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1006",
+            "display": "In the past 7 days: How much did pain interfere with your ability to participate in social activities?"
+          }
+        ]
+      },
       "prefix": "In the past 7 days:",
       "text": "How much did pain interfere with your ability to participate in social activities?",
       "answerOption": [
@@ -253,6 +310,15 @@
     {
       "linkId": "8",
       "type": "choice",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1007",
+            "display": "In the past 7 days: How much did pain interfere with your household chores?"
+          }
+        ]
+      },
       "prefix": "In the past 7 days:",
       "text": "How much did pain interfere with your household chores?",
       "answerOption": [
@@ -291,6 +357,15 @@
     {
       "linkId": "9",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1008",
+            "display": "\"Have you used any strategies or methods to help with your pain in the last 6 months: Exercises at home (such as those assigned by a therapist) or outside (such as walking, jogging, swimming)?"
+          }
+        ]
+      },
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
       "text": "Exercises at home (such as those assigned by a therapist) or outside (such as walking, jogging, swimming)?"
     },
@@ -309,6 +384,15 @@
     {
       "linkId": "10",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1009",
+            "display": "Have you used any strategies or methods to help with your pain in the last 6 months: Sleep positioners or devices (such as additional pillows, padding, etc.)?"
+          }
+        ]
+      },
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
       "text": "Sleep positioners or devices (such as additional pillows, padding, etc.)?"
     },
@@ -327,6 +411,15 @@
     {
       "linkId": "11",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1010",
+            "display": "Have you used any strategies or methods to help with your pain in the last 6 months: Stretching?"
+          }
+        ]
+      },
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
       "text": "Stretching?"
     },
@@ -345,6 +438,15 @@
     {
       "linkId": "12",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1011",
+            "display": "Have you used any strategies or methods to help with your pain in the last 6 months: Weight loss or changes in  your diet?"
+          }
+        ]
+      },
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
       "text": "Weight loss or changes in  your diet?"
     },
@@ -363,6 +465,15 @@
     {
       "linkId": "13",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1012",
+            "display": "Have you used any strategies or methods to help with your pain in the last 6 months: Setting and reaching activity goals?"
+          }
+        ]
+      },
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
       "text": "Setting and reaching activity goals?"
     },
@@ -381,6 +492,15 @@
     {
       "linkId": "14",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1013",
+            "display": "Have you used any strategies or methods to help with your pain in the last 6 months: Ice or heat therapy?"
+          }
+        ]
+      },
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
       "text": "Ice or heat therapy?"
     },
@@ -399,6 +519,15 @@
     {
       "linkId": "15",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1014",
+            "display": "Have you used any strategies or methods to help with your pain in the last 6 months: Physical therapy?"
+          }
+        ]
+      },
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
       "text": "Physical therapy?"
     },
@@ -417,6 +546,15 @@
     {
       "linkId": "16",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1015",
+            "display": "Have you used any strategies or methods to help with your pain in the last 6 months: Acupuncture?"
+          }
+        ]
+      },
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
       "text": "Acupuncture?"
     },
@@ -435,6 +573,15 @@
     {
       "linkId": "17",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1016",
+            "display": "Have you used any strategies or methods to help with your pain in the last 6 months: Chiropractic treatment?"
+          }
+        ]
+      },
       "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
       "text": "Chiropractic treatment?"
     },
@@ -453,6 +600,15 @@
     {
       "linkId": "18",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1017",
+            "display": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months: Pain relievers (such as Advil, Aleve, Aspirin, Ibuprofen, Motrin, Tylenol)?"
+          }
+        ]
+      },
       "prefix": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months: ",
       "text": "Pain relievers (such as Advil, Aleve, Aspirin, Ibuprofen, Motrin, Tylenol)?"
     },
@@ -471,6 +627,15 @@
     {
       "linkId": "19",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1018",
+            "display": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months: Herbal or nutritional pain relievers (such as ginseng or kava kava)?"
+          }
+        ]
+      },
       "prefix": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months: ",
       "text": "Herbal or nutritional pain relievers (such as ginseng or kava kava)?"
     },
@@ -489,6 +654,15 @@
     {
       "linkId": "20",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1019",
+            "display": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months: Cremes, lotions, gels or patches applied to the skin (for example Bengay, Tiger Balm or BioFreeze)?"
+          }
+        ]
+      },
       "prefix": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months: ",
       "text": "Cremes, lotions, gels or patches applied to the skin (for example Bengay, Tiger Balm or BioFreeze)?"
     },
@@ -507,6 +681,15 @@
     {
       "linkId": "21",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1020",
+            "display": "Have you used any of the following prescription medications to help with your pain in the last 6 months?: Opioid medications (such as hydrocodone, oxycodone, codeine, morphine and fentanyl)?"
+          }
+        ]
+      },
       "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months?:",
       "text": "Opioid medications (such as hydrocodone, oxycodone, codeine, morphine and fentanyl)?"
     },
@@ -525,6 +708,15 @@
     {
       "linkId": "22",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1021",
+            "display": "Have you used any of the following prescription medications to help with your pain in the last 6 months ?: Cortisone injection (a shot to relieve inflammation)?"
+          }
+        ]
+      },
       "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months ?:",
       "text": "Cortisone injection (a shot to relieve inflammation)?"
     },
@@ -543,6 +735,15 @@
     {
       "linkId": "23",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1022",
+            "display": "Have you used any of the following prescription medications to help with your pain in the last 6 months?: Non-opioid medications as prescribed by a doctor (such as Celebrex, Cymbalta)?"
+          }
+        ]
+      },
       "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months?:",
       "text": "Non-opioid medications as prescribed by a doctor (such as Celebrex, Cymbalta)?"
     },
@@ -561,6 +762,15 @@
     {
       "linkId": "24",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1023",
+            "display": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?: Yoga?"
+          }
+        ]
+      },
       "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
       "text": "Yoga?"
     },
@@ -579,6 +789,15 @@
     {
       "linkId": "25",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1024",
+            "display": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months ?: Massage?"
+          }
+        ]
+      },
       "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months ?:",
       "text": "Massage?"
     },
@@ -597,6 +816,15 @@
     {
       "linkId": "26",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1025",
+            "display": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?: Meditation?"
+          }
+        ]
+      },
       "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
       "text": "Meditation?"
     },
@@ -615,6 +843,15 @@
     {
       "linkId": "27",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1026",
+            "display": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?: Relaxation or mindfulness-based training?"
+          }
+        ]
+      },
       "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
       "text": "Relaxation or mindfulness-based training?"
     },
@@ -633,6 +870,15 @@
     {
       "linkId": "28",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1027",
+            "display": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?: Group or individual therapy for pain?"
+          }
+        ]
+      },
       "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
       "text": "Group or individual therapy for pain?"
     },
@@ -651,6 +897,15 @@
     {
       "linkId": "29",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1028",
+            "display": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?: Acceptance and commitment therapy?"
+          }
+        ]
+      },
       "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
       "text": "Acceptance and commitment therapy?"
     },
@@ -669,6 +924,15 @@
     {
       "linkId": "30",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1029",
+            "display": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?: Sleep management (such as a sleep study or CPAP)?"
+          }
+        ]
+      },
       "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
       "text": "Sleep management (such as a sleep study or CPAP)?"
     },
@@ -687,6 +951,15 @@
     {
       "linkId": "31",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1030",
+            "display": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months: Aromatherapy?"
+          }
+        ]
+      },
       "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
       "text": "Aromatherapy?"
     },
@@ -705,6 +978,15 @@
     {
       "linkId": "32",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1031",
+            "display": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months: Crystals?"
+          }
+        ]
+      },
       "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
       "text": "Crystals?"
     },
@@ -723,6 +1005,15 @@
     {
       "linkId": "33",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1032",
+            "display": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months: Essential oils?"
+          }
+        ]
+      },
       "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
       "text": "Essential oils?"
     },
@@ -741,6 +1032,15 @@
     {
       "linkId": "34",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1033",
+            "display": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months: Music therapy?"
+          }
+        ]
+      },
       "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
       "text": "Music therapy?"
     },
@@ -759,6 +1059,15 @@
     {
       "linkId": "35",
       "type": "boolean",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1034",
+            "display": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months: Other?"
+          }
+        ]
+      },
       "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
       "text": "Other?"
     },
@@ -777,11 +1086,29 @@
     {
       "linkId": "36",
       "type": "text",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1035",
+            "display": "We’d like to know more about you and your goals.  What are your most important  activity goals?  For example: I’d like to be able to walk without pain."
+          }
+        ]
+      },
       "text": "We’d like to know more about you and your goals.  What are your most important  activity goals?  For example: I’d like to be able to walk without pain."
     },
     {
       "linkId": "37",
       "type": "text",
+      "code": {
+        "coding": [
+          {
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaire",
+            "code": "mpq-1036",
+            "display": "What are the biggest barriers to achieving your activity goals?  For example: I have a lot of stress from work which makes my pain worse."
+          }
+        ]
+      },
       "text": "What are the biggest barriers to achieving your activity goals?  For example: I have a lot of stress from work which makes my pain worse."
     }
   ]
