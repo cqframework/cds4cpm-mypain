@@ -16,13 +16,35 @@
 }
 
 @media screen and (max-width: 400px) {
+    .prefix-text {
+        font-size: 30px;
+    }
     .questionnaire-item {
         height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
     }
     .questionnaire-item p {
-        font-size: larger;
+        font-size: 24px;
+    }
+    .btn-group-vertical {
+        width: 100%;
+    }
+
+    .boolean-type {
+        font-size: 20px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .choice-type .btn-outline-secondary:hover {
+        background-color: #e9ecef;
+        color: #000000;
+    }
+
+    .choice-type .btn-outline-secondary:active {
+        background-color: #dddddd;
+        color: #000000;
     }
 }

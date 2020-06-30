@@ -1,22 +1,28 @@
 import React from 'react';
 import { QuestionnaireItem, QuestionnaireResponseItemAnswer } from '../../fhir-types/fhir-r4';
 import './QuestionnaireItemComponent.css';
-import { Card, ButtonGroup, Button } from 'react-bootstrap'
+import { Card, ButtonGroup, Button } from 'react-bootstrap';
+import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 
 function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   let currentCardId: any;
   return (
     <Card className={makeClasses("questionnaire-item", props.QuestionnaireItem.linkId === currentCardId ? 'current-card' : '')} id={props.QuestionnaireItem.linkId}>
-      <div>{props.QuestionnaireItem.prefix}</div>
+      <div className="prefix-text">{props.QuestionnaireItem.prefix}</div>
       <div>
-        <p><span>{props.QuestionnaireItem.linkId}. </span>{props.QuestionnaireItem.text}</p></div>
+        <p><FontAwesomeIcon icon={faQuestionCircle} />  {props.QuestionnaireItem.text}</p></div>
       <div>
         {
           props.QuestionnaireItem.type === "boolean" ?
             <div className="boolean-type">
-              <input type="radio" name={props.QuestionnaireItem.linkId} onChange={() => props.onChange(props.QuestionnaireItem, [{ valueBoolean: true }])} /> Yes
-              <input type="radio" name={props.QuestionnaireItem.linkId} onChange={() => props.onChange(props.QuestionnaireItem, [{ valueBoolean: false }])} /> No
+              <div className="radio-button">
+                <input type="radio" name={props.QuestionnaireItem.linkId} onChange={() => props.onChange(props.QuestionnaireItem, [{ valueBoolean: true }])} /> Yes
+              </div>
+              <div className="radio-button">
+                <input type="radio" name={props.QuestionnaireItem.linkId} onChange={() => props.onChange(props.QuestionnaireItem, [{ valueBoolean: false }])} /> No
+              </div>
             </div>
             : props.QuestionnaireItem.type === "choice" ?
               <div className="choice-type">
@@ -47,13 +53,20 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
 
 function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   return (
-    <ButtonGroup>
+    <ButtonGroup vertical>
       {
         props.QuestionnaireItem.answerOption?.map((answerOption) => {
-          return (<Button key={JSON.stringify(answerOption.valueCoding)} size="sm" variant="outline-secondary" value={JSON.stringify(answerOption.valueCoding)} onClick={(event: any) => props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])}>{answerOption.valueCoding?.display}</Button>);
+          return (<Button key={JSON.stringify(answerOption.valueCoding)} size="lg" variant="outline-secondary" value={JSON.stringify(answerOption.valueCoding)} onClick={(event: any) => props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])}>{answerOption.valueCoding?.display}</Button>);
         })
       }
     </ButtonGroup>
+    // <ButtonGroup>
+    //   {
+    //     props.QuestionnaireItem.answerOption?.map((answerOption) => {
+    //       return (<Button key={JSON.stringify(answerOption.valueCoding)} size="sm" variant="outline-secondary" value={JSON.stringify(answerOption.valueCoding)} onClick={(event: any) => props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])}>{answerOption.valueCoding?.display}</Button>);
+    //     })
+    //   }
+    // </ButtonGroup>
   );
 }
 
