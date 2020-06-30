@@ -44,30 +44,35 @@
       "answerOption": [
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13879-4",
             "display": "Had no pain"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6752-5",
             "display": "Mild"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6751-7",
             "display": "Moderate"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6750-9",
             "display": "Severe"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13958-6",
             "display": "Very Severe"
           }
@@ -90,30 +95,35 @@
       "answerOption": [
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13879-4",
             "display": "Had no pain"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6752-5",
             "display": "Mild"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6751-7",
             "display": "Moderate"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6750-9",
             "display": "Severe"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13958-6",
             "display": "Very Severe"
           }
@@ -136,30 +146,35 @@
       "answerOption": [
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13879-4",
             "display": "Had no pain"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6752-5",
             "display": "Mild"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6751-7",
             "display": "Moderate"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6750-9",
             "display": "Severe"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13958-6",
             "display": "Very Severe"
           }
@@ -183,30 +198,35 @@
       "answerOption": [
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6568-5",
             "display": "Not at all"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13863-8",
             "display": "A little bit"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13909-9",
             "display": "Somewhat"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13902-4",
             "display": "Quite a bit"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13914-9",
             "display": "Very much"
           }
@@ -230,30 +250,35 @@
       "answerOption": [
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6568-5",
             "display": "Not at all"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13863-8",
             "display": "A little bit"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13909-9",
             "display": "Somewhat"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13902-4",
             "display": "Quite a bit"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13914-9",
             "display": "Very much"
           }
@@ -277,30 +302,35 @@
       "answerOption": [
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6568-5",
             "display": "Not at all"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13863-8",
             "display": "A little bit"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13909-9",
             "display": "Somewhat"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13902-4",
             "display": "Quite a bit"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13914-9",
             "display": "Very much"
           }
@@ -324,30 +354,35 @@
       "answerOption": [
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA6568-5",
             "display": "Not at all"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13863-8",
             "display": "A little bit"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13909-9",
             "display": "Somewhat"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13902-4",
             "display": "Quite a bit"
           }
         },
         {
           "valueCoding": {
+            "system": "https://loinc.org",
             "code": "LA13914-9",
             "display": "Very much"
           }

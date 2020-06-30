@@ -74,12 +74,19 @@ export default class App extends React.Component<AppProps, AppState> {
     if (existingResponseIndex >= 0) {
       newQuestionnaireResponse.item[existingResponseIndex].answer = answer;
         newQuestionnaireResponse.item[existingResponseIndex].text = item.text;
+        if(newQuestionnaireResponse.item[existingResponseIndex].answer){
+            // @ts-ignore
+            if(newQuestionnaireResponse.item[existingResponseIndex].answer[0].type === 'valueCoding'){
+                // @ts-ignore
+                newQuestionnaireResponse.item[existingResponseIndex].answer[0].coding.code.system = answer.coding.code.system;
+            }
+        }
     }
     else {
       newQuestionnaireResponse.item.push({
         linkId: item.linkId,
         answer: answer,
-        text:item.text
+        text:item.text,
       });
     }
 
