@@ -61,6 +61,6 @@ pipeline {
           sh 'docker push contentgroup/mypain:${env.DOCKER_LABEL}'
         }
       }
-
+    }
   }
 }
