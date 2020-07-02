@@ -1,0 +1,95 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "MyPainToSiteExample",
+  "url": "https://cds4cpm-develop.sandbox.alphora.com/cqf-ruler-r4/fhir/MyPainToSiteExample",
+  "version": "1.0.0",
+  "name": "MyPAIN to site mappings for questionnaireResponse",
+  "status": "draft",
+  "experimental": true,
+  "date": "2020-06-30",
+  "publisher": "ARQH",
+  "description": "Rule-based mappings between RTI MyPAIN and local site codes for MyPAIN observation codes.",
+  "sourceCanonical": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+  "targetCanonical": "http://anysite.com",
+  "group": [
+    {
+      "source": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+      "sourceVersion": "1.0.0",
+      "target": "http://anysite.com",
+      "targetVersion": "2020",
+      "element": [
+        {
+          "code": "mpqr-1000",
+          "target": [
+            {
+              "code": "site-1000",
+              "display": "Site Never",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "mpqr-1001",
+          "target": [
+            {
+              "code": "site-1001",
+              "display": "Site Sometimes",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "mpqr-1002",
+          "target": [
+            {
+              "code": "site-1002",
+              "display": "Site Always",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "mpqr-1003",
+          "target": [
+            {
+              "code": "site-1003",
+              "display": "Site Had no pain",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ,
+        {
+          "code": "mpqr-1004",
+          "target": [
+            {
+              "code": "site-1004",
+              "display": "Site Mild",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "mpqr-1005",
+          "target": [
+            {
+              "code": "site-1005",
+              "display": "Site Moderate",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "mpqr-1006",
+          "target": [
+            {
+              "code": "site-1006",
+              "display": "Site Severe",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
