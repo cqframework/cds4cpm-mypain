@@ -66,3 +66,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Docker
+
+To build with docker run:
+
+`docker build .`
+
+from the root directory. This is will build a container which serves content on port 80. You can run this with:
+
+`docker run -p 80:80 <hash>`
