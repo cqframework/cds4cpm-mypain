@@ -54,7 +54,6 @@ pipeline {
       }
     }
     stage('Docker Push') {
-      agent any
       steps {
         withCredentials([usernamePassword(credentialsId: 'dockerhub-jpercival', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
