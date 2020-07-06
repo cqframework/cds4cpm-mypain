@@ -15,13 +15,19 @@ pipeline {
           env.ENVIRONMENT_NAME = environment  
           println("Environment: ${env.ENVIRONMENT_NAME}");
 
+          env.DOCKER_LABEL = environment;
+
           if (env.ENVIRONMENT_NAME == 'staging') {
             env.CLOUDFRONT_DISTRIBUTION = 'E3MM1APWOMZXHB'
+            env.DOCKER_LABEL = 'latest'
           } 
           else if (env.ENVIRONMENT_NAME == 'develop') {
             env.CLOUDFRONT_DISTRIBUTION = 'E241WF4QIREH4O'
+            env.DOCKER_LABEL = 'develop'
           } 
+
           println("CloudFront Distribution: ${env.CLOUDFRONT_DISTRIBUTION}");
+          println("Docker Label: ${env.DOCKER_LABEL}");
         }
       }
     }
@@ -42,5 +48,19 @@ pipeline {
         }
     }
 
+    stage('Docker Build') {
+      steps {
+        sh "docker build -t contentgroup/mypain:${env.DOCKER_LABEL} ."
+      }
+    }
+
+    stage('Docker Push') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'dockerhub-jpercival', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+          sh 'docker login -u $dockerHubUser -p $dockerHubPassword'
+          sh "docker push contentgroup/mypain:${env.DOCKER_LABEL}"
+        }
+      }
+    }
   }
 }
