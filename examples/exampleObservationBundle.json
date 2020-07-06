@@ -1,0 +1,115 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "observations",
+      "resource": {
+        "resourceType": "Bundle",
+        "identifier": {
+          "value": "obs_123455"
+        },
+        "type": "transaction",
+        "entry": [
+          {
+            "resource": {
+              "resourceType": "Observation",
+              "id": "15960.1",
+              "meta": {
+                "versionId": "1",
+                "lastUpdated": "2020-06-30T19:41:55.937+00:00",
+                "source": "#0v6T2RLwAuJGEau3"
+              },
+              "status": "final",
+              "code": {
+                "coding": [
+                  {
+                    "code": "74465-6",
+                    "display": "Questionnaire response Document"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+                "display": "Brenda Jackson"
+              },
+              "effectiveDateTime": "2020-06-30T13:13:46-06:00",
+              "valueString": "lower right back"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Observation",
+              "id": "15960.2",
+              "meta": {
+                "versionId": "1",
+                "lastUpdated": "2020-06-30T19:41:55.937+00:00",
+                "source": "#0v6T2RLwAuJGEau3"
+              },
+              "status": "final",
+              "code": {
+                "coding": [
+                  {
+                    "code": "74465-6",
+                    "display": "Questionnaire response Document"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+                "display": "Brenda Jackson"
+              },
+              "effectiveDateTime": "2020-06-30T13:13:46-06:00",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "mpqr-1006",
+                    "display": "Severe"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Observation",
+              "id": "15960.3",
+              "meta": {
+                "versionId": "1",
+                "lastUpdated": "2020-06-30T19:41:55.937+00:00",
+                "source": "#0v6T2RLwAuJGEau3"
+              },
+              "status": "final",
+              "code": {
+                "coding": [
+                  {
+                    "code": "74465-6",
+                    "display": "Questionnaire response Document"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+                "display": "Brenda Jackson"
+              },
+              "effectiveDateTime": "2020-06-30T13:13:46-06:00",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "mpqr-1004",
+                    "display": "Mild"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "conceptMapURL",
+      "valueString": "http://localhost:8080/cqf-ruler-r4/fhir/ConceptMap/MyPainToSiteExample"
+    }
+  ]
+}

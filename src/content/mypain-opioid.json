@@ -44,31 +44,36 @@
       "answerOption": [
         {
           "valueCoding": {
-            "code": "LA13879-4",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1003",
             "display": "Had no pain"
           }
         },
         {
           "valueCoding": {
-            "code": "LA6752-5",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1004",
             "display": "Mild"
           }
         },
         {
           "valueCoding": {
-            "code": "LA6751-7",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1005",
             "display": "Moderate"
           }
         },
         {
           "valueCoding": {
-            "code": "LA6750-9",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1006",
             "display": "Severe"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13958-6",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1007",
             "display": "Very Severe"
           }
         }
@@ -90,31 +95,36 @@
       "answerOption": [
         {
           "valueCoding": {
-            "code": "LA13879-4",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1003",
             "display": "Had no pain"
           }
         },
         {
           "valueCoding": {
-            "code": "LA6752-5",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1004",
             "display": "Mild"
           }
         },
         {
           "valueCoding": {
-            "code": "LA6751-7",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1005",
             "display": "Moderate"
           }
         },
         {
           "valueCoding": {
-            "code": "LA6750-9",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1006",
             "display": "Severe"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13958-6",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1007",
             "display": "Very Severe"
           }
         }
@@ -136,31 +146,36 @@
       "answerOption": [
         {
           "valueCoding": {
-            "code": "LA13879-4",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1003",
             "display": "Had no pain"
           }
         },
         {
           "valueCoding": {
-            "code": "LA6752-5",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1004",
             "display": "Mild"
           }
         },
         {
           "valueCoding": {
-            "code": "LA6751-7",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1005",
             "display": "Moderate"
           }
         },
         {
           "valueCoding": {
-            "code": "LA6750-9",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1006",
             "display": "Severe"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13958-6",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1007",
             "display": "Very Severe"
           }
         }
@@ -183,31 +198,36 @@
       "answerOption": [
         {
           "valueCoding": {
-            "code": "LA6568-5",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1008",
             "display": "Not at all"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13863-8",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1009",
             "display": "A little bit"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13909-9",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1010",
             "display": "Somewhat"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13902-4",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1011",
             "display": "Quite a bit"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13914-9",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1012",
             "display": "Very much"
           }
         }
@@ -230,31 +250,36 @@
       "answerOption": [
         {
           "valueCoding": {
-            "code": "LA6568-5",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1008",
             "display": "Not at all"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13863-8",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1009",
             "display": "A little bit"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13909-9",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1010",
             "display": "Somewhat"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13902-4",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1011",
             "display": "Quite a bit"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13914-9",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1012",
             "display": "Very much"
           }
         }
@@ -277,31 +302,36 @@
       "answerOption": [
         {
           "valueCoding": {
-            "code": "LA6568-5",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1008",
             "display": "Not at all"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13863-8",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1009",
             "display": "A little bit"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13909-9",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1010",
             "display": "Somewhat"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13902-4",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1011",
             "display": "Quite a bit"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13914-9",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1012",
             "display": "Very much"
           }
         }
@@ -324,31 +354,36 @@
       "answerOption": [
         {
           "valueCoding": {
-            "code": "LA6568-5",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1008",
             "display": "Not at all"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13863-8",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1009",
             "display": "A little bit"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13909-9",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1010",
             "display": "Somewhat"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13902-4",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1011",
             "display": "Quite a bit"
           }
         },
         {
           "valueCoding": {
-            "code": "LA13914-9",
+            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+            "code": "mpqr-1012",
             "display": "Very much"
           }
         }

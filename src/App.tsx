@@ -80,13 +80,20 @@ export default class App extends React.Component<AppProps, AppState> {
     var existingResponseIndex = newQuestionnaireResponse.item.findIndex((responseItem) => responseItem.linkId === item.linkId);
     if (existingResponseIndex >= 0) {
       newQuestionnaireResponse.item[existingResponseIndex].answer = answer;
-      newQuestionnaireResponse.item[existingResponseIndex].text = item.text;
+        newQuestionnaireResponse.item[existingResponseIndex].text = item.text;
+        if(newQuestionnaireResponse.item[existingResponseIndex].answer){
+            // @ts-ignore
+            if(newQuestionnaireResponse.item[existingResponseIndex].answer[0].type === 'valueCoding'){
+                // @ts-ignore
+                newQuestionnaireResponse.item[existingResponseIndex].answer[0].coding.code.system = answer.coding.code.system;
+            }
+        }
     }
     else {
       newQuestionnaireResponse.item.push({
         linkId: item.linkId,
         answer: answer,
-        text: item.text
+        text:item.text,
       });
     }
 
@@ -104,7 +111,7 @@ export default class App extends React.Component<AppProps, AppState> {
   getCurrentDate(){
       let date = new Date();
       let day = date.getDate();
-      let month = date.getMonth();
+      let month = date.getMonth() + 1;
       let year = date.getFullYear();
       let hours = date.getHours();
       let min = date.getMinutes();
