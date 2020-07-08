@@ -1,4 +1,4 @@
-"testQuestionnaireResponse.json" is an example of the output of the mypain-opiod.json questionnaire submitted.
+"exampleQuestionnaireResponse.json" is an example of the output of the mypain-opiod.json questionnaire submitted.
 
 
 <H4> MyPAIN app </H4>
@@ -21,13 +21,13 @@
 <H4> QuestionnaireResponse $extract operation </H4>
 
 1.  Query the cqfruler to find and copy the QuestionnaireResponse generated with the MyPAIN app.  "GET http://localhost:8080/cqf-ruler-r4/fhir/QuestionnaireResponse" (may have to search through responses to find the right one)
-	An example one can be found at "\cds4cpm-mypain\examples\testQuestionnaireResponse.json".
+	An example one can be found at "\cds4cpm-mypain\examples\exampleQuestionnaireResponse.json".
 2.  Send the QuestionnaireResponse to the cqfruler as "POST http://localhost:8080/cqf-ruler-r4/fhir/QuestionnaireResponse/$extract".  Parameter name is questionnaireResponse.
 3.  The resulting bundle of Observations created from the QuestionnaireResponse will be posted to the questionnaireResponseExtract.endpoint set above.
 
 <H4> Observation $transform operation </H4>
 
-1.  Create a Parameters resource contaning a Bundle of Observations and a ConceptMap url similar to those found at "\cds4cpm-mypain\examples\testObservationBundle.json" and "\cds4cpm-mypain\examples\testConceptMap.json".
+1.  Create a Parameters resource contaning a Bundle of Observations and a ConceptMap url similar to those found at "\cds4cpm-mypain\examples\exampleObservationBundle.json" and "\cds4cpm-mypain\examples\exampleConceptMap.json".
 2.  Send the QuestionnaireResponse to the cqfruler as "POST http://localhost:8080/cqf-ruler-r4/fhir/QuestionnaireResponse/$extract".  Parameter name is questionnaireResponse.
 3.  The returning Bundle of Observations will be a transformed Bundle with the site codes replacing the original codes for the values of the Observations or if "observationTransform.replaceCode=false" then the site codes will be added as a new Observation value code with the concept map's corresponding display value. 
 
