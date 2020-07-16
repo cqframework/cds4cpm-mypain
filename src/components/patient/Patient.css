@@ -5,12 +5,14 @@
         text-align: left;
         flex-direction: column;
         justify-content: center;
+        padding: 10px;
     /* } */
 }
 
 .btn-outline-secondary {
     color: #000;
     border-color: #000;
+    background-color: lightgray;
 }
 
 .next-button {
