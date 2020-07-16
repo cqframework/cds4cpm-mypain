@@ -1,0 +1,1753 @@
+{
+  "resourceType": "Questionnaire",
+  "name": "MyPain Questionnaire",
+  "id": "mypain-questionnaire",
+  "status": "active",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2020-07-09T17:25:11.807Z",
+    "source": "#GO30VbHeXpS2URar",
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7"
+    ],
+    "tag": [
+      {
+        "code": "lformsVersion: 23.0.0"
+      }
+    ]
+  },
+  "item": [
+    {
+      "type": "open-choice",
+      "code": [
+        {
+          "code": "[Q1]"
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ],
+            "text": "Drop down"
+          }
+        }
+      ],
+      "required": false,
+      "linkId": "1",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "display": "Head"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Shoulders"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Knees"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Toes"
+          }
+        }
+      ]
+    },
+    {
+      "header": false,
+      "dataType": "CNE",
+      "question": "In the  past 7 days -  How intense was your pain at its worst?",
+      "linkId": "2",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "2",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "answers": [
+        {
+          "text": "Had no pain",
+          "code": "mpqr-1003",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Mild",
+          "code": "mpqr-1004",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Moderate",
+          "code": "mpqr-1005",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Severe",
+          "code": "mpqr-1006",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Very Severe",
+          "code": "mpqr-1007",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "header": false,
+      "dataType": "CNE",
+      "question": "How intense was your average pain?",
+      "linkId": "3",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "3",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "answers": [
+        {
+          "text": "Had no pain",
+          "code": "mpqr-1003",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Mild",
+          "code": "mpqr-1004",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Moderate",
+          "code": "mpqr-1005",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Severe",
+          "code": "mpqr-1006",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Very Severe",
+          "code": "mpqr-1007",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "header": false,
+      "dataType": "CNE",
+      "question": "What is your level of pain right now?",
+      "linkId": "4",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "4",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "answers": [
+        {
+          "text": "Had no pain",
+          "code": "mpqr-1003",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Mild",
+          "code": "mpqr-1004",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Moderate",
+          "code": "mpqr-1005",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Severe",
+          "code": "mpqr-1006",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Very Severe",
+          "code": "mpqr-1007",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "header": false,
+      "dataType": "CNE",
+      "question": "How much did pain interfere with your day to day activities?",
+      "linkId": "5",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "5",
+      "prefix": "In the past 7 days:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "answers": [
+        {
+          "text": "Not at all",
+          "code": "mpqr-1008",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "A little bit",
+          "code": "mpqr-1009",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Somewhat",
+          "code": "mpqr-1010",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Quite a bit",
+          "code": "mpqr-1011",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Very much",
+          "code": "mpqr-1012",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "header": false,
+      "dataType": "CNE",
+      "question": "How much did pain interfere with your work?",
+      "linkId": "6",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "6",
+      "prefix": "In the past 7 days:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "answers": [
+        {
+          "text": "Not at all",
+          "code": "mpqr-1008",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "A little bit",
+          "code": "mpqr-1009",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Somewhat",
+          "code": "mpqr-1010",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Quite a bit",
+          "code": "mpqr-1011",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Very much",
+          "code": "mpqr-1012",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "header": false,
+      "dataType": "CNE",
+      "question": "How much did pain interfere with your ability to participate in social activities?",
+      "linkId": "7",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "7",
+      "prefix": "In the past 7 days:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "answers": [
+        {
+          "text": "Not at all",
+          "code": "mpqr-1008",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "A little bit",
+          "code": "mpqr-1009",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Somewhat",
+          "code": "mpqr-1010",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Quite a bit",
+          "code": "mpqr-1011",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Very much",
+          "code": "mpqr-1012",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "header": false,
+      "dataType": "CNE",
+      "question": "How much did pain interfere with your household chores?",
+      "linkId": "8",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "8",
+      "prefix": "In the past 7 days:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "answers": [
+        {
+          "text": "Not at all",
+          "code": "mpqr-1008",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "A little bit",
+          "code": "mpqr-1009",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Somewhat",
+          "code": "mpqr-1010",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Quite a bit",
+          "code": "mpqr-1011",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Very much",
+          "code": "mpqr-1012",
+          "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+          "label": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Exercises at home (such as those assigned by a therapist) or outside (such as walking, jogging, swimming)?",
+      "linkId": "9",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "9",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "9a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "9a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "9",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Sleep positioners or devices (such as additional pillows, padding, etc.)?",
+      "linkId": "10",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "10",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "10a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "10a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "10",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Stretching?",
+      "linkId": "11",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "11",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "11a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "11a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "11",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Weight loss or changes in  your diet?",
+      "linkId": "12",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "12",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "12a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "12a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "12",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Setting and reaching activity goals?",
+      "linkId": "13",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "13",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "13a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "13a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "13",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Ice or heat therapy?",
+      "linkId": "14",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "14",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "14a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "14a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "14",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Physical therapy?",
+      "linkId": "15",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "15",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "15a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "15a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "15",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Acupuncture?",
+      "linkId": "16",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "16",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "16a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "16a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "16",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Chiropractic treatment?",
+      "linkId": "17",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "17",
+      "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "17a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "17a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "17",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Pain relievers (such as Advil, Aleve, Aspirin, Ibuprofen, Motrin, Tylenol)?",
+      "linkId": "18",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "18",
+      "prefix": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "18a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "18a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "18",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Herbal or nutritional pain relievers (such as ginseng or kava kava)?",
+      "linkId": "19",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "19",
+      "prefix": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "19a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "19a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "19",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Cremes, lotions, gels or patches applied to the skin (for example Bengay, Tiger Balm or BioFreeze)?",
+      "linkId": "20",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "20",
+      "prefix": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "20a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "20a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "20",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Opioid medications (such as hydrocodone, oxycodone, codeine, morphine and fentanyl)?",
+      "linkId": "21",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "21",
+      "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months?:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "21a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "21a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "21",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Cortisone injection (a shot to relieve inflammation)?",
+      "linkId": "22",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "22",
+      "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months ?:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "22a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "22a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "22",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Non-opioid medications as prescribed by a doctor (such as Celebrex, Cymbalta)?",
+      "linkId": "23",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "23",
+      "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months?:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "23a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "23a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "23",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Yoga?",
+      "linkId": "24",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "24",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "24a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "24a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "24",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Massage?",
+      "linkId": "25",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "25",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months ?:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "25a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "25a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "25",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Meditation?",
+      "linkId": "26",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "26",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "26a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "26a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "26",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Relaxation or mindfulness-based training?",
+      "linkId": "27",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "27",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "27a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "27a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "27",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Group or individual therapy for pain?",
+      "linkId": "28",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "28",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "28a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "28a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "28",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Acceptance and commitment therapy?",
+      "linkId": "29",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "29",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "29a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "29a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "29",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Sleep management (such as a sleep study or CPAP)?",
+      "linkId": "30",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "30",
+      "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "30a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "30a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "30",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Aromatherapy?",
+      "linkId": "31",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "31",
+      "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "31a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "31a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "31",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Crystals?",
+      "linkId": "32",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "32",
+      "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "32a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "32a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "32",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Essential oils?",
+      "linkId": "33",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "33",
+      "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "33a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "33a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "33",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Music therapy?",
+      "linkId": "34",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "34",
+      "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Did it work?",
+      "linkId": "34a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "34a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "34",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "BL",
+      "question": "Other?",
+      "linkId": "35",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "35",
+      "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "TX",
+      "question": "If so, please specify:",
+      "linkId": "35a",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "35a",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "35",
+            "trigger": {
+              "value": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "header": false,
+      "dataType": "TX",
+      "question": "We’d like to know more about you and your goals.  What are your most important  activity goals?  For example: I’d like to be able to walk without pain.",
+      "linkId": "36",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "36",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "TX",
+      "question": "What are the biggest barriers to achieving your activity goals?  For example: I have a lot of stress from work which makes my pain worse.",
+      "linkId": "37",
+      "questionCodeSystem": "LinkId",
+      "questionCode": "37",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    }
+  ]
+}
