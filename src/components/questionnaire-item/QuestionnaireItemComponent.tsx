@@ -3,6 +3,7 @@ import { QuestionnaireItem, QuestionnaireResponseItemAnswer } from '../../fhir-t
 import './QuestionnaireItemComponent.css';
 
 function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
+  let currentCardId: any;
   return (
     <div className="questionnaire-item">
         <div>{ props.QuestionnaireItem.prefix }</div>
@@ -26,7 +27,19 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
               <div>
                   <input type="text" onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString:event.target.value}])}  />
               </div>
-          : <div>Unrecognized QuestionnaireItem type: { props.QuestionnaireItem.type }</div>
+              : props.QuestionnaireItem.type === "quantity" ?
+                <div className="quantity-type">
+                  <input type="text" onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueQuantity: { value: parseFloat(event.target.value) } }])} /> days
+                </div>
+                : props.QuestionnaireItem.type === "open-choice" ?
+                  <div className="choice-type">
+                    {populateMultipleChoice(props)}
+                  </div>
+                    : props.QuestionnaireItem.type === "text" ?
+                      <div className="text-type">
+                        <input type="text" onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString: event.target.value }])} />
+                      </div>
+                      : <div>Unrecognized QuestionnaireItem type: {props.QuestionnaireItem.type}</div>
         }
       </div>
       {/* <div>{ JSON.stringify(props.QuestionnaireItem) }</div> */}
@@ -51,6 +64,22 @@ function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange:
         }
     </select>
   );
- }
+}
+
+function populateMultipleChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
+  return (
+    // fill with multiple choice buttons
+    <div>
+      {
+        props.QuestionnaireItem.answerOption?.map((answerOption) => {
+
+          return (<p key={JSON.stringify(answerOption.valueCoding)}>{answerOption.valueCoding?.display}</p>)
+        })
+      }
+    </div>
+  );
+}
+
+const makeClasses = (...classes: any[]) => classes.filter(i => Boolean(i)).join(' ');
 
 export default QuestionnaireItemComponent;

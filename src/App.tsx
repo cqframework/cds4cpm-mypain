@@ -2,8 +2,11 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuestionnaireComponent from './components/questionnaire/QuestionnaireComponent';
-import { Questionnaire, QuestionnaireResponse, QuestionnaireItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
-import { submitQuestionnaireResponse, getQuestionnaire } from './utils/fhirFacadeHelper';
+import { QuestionnaireResponse, QuestionnaireItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
+// import { Questionnaire } from './fhir-types/fhir-r4';
+import ContentMyPain from './content/mypain-opioid.json';  //mypain-opioid.json';
+// import { submitQuestionnaireResponse, getQuestionnaire } from './utils/fhirFacadeHelper';
+import { submitQuestionnaireResponse } from './utils/fhirFacadeHelper';
 import PatientContainer from './components/patient/PatientContainer';
 import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
@@ -12,8 +15,9 @@ interface AppProps {
 
 }
 
+// TODO: remember to assure that it is a proper questionnaire type
 interface AppState {
-  SelectedQuestionnaire?: Questionnaire,
+  SelectedQuestionnaire?: any,
   QuestionnaireResponse: QuestionnaireResponse
 }
 
@@ -35,21 +39,22 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   componentDidMount() {
-      let ptRef: string;
-      let ptDisplay;
-      getQuestionnaire()
-          .then(questionnaire =>{
-              FHIR.oauth2.ready()
-                  .then((client: Client) => client.patient.read())
-                  .then((patient) => {
-                      patient.id ? ptRef = patient.id : ptRef = " ";
-                      ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
-                      return this.selectQuestionnaire(questionnaire, ptRef, ptDisplay);
-                  });
-          })
+    let ptRef: string;
+    let ptDisplay;
+    // TODO: re-enable getQuestionnaire 
+    // getQuestionnaire()
+      // .then(questionnaire => {
+        FHIR.oauth2.ready()
+          .then((client: Client) => client.patient.read())
+          .then((patient) => {
+            patient.id ? ptRef = patient.id : ptRef = " ";
+            ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
+            return this.selectQuestionnaire(ContentMyPain, ptRef, ptDisplay);
+          });
+      // })
   }
 
-  selectQuestionnaire(selectedQuestionnaire: Questionnaire, ptRef: string, ptDisplay: string): void {
+  selectQuestionnaire(selectedQuestionnaire: any, ptRef: string, ptDisplay: string): void {
     this.setState({
       SelectedQuestionnaire: selectedQuestionnaire,
       QuestionnaireResponse: {
