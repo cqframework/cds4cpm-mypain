@@ -1,3 +1,8 @@
+html {
+  --color-dark: #282c34;
+  --color-light-text: #ffffff;
+}
+
 .app {
   text-align: center;
 }
@@ -14,19 +19,24 @@
 }
 
 .app-header {
-  background-color: #282c34;
+  background-color: var(--color-dark);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--color-light-text);
+  height: 45px;
+}
+
+.app-header p {
+  margin: 0;
 }
 
 .submit-button {
   background-color: #0099FF;
   font-size: calc(4px + 2vmin);
-  color: white;
+  color: var(--color-light-text);
 }
 
 .options {

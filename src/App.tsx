@@ -3,10 +3,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuestionnaireComponent from './components/questionnaire/QuestionnaireComponent';
 import { QuestionnaireResponse, QuestionnaireItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
-// import { Questionnaire } from './fhir-types/fhir-r4';
-import ContentMyPain from './content/mypain-open.json';  //mypain-opioid.json';
-// import { submitQuestionnaireResponse, getQuestionnaire } from './utils/fhirFacadeHelper';
-import { submitQuestionnaireResponse } from './utils/fhirFacadeHelper';
+import ContentMyPain from './content/mypain-opioid.json';  //mypain-opioid.json';
+import { submitQuestionnaireResponse, getQuestionnaire } from './utils/fhirFacadeHelper';
 import PatientContainer from './components/patient/PatientContainer';
 import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
@@ -23,27 +21,31 @@ interface AppState {
 
 export default class App extends React.Component<AppProps, AppState> {
 
+  // private options: { "value": Questionnaire, "text": string }[] = [
+  //   { "value": ContentMyPain, "text": ContentMyPain.title }
+  // ];
+
   constructor(props: AppProps) {
-      super(props);
-      this.state =
-          {
-              SelectedQuestionnaire: undefined,
-              QuestionnaireResponse: {
-                  resourceType: "QuestionnaireResponse",
-                  status: "in-progress",
-                  item: []
-              }
-          };
-      this.handleChange = this.handleChange.bind(this);
-      this.submitAnswers = this.submitAnswers.bind(this);
+    super(props);
+    this.state =
+    {
+      SelectedQuestionnaire: undefined,
+      QuestionnaireResponse: {
+        resourceType: "QuestionnaireResponse",
+        status: "in-progress",
+        item: []
+      }
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.submitAnswers = this.submitAnswers.bind(this);
   }
 
   componentDidMount() {
     let ptRef: string;
     let ptDisplay;
     // TODO: re-enable getQuestionnaire 
-    // getQuestionnaire()
-      // .then(questionnaire => {
+    getQuestionnaire()
+      .then(questionnaire => {
         FHIR.oauth2.ready()
           .then((client: Client) => client.patient.read())
           .then((patient) => {
@@ -51,16 +53,16 @@ export default class App extends React.Component<AppProps, AppState> {
             ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
             return this.selectQuestionnaire(ContentMyPain, ptRef, ptDisplay);
           });
-      // })
+      })
   }
 
   selectQuestionnaire(selectedQuestionnaire: any, ptRef: string, ptDisplay: string): void {
     console.log('questionnaire: ', selectedQuestionnaire);
     this.setState({
-      SelectedQuestionnaire: selectedQuestionnaire,
+      SelectedQuestionnaire: ContentMyPain,
       QuestionnaireResponse: {
-          ...this.state.QuestionnaireResponse,
-        questionnaire: selectedQuestionnaire.id,
+        ...this.state.QuestionnaireResponse,
+        questionnaire: ContentMyPain.id,
           subject:{
             reference:'Patient/' + ptRef,
             display:ptDisplay
@@ -71,10 +73,12 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   handleChange(item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]): void {
+    console.log('item: ', item);
+    console.log('answer: ', answer)
     var newQuestionnaireResponse = this.state.QuestionnaireResponse;
-    if (!newQuestionnaireResponse.item)
-    {
+    if (!newQuestionnaireResponse.item) {
       newQuestionnaireResponse.item = [];
+      console.log('hit here!')
     }
     var existingResponseIndex = newQuestionnaireResponse.item.findIndex((responseItem) => responseItem.linkId === item.linkId);
     if (existingResponseIndex >= 0) {
@@ -99,6 +103,7 @@ export default class App extends React.Component<AppProps, AppState> {
     this.setState({
       QuestionnaireResponse: newQuestionnaireResponse
     });
+    console.log('newQuestionnaireResponse:', newQuestionnaireResponse)
   }
 
   formatDateItem(dateItem: number){
@@ -128,41 +133,41 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   public render(): JSX.Element {
-      if(this.state.SelectedQuestionnaire) {
-          return (
-              <div className="app">
-                  <header className="app-header">
-                      <p>
-                          MyPain Development Branch v2
+    if (this.state.SelectedQuestionnaire) {
+      return (
+        <div className="app">
+          <header className="app-header">
+            <p>
+              MyPain Development Branch v2
                       </p>
-                  </header>
-                  <PatientContainer/>
-                  <hr/>
-                  <div>
-                      <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
-                                              questionnaireResponse={this.state.QuestionnaireResponse}
-                                              onChange={this.handleChange} onSubmit={this.submitAnswers}/>
-                  </div>
-                  <hr/>
-                  <div>QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div>
-              </div>
-          );
-      }else{
-          return (
-              <div className="app">
-                  <header className="app-header">
-                      <p>
-                          MyPain Development Branch v2
+          </header>
+          <PatientContainer />
+          <hr />
+          <div>
+            <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
+              questionnaireResponse={this.state.QuestionnaireResponse}
+              onChange={this.handleChange} onSubmit={this.submitAnswers} />
+          </div>
+          <hr />
+          <div>QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="app">
+          <header className="app-header">
+            <p>
+              MyPain Development Branch v2
                       </p>
-                  </header>
-                  <PatientContainer/>
-                  <hr/>
-                  <div>
-                  </div>
-                  <hr/>
-                  <div>QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div>
-              </div>
-          );
-      }
+          </header>
+          <PatientContainer />
+          <hr />
+          <div>
+          </div>
+          <hr />
+          <div>QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div>
+        </div>
+      );
+    }
   }
 }
