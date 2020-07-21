@@ -1,0 +1,29 @@
+.multi-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .multi-button {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 5px 0 5px;
+  }
+  .multi-button label input {
+    display: none;
+    /* top:-20px; */
+  }
+  
+  input:checked + span {
+    background-color: lightgray;
+    color: #fff;
+    padding: 3px 31px 7px 30px;
+    border-radius: 10px;
+  
+  }
+  /* .multi-button input[type='checkbox']:checked {
+  
+  }  */
