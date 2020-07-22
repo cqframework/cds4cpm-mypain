@@ -71,11 +71,10 @@ function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange:
 function populateMultipleChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   return (
     // fill with multiple choice buttons
-    <div className="multi-container">
+    <div>
       {
         props.QuestionnaireItem.answerOption?.map((answerOption) => {
-          // (event: any) => props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])
-            return <MultiSelectButtonComponent key={answerOption.valueCoding?.display}>{answerOption.valueCoding?.display} </MultiSelectButtonComponent>
+            return <MultiSelectButtonComponent key={JSON.stringify(answerOption.valueCoding)}  {...answerOption}>{answerOption.valueCoding?.display}</MultiSelectButtonComponent>
         })
       }
     </div>

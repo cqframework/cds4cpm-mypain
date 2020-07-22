@@ -48,3 +48,7 @@ html {
 .app .options, .app .options button {
   margin: 5px;
 }
+
+.hidden {
+  display: none;
+}

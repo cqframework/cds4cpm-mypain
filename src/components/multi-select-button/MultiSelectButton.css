@@ -3,27 +3,70 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
-  .multi-button {
+}
+
+.multi-button {
     width: 100px;
-    height: 30px;
+    height: 40px;
     border: 1px solid #000;
     border-radius: 10px;
     margin: 5px 0 5px;
-  }
-  .multi-button label input {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.multi-button label input {
     display: none;
-    /* top:-20px; */
-  }
-  
-  input:checked + span {
-    background-color: lightgray;
-    color: #fff;
-    padding: 3px 31px 7px 30px;
+}
+
+.selected {
+    background-color: #000000;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.additional-info-box {
+    width: 100%;
+    border: 1px dashed #000000;
+    padding: 10px;
+    position: relative;
+    margin-top: -20px;
+    z-index: 1;
+}
+
+.additional-info-box>div {
+    padding-top: 10px;
+}
+
+.button-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-box button {
+    width: 100px;
+    margin: 0 5px;
+    background-color: #ffffff;
+    border: 1px solid black;
     border-radius: 10px;
-  
-  }
-  /* .multi-button input[type='checkbox']:checked {
-  
-  }  */
+    height: 30px;
+    box-shadow: none;
+    padding: 0 10px;
+}
+
+.input-group .input-group-prepend .input-group-text {
+    border: 1px solid #000000 !important;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.input-group input {
+    border: 1px solid black !important;
+}
+
+.input-group input:focus {
+    outline: 0;
+    box-shadow: none;
+}
