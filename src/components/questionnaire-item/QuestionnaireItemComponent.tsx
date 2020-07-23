@@ -1,16 +1,39 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import { QuestionnaireItem, QuestionnaireResponseItemAnswer } from '../../fhir-types/fhir-r4';
 import './QuestionnaireItemComponent.css';
 import { Card, ButtonGroup, Button } from 'react-bootstrap';
-import  MultiSelectButtonComponent  from '../multi-select-button/MultiSelectButton';
-import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
+import MultiSelectButtonComponent from '../multi-select-button/MultiSelectButton';
+import { faQuestionCircle, faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   let currentCardId: any;
-  // let valueCallback: any;
+  let questionnaireItemRef: any = createRef();
+
+  function handleNextQuestionScroll(linkId: number) {
+    console.log('linkId: ', linkId);
+    console.log('questionnaire container: ', questionnaireItemRef);
+    if (questionnaireItemRef.current.id === linkId) {
+      questionnaireItemRef.current.nextSibling.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      })
+    }
+  }
+  function handlePreviousQuestionScroll(linkId: number) {
+    console.log('linkId: ', linkId);
+    console.log('questionnaire container: ', questionnaireItemRef);
+    if (questionnaireItemRef.current.id === linkId) {
+      questionnaireItemRef.current.previousSibling.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      })
+    }
+  }
+
   return (
-    <Card className={makeClasses("questionnaire-item", props.QuestionnaireItem.linkId === currentCardId ? 'current-card' : '')} id={props.QuestionnaireItem.linkId}>
+    <Card ref={questionnaireItemRef} className={makeClasses("questionnaire-item", props.QuestionnaireItem.linkId === currentCardId ? 'current-card' : '')} id={props.QuestionnaireItem.linkId}>
+      <button value={props.QuestionnaireItem.linkId} onClick={(event: any) => handlePreviousQuestionScroll(event.target.value)}> <FontAwesomeIcon icon={faArrowAltCircleLeft} /> </button>
       <div className="prefix-text">{props.QuestionnaireItem.prefix}</div>
       <div>
         <p><FontAwesomeIcon icon={faQuestionCircle} />  {props.QuestionnaireItem.text}</p></div>
@@ -52,6 +75,7 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
           ) : null
         }
       </div>
+      <Button variant="outline-secondary" size='lg' className="next-button" value={props.QuestionnaireItem.linkId} onClick={(event: any) => handleNextQuestionScroll(event.target.value)}>Next</Button>
     </Card>
   );
 }
@@ -70,11 +94,10 @@ function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange:
 
 function populateMultipleChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   return (
-    // fill with multiple choice buttons
     <div>
       {
         props.QuestionnaireItem.answerOption?.map((answerOption) => {
-            return <MultiSelectButtonComponent key={JSON.stringify(answerOption.valueCoding)}  {...answerOption}>{answerOption.valueCoding?.display}</MultiSelectButtonComponent>
+          return <MultiSelectButtonComponent key={JSON.stringify(answerOption.valueCoding)}  {...answerOption}>{answerOption.valueCoding?.display}</MultiSelectButtonComponent>
         })
       }
     </div>

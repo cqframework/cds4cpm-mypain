@@ -39,8 +39,7 @@ function handleEnableWhen(item: QuestionnaireItem, key: number, propsOnChange:(i
          questionnaireResponse.item?.map((answer, key)=>{
              if(answer.linkId === question){
                  let linkedItem = selectedQuestionnaireItemsByLinkId.get(answer.linkId);
-                 console.log('answered question: ', answer);
-                 console.log('linked item', linkedItem)
+                 console.log('linkedItem', linkedItem);
                  if(linkedItem.type === 'boolean'){
                      if(answer.answer){
                          if(answer.answer[0].valueBoolean === enableWhen.answerBoolean){
@@ -94,6 +93,7 @@ Does NOT work.  It causes the error:
          })
     })
     if(allLinkedQuestionsAnswered) {
+        console.log('no more linked questions.')
         return <QuestionnaireItemComponent QuestionnaireItem={item} key={key} onChange={propsOnChange}/>
     }else {
         if (questionnaireResponse.item?.find(i => i.linkId === item.linkId)?.answer?.length) {

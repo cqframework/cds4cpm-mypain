@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuestionnaireComponent from './components/questionnaire/QuestionnaireComponent';
@@ -8,6 +8,7 @@ import { submitQuestionnaireResponse, getQuestionnaire } from './utils/fhirFacad
 import PatientContainer from './components/patient/PatientContainer';
 import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
+import { Button } from 'react-bootstrap';
 
 interface AppProps {
 
@@ -24,7 +25,7 @@ export default class App extends React.Component<AppProps, AppState> {
   // private options: { "value": Questionnaire, "text": string }[] = [
   //   { "value": ContentMyPain, "text": ContentMyPain.title }
   // ];
-
+  questionnaireContainer: any = createRef();
   constructor(props: AppProps) {
     super(props);
     this.state =
@@ -74,12 +75,9 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   handleChange(item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]): void {
-    console.log('item: ', item);
-    console.log('answer: ', answer)
     var newQuestionnaireResponse = this.state.QuestionnaireResponse;
     if (!newQuestionnaireResponse.item) {
       newQuestionnaireResponse.item = [];
-      console.log('hit here!')
     }
     var existingResponseIndex = newQuestionnaireResponse.item.findIndex((responseItem) => responseItem.linkId === item.linkId);
     if (existingResponseIndex >= 0) {
@@ -124,6 +122,16 @@ export default class App extends React.Component<AppProps, AppState> {
 //      "2020-06-19T12:05:43-06:00"
       return year + '-' + this.formatDateItem(month) + '-' + this.formatDateItem(day) + 'T' +  this.formatDateItem(hours) + ':' + this.formatDateItem(min) + ':' + this.formatDateItem(sec) + '-' + this.formatDateItem(zone) + ':00';
   }
+    
+  startQuestionnaire = () => {
+    console.log('questionnaire container: ', this.questionnaireContainer);
+    if(this.questionnaireContainer.current) {
+      this.questionnaireContainer.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      })
+    }
+  }
 
   submitAnswers(): void {
       let returnQuestionnaireResponse = this.state.QuestionnaireResponse;
@@ -143,14 +151,15 @@ export default class App extends React.Component<AppProps, AppState> {
                       </p>
           </header>
           <PatientContainer />
+          <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
           <hr />
-          <div>
+          <div ref={this.questionnaireContainer}>
             <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
               questionnaireResponse={this.state.QuestionnaireResponse}
               onChange={this.handleChange} onSubmit={this.submitAnswers} />
           </div>
           <hr />
-          <div>QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div>
+          <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div>
         </div>
       );
     } else {
@@ -166,7 +175,7 @@ export default class App extends React.Component<AppProps, AppState> {
           <div>
           </div>
           <hr />
-          <div>QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div>
+          <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div>
         </div>
       );
     }

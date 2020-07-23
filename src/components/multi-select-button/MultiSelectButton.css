@@ -56,14 +56,21 @@
     padding: 0 10px;
 }
 
+.button-box Button:focus {
+    color: #000;
+}
+
 .input-group .input-group-prepend .input-group-text {
     border: 1px solid #000000 !important;
+    border-radius: 10px 0 0 10px;
     background-color: #000000;
     color: #ffffff;
 }
 
 .input-group input {
     border: 1px solid black !important;
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
 }
 
 .input-group input:focus {

@@ -1,54 +1,61 @@
 html {
-  --color-dark: #282c34;
-  --color-light-text: #ffffff;
+    --color-dark: #282c34;
+    --color-light-text: #ffffff;
 }
 
 .app {
-  text-align: center;
+    text-align: center;
 }
 
 .app-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .app-logo {
-    animation: app-logo-spin infinite 20s linear;
-  }
+    .app-logo {
+        animation: app-logo-spin infinite 20s linear;
+    }
 }
 
 .app-header {
-  background-color: var(--color-dark);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: var(--color-light-text);
-  height: 45px;
+    background-color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: var(--color-light-text);
+    height: 45px;
 }
 
 .app-header p {
-  margin: 0;
+    margin: 0;
 }
 
 .submit-button {
-  background-color: #0099FF;
-  font-size: calc(4px + 2vmin);
-  color: var(--color-light-text);
+    background-color: #0099FF;
+    font-size: calc(4px + 2vmin);
+    color: var(--color-light-text);
 }
 
 .options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.app .options, .app .options button {
-  margin: 5px;
+
+.app .options,
+.app .options button {
+    margin: 5px;
+}
+
+.response-container {
+    max-width: 100%;
+    word-break: break-all;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
