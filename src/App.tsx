@@ -97,12 +97,12 @@ export default class App extends React.Component<AppProps, AppState> {
         answer: answer,
         text:item.text,
       });
+      console.log('mewQuestionnaireResponse:', newQuestionnaireResponse);
     }
 
     this.setState({
       QuestionnaireResponse: newQuestionnaireResponse
     });
-    console.log('newQuestionnaireResponse:', newQuestionnaireResponse)
   }
 
   formatDateItem(dateItem: number){
@@ -126,6 +126,7 @@ export default class App extends React.Component<AppProps, AppState> {
   startQuestionnaire = () => {
     console.log('questionnaire container: ', this.questionnaireContainer);
     if(this.questionnaireContainer.current) {
+      this.questionnaireContainer.current.firstChild.firstChild.nextSibling.classList.add('active');
       this.questionnaireContainer.current.scrollIntoView({
         behavior: 'smooth',
         block: 'nearest'

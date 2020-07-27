@@ -7,13 +7,14 @@ import { faQuestionCircle, faArrowAltCircleLeft } from "@fortawesome/free-regula
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
-  let currentCardId: any;
   let questionnaireItemRef: any = createRef();
 
   function handleNextQuestionScroll(linkId: number) {
-    console.log('linkId: ', linkId);
-    console.log('questionnaire container: ', questionnaireItemRef);
+    console.log('questionnaire stuff: ', questionnaireItemRef.current)
+
     if (questionnaireItemRef.current.id === linkId) {
+      questionnaireItemRef.current.nextSibling.classList.add('active')
+      questionnaireItemRef.current.classList.remove('active')
       questionnaireItemRef.current.nextSibling.scrollIntoView({
         behavior: 'smooth',
         block: 'nearest'
@@ -21,9 +22,10 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
     }
   }
   function handlePreviousQuestionScroll(linkId: number) {
-    console.log('linkId: ', linkId);
-    console.log('questionnaire container: ', questionnaireItemRef);
+    console.log('questionnaire stuff: ', questionnaireItemRef)
     if (questionnaireItemRef.current.id === linkId) {
+      questionnaireItemRef.current.previousSibling.classList.add('active')
+      questionnaireItemRef.current.classList.remove('active')
       questionnaireItemRef.current.previousSibling.scrollIntoView({
         behavior: 'smooth',
         block: 'nearest'
@@ -32,8 +34,13 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
   }
 
   return (
-    <Card ref={questionnaireItemRef} className={makeClasses("questionnaire-item", props.QuestionnaireItem.linkId === currentCardId ? 'current-card' : '')} id={props.QuestionnaireItem.linkId}>
-      <button value={props.QuestionnaireItem.linkId} onClick={(event: any) => handlePreviousQuestionScroll(event.target.value)}> <FontAwesomeIcon icon={faArrowAltCircleLeft} /> </button>
+    <Card ref={questionnaireItemRef} className={"questionnaire-item"} id={props.QuestionnaireItem.linkId}>
+      {props.QuestionnaireItem.linkId === '1' ? ('')
+       : 
+       (
+        <Button className="btn-outline-secondary previous-button" value={props.QuestionnaireItem.linkId} onClick={(event: any) => handlePreviousQuestionScroll(event.target.value)}> <FontAwesomeIcon icon={faArrowAltCircleLeft} /> </Button>
+       )}
+       {}
       <div className="prefix-text">{props.QuestionnaireItem.prefix}</div>
       <div>
         <p><FontAwesomeIcon icon={faQuestionCircle} />  {props.QuestionnaireItem.text}</p></div>
@@ -81,11 +88,19 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
 }
 
 function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
+  // let activeButton: string = '';
   return (
     <ButtonGroup>
       {
         props.QuestionnaireItem.answerOption?.map((answerOption) => {
-          return (<Button key={JSON.stringify(answerOption.valueCoding)} size="sm" variant="outline-secondary" value={JSON.stringify(answerOption.valueCoding)} onClick={(event: any) => props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])}>{answerOption.valueCoding?.display}</Button>);
+          return (<Button key={JSON.stringify(answerOption.valueCoding)} 
+                    size="sm"
+                    variant="outline-secondary"
+                    // className={props.QuestionnaireItem ? 'selected' : ''}
+                    value={JSON.stringify(answerOption.valueCoding)} 
+                    onClick={(event: any) => {props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])}}>
+                      {answerOption.valueCoding?.display}
+                  </Button>);
         })
       }
     </ButtonGroup>
@@ -108,6 +123,5 @@ function populateMultipleChoice(props: { QuestionnaireItem: QuestionnaireItem, o
 //   console.log('multi choice data: ', valueData);
 // }
 
-const makeClasses = (...classes: any[]) => classes.filter(i => Boolean(i)).join(' ');
 
 export default QuestionnaireItemComponent;

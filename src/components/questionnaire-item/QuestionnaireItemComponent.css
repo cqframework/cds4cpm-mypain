@@ -1,53 +1,71 @@
 .questionnaire-item {
-  color: #333333;
-  border: 1px solid #000000;
-  padding: 10px;
-  margin: 3px;
+    color: #333333;
+    border: 1px solid #000000;
+    padding: 10px;
+    margin: 3px;
+}
+
+.questionnaire-item.card {
+    display: none;
+}
+
+.questionnaire-item.card.active {
+    display: flex;
 }
 
 .btn-outline-secondary {
-  color: #000;
-  border-color: #000;
-  background-color: #ffffff !important;
+    color: #000;
+    border-color: #000;
+    background-color: #ffffff !important;
 }
 
 .btn-outline-secondary:focus {
-  outline: none;
-  box-shadow: none !important;
-  background-color: #ebebeb !important;
+    outline: none;
+    box-shadow: none !important;
+    background-color: #ebebeb !important;
+    color: #000;
+}
+
+.btn-outline-secondary:active {
+    outline: none;
+    box-shadow: none !important;
+    background-color: #ebebeb !important;
+    color: #000 !important;
+}
+
+.previous-button {
+    border: none;
+    font-size: x-large;
+    width: 20%;
 }
 
 @media screen and (max-width: 400px) {
-  .prefix-text {
-      font-size: 30px;
-  }
-  .questionnaire-item {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-  }
-  .questionnaire-item p {
-      font-size: 24px;
-  }
-  /* .btn-group-vertical {
+    .prefix-text {
+        font-size: 24px;
+    }
+    .questionnaire-item {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .questionnaire-item p {
+        font-size: 24px;
+    }
+    /* .btn-group-vertical {
       width: 100%;
   } */
-
-  .boolean-type {
-      font-size: 20px;
-      display: flex;
-      justify-content: space-evenly;
-  }
-
-  .choice-type .btn-outline-secondary:hover {
-      background-color: #e9ecef;
-      color: #000000;
-  }
-
-  .choice-type .btn-outline-secondary:active {
-      background-color: #dddddd;
-      color: #000000;
-  }
+    .boolean-type {
+        font-size: 20px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .choice-type .btn-outline-secondary:hover {
+        background-color: #e9ecef;
+        color: #000000;
+    }
+    .choice-type .btn-outline-secondary:active {
+        background-color: #dddddd;
+        color: #000000;
+    }
 }
-

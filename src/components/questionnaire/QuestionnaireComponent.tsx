@@ -7,12 +7,14 @@ import {
     QuestionnaireResponseItemAnswer
 } from '../../fhir-types/fhir-r4';
 import QuestionnaireItemComponent from '../questionnaire-item/QuestionnaireItemComponent';
+import { Button } from 'react-bootstrap';
 
 let questionnaireResponse:QuestionnaireResponse;
 let selectedQuestionnaireItemsByLinkId = new Map();
 
 function QuestionnaireComponent(props: { questionnaire: Questionnaire, questionnaireResponse: QuestionnaireResponse, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void, onSubmit: () => void }) {
     fillSelectedQuestionnaireItems(props.questionnaire);
+    console.log('selected questionnaire: ', props.questionnaire)
     questionnaireResponse = props.questionnaireResponse;
   return (
     <div className="questionnaire">
@@ -22,14 +24,17 @@ function QuestionnaireComponent(props: { questionnaire: Questionnaire, questionn
                 return item.enableWhen ? handleEnableWhen(item, key, props.onChange) : <QuestionnaireItemComponent QuestionnaireItem={item} key={key} onChange={props.onChange} />
             }) : null
         }
-        <button type="button" onClick={props.onSubmit}>Submit</button>
+        <Button type="button" onClick={props.onSubmit}>Submit</Button>
     </div>
   );
 }
 
 //for speed this might need to be done in App.selectQuestionnaire() so it is done once per questionnaire, instead of every time a change occurs
 function fillSelectedQuestionnaireItems(selectedQuestionnaire:Questionnaire){
-    selectedQuestionnaire.item?.forEach((item, key) => {selectedQuestionnaireItemsByLinkId.set(item.linkId,item);})
+    selectedQuestionnaire.item?.forEach((item, key) => {
+        selectedQuestionnaireItemsByLinkId.set(item.linkId,item);
+        // console.log('selected: ', selectedQuestionnaireItemsByLinkId, key)
+    })
 }
 
 function handleEnableWhen(item: QuestionnaireItem, key: number, propsOnChange:(item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[])=>void){
