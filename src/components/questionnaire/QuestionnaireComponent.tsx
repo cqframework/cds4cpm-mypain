@@ -14,7 +14,6 @@ let selectedQuestionnaireItemsByLinkId = new Map();
 
 function QuestionnaireComponent(props: { questionnaire: Questionnaire, questionnaireResponse: QuestionnaireResponse, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void, onSubmit: () => void }) {
     fillSelectedQuestionnaireItems(props.questionnaire);
-    console.log('selected questionnaire: ', props.questionnaire)
     questionnaireResponse = props.questionnaireResponse;
   return (
     <div className="questionnaire">
@@ -33,7 +32,6 @@ function QuestionnaireComponent(props: { questionnaire: Questionnaire, questionn
 function fillSelectedQuestionnaireItems(selectedQuestionnaire:Questionnaire){
     selectedQuestionnaire.item?.forEach((item, key) => {
         selectedQuestionnaireItemsByLinkId.set(item.linkId,item);
-        // console.log('selected: ', selectedQuestionnaireItemsByLinkId, key)
     })
 }
 
@@ -98,7 +96,6 @@ Does NOT work.  It causes the error:
          })
     })
     if(allLinkedQuestionsAnswered) {
-        console.log('no more linked questions.')
         return <QuestionnaireItemComponent QuestionnaireItem={item} key={key} onChange={propsOnChange}/>
     }else {
         if (questionnaireResponse.item?.find(i => i.linkId === item.linkId)?.answer?.length) {

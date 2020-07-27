@@ -10,8 +10,6 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
   let questionnaireItemRef: any = createRef();
 
   function handleNextQuestionScroll(linkId: number) {
-    console.log('questionnaire stuff: ', questionnaireItemRef.current)
-
     if (questionnaireItemRef.current.id === linkId) {
       questionnaireItemRef.current.nextSibling.classList.add('active')
       questionnaireItemRef.current.classList.remove('active')
@@ -96,7 +94,6 @@ function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange:
           return (<Button key={JSON.stringify(answerOption.valueCoding)} 
                     size="sm"
                     variant="outline-secondary"
-                    // className={props.QuestionnaireItem ? 'selected' : ''}
                     value={JSON.stringify(answerOption.valueCoding)} 
                     onClick={(event: any) => {props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])}}>
                       {answerOption.valueCoding?.display}
