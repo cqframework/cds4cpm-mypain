@@ -1,5 +1,5 @@
 .questionnaire-item {
-    color: #333333;
+    color: var(--color-dark);
     border: 1px solid #000000;
     padding: 10px;
     margin: 3px;
@@ -14,8 +14,9 @@
 }
 
 .btn-outline-secondary {
-    color: #000;
-    border-color: #000;
+    /* color: #000; */
+    color: var(--color-dark);
+    border-color: var(--color-dark);
     background-color: #ffffff !important;
 }
 
@@ -67,5 +68,9 @@
     .choice-type .btn-outline-secondary:active {
         background-color: #dddddd;
         color: #000000;
+    }
+    input[type=radio] {
+        transform: scale(2);
+        margin: 10px;
     }
 }

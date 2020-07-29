@@ -97,7 +97,6 @@ export default class App extends React.Component<AppProps, AppState> {
         answer: answer,
         text:item.text,
       });
-      console.log('mewQuestionnaireResponse:', newQuestionnaireResponse);
     }
 
     this.setState({
@@ -142,6 +141,10 @@ export default class App extends React.Component<AppProps, AppState> {
       //window.location.reload();
   }
 
+  setTheme(color: string) {
+    document.documentElement.style.setProperty('--color-dark', color);
+  }
+
   public render(): JSX.Element {
     if (this.state.SelectedQuestionnaire) {
       return (
@@ -151,6 +154,11 @@ export default class App extends React.Component<AppProps, AppState> {
               MyPain Development Branch v2
                       </p>
           </header>
+          {/* Testing out themes. // TODO: implement them being passed in via the URL */}
+          <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('0, 0, 255')}}>blue theme</Button>
+          <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('0,0,0')}}>black theme</Button>
+          <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('24,128,56')}}>green theme</Button>
+          <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('128,0,128')}}>purple theme</Button>
           <PatientContainer />
           <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
           <hr />

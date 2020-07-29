@@ -31,8 +31,10 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
     }
   }
 
+
   return (
     <Card ref={questionnaireItemRef} className={"questionnaire-item"} id={props.QuestionnaireItem.linkId}>
+      
       {props.QuestionnaireItem.linkId === '1' ? ('')
        : 
        (
@@ -47,10 +49,10 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
           props.QuestionnaireItem.type === "boolean" ?
             <div className="boolean-type">
               <div className="radio-button">
-                <input type="radio" name={props.QuestionnaireItem.linkId} onChange={() => props.onChange(props.QuestionnaireItem, [{ valueBoolean: true }])} /> Yes
+                <input type="radio" name={props.QuestionnaireItem.linkId} onChange={() => props.onChange(props.QuestionnaireItem, [{ valueBoolean: true }])} /> <label htmlFor={props.QuestionnaireItem.linkId}> Yes</label>
               </div>
               <div className="radio-button">
-                <input type="radio" name={props.QuestionnaireItem.linkId} onChange={() => props.onChange(props.QuestionnaireItem, [{ valueBoolean: false }])} /> No
+                <input type="radio" name={props.QuestionnaireItem.linkId} onChange={() => props.onChange(props.QuestionnaireItem, [{ valueBoolean: false }])} /><label htmlFor={props.QuestionnaireItem.linkId}> No</label>
               </div>
             </div>
             : props.QuestionnaireItem.type === "choice" ?

@@ -28,7 +28,7 @@
 
 .additional-info-box {
     width: 100%;
-    border: 1px dashed #000000;
+    border: 1px dashed rgba(var(--color-dark), 1);
     padding: 10px;
     position: relative;
     margin-top: -20px;
@@ -48,8 +48,9 @@
 .button-box button {
     width: 100px;
     margin: 0 5px;
-    background-color: #ffffff;
-    border: 1px solid black;
+    background-color: rgba(var(--color-dark), .10) !important;
+    color: rgba(var(--color-dark), 1);
+    border: 1px solid rgba(var(--color-dark), 1);
     border-radius: 10px;
     height: 30px;
     box-shadow: none;
@@ -57,18 +58,18 @@
 }
 
 .button-box Button:focus {
-    color: #000;
+    color: rgba(var(--color-dark), 1);
 }
 
 .input-group .input-group-prepend .input-group-text {
-    border: 1px solid #000000 !important;
+    border: 1px solid rgba(var(--color-dark), 1) !important;
     border-radius: 10px 0 0 10px;
-    background-color: #000000;
+    background-color: rgba(var(--color-dark), 1);
     color: #ffffff;
 }
 
 .input-group input {
-    border: 1px solid black !important;
+    border: 1px solid rgba(var(--color-dark), 1) !important;
     border-top-right-radius: 10px !important;
     border-bottom-right-radius: 10px !important;
 }

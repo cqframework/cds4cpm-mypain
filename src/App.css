@@ -1,6 +1,6 @@
 html {
-    --color-dark: #282c34;
-    --color-light-text: #ffffff;
+    --color-dark: 40, 44, 52;
+    --color-light-text: 255, 255, 255;
 }
 
 .app {
@@ -19,24 +19,26 @@ html {
 }
 
 .app-header {
-    background-color: var(--color-dark);
+    background-color: rgba(var(--color-dark), 1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: var(--color-light-text);
+    color: rgba(var(--color-light-text), 1);
     height: 45px;
 }
 
 .app-header p {
     margin: 0;
+    color: var(--color-light-text)
 }
 
 .submit-button {
-    background-color: #0099FF;
+    background-color: rgba(var(--color-dark), .10) !important;
+    border-color: var(--color-dark) !important;
     font-size: calc(4px + 2vmin);
-    color: var(--color-light-text);
+    color: rgba(var(--color-dark), 1) !important;
 }
 
 .options {
@@ -58,4 +60,8 @@ html {
 
 .hidden {
     display: none;
+}
+
+svg path {
+    fill: rgba(var(--color-dark), 1) !important;
 }

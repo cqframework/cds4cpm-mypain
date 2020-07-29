@@ -23,7 +23,7 @@ function QuestionnaireComponent(props: { questionnaire: Questionnaire, questionn
                 return item.enableWhen ? handleEnableWhen(item, key, props.onChange) : <QuestionnaireItemComponent QuestionnaireItem={item} key={key} onChange={props.onChange} />
             }) : null
         }
-        <Button type="button" onClick={props.onSubmit}>Submit</Button>
+        <Button className="submit-button" type="button" onClick={props.onSubmit}>Submit</Button>
     </div>
   );
 }
