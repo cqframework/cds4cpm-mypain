@@ -42,7 +42,6 @@ function handleEnableWhen(item: QuestionnaireItem, key: number, propsOnChange:(i
          questionnaireResponse.item?.map((answer, key)=>{
              if(answer.linkId === question){
                  let linkedItem = selectedQuestionnaireItemsByLinkId.get(answer.linkId);
-                 console.log('linkedItem', linkedItem);
                  if(linkedItem.type === 'boolean'){
                      if(answer.answer){
                          if(answer.answer[0].valueBoolean === enableWhen.answerBoolean){

@@ -34,13 +34,78 @@
     color: #000 !important;
 }
 
+.boolean-type {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.choice-type .btn-outline-secondary:hover {
+    background-color: #e9ecef;
+    color: #000000;
+}
+
+input[type=radio] {
+    transform: scale(2);
+    margin: 10px;
+}
+
+.choice-type .btn-outline-secondary.selected {
+    border-color: rgba(var(--color-dark), .25) !important;
+    background-color: rgba(var(--color-dark), .25) !important;
+    color: #000000 !important;
+}
+
 .previous-button {
     border: none;
     font-size: x-large;
     width: 20%;
 }
 
-@media screen and (max-width: 400px) {
+
+/* 
+.boolean-type {
+    margin: 0.5rem 0;
+}
+
+input[type='radio'] {
+    opacity: 0;
+}
+
+input[type='radio']+label {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+input[type='radio']+label::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    left: -35px;
+    border-radius: 50%;
+    border: 1px solid #6f686a;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+}
+
+input[type='radio']+label::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    left: -31px;
+    top: 4px;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+}
+
+input[type='radio']:checked+label::after {
+    background: rgba(var(--color-dark), .75);
+} */
+
+@media screen and (max-width: 450px) {
     .prefix-text {
         font-size: 24px;
     }
@@ -52,25 +117,5 @@
     }
     .questionnaire-item p {
         font-size: 24px;
-    }
-    /* .btn-group-vertical {
-      width: 100%;
-  } */
-    .boolean-type {
-        font-size: 20px;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    .choice-type .btn-outline-secondary:hover {
-        background-color: #e9ecef;
-        color: #000000;
-    }
-    .choice-type .btn-outline-secondary:active {
-        background-color: #dddddd;
-        color: #000000;
-    }
-    input[type=radio] {
-        transform: scale(2);
-        margin: 10px;
     }
 }

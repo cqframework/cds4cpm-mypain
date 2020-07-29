@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   let questionnaireItemRef: any = createRef();
+  // let activeButtonRef: any = createRef();
 
   function handleNextQuestionScroll(linkId: number) {
     if (questionnaireItemRef.current.id === linkId) {
@@ -20,7 +21,6 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
     }
   }
   function handlePreviousQuestionScroll(linkId: number) {
-    console.log('questionnaire stuff: ', questionnaireItemRef)
     if (questionnaireItemRef.current.id === linkId) {
       questionnaireItemRef.current.previousSibling.classList.add('active')
       questionnaireItemRef.current.classList.remove('active')
@@ -34,13 +34,17 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
 
   return (
     <Card ref={questionnaireItemRef} className={"questionnaire-item"} id={props.QuestionnaireItem.linkId}>
-      
+
       {props.QuestionnaireItem.linkId === '1' ? ('')
-       : 
-       (
-        <Button className="btn-outline-secondary previous-button" value={props.QuestionnaireItem.linkId} onClick={(event: any) => handlePreviousQuestionScroll(event.target.value)}> <FontAwesomeIcon icon={faArrowAltCircleLeft} /> </Button>
-       )}
-       {}
+        :
+        (
+          <Button className="btn-outline-secondary previous-button"
+            value={props.QuestionnaireItem.linkId}
+            onClick={(event: any) => handlePreviousQuestionScroll(event.target.value)}>
+            <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+          </Button>
+        )}
+      {}
       <div className="prefix-text">{props.QuestionnaireItem.prefix}</div>
       <div>
         <p><FontAwesomeIcon icon={faQuestionCircle} />  {props.QuestionnaireItem.text}</p></div>
@@ -69,7 +73,9 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
                   </div>
                   : props.QuestionnaireItem.type === "text" ?
                     <div className="text-type">
-                      <input type="text" onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString: event.target.value }])} />
+                      <input type="text"
+                        onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString: event.target.value }])}
+                      />
                     </div>
                     : <div>Unrecognized QuestionnaireItem type: {props.QuestionnaireItem.type}</div>
         }
@@ -88,18 +94,37 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
 }
 
 function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
-  // let activeButton: string = '';
+  let activeButton: any = createRef();
+  function handleOnClick(event: any) {
+    // console.log('event:', JSON.parse(event.target.value));
+    // props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])
+    console.log('activeButton: ', activeButton)
+    
+    for(let child of activeButton.current.children) {
+      if(child.value === event.target.value) {
+        child.classList.add('selected');
+        console.log('child: ', child);
+      } else {
+        child.classList.remove('selected');
+      }
+    }
+    // activeButton.current.classList.add('active');
+
+  }
   return (
-    <ButtonGroup>
+    <ButtonGroup ref={activeButton}>
       {
         props.QuestionnaireItem.answerOption?.map((answerOption) => {
-          return (<Button key={JSON.stringify(answerOption.valueCoding)} 
-                    size="sm"
-                    variant="outline-secondary"
-                    value={JSON.stringify(answerOption.valueCoding)} 
-                    onClick={(event: any) => {props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])}}>
-                      {answerOption.valueCoding?.display}
-                  </Button>);
+          return (<Button key={JSON.stringify(answerOption.valueCoding)}
+            size="sm"
+            aria-required="true"
+            variant="outline-secondary"
+            value={JSON.stringify(answerOption.valueCoding)}
+            onClick={(event: any) => 
+              handleOnClick(event)
+            }>
+            {answerOption.valueCoding?.display}
+          </Button>);
         })
       }
     </ButtonGroup>
