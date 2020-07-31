@@ -45,7 +45,8 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
           </Button>
         )}
       {}
-      <div className="prefix-text">{props.QuestionnaireItem.prefix}</div>
+      <div className="prefix-text">
+        {props.QuestionnaireItem.prefix}</div>
       <div>
         <p><FontAwesomeIcon icon={faQuestionCircle} />  {props.QuestionnaireItem.text}</p></div>
       <div>
@@ -95,22 +96,18 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
 
 function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   let activeButton: any = createRef();
+  
   function handleOnClick(event: any) {
-    // console.log('event:', JSON.parse(event.target.value));
-    // props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])
-    console.log('activeButton: ', activeButton)
-    
+    props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])    
     for(let child of activeButton.current.children) {
       if(child.value === event.target.value) {
         child.classList.add('selected');
-        console.log('child: ', child);
       } else {
         child.classList.remove('selected');
       }
     }
-    // activeButton.current.classList.add('active');
-
   }
+
   return (
     <ButtonGroup ref={activeButton}>
       {
