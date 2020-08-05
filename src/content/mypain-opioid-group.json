@@ -1,0 +1,874 @@
+{
+    "resourceType": "Questionnaire",
+    "id": "mypain-questionnaire",
+    "meta": {
+        "versionId": "1",
+        "lastUpdated": "2020-07-09T17:25:11.807+00:00",
+        "source": "#GO30VbHeXpS2URar",
+        "profile": [
+            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7"
+        ],
+        "tag": [{
+            "code": "lformsVersion: 23.0.0"
+        }]
+    },
+    "title": "MyPain Questionnaire",
+    "status": "active",
+    "item": [{
+            "text": "Please describe the location(s) of any pain you have had in the past 7 days (e.g., lower back and left hip):",
+            "type": "group",
+            "code": [{
+                "code": "[Q1]"
+            }],
+            "required": false,
+            "linkId": "1",
+            "item": [{
+                    "linkId": "1.1",
+                    "prefix": "Head",
+                    "text": "What type of HEAD pain?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "1.2",
+                    "prefix": "Shoulders",
+                    "text": "What type of SHOULDERS pain?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "1.3",
+                    "prefix": "Knees",
+                    "text": "What type of KNEES pain?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "1.4",
+                    "prefix": "Toes",
+                    "text": "What type of TOES pain?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        }
+                    ]
+
+                }
+            ]
+        },
+        {
+            "linkId": "2",
+            "text": "In the  past 7 days -  How intense was your pain at its worst?",
+            "type": "choice",
+            "answerOption": [{
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1003",
+                        "display": "Had no pain"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1004",
+                        "display": "Mild"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1005",
+                        "display": "Moderate"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1006",
+                        "display": "Severe"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1007",
+                        "display": "Very Severe"
+                    }
+                }
+            ]
+        },
+        {
+            "linkId": "3",
+            "text": "How intense was your average pain?",
+            "type": "choice",
+            "answerOption": [{
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1003",
+                        "display": "Had no pain"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1004",
+                        "display": "Mild"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1005",
+                        "display": "Moderate"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1006",
+                        "display": "Severe"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1007",
+                        "display": "Very Severe"
+                    }
+                }
+            ]
+        },
+        {
+            "linkId": "4",
+            "text": "What is your level of pain right now?",
+            "type": "choice",
+            "answerOption": [{
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1003",
+                        "display": "Had no pain"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1004",
+                        "display": "Mild"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1005",
+                        "display": "Moderate"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1006",
+                        "display": "Severe"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1007",
+                        "display": "Very Severe"
+                    }
+                }
+            ]
+        },
+        {
+            "linkId": "5",
+            "prefix": "In the past 7 days:",
+            "text": "How much did pain interfere with your day to day activities?",
+            "type": "choice",
+            "answerOption": [{
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1008",
+                        "display": "Not at all"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1009",
+                        "display": "A little bit"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1010",
+                        "display": "Somewhat"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1011",
+                        "display": "Quite a bit"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1012",
+                        "display": "Very much"
+                    }
+                }
+            ]
+        },
+        {
+            "linkId": "6",
+            "prefix": "In the past 7 days:",
+            "text": "How much did pain interfere with your work?",
+            "type": "choice",
+            "answerOption": [{
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1008",
+                        "display": "Not at all"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1009",
+                        "display": "A little bit"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1010",
+                        "display": "Somewhat"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1011",
+                        "display": "Quite a bit"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1012",
+                        "display": "Very much"
+                    }
+                }
+            ]
+        },
+        {
+            "linkId": "7",
+            "prefix": "In the past 7 days:",
+            "text": "How much did pain interfere with your ability to participate in social activities?",
+            "type": "choice",
+            "answerOption": [{
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1008",
+                        "display": "Not at all"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1009",
+                        "display": "A little bit"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1010",
+                        "display": "Somewhat"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1011",
+                        "display": "Quite a bit"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1012",
+                        "display": "Very much"
+                    }
+                }
+            ]
+        },
+        {
+            "linkId": "8",
+            "prefix": "In the past 7 days:",
+            "text": "How much did pain interfere with your household chores?",
+            "type": "choice",
+            "answerOption": [{
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1008",
+                        "display": "Not at all"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1009",
+                        "display": "A little bit"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1010",
+                        "display": "Somewhat"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1011",
+                        "display": "Quite a bit"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1012",
+                        "display": "Very much"
+                    }
+                }
+            ]
+        },
+        {
+            "linkId": "9",
+            "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+            "text": "Exercises at home (such as those assigned by a therapist) or outside (such as walking, jogging, swimming)?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "9a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "9",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "10",
+            "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+            "text": "Sleep positioners or devices (such as additional pillows, padding, etc.)?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "10a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "10",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "11",
+            "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+            "text": "Stretching?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "11a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "11",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "12",
+            "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+            "text": "Weight loss or changes in  your diet?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "12a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "12",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "13",
+            "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+            "text": "Setting and reaching activity goals?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "13a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "13",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "14",
+            "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+            "text": "Ice or heat therapy?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "14a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "14",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "15",
+            "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+            "text": "Physical therapy?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "15a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "15",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "16",
+            "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+            "text": "Acupuncture?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "16a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "16",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "17",
+            "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
+            "text": "Chiropractic treatment?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "17a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "17",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "18",
+            "prefix": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months: ",
+            "text": "Pain relievers (such as Advil, Aleve, Aspirin, Ibuprofen, Motrin, Tylenol)?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "18a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "18",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "19",
+            "prefix": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months: ",
+            "text": "Herbal or nutritional pain relievers (such as ginseng or kava kava)?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "19a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "19",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "20",
+            "prefix": "Have you used any of the following items you can buy without a prescription from your doctor to help with your pain in the last 6 months: ",
+            "text": "Cremes, lotions, gels or patches applied to the skin (for example Bengay, Tiger Balm or BioFreeze)?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "20a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "20",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "21",
+            "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months?:",
+            "text": "Opioid medications (such as hydrocodone, oxycodone, codeine, morphine and fentanyl)?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "21a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "21",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "22",
+            "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months ?:",
+            "text": "Cortisone injection (a shot to relieve inflammation)?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "22a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "22",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "23",
+            "prefix": "Have you used any of the following prescription medications to help with your pain in the last 6 months?:",
+            "text": "Non-opioid medications as prescribed by a doctor (such as Celebrex, Cymbalta)?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "23a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "23",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "24",
+            "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
+            "text": "Yoga?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "24a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "24",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "25",
+            "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months ?:",
+            "text": "Massage?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "25a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "25",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "26",
+            "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
+            "text": "Meditation?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "26a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "26",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "27",
+            "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
+            "text": "Relaxation or mindfulness-based training?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "27a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "27",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "28",
+            "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
+            "text": "Group or individual therapy for pain?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "28a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "28",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "29",
+            "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
+            "text": "Acceptance and commitment therapy?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "29a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "29",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "30",
+            "prefix": "Have you tried any of the following mind-body techniques or therapies to help with your pain in the last 6 months?:",
+            "text": "Sleep management (such as a sleep study or CPAP)?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "30a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "30",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "31",
+            "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
+            "text": "Aromatherapy?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "31a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "31",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "32",
+            "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
+            "text": "Crystals?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "32a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "32",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "33",
+            "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
+            "text": "Essential oils?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "33a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "33",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "34",
+            "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
+            "text": "Music therapy?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "34a",
+            "text": "Did it work?",
+            "type": "boolean",
+            "enableWhen": [{
+                "question": "34",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "35",
+            "prefix": "Have you tried any of the following new or non-traditional therapies to help with your pain in the last 6 months:",
+            "text": "Other?",
+            "type": "boolean"
+        },
+        {
+            "linkId": "35a",
+            "text": "If so, please specify:",
+            "type": "text",
+            "enableWhen": [{
+                "question": "35",
+                "operator": "=",
+                "answerBoolean": true
+            }]
+        },
+        {
+            "linkId": "36",
+            "text": "We’d like to know more about you and your goals.  What are your most important  activity goals?  For example: I’d like to be able to walk without pain.",
+            "type": "text"
+        },
+        {
+            "linkId": "37",
+            "text": "What are the biggest barriers to achieving your activity goals?  For example: I have a lot of stress from work which makes my pain worse.",
+            "type": "text"
+        }
+    ]
+}

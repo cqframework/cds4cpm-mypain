@@ -3,10 +3,10 @@ import './MultiSelectButton.css';
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { QuestionnaireItem } from '../../fhir-types/fhir-r4';
 
-// const multiSelectArray: Array<string> = [];
 
-export default class MultiSelectButtonComponent extends React.Component<{}, any> {
+export default class MultiSelectButtonComponent extends React.Component<QuestionnaireItem, any> {
     constructor(props: any) {
         super(props);
 
@@ -18,6 +18,7 @@ export default class MultiSelectButtonComponent extends React.Component<{}, any>
     }
 
     public render(): JSX.Element {
+        let text: string = this.props.text!;
         return (
             <div className="multi-container">
 
@@ -31,22 +32,23 @@ export default class MultiSelectButtonComponent extends React.Component<{}, any>
                             checked={this.state.checked}
                             onChange={event => {
                                 let checked = event.target.checked
-                                this.setState({ checked: checked, value: this.props.children })
+                                this.setState({ checked: checked, value: this.props.prefix })
                             }
                                 // onChange={}
-                            } /> <span>{this.props.children}</span>
+                            } /> <span>{this.props.prefix}</span>
                     </label>
 
                 </div>
 
-                <div className={`additional-info-box ${this.state.checked ? "" : 'hidden'}`} >
+                <div className={`additional-info-box ${this.state.checked ? null : 'hidden'}`} >
                     <div>
-                        <span> <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon> What type of {this.props.children} pain?</span>
+                        <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon><span>{text}</span>
                         <div className="button-box">
-                            {/* TODO make these dynamic and put these options nested in the questionnaire  */}
-                            <Button size="sm" variant="outline-secondary">Burning</Button>
-                            <Button size="sm" variant="outline-secondary">Aching</Button>
-                            <Button value="Stabbing" onClick={(event:any) => {console.log(event.target.value)}} size="sm" variant="outline-secondary">Stabbing</Button>
+                            {
+                                this.props.answerOption?.map((item: any) => {
+                                   return <Button key={JSON.stringify(item.valueCoding)} value={item.valueCoding?.display} onClick={(event: any) => { console.log(event.target.value) }} size="sm" variant="outline-secondary">{item.valueCoding?.display}</Button>
+                                })
+                            }
                         </div>
                         <InputGroup size="sm" className="mt-2">
                             <InputGroup.Prepend>

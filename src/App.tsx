@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuestionnaireComponent from './components/questionnaire/QuestionnaireComponent';
 import { QuestionnaireResponse, QuestionnaireItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
-import ContentMyPain from './content/mypain-open.json';  //mypain-opioid.json';
+import ContentMyPain from './content/mypain-opioid-group.json';  //mypain-opioid.json';
 import { submitQuestionnaireResponse, getQuestionnaire } from './utils/fhirFacadeHelper';
 import PatientContainer from './components/patient/PatientContainer';
 import FHIR from "fhirclient";
@@ -22,9 +22,6 @@ interface AppState {
 
 export default class App extends React.Component<AppProps, AppState> {
 
-  // private options: { "value": Questionnaire, "text": string }[] = [
-  //   { "value": ContentMyPain, "text": ContentMyPain.title }
-  // ];
   questionnaireContainer: any = createRef();
   constructor(props: AppProps) {
     super(props);

@@ -72,6 +72,10 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
                   <div className="open-choice-type">
                     {populateMultipleChoice(props)}
                   </div>
+                : props.QuestionnaireItem.type === "group" ?
+                  <div className="open-choice-type">
+                    {populateMultipleChoice(props)}
+                  </div>
                   : props.QuestionnaireItem.type === "text" ?
                     <div className="text-type">
                       <input type="text"
@@ -96,11 +100,11 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
 
 function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   let activeButton: any = createRef();
-  
+
   function handleOnClick(event: any) {
-    props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])    
-    for(let child of activeButton.current.children) {
-      if(child.value === event.target.value) {
+    props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(event.target.value) }])
+    for (let child of activeButton.current.children) {
+      if (child.value === event.target.value) {
         child.classList.add('selected');
       } else {
         child.classList.remove('selected');
@@ -117,7 +121,7 @@ function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange:
             aria-required="true"
             variant="outline-secondary"
             value={JSON.stringify(answerOption.valueCoding)}
-            onClick={(event: any) => 
+            onClick={(event: any) =>
               handleOnClick(event)
             }>
             {answerOption.valueCoding?.display}
@@ -129,20 +133,58 @@ function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange:
 }
 
 function populateMultipleChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
+  // let checked: boolean = false;
   return (
     <div>
       {
-        props.QuestionnaireItem.answerOption?.map((answerOption) => {
-          return <MultiSelectButtonComponent key={JSON.stringify(answerOption.valueCoding)}  {...answerOption}>{answerOption.valueCoding?.display}</MultiSelectButtonComponent>
+        props.QuestionnaireItem.item?.map((item) => {
+          return (
+            // <div className="multi-container" key={JSON.stringify(answerOption)}>
+
+            //   <div className={`multi-button ${checked ? "selected" : ""}`}>
+            //     <label>
+
+            //       <input
+            //         // TODO set up the followup questions
+            //         // name={}
+            //         type="checkbox"
+            //         checked={checked}
+            //         onChange={event => {
+            //           checked = event.target.checked
+            //           // this.setState({ checked: checked, value: this.props.children })
+            //         }
+            //           // onChange={}
+            //         } /> <span>{answerOption}</span>
+            //     </label>
+
+            //   </div>
+
+            //   {/* <div className={`additional-info-box ${this.state.checked ? "" : 'hidden'}`} >
+            //     <div>
+            //         <span> <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon> What type of {this.props.children} pain?</span>
+            //         <div className="button-box">
+            //             <Button size="sm" variant="outline-secondary">Burning</Button>
+            //             <Button size="sm" variant="outline-secondary">Aching</Button>
+            //             <Button value="Stabbing" onClick={(event:any) => {console.log(event.target.value)}} size="sm" variant="outline-secondary">Stabbing</Button>
+            //         </div>
+            //         <InputGroup size="sm" className="mt-2">
+            //             <InputGroup.Prepend>
+            //                 <InputGroup.Text id="inputGroup-sizing-sm">Other</InputGroup.Text>
+            //             </InputGroup.Prepend>
+            //             <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+            //         </InputGroup>
+
+            //     </div>
+            // </div> */}
+            // </div>
+            <MultiSelectButtonComponent key={JSON.stringify(item)}  {...item}>{item.answerOption}</MultiSelectButtonComponent>
+          )
         })
       }
     </div>
   );
 }
 
-// function getMultiChoiceValue(valueData: any) {
-//   console.log('multi choice data: ', valueData);
-// }
 
 
 export default QuestionnaireItemComponent;
