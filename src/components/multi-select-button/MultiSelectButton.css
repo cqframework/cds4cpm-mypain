@@ -6,14 +6,13 @@
 }
 
 .multi-button {
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: 30px;
     border: 1px solid #000;
     border-radius: 10px;
     margin: 5px 0 5px;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
 }
 
 .multi-button label input {
@@ -43,11 +42,12 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .button-box button {
     width: 100px;
-    margin: 0 5px;
+    margin: 0 5px 5px;
     background-color: rgba(var(--color-dark), .10) !important;
     color: rgba(var(--color-dark), 1);
     border: 1px solid rgba(var(--color-dark), 1);

@@ -16,18 +16,27 @@ export default class Patient extends React.Component<PatientProps, PatientState>
 
   constructor(props: PatientProps) {
     super(props);
-    this.state = { };
+    this.state = {};
   }
 
   public render(): JSX.Element {
     return (
       <div className="patient-view">
+        <div className="app-title-container">
+          <h2>MyPAIN</h2>
+          <p className='tagline-text'>Just what your doctor ordered, My Pain Assessment and Information Needs (MyPAIN).</p>
+        </div>
         <div className="welcome">
           <h4>Welcome to MyPain, {this.props.item?.name[0].given[0]}.</h4>
-          <p className="intro-text mb-5">Run it up the flagpole my capacity is full and incentivization. Bottleneck mice not enough bandwidth. Digital literacy herding cats, and lean into that problem and drill down, so rock Star/Ninja.</p>
+          <p className="intro-text mb-5">MyPAIN is a secure tool to help you are your provider make the best decisions about managing your pain.</p>
+        </div>
+        <div className="appointment-container">
           <h4><FontAwesomeIcon icon={faCalendar} /> Appointment</h4>
           {/* Bring in the appointment information */}
           <p className="appointment-text mb-5">You are scheduled for a visit with <span>[Clinician Name]</span> on <span>[Appointment date and time]</span></p>
+        </div>
+        <div className="intro-container">
+          <p>Your doctor and your care team see that your upcoming visit may be related to managing pain. We'd like to learn more about what you're experiencig in your life and in your body so we can work together during this vixit, so you feel better. Please take a few minutes to share your health and care goals with us.</p>
         </div>
         {/* <div>
           Patient ID: {this.props.item?.id}

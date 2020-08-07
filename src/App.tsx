@@ -152,10 +152,10 @@ export default class App extends React.Component<AppProps, AppState> {
                       </p>
           </header>
           {/* Testing out themes. // TODO: implement them being passed in via the URL */}
-          <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('0, 0, 255')}}>blue theme</Button>
+          {/* <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('0, 0, 255')}}>blue theme</Button>
           <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('0,0,0')}}>black theme</Button>
           <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('24,128,56')}}>green theme</Button>
-          <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('128,0,128')}}>purple theme</Button>
+          <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('128,0,128')}}>purple theme</Button> */}
           <PatientContainer />
           <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
           <hr />

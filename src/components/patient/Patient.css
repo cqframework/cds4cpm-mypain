@@ -1,11 +1,32 @@
+.patient-view {
+    min-height: 80vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    line-height: 1.3;
+}
+
+.patient-view p {
+    font-size: 1rem;
+}
+
+.patient-view .tagline-text {
+    font-style: italic;
+}
+
+.app-title-container {
+    text-align: left !important;
+}
+
 .welcome {
     /* @media screen only and (max-width: 480px) { */
-    height: 80vh;
+    /* height: 80vh; */
     display: flex;
     text-align: left;
     flex-direction: column;
     justify-content: center;
-    padding: 10px;
     /* } */
 }
 

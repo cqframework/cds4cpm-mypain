@@ -47,11 +47,81 @@
                                 "code": "mpqr-1003",
                                 "display": "Aching"
                             }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
                         }
                     ]
                 },
                 {
                     "linkId": "1.2",
+                    "prefix": "Neck",
+                    "text": "What type of NECK pain?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "1.3",
                     "prefix": "Shoulders",
                     "text": "What type of SHOULDERS pain?",
                     "type": "choice",
@@ -75,11 +145,277 @@
                                 "code": "mpqr-1003",
                                 "display": "Aching"
                             }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
                         }
                     ]
                 },
                 {
-                    "linkId": "1.3",
+                    "linkId": "1.4",
+                    "prefix": "Arms",
+                    "text": "What type of ARMS pain?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "1.5",
+                    "prefix": "Upper Back",
+                    "text": "What type of UPPER BACK pain?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "1.6",
+                    "prefix": "Lower Back",
+                    "text": "What type of LOWER BACK pain?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "1.7",
+                    "prefix": "Hips",
+                    "text": "What type of HIPS pain?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "1.8",
+                    "prefix": "Upper Legs",
+                    "text": "What type of UPPER LEGS pain?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "1.9",
                     "prefix": "Knees",
                     "text": "What type of KNEES pain?",
                     "type": "choice",
@@ -103,13 +439,34 @@
                                 "code": "mpqr-1003",
                                 "display": "Aching"
                             }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
                         }
                     ]
                 },
                 {
-                    "linkId": "1.4",
-                    "prefix": "Toes",
-                    "text": "What type of TOES pain?",
+                    "linkId": "1.9",
+                    "prefix": "Lower Legs",
+                    "text": "What type of LOWER LEGS pain?",
                     "type": "choice",
                     "answerOption": [{
                             "valueCoding": {
@@ -131,9 +488,78 @@
                                 "code": "mpqr-1003",
                                 "display": "Aching"
                             }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
                         }
                     ]
-
+                },
+                {
+                    "linkId": "1.4",
+                    "prefix": "Feet",
+                    "text": "What type of FEET pain?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
+                        }
+                    ]
                 }
             ]
         },

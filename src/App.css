@@ -3,6 +3,12 @@ html {
     --color-light-text: 255, 255, 255;
 }
 
+h1,
+h2,
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
 .app {
     text-align: center;
 }

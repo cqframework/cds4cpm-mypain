@@ -1,8 +1,8 @@
 import React from 'react';
 import './MultiSelectButton.css';
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { QuestionnaireItem } from '../../fhir-types/fhir-r4';
 
 
@@ -42,7 +42,8 @@ export default class MultiSelectButtonComponent extends React.Component<Question
 
                 <div className={`additional-info-box ${this.state.checked ? null : 'hidden'}`} >
                     <div>
-                        <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon><span>{text}</span>
+                        {/* <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon> */}
+                        <span>{text}</span>
                         <div className="button-box">
                             {
                                 this.props.answerOption?.map((item: any) => {
