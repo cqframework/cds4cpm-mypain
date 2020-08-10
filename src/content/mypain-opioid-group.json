@@ -15,7 +15,8 @@
     "title": "MyPain Questionnaire",
     "status": "active",
     "item": [{
-            "text": "Please describe the location(s) of any pain you have had in the past 7 days (e.g., lower back and left hip):",
+            "prefix": "We’d like to ask you a few questions about your pain and how it is affecting your life.",
+            "text": "Please describe the location(s) of any pain you have had in the past 7 days.",
             "type": "group",
             "code": [{
                 "code": "[Q1]"

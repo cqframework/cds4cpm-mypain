@@ -109,7 +109,7 @@ input[type="radio"]:focus+label::before {
 
 @media screen and (max-width: 450px) {
     .prefix-text {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     .questionnaire-item {
         min-height: 100vh;
@@ -118,6 +118,6 @@ input[type="radio"]:focus+label::before {
         justify-content: space-evenly;
     }
     .questionnaire-item p {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 }

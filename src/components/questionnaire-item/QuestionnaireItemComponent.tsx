@@ -133,7 +133,6 @@ function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange:
 }
 
 function populateMultipleChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
-  // let checked: boolean = false;
   return (
     <div>
       {

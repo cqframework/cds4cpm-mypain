@@ -17,8 +17,17 @@ export default class MultiSelectButtonComponent extends React.Component<Question
         };
     }
 
+    handleChange(value: any) {
+        console.log('selected value: ', value)
+    }
+
     public render(): JSX.Element {
         let text: string = this.props.text!;
+        let prefix: string = this.props.prefix!;
+        function concatAnswer(key: string, value: string) {
+            console.log('my pain:', `${key}, ${value}`);
+        }
+
         return (
             <div className="multi-container">
 
@@ -28,14 +37,16 @@ export default class MultiSelectButtonComponent extends React.Component<Question
                         <input
                             // TODO set up the followup questions
                             // name={}
+                            value={prefix}
                             type="checkbox"
                             checked={this.state.checked}
                             onChange={event => {
                                 let checked = event.target.checked
-                                this.setState({ checked: checked, value: this.props.prefix })
+                                this.setState({ checked: checked, value: prefix })
+                                this.handleChange(event.target.value)
                             }
                                 // onChange={}
-                            } /> <span>{this.props.prefix}</span>
+                            } /> <span>{prefix}</span>
                     </label>
 
                 </div>
@@ -47,7 +58,7 @@ export default class MultiSelectButtonComponent extends React.Component<Question
                         <div className="button-box">
                             {
                                 this.props.answerOption?.map((item: any) => {
-                                   return <Button key={JSON.stringify(item.valueCoding)} value={item.valueCoding?.display} onClick={(event: any) => { console.log(event.target.value) }} size="sm" variant="outline-secondary">{item.valueCoding?.display}</Button>
+                                   return <Button key={JSON.stringify(item.valueCoding)} value={item.valueCoding?.display} onClick={(event: any) => concatAnswer(prefix, event.target.value)} size="sm" variant="outline-secondary">{item.valueCoding?.display}</Button>
                                 })
                             }
                         </div>
