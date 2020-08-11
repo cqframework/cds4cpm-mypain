@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   let questionnaireItemRef: any = createRef();
-  // let activeButtonRef: any = createRef();
 
   function handleNextQuestionScroll(linkId: number) {
     if (questionnaireItemRef.current.id === linkId) {
@@ -68,21 +67,21 @@ function QuestionnaireItemComponent(props: { QuestionnaireItem: QuestionnaireIte
                 <div className="quantity-type">
                   <input type="text" onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueQuantity: { value: parseFloat(event.target.value) } }])} /> days
                 </div>
-                : props.QuestionnaireItem.type === "open-choice" ?
-                  <div className="open-choice-type">
-                    {populateMultipleChoice(props)}
-                  </div>
-                : props.QuestionnaireItem.type === "group" ?
-                  <div className="open-choice-type">
-                    {populateMultipleChoice(props)}
-                  </div>
-                  : props.QuestionnaireItem.type === "text" ?
-                    <div className="text-type">
-                      <input type="text"
-                        onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString: event.target.value }])}
-                      />
+                // : props.QuestionnaireItem.type === "open-choice" ?
+                //   <div className="open-choice-type">
+                //     {populateMultipleChoice(props)}
+                //   </div>
+                  : props.QuestionnaireItem.type === "group" ?
+                    <div className="open-choice-type">
+                      {populateGroupType(props)}
                     </div>
-                    : <div>Unrecognized QuestionnaireItem type: {props.QuestionnaireItem.type}</div>
+                    : props.QuestionnaireItem.type === "text" ?
+                      <div className="text-type">
+                        <input type="text"
+                          onChange={(event) => props.onChange(props.QuestionnaireItem, [{ valueString: event.target.value }])}
+                        />
+                      </div>
+                      : <div>Unrecognized QuestionnaireItem type: {props.QuestionnaireItem.type}</div>
         }
       </div>
       {/* <div>{ JSON.stringify(props.QuestionnaireItem) }</div> */}
@@ -132,13 +131,21 @@ function populateChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange:
   );
 }
 
-function populateMultipleChoice(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
+function populateGroupType(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
+
+
+  let receiveData = (childData: any)  => {
+    console.log('checkbox data: ', childData);
+    props.onChange(props.QuestionnaireItem, [{ valueCoding: JSON.parse(childData) }])
+  }
+
   return (
     <div>
       {
         props.QuestionnaireItem.item?.map((item) => {
           return (
-            <MultiSelectButtonComponent key={JSON.stringify(item)}  {...item}>{item.answerOption}</MultiSelectButtonComponent>
+            <MultiSelectButtonComponent parentCallback={receiveData} key={JSON.stringify(item)}  {...item}>{item.answerOption}</MultiSelectButtonComponent>
+
           )
         })
       }
