@@ -44,7 +44,8 @@
     color: #000000;
 }
 
-.choice-type .btn-outline-secondary.selected {
+.choice-type .btn-outline-secondary.selected,
+.open-choice-type .btn-outline-secondary.selected {
     border-color: rgba(var(--color-dark), .25) !important;
     background-color: rgba(var(--color-dark), .25) !important;
     color: #000000 !important;

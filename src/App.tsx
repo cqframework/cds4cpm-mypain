@@ -48,7 +48,6 @@ export default class App extends React.Component<AppProps, AppState> {
     FHIR.oauth2.ready()
       .then((client: Client) => client.patient.read())
       .then((patient) => {
-        console.log('patient: ', patient)
         patient.id ? ptRef = patient.id : ptRef = " ";
         ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
         return this.selectQuestionnaire(ContentMyPain, ptRef, ptDisplay);
