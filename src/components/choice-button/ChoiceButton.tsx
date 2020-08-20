@@ -32,8 +32,8 @@ export default class ChoiceButton extends React.Component<any, any> {
         }
 
         return (
-            <div>
-                {this.props.text}
+            <div className="choice-button-group">
+                <p>{this.props.text}</p>
                 <ButtonGroup ref={activeChoiceButton}>
                     {
                         this.props.answerOption?.map((answerOption: any) => {

@@ -36,7 +36,7 @@ export default class Patient extends React.Component<PatientProps, PatientState>
           <p className="appointment-text mb-5">You are scheduled for a visit with <span>[Clinician Name]</span> on <span>[Appointment date and time]</span></p>
         </div>
         <div className="intro-container">
-          <p>Your doctor and your care team see that your upcoming visit may be related to managing pain. We'd like to learn more about what you're experiencig in your life and in your body so we can work together during this vixit, so you feel better. Please take a few minutes to share your health and care goals with us.</p>
+          <p>Your doctor and your care team see that your upcoming visit may be related to managing pain. We’d like to learn more about the pain you’re experiencing so we can work together to help you feel better. Please take a few minutes to share your health and care goals with us. </p>
         </div>
         {/* <div>
           Patient ID: {this.props.item?.id}

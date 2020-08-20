@@ -108,16 +108,24 @@ input[type="radio"]:focus+label::before {
 }
 
 @media screen and (max-width: 450px) {
-    .prefix-text {
-        font-size: 1.25rem;
+    .questionnaire-section-header {
+        display: flex;
+        align-items: baseline;
+    }
+    .prefix-text,
+    .description-text {
+        text-align: left;
     }
     .questionnaire-item {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
     .questionnaire-item p {
-        font-size: 1.25rem;
+        font-size: 1rem;
+        text-align: left;
+        margin-bottom: 5px;
+        line-height: 1.3;
     }
 }

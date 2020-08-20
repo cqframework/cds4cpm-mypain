@@ -221,7 +221,7 @@ import React, { createRef } from 'react';
 import './QuestionnaireItemComponent.css';
 import { Card, Button } from 'react-bootstrap';
 import MultiSelectButtonComponent from '../multi-select-button/MultiSelectButton';
-import { faQuestionCircle, faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons";
+import { faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ChoiceButton from '../choice-button/ChoiceButton';
 
@@ -260,21 +260,22 @@ export default class QuestionnaireTestComponent extends React.Component<any, any
 
     return (
       <Card ref={this.questionnaireItemRef} className={"questionnaire-item"} id={this.props.QuestionnaireItem.linkId}>
-
-        {this.props.QuestionnaireItem.linkId === '1' ? ('')
-          :
-          (
-            <Button className="btn-outline-secondary previous-button"
-              value={this.props.QuestionnaireItem.linkId}
-              onClick={(event: any) => this.handlePreviousQuestionScroll(event.target.value)}>
-              <FontAwesomeIcon icon={faArrowAltCircleLeft} />
-            </Button>
-          )}
-        {}
-        <div className="prefix-text">
-          {this.props.QuestionnaireItem.prefix}</div>
-        <div>
-          <p><FontAwesomeIcon icon={faQuestionCircle} />  {this.props.QuestionnaireItem.text}</p></div>
+        <div className="questionnaire-section-header">
+          {this.props.QuestionnaireItem.linkId === '1' ? ('')
+            :
+            (
+              <Button className="btn-outline-secondary previous-button"
+                value={this.props.QuestionnaireItem.linkId}
+                onClick={(event: any) => this.handlePreviousQuestionScroll(event.target.value)}>
+                <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+              </Button>
+            )}
+          <div className="prefix-text">
+            <h3>{this.props.QuestionnaireItem.prefix}</h3>
+          </div>
+        </div>
+        <div className="description-text">
+          <p> {this.props.QuestionnaireItem.text}</p></div>
         <div>
           {
             this.props.QuestionnaireItem.type === "boolean" ?
