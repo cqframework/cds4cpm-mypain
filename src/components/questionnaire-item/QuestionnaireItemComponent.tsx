@@ -222,8 +222,9 @@ import './QuestionnaireItemComponent.css';
 import { Card, Button } from 'react-bootstrap';
 import MultiSelectButtonComponent from '../multi-select-button/MultiSelectButton';
 import { faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ChoiceButton from '../choice-button/ChoiceButton';
+import parser from 'html-react-parser';
 
 export default class QuestionnaireTestComponent extends React.Component<any, any> {
   constructor(props: any) {
@@ -258,6 +259,13 @@ export default class QuestionnaireTestComponent extends React.Component<any, any
 
   public render(): any {
 
+    let text = '';
+    if (!this.props.QuestionnaireItem.text) {
+      text = ''
+    } else {
+      text = this.props.QuestionnaireItem.text
+    }
+
     return (
       <Card ref={this.questionnaireItemRef} className={"questionnaire-item"} id={this.props.QuestionnaireItem.linkId}>
         <div className="questionnaire-section-header">
@@ -275,7 +283,7 @@ export default class QuestionnaireTestComponent extends React.Component<any, any
           </div>
         </div>
         <div className="description-text">
-          <p> {this.props.QuestionnaireItem.text}</p></div>
+          <p> {parser(text)}</p></div>
         <div>
           {
             this.props.QuestionnaireItem.type === "boolean" ?
@@ -310,7 +318,7 @@ export default class QuestionnaireTestComponent extends React.Component<any, any
                           onChange={(event) => this.props.onChange(this.props.QuestionnaireItem, [{ valueString: event.target.value }])}
                         />
                       </div>
-                      : <div>Unrecognized QuestionnaireItem type: {this.props.QuestionnaireItem.type}</div>
+                      : <div></div>
           }
         </div>
         {/* <div>{ JSON.stringify(props.QuestionnaireItem) }</div> */}
@@ -349,7 +357,7 @@ export default class QuestionnaireTestComponent extends React.Component<any, any
       props.onChange(childData, [{ valueCoding: JSON.parse(answer) }])
     }
 
-    if (props.QuestionnaireItem.code![0].code === 'pain-location') {
+    if (props.QuestionnaireItem.code![0].code === 'pain-location' || props.QuestionnaireItem.code![0].code === 'about-my-treatments') {
       return (
         <div>
           {
@@ -362,6 +370,20 @@ export default class QuestionnaireTestComponent extends React.Component<any, any
           }
         </div>
       );
+    // } else if () {
+    //   return (
+    //     <div>
+    //       {
+    //         props.QuestionnaireItem.item?.map((item: any) => {
+
+    //           return (
+    //             <ChoiceButton parentCallback={receiveData} key={JSON.stringify(item)} {...item}></ChoiceButton>
+    //           )
+    //         })
+
+    //       }
+    //     </div>
+    //   )
     } else {
       return (
         <div>

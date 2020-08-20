@@ -1052,17 +1052,17 @@
         {
             "linkId": "5",
             "prefix": "About My Treatments",
-            "text": "We’d like to know more about how you manage your pain and what has worked for you. When answering these questions, please focus on pain related to what brings you in for your upcoming medical visit.",
-            "type": "choice"
+            "text": "We’d like to know more about how you manage your pain and what has worked for you. When answering these questions, please <strong>focus on pain</strong> related to what brings you in for your upcoming medical visit. <br/><br/> These treatments are organized into sections by type: <br/> Basic therapies <br/>Mind-body therapies<br/>New therapies<br/>Non-prescription medicines <br/>Prescription medicines",
+            "type": ""
         },
         {
             "linkId": "6",
             "prefix": "About My Treatments",
-            "text": "What have you tried in the past 6 months to help you with your pain? Select all answers that apply. We also want to know if it worked for you.",
+            "text": "What have you tried in the <strong>past 6 months</strong> to help you with your pain? Select all answers that apply. We also want to know if it worked for you.",
             "type": "group",
             "code": [{
                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "pain-location"
+                "code": "about-my-treatments"
             }],
             "item": [{
                     "linkId": "6.1",
@@ -1298,11 +1298,11 @@
         {
             "linkId": "7",
             "prefix": "About My Treatments",
-            "text": "Which of the mind-body therapies below have you used to help with your pain in the last 6 months (select all that apply)?",
+            "text": "Which of the <strong>mind-body therapies</strong> below have you used to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
             "type": "group",
             "code": [{
                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "pain-location"
+                "code": "about-my-treatments"
             }],
             "item": [{
                     "linkId": "7.1",
@@ -1538,11 +1538,11 @@
         {
             "linkId": "8",
             "prefix": "About My Treatments",
-            "text": "Which of the new therapies below have you used to help with your pain in the last 6 months (select all that apply)?",
+            "text": "Which of the <strong>new therapies</strong> below have you used to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
             "type": "group",
             "code": [{
                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "pain-location"
+                "code": "about-my-treatments"
             }],
             "item": [{
                     "linkId": "8.1",
@@ -1691,6 +1691,235 @@
                 }
             ]
         },
+        {
+            "linkId": "9",
+            "prefix": "About My Treatments",
+            "text": "Which of the <strong>items you can buy without a prescription from your doctor</strong> below have you used to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
+            "type": "group",
+            "code": [{
+                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                "code": "about-my-treatments"
+            }],
+            "item": [{
+                    "linkId": "9.1",
+                    "prefix": "Pain relievers (such as Advil, Aleve, Aspirin, Ibuprofen, Motrin, or Tylenol)",
+                    "text": "Did it work?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Never"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Sometimes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Always"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "9.2",
+                    "prefix": "Herbal or nutritional pain relievers (such as ginseng or kava kava)",
+                    "text": "Did it work?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Never"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Sometimes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Always"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "9.3",
+                    "prefix": "Cremes, lotions, gels or patches applied to the skin (for example BENGAY®, TIGER BALM® or BiOFREEZE®) ",
+                    "text": "Did it work?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Never"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Sometimes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Always"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "9.4",
+                    "prefix": "Other, please specify",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "linkId": "10",
+            "prefix": "About My Treatments",
+            "text": "Which of the <strong>prescription medications</strong> below have you used to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
+            "type": "group",
+            "code": [{
+                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                "code": "about-my-treatments"
+            }],
+            "item": [{
+                    "linkId": "10.1",
+                    "prefix": "Opioid medications (such as hydrocodone, oxycodone, codeine, morphine and fentanyl)",
+                    "text": "Did it work?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Never"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Sometimes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Always"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "10.2",
+                    "prefix": "Cortisone injection (a shot to relieve inflammation)",
+                    "text": "Did it work?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Never"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Sometimes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Always"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "10.3",
+                    "prefix": "Non-opioid medications as prescribed by a doctor (such as Celebrex or Cymbalta)",
+                    "text": "Did it work?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Never"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Sometimes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Always"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "10.4",
+                    "prefix": "Medical marijuana",
+                    "text": "Did it work?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Never"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Sometimes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Always"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "10.5",
+                    "prefix": "Other, please specify",
+                    "type": "text"
+                }
+            ]
+        },
+
         {
             "linkId": "9",
             "prefix": "Have you used any strategies or methods to help with your pain in the last 6 months: ",
