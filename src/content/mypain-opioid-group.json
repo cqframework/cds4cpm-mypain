@@ -572,7 +572,7 @@
             "type": "group",
             "code": [{
                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "pain-intensity"
+                "code": "my-pain-intensity"
             }],
             "item": [{
                     "linkId": "2a",
@@ -706,7 +706,7 @@
             "type": "group",
             "code": [{
                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "pain-interference"
+                "code": "my-pain-interference"
             }],
             "item": [{
                     "linkId": "3a",
@@ -881,7 +881,7 @@
             "type": "group",
             "code": [{
                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "pain-interference"
+                "code": "my-pain-interference"
             }],
             "item": [{
                     "linkId": "4a",
