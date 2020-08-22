@@ -25,10 +25,11 @@
     display: none;
 }
 
-.selected {
+.multi-button.selected {
     background-color: #000000;
     color: #ffffff;
     z-index: 10;
+    border-radius: 10px 10px 0 0
 }
 
 .additional-info-box {
@@ -44,6 +45,10 @@
     padding-top: 10px;
 }
 
+.additional-info-box .follow-up-question {
+    text-align: center;
+}
+
 .button-box {
     width: 100%;
     display: flex;
@@ -51,8 +56,13 @@
     flex-wrap: wrap;
 }
 
-.button-box button {
-    width: 100px;
+.button-box .btn-group {
+    width: 100%;
+    box-shadow: none;
+}
+
+.button-box>button {
+    width: 120px;
     margin: 0 5px 5px;
     background-color: rgba(var(--color-dark), .10) !important;
     color: rgba(var(--color-dark), 1);

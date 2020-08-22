@@ -562,6 +562,55 @@
                             }
                         }
                     ]
+                },
+                {
+                    "linkId": "1.12",
+                    "prefix": "Everywhere",
+                    "text": "What type of EVERYWHERE pain?",
+                    "type": "choice",
+                    "answerOption": [{
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
+                        }
+                    ]
                 }
             ]
         },
