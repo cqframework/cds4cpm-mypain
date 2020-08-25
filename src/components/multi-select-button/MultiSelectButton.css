@@ -90,7 +90,12 @@
     border-bottom-right-radius: 10px !important;
 }
 
-.input-group input:focus {
+.input-group input:focus,
+input {
     outline: 0;
     box-shadow: none;
+}
+
+.other-textbox input {
+    width: 100%;
 }

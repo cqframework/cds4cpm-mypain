@@ -6,6 +6,8 @@ import MultiSelectButtonComponent from '../multi-select-button/MultiSelectButton
 import { faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ChoiceButton from '../choice-button/ChoiceButton';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css'
 import parser from 'html-react-parser';
 
 export default class QuestionnaireItemComponent extends React.Component<any, any> {
@@ -16,6 +18,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
     }
   }
   questionnaireItemRef: any = createRef();
+  // percentage: number = 0;
 
   handleNextQuestionScroll(linkId: number) {
     if (this.questionnaireItemRef.current.id === linkId) {
@@ -38,6 +41,8 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
     }
 
   }
+  
+  
 
   public render(): any {
 
@@ -47,6 +52,22 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
     } else {
       text = this.props.QuestionnaireItem.text
     }
+    const percentage = (item: number, length:number):number =>{
+      item = Number(item)
+      // console.log(item)
+      if(!isNaN(item) && item !== null) {
+        let percent = (item -1)/length;
+        if(!isNaN(percent)) {
+          return Math.round(percent * 100);
+        } else {
+          return 0;
+        }
+        
+      } else {
+        return 0;
+      }
+    }
+    
 
     return (
       <Card ref={this.questionnaireItemRef} className={"questionnaire-item"} id={this.props.QuestionnaireItem.linkId}>
@@ -62,6 +83,9 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
             )}
           <div className="prefix-text">
             <h3>{this.props.QuestionnaireItem.prefix}</h3>
+          </div>
+          <div className="progress-circle">
+            <CircularProgressbar value={percentage(this.props.QuestionnaireItem.linkId, this.props.length)} text={percentage(this.props.QuestionnaireItem.linkId, this.props.length) + '%'}/>
           </div>
         </div>
         <div className="description-text">
@@ -92,7 +116,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
 
                     : this.props.QuestionnaireItem.type === "text" ?
                       <div className="text-type">
-                        <input type="text"
+                        <textarea placeholder="Your most important activity goals..."
                           onChange={(event) => this.props.onChange(this.props.QuestionnaireItem, [{ valueString: event.target.value }])}
                         />
                       </div>

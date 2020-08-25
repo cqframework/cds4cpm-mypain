@@ -2417,7 +2417,7 @@ babel-jest@^24.9.0:
     chalk "^2.4.2"
     slash "^2.0.0"
 
-babel-loader@8.1.0:
+babel-loader@8.1.0, babel-loader@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.1.0.tgz#c611d5112bd5209abe8b9fa84c3e4da25275f1c3"
   integrity sha512-7q7nC1tYOrqvUrN3LQK4GwSk/TQorZSOlO9C+RZDZpODgyN4ZlCqE5q9cDsyWOliN+aU9B4JX01xK9eJXowJLw==
@@ -9074,6 +9074,11 @@ react-breakpoint-fix@^1.0.7:
     patch-package "^6.1.2"
     path "^0.12.7"
     react-scripts "^3.0.1"
+
+react-circular-progressbar@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-circular-progressbar/-/react-circular-progressbar-2.0.3.tgz#fa8eb59f8db168d2904bae4590641792c80f5991"
+  integrity sha512-YKN+xAShXA3gYihevbQZbavfiJxo83Dt1cUxqg/cltj4VVsRQpDr7Fg1mvjDG3x1KHGtd9NmYKvJ2mMrPwbKyw==
 
 react-dev-utils@^10.2.1:
   version "10.2.1"

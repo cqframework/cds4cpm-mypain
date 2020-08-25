@@ -22,12 +22,14 @@
         "react": "^16.13.1",
         "react-bootstrap": "^1.0.1",
         "react-breakpoint-fix": "^1.0.7",
+        "react-circular-progressbar": "^2.0.3",
         "react-dom": "^16.13.1",
         "react-scripts": "3.4.1"
     },
     "devDependencies": {
         "@rescripts/cli": "^0.0.13",
         "@rescripts/utilities": "^0.0.6",
+        "babel-loader": "^8.1.0",
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "gh-pages": "^2.2.0",
@@ -48,12 +50,14 @@
         "production": [
             ">0.2%",
             "not dead",
-            "not op_mini all"
+            "not op_mini all",
+            "ie >= 9"
         ],
         "development": [
             "last 1 chrome version",
             "last 1 firefox version",
-            "last 1 safari version"
+            "last 1 safari version",
+            "ie >= 9"
         ]
     }
 }

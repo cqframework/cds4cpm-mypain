@@ -7,7 +7,7 @@ import {
     QuestionnaireResponseItemAnswer
 } from '../../fhir-types/fhir-r4';
 // import QuestionnaireItemComponent from '../questionnaire-item/QuestionnaireItemComponent';
-import QuestionnaireTestComponent from '../questionnaire-item/QuestionnaireItemComponent';
+import QuestionnaireItemComponent from '../questionnaire-item/QuestionnaireItemComponent';
 import { Button } from 'react-bootstrap';
 
 let questionnaireResponse:QuestionnaireResponse;
@@ -22,7 +22,7 @@ function QuestionnaireComponent(props: { questionnaire: Questionnaire, questionn
         <div>{ props.questionnaire.title }</div>
         {
             props.questionnaire.item ? props.questionnaire.item.map((item, key) =>{
-                return item.enableWhen ? handleEnableWhen(item, key, props.onChange) : <QuestionnaireTestComponent QuestionnaireItem={item} key={key} onChange={props.onChange} />
+                return item.enableWhen ? handleEnableWhen(item, key, props.onChange) : <QuestionnaireItemComponent length={props.questionnaire.item?.length} QuestionnaireItem={item} key={key} onChange={props.onChange} />
             }) : null
         }
         <Button className="submit-button" type="button" onClick={props.onSubmit}>Submit</Button>
@@ -97,7 +97,7 @@ Does NOT work.  It causes the error:
          })
     })
     if(allLinkedQuestionsAnswered) {
-        return <QuestionnaireTestComponent QuestionnaireItem={item} key={key} onChange={propsOnChange}/>
+        return <QuestionnaireItemComponent QuestionnaireItem={item} key={key} onChange={propsOnChange}/>
     }else {
         if (questionnaireResponse.item?.find(i => i.linkId === item.linkId)?.answer?.length) {
             propsOnChange(item, undefined);
