@@ -2,8 +2,6 @@ import React from 'react';
 import './Patient.css';
 import { fhirclient } from 'fhirclient/lib/types';
 // import { Button } from 'react-bootstrap';
-import { faCalendar } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface PatientProps {
   item?: fhirclient.FHIR.Patient;
@@ -29,11 +27,6 @@ export default class Patient extends React.Component<PatientProps, PatientState>
         <div className="welcome">
           <h4>Welcome to MyPain, {this.props.item?.name[0].given[0]}.</h4>
           <p className="intro-text mb-5">MyPAIN is a secure tool to help you are your provider make the best decisions about managing your pain.</p>
-        </div>
-        <div className="appointment-container">
-          <h4><FontAwesomeIcon icon={faCalendar} /> Appointment</h4>
-          {/* Bring in the appointment information */}
-          <p className="appointment-text mb-5">You are scheduled for a visit with <span>[Clinician Name]</span> on <span>[Appointment date and time]</span></p>
         </div>
         <div className="intro-container">
           <p>Your doctor and your care team see that your upcoming visit may be related to managing pain. We’d like to learn more about the pain you’re experiencing so we can work together to help you feel better. Please take a few minutes to share your health and care goals with us. </p>

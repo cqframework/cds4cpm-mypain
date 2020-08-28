@@ -1,5 +1,5 @@
 import React, { createRef } from 'react';
-// import { QuestionnaireItem, QuestionnaireResponseItemAnswer } from '../../fhir-types/fhir-r4';
+import { QuestionnaireItem, QuestionnaireItemAnswerOption, QuestionnaireResponseItem } from '../../fhir-types/fhir-r4';
 import './QuestionnaireItemComponent.css';
 import { Card, Button } from 'react-bootstrap';
 import MultiSelectButtonComponent from '../multi-select-button/MultiSelectButton';
@@ -18,7 +18,6 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
     }
   }
   questionnaireItemRef: any = createRef();
-  // percentage: number = 0;
 
   handleNextQuestionScroll(linkId: number) {
     if (this.questionnaireItemRef.current.id === linkId) {
@@ -42,10 +41,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
 
   }
   
-  
-
-  public render(): any {
-
+  public render(): JSX.Element {
     let text = '';
     if (!this.props.QuestionnaireItem.text) {
       text = ''
@@ -54,7 +50,6 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
     }
     const percentage = (item: number, length:number):number =>{
       item = Number(item)
-      // console.log(item)
       if(!isNaN(item) && item !== null) {
         let percent = (item -1)/length;
         if(!isNaN(percent)) {
@@ -140,7 +135,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
   public populateChoice(props: any) {
 
 
-    let receiveData = (childData: any, answer: string) => {
+    let receiveData = (childData: QuestionnaireItem, answer: string) => {
       props.onChange(childData, [{ valueCoding: JSON.parse(answer) }])
     }
 
@@ -154,7 +149,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
   public populateGroupType(props: any) {
 
 
-    let receiveData = (childData: any, answer: string) => {
+    let receiveData = (childData: QuestionnaireResponseItem, answer: string) => {
       props.onChange(childData, [{ valueCoding: JSON.parse(answer) }])
     }
 
@@ -174,7 +169,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
       return (
         <div>
           {
-            props.QuestionnaireItem.item?.map((item: any) => {
+            props.QuestionnaireItem.item?.map((item: QuestionnaireItemAnswerOption) => {
               return (
                 <ChoiceButton parentCallback={receiveData} key={JSON.stringify(item)} {...item}></ChoiceButton>
               )

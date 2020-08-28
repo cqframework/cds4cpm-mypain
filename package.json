@@ -16,6 +16,7 @@
         "@types/node": "^13.11.0",
         "@types/react": "^16.9.32",
         "@types/react-dom": "^16.9.6",
+        "array.prototype.fill": "^1.0.2",
         "bootstrap": "^4.5.0",
         "fhirclient": "^2.3.0",
         "html-react-parser": "^0.13.0",
@@ -51,13 +52,13 @@
             ">0.2%",
             "not dead",
             "not op_mini all",
-            "ie >= 9"
+            "ie 11"
         ],
         "development": [
             "last 1 chrome version",
             "last 1 firefox version",
             "last 1 safari version",
-            "ie >= 9"
+            "ie 11"
         ]
     }
 }

@@ -19,7 +19,6 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
     public render(): JSX.Element {
         let activeChoiceButton: any = createRef();
         const handleClick = (event: any) => {
-
             collectAnswer(this.props, event.target.value)
             for (let child of activeChoiceButton.current.children) {
                 if (child.value === event.target.value) {
@@ -31,11 +30,9 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
         }
 
         const receiveTextAnswer = (text: string) => {
-            if(text.length > 0) {
-                this.props.parentCallback(this.props, JSON.stringify({"answer":[{"valueString": text}]}));
+            if (text.length > 0) {
+                this.props.parentCallback(this.props, JSON.stringify({ "answer": [{ "valueString": text }] }));
             }
-            // console.log('input text: ', text)
-            console.log('answer:', this.props, {"answer":[{"valueString": text}]})
         }
         let text: string = this.props.text!;
         let prefix: string = this.props.prefix!;
@@ -114,10 +111,10 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
                                             </div>
                                         </div>
                                     ) : (
-                                        <div className="other-textbox">
-                                            <input type="text" placeholder="Type here..." onChange={event => receiveTextAnswer(event.target.value)}/>
-                                        </div>
-                                    )}
+                                            <div className="other-textbox">
+                                                <input type="text" placeholder="Type here..." onChange={event => receiveTextAnswer(event.target.value)} />
+                                            </div>
+                                        )}
                                 </div>
                             )}
                 </div>

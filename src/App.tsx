@@ -10,6 +10,7 @@ import PatientContainer from './components/patient/PatientContainer';
 import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
 import { Button } from 'react-bootstrap';
+import ReviewPageComponent from './components/review-page/ReviewPageComponent';
 
 interface AppProps {
 
@@ -71,14 +72,17 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   handleChange(item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]): void {
-    var newQuestionnaireResponse = this.state.QuestionnaireResponse;
+    let newQuestionnaireResponse = this.state.QuestionnaireResponse;
+    console.log('item: ', item)
+    console.log('answer: ', answer);
     if (!newQuestionnaireResponse.item) {
       newQuestionnaireResponse.item = [];
     }
-    var existingResponseIndex = newQuestionnaireResponse.item.findIndex((responseItem) => responseItem.linkId === item.linkId);
+    let existingResponseIndex = newQuestionnaireResponse.item.findIndex((responseItem) => responseItem.linkId === item.linkId);
     if (existingResponseIndex >= 0) {
       newQuestionnaireResponse.item[existingResponseIndex].answer = answer;
       newQuestionnaireResponse.item[existingResponseIndex].text = item.text;
+      // newQuestionnaireResponse.item[existingResponseIndex].prefix = item.prefix;
       if (newQuestionnaireResponse.item[existingResponseIndex].answer) {
         // @ts-ignore
         if (newQuestionnaireResponse.item[existingResponseIndex].answer[0].type === 'valueCoding') {
@@ -164,7 +168,10 @@ export default class App extends React.Component<AppProps, AppState> {
               onChange={this.handleChange} onSubmit={this.submitAnswers} />
           </div>
           <hr />
-          <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div>
+          {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
+          <div>
+            <ReviewPageComponent {...this.state.QuestionnaireResponse}></ReviewPageComponent>
+          </div>
         </div>
       );
     } else {
@@ -180,7 +187,10 @@ export default class App extends React.Component<AppProps, AppState> {
           <div>
           </div>
           <hr />
-          <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div>
+          {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
+          <div>
+            <ReviewPageComponent {...this.state.QuestionnaireResponse}></ReviewPageComponent>
+          </div>
         </div>
       );
     }

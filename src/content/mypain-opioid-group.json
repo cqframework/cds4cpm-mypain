@@ -1987,6 +1987,26 @@
             }],
             "type": "text",
             "text": "We'd like to know what makes it hard for you to reach your activity goals. What are the biggest barriers to achieving your activity goals (for example, I have a lot of stress from work which makes my pain worse). Please describe, in your own words, barriers to reaching your most important activity goals.<br/><br/><strong>What are the biggest barriers to achieving your activity goals?</strong>"
+        },
+        {
+            "linkId": "13",
+            "prefix": "Managing Chronic Pain",
+            "code": [{
+                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                "code": "about-my-goals"
+            }],
+            "type": "group",
+            "text": "Below is a link to a video produced by the American Chronic Pain Association about living with chronic pain. We’d like to suggest you watch the video to help you prepare for your upcoming visit. This video can help you prepare to ask questions that are important to you when you visit with your provider. <br/> <br/> <iframe width=\"100%\" height=\"200\" src=\"https://www.youtube.com/embed/QWcr9J3MLfo\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+        },
+        {
+            "linkId": "14",
+            "prefix": "Managing Chronic Pain",
+            "code": [{
+                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                "code": "about-my-goals"
+            }],
+            "type": "group",
+            "text": "The website linked below provides some information from the U.S. Pain Foundation about the causes and diagnosis of pain in general, treatment options and self management and well-being when living with pain. This information can help you prepare to ask questions that are important to you when you visit with your provider.<br/> <br/> <a href=\"https://uspainfoundation.org/living-with-pain/\"><img width=\"100%\" src=\"https://uspainfoundation.org//wp-content/uploads/2017/07/Woman-holding-neck-1024x682.jpg\"/></a>"
         }
 
         
