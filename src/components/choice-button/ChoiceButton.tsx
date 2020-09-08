@@ -15,9 +15,18 @@ export default class ChoiceButton extends React.Component<any, any> {
     
     public render(): JSX.Element {
         let activeChoiceButton: any = createRef();
+        let questionnaireItem = {
+            linkId: this.props.linkId,
+            type: this.props.type,
+            prefix: this.props.prefix,
+            answerOption: this.props.answerOption,
+            text: this.props.text
+        }
         const handleClick = (event: any) => {
-            
-            collectAnswer(this.props, event.target.value)
+            if(questionnaireItem.prefix && questionnaireItem.text) {
+                questionnaireItem.text = questionnaireItem.prefix + ': ' + questionnaireItem.text;
+            }
+            collectAnswer(questionnaireItem, event.target.value)
             for (let child of activeChoiceButton.current.children) {
                 if (child.value === event.target.value) {
                     child.classList.add('selected');
@@ -33,10 +42,10 @@ export default class ChoiceButton extends React.Component<any, any> {
 
         return (
             <div className="choice-button-group">
-                <p>{this.props.text}</p>
+                <p>{questionnaireItem.text}</p>
                 <ButtonGroup ref={activeChoiceButton}>
                     {
-                        this.props.answerOption?.map((answerOption: any) => {
+                        questionnaireItem.answerOption?.map((answerOption: any) => {
                             return <Button key={JSON.stringify(answerOption.valueCoding)}
                                 size="sm"
                                 aria-required="true"

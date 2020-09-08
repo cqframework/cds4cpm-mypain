@@ -1,6 +1,7 @@
 import React from 'react';
 import './ReviewPageComponent.css';
 import { Table } from 'react-bootstrap';
+import parser from 'html-react-parser';
 
 export default class ReviewPageComponent extends React.Component<any, any> {
     // constructor(props: any) {
@@ -9,13 +10,11 @@ export default class ReviewPageComponent extends React.Component<any, any> {
 
 
     public render(): JSX.Element {
-        console.log('response: ', this.props)
+        // console.log('review: ', this.props)
         if (this.props.item) {
-            this.props.item.sort((a: any, b: any) => (a.linkId > b.linkId) ? 1 : -1)
+            this.props.item.sort((a: any, b: any) => (Number(a.linkId) > Number(b.linkId)) ? 1 : -1)
             return (
-                // <div>{JSON.stringify(this.props)}</div>
                 <div>
-                    {console.log('item: ', this.props.item)}
                     {
                         <Table responsive bordered striped>
                             <thead>
@@ -26,16 +25,37 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                             </thead>
                             <tbody>
                                 {this.props.item.map((item: any) => {
-                                    return (<tr>
-                                        <td> {item.linkId} {item.text} </td>
-                                        <td> {item.answer[0].valueCoding.display}</td>
-                                    </tr>)
-                                })}
+                                    if (item.answer[0].valueCoding) {
+                                        if (item.answer[0].valueCoding.display) {
+                                            return (<tr key={JSON.stringify(item)}>
+                                                <td> {parser(item.text)} </td>
+                                                <td> {JSON.stringify(item.answer[0].valueCoding.display)}</td>
+                                            </tr>)
+
+
+                                        }
+                                        else {
+                                            return <tr>
+                                                <td>Other:</td>
+                                                <td>{JSON.stringify(item)}</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else if (item.answer[0].valueString) {
+                                        return (<tr key={JSON.stringify(item)}>
+                                            <td> {parser(item.text)} </td>
+                                            <td> {item.answer[0].valueString}</td>
+                                        </tr>)
+                                    } else {
+                                        console.log('not item: ', item)
+                                        return <div></div>;
+                                    }
+                                }
+                                )
+                                }
                             </tbody>
                         </Table>
-                        // this.props.item.map((item: any) => {
-                        //    return (<p>{item.text}</p>)
-                        // })
+
                     }
                 </div>
             )

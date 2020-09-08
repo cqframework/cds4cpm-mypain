@@ -18,15 +18,24 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
     }
   }
   questionnaireItemRef: any = createRef();
+  showReview: boolean = false;
 
   handleNextQuestionScroll(linkId: number) {
     if (this.questionnaireItemRef.current.id === linkId) {
-      this.questionnaireItemRef.current.nextSibling.classList.add('active')
-      this.questionnaireItemRef.current.classList.remove('active')
-      this.questionnaireItemRef.current.nextSibling.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest'
-      })
+      if (this.questionnaireItemRef.current.nextSibling) {
+        this.questionnaireItemRef.current.nextSibling.classList.add('active')
+        this.questionnaireItemRef.current.classList.remove('active')
+        this.questionnaireItemRef.current.nextSibling.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest'
+        })
+      }
+
+
+    }
+    if (this.questionnaireItemRef.current.nextSibling == null) {
+      this.showReview = true;
+      this.props.receivingCallback(this.showReview);
     }
   }
   handlePreviousQuestionScroll(linkId: number) {
@@ -40,7 +49,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
     }
 
   }
-  
+
   public render(): JSX.Element {
     let text = '';
     if (!this.props.QuestionnaireItem.text) {
@@ -48,21 +57,21 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
     } else {
       text = this.props.QuestionnaireItem.text
     }
-    const percentage = (item: number, length:number):number =>{
+    const percentage = (item: number, length: number): number => {
       item = Number(item)
-      if(!isNaN(item) && item !== null) {
-        let percent = (item -1)/length;
-        if(!isNaN(percent)) {
+      if (!isNaN(item) && item !== null) {
+        let percent = (item - 1) / length;
+        if (!isNaN(percent)) {
           return Math.round(percent * 100);
         } else {
           return 0;
         }
-        
+
       } else {
         return 0;
       }
     }
-    
+
 
     return (
       <Card ref={this.questionnaireItemRef} className={"questionnaire-item"} id={this.props.QuestionnaireItem.linkId}>
@@ -80,7 +89,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
             <h3>{this.props.QuestionnaireItem.prefix}</h3>
           </div>
           <div className="progress-circle">
-            <CircularProgressbar value={percentage(this.props.QuestionnaireItem.linkId, this.props.length)} text={percentage(this.props.QuestionnaireItem.linkId, this.props.length) + '%'}/>
+            <CircularProgressbar value={percentage(this.props.QuestionnaireItem.linkId, this.props.length)} text={percentage(this.props.QuestionnaireItem.linkId, this.props.length) + '%'} />
           </div>
         </div>
         <div className="description-text">
@@ -148,8 +157,20 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
   // public populateGroupType(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   public populateGroupType(props: any) {
 
+    let responseItem: QuestionnaireResponseItem = {
+      definition: props.QuestionnaireItem.prefix,
+      text: props.QuestionnaireItem.text,
+      linkId: props.QuestionnaireItem.linkId,
+      item: []
+    }
 
     let receiveData = (childData: QuestionnaireResponseItem, answer: string) => {
+      // if(responseItem.item.includes(childData)) {
+        
+      // }
+      responseItem.item?.push(childData)
+      console.log('childData: ', responseItem)
+      // props.onChange(responseItem, [{ valueCoding: JSON.parse(answer) }])
       props.onChange(childData, [{ valueCoding: JSON.parse(answer) }])
     }
 

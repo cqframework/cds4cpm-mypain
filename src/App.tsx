@@ -3,14 +3,13 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuestionnaireComponent from './components/questionnaire/QuestionnaireComponent';
 import { QuestionnaireResponse, QuestionnaireItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
-import ContentMyPain from './content/mypain-opioid-group.json';  //mypain-opioid.json';
+import ContentMyPain from './content/mypain-formtool.json';  //mypain-opioid.json';
 import { submitQuestionnaireResponse } from './utils/fhirFacadeHelper';
 // TODO: add import of  getQuestionnaire 
 import PatientContainer from './components/patient/PatientContainer';
 import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
 import { Button } from 'react-bootstrap';
-import ReviewPageComponent from './components/review-page/ReviewPageComponent';
 
 interface AppProps {
 
@@ -72,14 +71,15 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   handleChange(item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]): void {
+    console.log('item: ', item);
+    console.log('answer: ', answer)
     let newQuestionnaireResponse = this.state.QuestionnaireResponse;
-    console.log('item: ', item)
-    console.log('answer: ', answer);
     if (!newQuestionnaireResponse.item) {
       newQuestionnaireResponse.item = [];
     }
     let existingResponseIndex = newQuestionnaireResponse.item.findIndex((responseItem) => responseItem.linkId === item.linkId);
     if (existingResponseIndex >= 0) {
+      console.log('existing response index: ', existingResponseIndex);
       newQuestionnaireResponse.item[existingResponseIndex].answer = answer;
       newQuestionnaireResponse.item[existingResponseIndex].text = item.text;
       // newQuestionnaireResponse.item[existingResponseIndex].prefix = item.prefix;
@@ -123,7 +123,6 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   startQuestionnaire = () => {
-    console.log('questionnaire container: ', this.questionnaireContainer);
     if (this.questionnaireContainer.current) {
       this.questionnaireContainer.current.firstChild.firstChild.nextSibling.classList.add('active');
       this.questionnaireContainer.current.scrollIntoView({
@@ -169,9 +168,6 @@ export default class App extends React.Component<AppProps, AppState> {
           </div>
           <hr />
           {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
-          <div>
-            <ReviewPageComponent {...this.state.QuestionnaireResponse}></ReviewPageComponent>
-          </div>
         </div>
       );
     } else {
@@ -188,9 +184,6 @@ export default class App extends React.Component<AppProps, AppState> {
           </div>
           <hr />
           {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
-          <div>
-            <ReviewPageComponent {...this.state.QuestionnaireResponse}></ReviewPageComponent>
-          </div>
         </div>
       );
     }

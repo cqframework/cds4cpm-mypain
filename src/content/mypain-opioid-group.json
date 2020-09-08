@@ -8,28 +8,35 @@
         "profile": [
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7"
         ],
-        "tag": [{
-            "code": "lformsVersion: 23.0.0"
-        }]
+        "tag": [
+            {
+                "code": "lformsVersion: 23.0.0"
+            }
+        ]
     },
     "title": "MyPain Questionnaire",
     "status": "active",
-    "item": [{
+    "item": [
+        {
             "prefix": "My Pain Location",
             "text": "We’d like to ask you a few questions about your pain and how it is affecting your life. Please describe the location(s) of any pain you have had in the past 7 days.",
             "type": "group",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "pain-location"
-            }],
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "pain-location"
+                }
+            ],
             "required": false,
             "linkId": "1",
-            "item": [{
+            "item": [
+                {
                     "linkId": "1.1",
                     "prefix": "Head",
                     "text": "What type of HEAD pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -78,7 +85,8 @@
                     "prefix": "Neck",
                     "text": "What type of NECK pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -127,7 +135,8 @@
                     "prefix": "Shoulders",
                     "text": "What type of SHOULDERS pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -176,7 +185,8 @@
                     "prefix": "Arms",
                     "text": "What type of ARMS pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -225,7 +235,8 @@
                     "prefix": "Upper Back",
                     "text": "What type of UPPER BACK pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -274,7 +285,8 @@
                     "prefix": "Lower Back",
                     "text": "What type of LOWER BACK pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -320,10 +332,11 @@
                 },
                 {
                     "linkId": "1.7",
-                    "prefix": "Hips",
-                    "text": "What type of HIPS pain?",
+                    "prefix": "Hands",
+                    "text": "What type of HANDS pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -369,10 +382,11 @@
                 },
                 {
                     "linkId": "1.8",
-                    "prefix": "Upper Legs",
-                    "text": "What type of UPPER LEGS pain?",
+                    "prefix": "Abdomen",
+                    "text": "What type of ABDOMEN pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -418,10 +432,11 @@
                 },
                 {
                     "linkId": "1.9",
-                    "prefix": "Knees",
-                    "text": "What type of KNEES pain?",
+                    "prefix": "Pelvis",
+                    "text": "What type of PELVIS pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -467,10 +482,11 @@
                 },
                 {
                     "linkId": "1.10",
-                    "prefix": "Lower Legs",
-                    "text": "What type of LOWER LEGS pain?",
+                    "prefix": "Hips",
+                    "text": "What type of HIPS pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -516,10 +532,11 @@
                 },
                 {
                     "linkId": "1.11",
-                    "prefix": "Feet",
-                    "text": "What type of FEET pain?",
+                    "prefix": "Upper Legs",
+                    "text": "What type of UPPER LEGS pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -565,10 +582,11 @@
                 },
                 {
                     "linkId": "1.12",
-                    "prefix": "Everywhere",
-                    "text": "What type of EVERYWHERE pain?",
+                    "prefix": "Knees",
+                    "text": "What type of KNEES pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -611,6 +629,161 @@
                             }
                         }
                     ]
+                },
+                {
+                    "linkId": "1.13",
+                    "prefix": "Lower Legs",
+                    "text": "What type of LOWER LEGS pain?",
+                    "type": "choice",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "1.14",
+                    "prefix": "Feet",
+                    "text": "What type of FEET pain?",
+                    "type": "choice",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "1.15",
+                    "prefix": "Everywhere",
+                    "text": "What type of EVERYWHERE pain?",
+                    "type": "choice",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Stabbing"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Burning"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Aching"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Tingling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Prickling"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                                "code": "mpqr-1003",
+                                "display": "Throbbing"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "1.16",
+                    "prefix": "Other, please describe",
+                    "type": "text"
                 }
             ]
         },
@@ -619,46 +792,50 @@
             "prefix": "My Pain Intensity",
             "text": "Thinking about your overall pain, in the past 7 days, please respond to the questions below:",
             "type": "group",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "my-pain-intensity"
-            }],
-            "item": [{
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "my-pain-intensity"
+                }
+            ],
+            "item": [
+                {
                     "linkId": "2.1",
                     "text": "How intense was your pain at its worst?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "No pain"
                             }
                         },
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1004",
+                                "code": "mpqr-1001",
                                 "display": "Mild"
                             }
                         },
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1005",
+                                "code": "mpqr-1001",
                                 "display": "Moderate"
                             }
                         },
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1006",
+                                "code": "mpqr-1001",
                                 "display": "Severe"
                             }
                         },
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1007",
+                                "code": "mpqr-1001",
                                 "display": "Very Severe"
                             }
                         }
@@ -668,38 +845,39 @@
                     "linkId": "2.2",
                     "text": "How intense was your average pain?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "No pain"
                             }
                         },
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1004",
+                                "code": "mpqr-1002",
                                 "display": "Mild"
                             }
                         },
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1005",
+                                "code": "mpqr-1002",
                                 "display": "Moderate"
                             }
                         },
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1006",
+                                "code": "mpqr-1002",
                                 "display": "Severe"
                             }
                         },
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1007",
+                                "code": "mpqr-1002",
                                 "display": "Very Severe"
                             }
                         }
@@ -709,7 +887,8 @@
                     "linkId": "2.3",
                     "text": "What is your level of pain right now?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -719,28 +898,28 @@
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1004",
+                                "code": "mpqr-1003",
                                 "display": "Mild"
                             }
                         },
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1005",
+                                "code": "mpqr-1003",
                                 "display": "Moderate"
                             }
                         },
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1006",
+                                "code": "mpqr-1003",
                                 "display": "Severe"
                             }
                         },
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "mpqr-1007",
+                                "code": "mpqr-1003",
                                 "display": "Very Severe"
                             }
                         }
@@ -753,25 +932,29 @@
             "prefix": "My Pain Interference",
             "text": "Thinking about your overall pain, in the past 7 days, please respond to the questions below:",
             "type": "group",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "my-pain-interference"
-            }],
-            "item": [{
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "my-pain-interference"
+                }
+            ],
+            "item": [
+                {
                     "linkId": "3.1",
                     "text": "How much did pain interfere with your day to day activities?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "LA6568-5",
+                                "code": "mpq-1004",
                                 "display": "Not at all"
                             }
                         },
                         {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                                "code": "LA13863-8",
+                                "code": "mpq-1004",
                                 "display": "A little"
                             }
                         },
@@ -802,7 +985,8 @@
                     "linkId": "3.2",
                     "text": "How much did pain interfere with your work around the home?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "LA6568-5",
@@ -843,7 +1027,8 @@
                     "linkId": "3.3",
                     "text": "How much did pain interfere with your ability to participate in social activities?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "LA6568-5",
@@ -884,7 +1069,8 @@
                     "linkId": "3.4",
                     "text": "How much did pain interfere with your household chores?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "LA6568-5",
@@ -928,15 +1114,19 @@
             "prefix": "My Pain Interference",
             "text": "Thinking about your overall pain, in the past 7 days, please respond to the questions below:",
             "type": "group",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "my-pain-interference"
-            }],
-            "item": [{
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "my-pain-interference"
+                }
+            ],
+            "item": [
+                {
                     "linkId": "4.1",
                     "text": "How much did pain interfere with the things you usually do for fun?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "LA6568-5",
@@ -977,7 +1167,8 @@
                     "linkId": "4.2",
                     "text": "How much did pain interfere with your enjoyment of social activities?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "LA6568-5",
@@ -1018,7 +1209,8 @@
                     "linkId": "4.3",
                     "text": "How much did pain interfere with your enjoyment of life?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "LA6568-5",
@@ -1059,7 +1251,8 @@
                     "linkId": "4.4",
                     "text": "How much did pain interfere with your family life?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "LA6568-5",
@@ -1102,23 +1295,27 @@
             "linkId": "5",
             "prefix": "About My Treatments",
             "text": "We’d like to know more about how you manage your pain and what has worked for you. When answering these questions, please <strong>focus on pain</strong> related to what brings you in for your upcoming medical visit. <br/><br/> These treatments are organized into sections by type: <br/> Basic therapies <br/>Mind-body therapies<br/>New therapies<br/>Non-prescription medicines <br/>Prescription medicines",
-            "type": ""
+            "type": "choice"
         },
         {
             "linkId": "6",
             "prefix": "About My Treatments",
             "text": "What have you tried in the <strong>past 6 months</strong> to help you with your pain? Select all answers that apply. We also want to know if it worked for you.",
             "type": "group",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "about-my-treatments"
-            }],
-            "item": [{
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "about-my-treatments"
+                }
+            ],
+            "item": [
+                {
                     "linkId": "6.1",
                     "prefix": "Exercises at home (such as those assigned by a therapist) or outside (such as walking, jogging, swimming)",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1146,7 +1343,8 @@
                     "prefix": "Stretching",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1174,7 +1372,8 @@
                     "prefix": "Weight loss or changes in your diet",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1202,7 +1401,8 @@
                     "prefix": "Setting and reaching activity goals",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1230,7 +1430,8 @@
                     "prefix": "Ice or Heat Therapy",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1258,7 +1459,8 @@
                     "prefix": "Physical Therapy",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1286,7 +1488,8 @@
                     "prefix": "Acupuncture",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1314,7 +1517,8 @@
                     "prefix": "Chiropractic treatment",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1349,16 +1553,20 @@
             "prefix": "About My Treatments",
             "text": "Which of the <strong>mind-body therapies</strong> below have you used to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
             "type": "group",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "about-my-treatments"
-            }],
-            "item": [{
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "about-my-treatments"
+                }
+            ],
+            "item": [
+                {
                     "linkId": "7.1",
                     "prefix": "Yoga",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1386,7 +1594,8 @@
                     "prefix": "Massage",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1414,7 +1623,8 @@
                     "prefix": "Meditation",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1442,7 +1652,8 @@
                     "prefix": "Relaxation or mindfulness-based training",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1470,7 +1681,8 @@
                     "prefix": "Group or individual therapy for pain",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1498,7 +1710,8 @@
                     "prefix": "Cognitive behavioral therapy",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1526,7 +1739,8 @@
                     "prefix": "Acceptance or commitment therapy",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1554,7 +1768,8 @@
                     "prefix": "Sleep management (such as a sleep study or CPAP)",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1589,16 +1804,20 @@
             "prefix": "About My Treatments",
             "text": "Which of the <strong>new therapies</strong> below have you used to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
             "type": "group",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "about-my-treatments"
-            }],
-            "item": [{
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "about-my-treatments"
+                }
+            ],
+            "item": [
+                {
                     "linkId": "8.1",
                     "prefix": "Aromatherapy",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1626,7 +1845,8 @@
                     "prefix": "Crystals",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1654,7 +1874,8 @@
                     "prefix": "Essential oils",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1682,7 +1903,8 @@
                     "prefix": "CBD oil",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1710,7 +1932,8 @@
                     "prefix": "Music therapy",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1745,16 +1968,20 @@
             "prefix": "About My Treatments",
             "text": "Which of the <strong>items you can buy without a prescription from your doctor</strong> below have you used to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
             "type": "group",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "about-my-treatments"
-            }],
-            "item": [{
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "about-my-treatments"
+                }
+            ],
+            "item": [
+                {
                     "linkId": "9.1",
                     "prefix": "Pain relievers (such as Advil, Aleve, Aspirin, Ibuprofen, Motrin, or Tylenol)",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1782,7 +2009,8 @@
                     "prefix": "Herbal or nutritional pain relievers (such as ginseng or kava kava)",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1807,10 +2035,11 @@
                 },
                 {
                     "linkId": "9.3",
-                    "prefix": "Cremes, lotions, gels or patches applied to the skin (for example BENGAY®, TIGER BALM® or BiOFREEZE®) ",
+                    "prefix": "Cremes, lotions, gels or patches applied to the skin (for example BENGAY®, TIGER BALM® or BiOFREEZE®)",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1845,16 +2074,20 @@
             "prefix": "About My Treatments",
             "text": "Which of the <strong>prescription medications</strong> below have you used to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
             "type": "group",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "about-my-treatments"
-            }],
-            "item": [{
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "about-my-treatments"
+                }
+            ],
+            "item": [
+                {
                     "linkId": "10.1",
                     "prefix": "Opioid medications (such as hydrocodone, oxycodone, codeine, morphine and fentanyl)",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1882,7 +2115,8 @@
                     "prefix": "Cortisone injection (a shot to relieve inflammation)",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1910,7 +2144,8 @@
                     "prefix": "Non-opioid medications as prescribed by a doctor (such as Celebrex or Cymbalta)",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1938,7 +2173,8 @@
                     "prefix": "Medical marijuana",
                     "text": "Did it work?",
                     "type": "choice",
-                    "answerOption": [{
+                    "answerOption": [
+                        {
                             "valueCoding": {
                                 "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
                                 "code": "mpqr-1003",
@@ -1971,44 +2207,97 @@
         {
             "linkId": "11",
             "prefix": "About My Goals",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "about-my-goals"
-            }],
-            "type": "text",
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "about-my-goals"
+                }
+            ],
+            "type": "display",
             "text": "We'd like to know more about you and your activity goals (for example, I'd like to be able to walk without pain). Please describe, in your own words, your most important activity goals.<br/><br/><strong>What are your most important activity goals?</strong>"
         },
         {
             "linkId": "12",
             "prefix": "About My Goals",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "about-my-goals"
-            }],
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "about-my-goals"
+                }
+            ],
             "type": "text",
             "text": "We'd like to know what makes it hard for you to reach your activity goals. What are the biggest barriers to achieving your activity goals (for example, I have a lot of stress from work which makes my pain worse). Please describe, in your own words, barriers to reaching your most important activity goals.<br/><br/><strong>What are the biggest barriers to achieving your activity goals?</strong>"
         },
         {
             "linkId": "13",
             "prefix": "Managing Chronic Pain",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "about-my-goals"
-            }],
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "about-my-goals"
+                }
+            ],
             "type": "group",
             "text": "Below is a link to a video produced by the American Chronic Pain Association about living with chronic pain. We’d like to suggest you watch the video to help you prepare for your upcoming visit. This video can help you prepare to ask questions that are important to you when you visit with your provider. <br/> <br/> <iframe width=\"100%\" height=\"200\" src=\"https://www.youtube.com/embed/QWcr9J3MLfo\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
         },
         {
             "linkId": "14",
             "prefix": "Managing Chronic Pain",
-            "code": [{
-                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                "code": "about-my-goals"
-            }],
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "about-my-goals"
+                }
+            ],
             "type": "group",
             "text": "The website linked below provides some information from the U.S. Pain Foundation about the causes and diagnosis of pain in general, treatment options and self management and well-being when living with pain. This information can help you prepare to ask questions that are important to you when you visit with your provider.<br/> <br/> <a href=\"https://uspainfoundation.org/living-with-pain/\"><img width=\"100%\" src=\"https://uspainfoundation.org//wp-content/uploads/2017/07/Woman-holding-neck-1024x682.jpg\"/></a>"
+        },
+        {
+            "linkId": "15",
+            "prefix": "MyPAIN Feedback",
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "mypain-feedback"
+                }
+            ],
+            "type": "choice",
+            "text": "Please indicate your level of agreement with the following statement: <br/><br/>Using the MyPAIN tool has helped me begin preparing for a conversation with my provider about managing my pain.",
+            "answerOption": [
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1003",
+                        "display": "Never"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1003",
+                        "display": "Sometimes"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                        "code": "mpqr-1003",
+                        "display": "Always"
+                    }
+                }
+            ]
+        },
+        {
+            "linkId": "16",
+            "prefix": "MyPAIN Feedback",
+            "code": [
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "mypain-feedback"
+                }
+            ],
+            "type": "text",
+            "text": "Do you have any other feedback or thoughts to share on your use of MyPAIN?"
         }
-
-        
     ]
 }

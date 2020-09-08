@@ -18,8 +18,19 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
 
     public render(): JSX.Element {
         let activeChoiceButton: any = createRef();
+        let questionnaireItem = {
+            linkId: this.props.linkId,
+            type: this.props.type,
+            prefix: this.props.prefix,
+            answerOption: this.props.answerOption,
+            text: this.props.text
+        }
+
         const handleClick = (event: any) => {
-            collectAnswer(this.props, event.target.value)
+            if (questionnaireItem.prefix && questionnaireItem.text) {
+                questionnaireItem.text = questionnaireItem.prefix + ': ' + questionnaireItem.text;
+            }
+            collectAnswer(questionnaireItem, event.target.value);
             for (let child of activeChoiceButton.current.children) {
                 if (child.value === event.target.value) {
                     child.classList.add('selected');
@@ -30,12 +41,13 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
         }
 
         const receiveTextAnswer = (text: string) => {
+            console.log('text: ', text)
             if (text.length > 0) {
-                this.props.parentCallback(this.props, JSON.stringify({ "answer": [{ "valueString": text }] }));
+                questionnaireItem.text = questionnaireItem.prefix + ': ' + questionnaireItem.text;
+                this.props.parentCallback(questionnaireItem, JSON.stringify({ display: text }));
             }
         }
-        let text: string = this.props.text!;
-        let prefix: string = this.props.prefix!;
+
         const collectAnswer = (QuestionnaireItem: any, answer: string) => {
             this.props.parentCallback(QuestionnaireItem, answer);
         }
@@ -47,14 +59,14 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
                     <label>
 
                         <input
-                            value={prefix}
+                            value={questionnaireItem.prefix}
                             type="checkbox"
                             checked={this.state.checked}
                             onChange={event => {
                                 let checked = event.target.checked
-                                this.setState({ checked: checked, value: prefix })
+                                this.setState({ checked: checked, value: questionnaireItem.prefix })
                             }
-                            } /> <span>{prefix}</span>
+                            } /> <span>{questionnaireItem.prefix}</span>
                     </label>
 
                 </div>
@@ -64,7 +76,7 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
                         this.props.code === 'pain-location' ? (
                             <div>
                                 {/* <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon> */}
-                                <p>{text}</p>
+                                <p>{questionnaireItem.text}</p>
                                 <div className="button-box" ref={activeChoiceButton} >
                                     {
                                         this.props.answerOption?.map((answerOption: any) => {
@@ -80,7 +92,7 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
                                 </div>
                                 <InputGroup size="sm" className="mt-2">
                                     <InputGroup.Prepend>
-                                        <InputGroup.Text id="inputGroup-sizing-sm">Other</InputGroup.Text>
+                                        <InputGroup.Text id="inputGroup-sizing-sm" onChange={(event: any) => receiveTextAnswer(event.target.value)}>Other</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                                 </InputGroup>
@@ -90,7 +102,7 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
                                 <div>
                                     {this.props.type === 'choice' ? (
                                         <div>
-                                            <p className="follow-up-question">{text}</p>
+                                            <p className="follow-up-question">{questionnaireItem.text}</p>
                                             <div className="button-box">
                                                 <ButtonGroup ref={activeChoiceButton}>
                                                     {
