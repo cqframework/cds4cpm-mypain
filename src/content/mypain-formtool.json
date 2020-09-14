@@ -1163,6 +1163,11 @@
                     "type": "choice",
                     "code": [
                         {
+                            "code": "75262-6",
+                            "display": "How intense was your pain at its worst?",
+                            "system": "https://loinc.org/75262-6"
+                        },
+                        {
                             "code": "mpq-1001",
                             "display": "How intense was your pain at its worst?",
                             "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
@@ -1228,6 +1233,11 @@
                     "type": "choice",
                     "code": [
                         {
+                            "code": "75261-8",
+                            "display": "How intense was your average pain?",
+                            "system": "https://loinc.org/75261-8/"
+                        },
+                        {
                             "code": "mpq-1002",
                             "display": "How intense was your average pain?",
                             "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
@@ -1292,6 +1302,11 @@
                 {
                     "type": "choice",
                     "code": [
+                        {
+                            "code": "75260-0",
+                            "display": "What is your level of pain right now?",
+                            "system": "https://loinc.org/75260-0/"
+                        },
                         {
                             "code": "mpq-1003",
                             "display": "What is your level of pain right now?",
@@ -1378,6 +1393,11 @@
                     "type": "choice",
                     "code": [
                         {
+                            "code": "61758-9",
+                            "display": "How much did pain interfere with your day to day activities?",
+                            "system": "https://loinc.org/61758-9/"
+                        },
+                        {
                             "code": "mpq-1004",
                             "display": "How much did pain interfere with your day to day activities?",
                             "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
@@ -1442,6 +1462,11 @@
                 {
                     "type": "choice",
                     "code": [
+                        {
+                            "code": "61769-6",
+                            "display": "How much did pain interfere with your work around the home?",
+                            "system": "https://loinc.org/61769-6/"
+                        },
                         {
                             "code": "mpq-1005",
                             "display": "How much did pain interfere with your work around the home?",
@@ -1508,6 +1533,11 @@
                     "type": "choice",
                     "code": [
                         {
+                            "code": "61773-8",
+                            "display": "How much did pain interfere with your ability to participate in social activities?",
+                            "system": "https://loinc.org/61773-8/"
+                        },
+                        {
                             "code": "mpq-1006",
                             "display": "How much did pain interfere with your ability to participate in social activities?",
                             "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
@@ -1572,6 +1602,11 @@
                 {
                     "type": "choice",
                     "code": [
+                        {
+                            "code": "61775-3",
+                            "display": "How much did pain interfere with your household chores?",
+                            "system": "https://loinc.org/61775-3/"
+                        },
                         {
                             "code": "mpq-1007",
                             "display": "How much did pain interfere with your household chores?",
@@ -1638,7 +1673,7 @@
         },
         {
             "type": "display",
-            "linkId": "5",
+            "linkId": "4",
             "text": "We’d like to know more about how you manage your pain and what has worked for you. When answering these questions, please <strong>focus on pain</strong> related to what brings you in for your upcoming medical visit. <br/><br/> These treatments are organized into sections by type: <br/> Basic therapies <br/>Mind-body therapies<br/>New therapies<br/>Non-prescription medicines <br/>Prescription medicines",
             "prefix": "About My Treatments"
         },
@@ -1656,7 +1691,7 @@
                 }
             ],
             "required": false,
-            "linkId": "6",
+            "linkId": "5",
             "text": "What have you tried in the <strong>past 6 months</strong> to help you with your pain? Select all answers that apply. We also want to know if it worked for you.",
             "prefix": "About My Treatments",
             "item": [
@@ -1691,23 +1726,75 @@
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1002",
+                                "display": "Always",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "choice",
+                    "code": [
+                        {
+                            "code": "mpq-1009",
+                            "display": "Did it work?",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "drop-down",
+                                        "display": "Drop down"
+                                    }
+                                ],
+                                "text": "Drop down"
+                            }
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "5.2",
+                    "text": "Did it work?",
+                    "prefix": "Sleep positioners or devices (such as additional pillows, padding, etc.)",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1000",
+                                "display": "Never",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1001",
+                                "display": "Sometimes",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
                                 "code": "mpqr-1003",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -1737,29 +1824,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "6.2",
+                    "linkId": "5.3",
                     "text": "Did it work?",
                     "prefix": "Stretching",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -1789,29 +1876,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "6.3",
+                    "linkId": "5.4",
                     "text": "Did it work?",
                     "prefix": "Weight loss or changes in your diet",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -1841,29 +1928,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "6.4",
+                    "linkId": "5.5",
                     "text": "Did it work?",
                     "prefix": "Setting and reaching activity goals",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -1893,29 +1980,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "6.5",
+                    "linkId": "5.6",
                     "text": "Did it work?",
                     "prefix": "Ice or Heat Therapy",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -1945,29 +2032,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "6.6",
+                    "linkId": "5.7",
                     "text": "Did it work?",
                     "prefix": "Physical Therapy",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -1997,29 +2084,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "6.7",
+                    "linkId": "5.8",
                     "text": "Did it work?",
                     "prefix": "Acupuncture",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -2055,26 +2142,458 @@
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
+                },
+                {
+                    "type": "text",
+                    "code": [
+                        {
+                            "code": "mpq-1054",
+                            "display": "Other, please describe",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "5.10",
+                    "text": "Other, please describe",
+                    "prefix": "Other, please describe"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "code": [
+                {
+                    "code": "about-my-treatments",
+                    "display": "Have you used any of the following <strong>items you can buy without a prescription from your doctor</strong> to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
+                    "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                },
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "about-my-treatments"
+                }
+            ],
+            "required": false,
+            "linkId": "6",
+            "text": "Have you used any of the following <strong>items you can buy without a prescription from your doctor</strong> to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
+            "prefix": "About My Treatments",
+            "item": [
+                {
+                    "type": "choice",
+                    "code": [
+                        {
+                            "code": "mpq-1017",
+                            "display": "Did it work?",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "drop-down",
+                                        "display": "Drop down"
+                                    }
+                                ],
+                                "text": "Drop down"
+                            }
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "6.1",
+                    "text": "Did it work?",
+                    "prefix": "Pain relievers (such as Advil, Aleve, Aspirin, Ibuprofen, Motrin, Tylenol)",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1000",
+                                "display": "Never",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1001",
+                                "display": "Sometimes",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1002",
+                                "display": "Always",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "choice",
+                    "code": [
+                        {
+                            "code": "mpq-1018",
+                            "display": "Did it work?",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "drop-down",
+                                        "display": "Drop down"
+                                    }
+                                ],
+                                "text": "Drop down"
+                            }
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "6.2",
+                    "text": "Did it work?",
+                    "prefix": "Herbal or nutritional pain relievers (such as ginseng or kava kava)",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1000",
+                                "display": "Never",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1001",
+                                "display": "Sometimes",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1002",
+                                "display": "Always",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "choice",
+                    "code": [
+                        {
+                            "code": "mpq-1019",
+                            "display": "Did it work?",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "drop-down",
+                                        "display": "Drop down"
+                                    }
+                                ],
+                                "text": "Drop down"
+                            }
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "6.3",
+                    "text": "Did it work?",
+                    "prefix": "Cremes, lotions, gels or patches applied to the skin (for example BENGAY®, TIGER BALM® or BiOFREEZE®)",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1000",
+                                "display": "Never",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1001",
+                                "display": "Sometimes",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1002",
+                                "display": "Always",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "code": [
+                {
+                    "code": "about-my-treatments",
+                    "display": "Have you used any of the following  <strong>prescription medications</strong> to help with your pain in the <strong>last 6 months</strong>?",
+                    "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                },
+                {
+                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+                    "code": "about-my-treatments"
+                }
+            ],
+            "required": false,
+            "linkId": "7",
+            "text": "Have you used any of the following  <strong>prescription medications</strong> to help with your pain in the <strong>last 6 months</strong>?",
+            "prefix": "About My Treatments",
+            "item": [
+                {
+                    "type": "choice",
+                    "code": [
+                        {
+                            "code": "mpq-1020",
+                            "display": "Did it work?",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "drop-down",
+                                        "display": "Drop down"
+                                    }
+                                ],
+                                "text": "Drop down"
+                            }
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "7.1",
+                    "text": "Did it work?",
+                    "prefix": "Opioid medications (such as hydrocodone, oxycodone, codeine, morphine and fentanyl)",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1000",
+                                "display": "Never",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1001",
+                                "display": "Sometimes",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1002",
+                                "display": "Always",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "choice",
+                    "code": [
+                        {
+                            "code": "mpq-1021",
+                            "display": "Did it work?",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "drop-down",
+                                        "display": "Drop down"
+                                    }
+                                ],
+                                "text": "Drop down"
+                            }
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "7.2",
+                    "text": "Did it work?",
+                    "prefix": "Procedure or Injection (such as a shot to relieve inflammation)",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1000",
+                                "display": "Never",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1001",
+                                "display": "Sometimes",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1002",
+                                "display": "Always",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "choice",
+                    "code": [
+                        {
+                            "code": "mpq-1022",
+                            "display": "Did it work?",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "drop-down",
+                                        "display": "Drop down"
+                                    }
+                                ],
+                                "text": "Drop down"
+                            }
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "7.3",
+                    "text": "Did it work?",
+                    "prefix": "Non-opioid medications as prescribed by a doctor (such as Celebrex or Cymbalta)",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1000",
+                                "display": "Never",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1001",
+                                "display": "Sometimes",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1002",
+                                "display": "Always",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "choice",
+                    "code": [
+                        {
+                            "code": "mpq-1056",
+                            "display": "Did it work?",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "drop-down",
+                                        "display": "Drop down"
+                                    }
+                                ],
+                                "text": "Drop down"
+                            }
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "7.4",
+                    "text": "Did it work?",
+                    "prefix": "Medical marijuana",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1000",
+                                "display": "Never",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1001",
+                                "display": "Sometimes",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1002",
+                                "display": "Always",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "code": [
+                        {
+                            "code": "mpq-1057",
+                            "display": "Other, please describe",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "7.5",
+                    "text": "Other, please describe",
+                    "prefix": "Other, please describe"
                 }
             ]
         },
@@ -2092,7 +2611,7 @@
                 }
             ],
             "required": false,
-            "linkId": "7",
+            "linkId": "8",
             "text": "Have you tried any of the following <strong>new therapies</strong> to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
             "prefix": "About My Treatments",
             "item": [
@@ -2121,29 +2640,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "7.1",
+                    "linkId": "8.1",
                     "text": "Did it work?",
                     "prefix": "Yoga",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -2173,29 +2692,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "7.2",
+                    "linkId": "8.2",
                     "text": "Did it work?",
                     "prefix": "Massage",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -2225,29 +2744,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "7.3",
+                    "linkId": "8.3",
                     "text": "Did it work?",
                     "prefix": "Meditation",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -2277,29 +2796,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "7.4",
+                    "linkId": "8.4",
                     "text": "Did it work?",
                     "prefix": "Relaxation or mindfulness-based training",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -2329,29 +2848,81 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "7.5",
+                    "linkId": "8.5",
                     "text": "Did it work?",
                     "prefix": "Group or individual therapy for pain",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "choice",
+                    "code": [
+                        {
+                            "code": "mpq-1058",
+                            "display": "Did it work?",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "drop-down",
+                                        "display": "Drop down"
+                                    }
+                                ],
+                                "text": "Drop down"
+                            }
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "8.6",
+                    "text": "Did it work?",
+                    "prefix": "Cognitive behavioral therapy",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1000",
+                                "display": "Never",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1001",
+                                "display": "Sometimes",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1002",
+                                "display": "Always",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -2381,7 +2952,7 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "7.7",
+                    "linkId": "8.7",
                     "text": "Did it work?",
                     "prefix": "Acceptance or commitment therapy",
                     "answerOption": [
@@ -2439,26 +3010,40 @@
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
+                },
+                {
+                    "type": "text",
+                    "code": [
+                        {
+                            "code": "mpq-1059",
+                            "display": "Other, please describe",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "8.9",
+                    "text": "Other, please describe",
+                    "prefix": "Other, please describe"
                 }
             ]
         },
@@ -2476,7 +3061,7 @@
                 }
             ],
             "required": false,
-            "linkId": "8",
+            "linkId": "9",
             "text": "Have you tried any of the following <strong>new therapies</strong> to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
             "prefix": "About My Treatments",
             "item": [
@@ -2505,29 +3090,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "8.1",
+                    "linkId": "9.1",
                     "text": "Did it work?",
                     "prefix": "Aromatherapy",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -2557,29 +3142,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "8.2",
+                    "linkId": "9.2",
                     "text": "Did it work?",
                     "prefix": "Crystals",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -2609,29 +3194,81 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "8.3",
+                    "linkId": "9.3",
                     "text": "Did it work?",
                     "prefix": "Essential oils",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "choice",
+                    "code": [
+                        {
+                            "code": "mpq-1060",
+                            "display": "Did it work?",
+                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "drop-down",
+                                        "display": "Drop down"
+                                    }
+                                ],
+                                "text": "Drop down"
+                            }
+                        }
+                    ],
+                    "required": false,
+                    "linkId": "9.4",
+                    "text": "Did it work?",
+                    "prefix": "CBD oil",
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1000",
+                                "display": "Never",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1001",
+                                "display": "Sometimes",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "code": "mpqr-1002",
+                                "display": "Always",
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -2661,29 +3298,29 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "8.5",
+                    "linkId": "9.5",
                     "text": "Did it work?",
                     "prefix": "Music therapy",
                     "answerOption": [
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1001",
                                 "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
                             "valueCoding": {
-                                "code": "mpqr-1003",
+                                "code": "mpqr-1002",
                                 "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         }
                     ]
@@ -2697,366 +3334,20 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "8.6",
-                    "prefix": "Other, please specify"
-                }
-            ]
-        },
-        {
-            "type": "group",
-            "code": [
-                {
-                    "code": "about-my-treatments",
-                    "display": "Have you used any of the following <strong>items you can buy without a prescription from your doctor</strong> to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
-                    "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
-                },
-                {
-                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                    "code": "about-my-treatments"
-                }
-            ],
-            "required": false,
-            "linkId": "9",
-            "text": "Have you used any of the following <strong>items you can buy without a prescription from your doctor</strong> to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
-            "prefix": "About My Treatments",
-            "item": [
-                {
-                    "type": "choice",
-                    "code": [
-                        {
-                            "code": "mpq-1017",
-                            "display": "Did it work?",
-                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
-                        }
-                    ],
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                            "valueCodeableConcept": {
-                                "coding": [
-                                    {
-                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                        "code": "drop-down",
-                                        "display": "Drop down"
-                                    }
-                                ],
-                                "text": "Drop down"
-                            }
-                        }
-                    ],
-                    "required": false,
-                    "linkId": "9.1",
-                    "text": "Did it work?",
-                    "prefix": "Pain relievers (such as Advil, Aleve, Aspirin, Ibuprofen, Motrin, Tylenol)",
-                    "answerOption": [
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        },
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        },
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "choice",
-                    "code": [
-                        {
-                            "code": "mpq-1018",
-                            "display": "Did it work?",
-                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
-                        }
-                    ],
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                            "valueCodeableConcept": {
-                                "coding": [
-                                    {
-                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                        "code": "drop-down",
-                                        "display": "Drop down"
-                                    }
-                                ],
-                                "text": "Drop down"
-                            }
-                        }
-                    ],
-                    "required": false,
-                    "linkId": "9.2",
-                    "text": "Did it work?",
-                    "prefix": "Herbal or nutritional pain relievers (such as ginseng or kava kava)",
-                    "answerOption": [
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        },
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        },
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "choice",
-                    "code": [
-                        {
-                            "code": "mpq-1019",
-                            "display": "Did it work?",
-                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
-                        }
-                    ],
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                            "valueCodeableConcept": {
-                                "coding": [
-                                    {
-                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                        "code": "drop-down",
-                                        "display": "Drop down"
-                                    }
-                                ],
-                                "text": "Drop down"
-                            }
-                        }
-                    ],
-                    "required": false,
-                    "linkId": "9.3",
-                    "text": "Did it work?",
-                    "prefix": "Cremes, lotions, gels or patches applied to the skin (for example BENGAY®, TIGER BALM® or BiOFREEZE®)",
-                    "answerOption": [
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        },
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        },
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "group",
-            "code": [
-                {
-                    "code": "about-my-treatments",
-                    "display": "Have you used any of the following  <strong>prescription medications</strong> to help with your pain in the <strong>last 6 months</strong>?",
-                    "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
-                },
-                {
-                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                    "code": "about-my-treatments"
-                }
-            ],
-            "required": false,
-            "linkId": "10",
-            "text": "Have you used any of the following  <strong>prescription medications</strong> to help with your pain in the <strong>last 6 months</strong>?",
-            "prefix": "About My Treatments",
-            "item": [
-                {
-                    "type": "choice",
-                    "code": [
-                        {
-                            "code": "mpq-1020",
-                            "display": "Did it work?",
-                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
-                        }
-                    ],
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                            "valueCodeableConcept": {
-                                "coding": [
-                                    {
-                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                        "code": "drop-down",
-                                        "display": "Drop down"
-                                    }
-                                ],
-                                "text": "Drop down"
-                            }
-                        }
-                    ],
-                    "required": false,
-                    "linkId": "10.1",
-                    "text": "Did it work?",
-                    "prefix": "Opioid medications (such as hydrocodone, oxycodone, codeine, morphine and fentanyl)",
-                    "answerOption": [
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        },
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        },
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "choice",
-                    "code": [
-                        {
-                            "code": "mpq-1021",
-                            "display": "Did it work?",
-                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
-                        }
-                    ],
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                            "valueCodeableConcept": {
-                                "coding": [
-                                    {
-                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                        "code": "drop-down",
-                                        "display": "Drop down"
-                                    }
-                                ],
-                                "text": "Drop down"
-                            }
-                        }
-                    ],
-                    "required": false,
-                    "linkId": "10.2",
-                    "text": "Did it work?",
-                    "prefix": "Cortisone injection (a shot to relieve inflammation)",
-                    "answerOption": [
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        },
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        },
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "choice",
-                    "code": [
-                        {
-                            "code": "mpq-1022",
-                            "display": "Did it work?",
-                            "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
-                        }
-                    ],
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                            "valueCodeableConcept": {
-                                "coding": [
-                                    {
-                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                        "code": "drop-down",
-                                        "display": "Drop down"
-                                    }
-                                ],
-                                "text": "Drop down"
-                            }
-                        }
-                    ],
-                    "required": false,
-                    "linkId": "10.3",
-                    "text": "Did it work?",
-                    "prefix": "Non-opioid medications as prescribed by a doctor (such as Celebrex or Cymbalta)",
-                    "answerOption": [
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Never",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        },
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Sometimes",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        },
-                        {
-                            "valueCoding": {
-                                "code": "mpqr-1003",
-                                "display": "Always",
-                                "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
-                            }
-                        }
-                    ]
+                    "linkId": "9.6",
+                    "text": "Other, please describe",
+                    "prefix": "Other, please describe"
                 }
             ]
         },
         {
             "type": "text",
             "code": [
+                {
+                    "code": "mpq-1035",
+                    "display": "We’d like to know more about you and your goals. What are your most important activity goals? For example: I’d like to be able to walk without pain.",
+                    "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                },
                 {
                     "code": "mpq-1036",
                     "display": "We’d like to know more about you and your goals. What are your most important activity goals? For example: I’d like to be able to walk without pain.",
@@ -3076,6 +3367,11 @@
             "type": "text",
             "code": [
                 {
+                    "code": "mpq-1036",
+                    "display": "What are the biggest barriers to achieving your activity goals? For example: I have a lot of stress from work which makes my pain worse.",
+                    "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                },
+                {
                     "code": "mpq-1037",
                     "display": "What are the biggest barriers to achieving your activity goals? For example: I have a lot of stress from work which makes my pain worse.",
                     "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
@@ -3091,44 +3387,25 @@
             "prefix": "About My Goals"
         },
         {
-            "type": "group",
-            "code": [
-                {
-                    "code": "about-my-goals",
-                    "display": "Below is a link to a video produced by the American Chronic Pain Association about living with chronic pain. We’d like to suggest you watch the video to help you prepare for your upcoming visit. This video can help you prepare to ask questions that are important to you when you visit with your provider. <br/> <br/> <iframe width=\"100%\" height=\"200\" src=\"https://www.youtube.com/embed/QWcr9J3MLfo\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
-                    "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
-                },
-                {
-                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                    "code": "about-my-goals"
-                }
-            ],
-            "required": false,
-            "linkId": "13",
+            "type": "display",
+            "linkId": "12",
             "text": "Below is a link to a video produced by the American Chronic Pain Association about living with chronic pain. We’d like to suggest you watch the video to help you prepare for your upcoming visit. This video can help you prepare to ask questions that are important to you when you visit with your provider. <br/> <br/> <iframe width=\"100%\" height=\"200\" src=\"https://www.youtube.com/embed/QWcr9J3MLfo\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
             "prefix": "Managing Chronic Pain"
         },
         {
-            "type": "group",
-            "code": [
-                {
-                    "code": "about-my-goals",
-                    "display": "The website linked below provides some information from the U.S. Pain Foundation about the causes and diagnosis of pain in general, treatment options and self management and well-being when living with pain. This information can help you prepare to ask questions that are important to you when you visit with your provider.<br/> <br/> <a target=\"_blank\" href=\"https://uspainfoundation.org/living-with-pain/\"><img width=\"100%\" src=\"https://uspainfoundation.org//wp-content/uploads/2017/07/Woman-holding-neck-1024x682.jpg\"/></a>",
-                    "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
-                },
-                {
-                    "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-                    "code": "about-my-goals"
-                }
-            ],
-            "required": false,
-            "linkId": "14",
+            "type": "display",
+            "linkId": "13",
             "text": "The website linked below provides some information from the U.S. Pain Foundation about the causes and diagnosis of pain in general, treatment options and self management and well-being when living with pain. This information can help you prepare to ask questions that are important to you when you visit with your provider.<br/> <br/> <a target=\"_blank\" href=\"https://uspainfoundation.org/living-with-pain/\"><img width=\"100%\" src=\"https://uspainfoundation.org//wp-content/uploads/2017/07/Woman-holding-neck-1024x682.jpg\"/></a>",
             "prefix": "Managing Chronic Pain"
         },
         {
             "type": "choice",
             "code": [
+                {
+                    "code": "mpq-1064",
+                    "display": "Please indicate your level of agreement with the following statement: <br/><br/>Using the MyPAIN tool has helped me begin preparing for a conversation with my provider about managing my pain.",
+                    "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes"
+                },
                 {
                     "code": "mypain-feedback",
                     "display": "Please indicate your level of agreement with the following statement: <br/><br/>Using the MyPAIN tool has helped me begin preparing for a conversation with my provider about managing my pain.",
@@ -3155,29 +3432,43 @@
                 }
             ],
             "required": false,
-            "linkId": "15",
+            "linkId": "14",
             "text": "Please indicate your level of agreement with the following statement: <br/><br/>Using the MyPAIN tool has helped me begin preparing for a conversation with my provider about managing my pain.",
             "prefix": "MyPAIN Feedback",
             "answerOption": [
                 {
                     "valueCoding": {
-                        "code": "mpqr-1003",
-                        "display": "Never",
-                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                        "code": "LA15238-1",
+                        "display": "Disagree a lot",
+                        "system": "https://loinc.org/LL1606-4/"
                     }
                 },
                 {
                     "valueCoding": {
-                        "code": "mpqr-1003",
-                        "display": "Sometimes",
-                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                        "code": "LA15239-9",
+                        "display": "Disagree a little",
+                        "system": "https://loinc.org/LL1606-4/"
                     }
                 },
                 {
                     "valueCoding": {
-                        "code": "mpqr-1003",
-                        "display": "Always",
-                        "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse"
+                        "code": "LA15240-7",
+                        "display": "Neither agree nor disagree",
+                        "system": "https://loinc.org/LL1606-4/"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "code": "LA15241-5",
+                        "display": "Agree a little",
+                        "system": "https://loinc.org/LL1606-4/"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "code": "LA15242-3",
+                        "display": "Agree a lot",
+                        "system": "https://loinc.org/LL1606-4/"
                     }
                 }
             ]

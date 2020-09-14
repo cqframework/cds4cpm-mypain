@@ -1,9 +1,9 @@
 import React, { createRef } from 'react';
 import './MultiSelectButton.css';
-import { InputGroup, FormControl, ButtonGroup, Button } from 'react-bootstrap';
+import { ButtonGroup, Button } from 'react-bootstrap';
 // import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { QuestionnaireItem } from '../../fhir-types/fhir-r4';
+import { QuestionnaireItem } from '../../fhir-types/fhir-r4';
 
 
 export default class MultiSelectButtonComponent extends React.Component<any, any> {
@@ -18,7 +18,7 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
 
     public render(): JSX.Element {
         let activeChoiceButton: any = createRef();
-        let questionnaireItem = {
+        let questionnaireItem: QuestionnaireItem = {
             linkId: this.props.linkId,
             type: this.props.type,
             prefix: this.props.prefix,
@@ -73,30 +73,31 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
 
                 <div className={`additional-info-box ${this.state.checked ? null : 'hidden'}`} >
                     {
-                        this.props.code === 'pain-location' ? (
+                        this.props.sectionCode === 'pain-location' ? (
                             <div>
-                                {/* <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon> */}
-                                <p>{questionnaireItem.text}</p>
-                                <div className="button-box" ref={activeChoiceButton} >
-                                    {
-                                        this.props.answerOption?.map((answerOption: any) => {
-                                            return <Button
-                                                key={JSON.stringify(answerOption.valueCoding)}
-                                                value={JSON.stringify(answerOption.valueCoding)}
-                                                onClick={
-                                                    (event: any) => {
-                                                        handleClick(event);
-                                                    }} size="sm" variant="outline-secondary">{answerOption.valueCoding?.display}</Button>
-                                        })
-                                    }
-                                </div>
-                                <InputGroup size="sm" className="mt-2">
-                                    <InputGroup.Prepend>
-                                        <InputGroup.Text id="inputGroup-sizing-sm" onChange={(event: any) => receiveTextAnswer(event.target.value)}>Other</InputGroup.Text>
-                                    </InputGroup.Prepend>
-                                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-                                </InputGroup>
+                                {this.props.type === 'choice' ? (
+                                    <div>
+                                        <p>{questionnaireItem.text}</p>
+                                        <div className="button-box" ref={activeChoiceButton} >
+                                            {
+                                                this.props.answerOption?.map((answerOption: any) => {
+                                                    return <Button
+                                                        key={JSON.stringify(answerOption.valueCoding)}
+                                                        value={JSON.stringify(answerOption.valueCoding)}
+                                                        onClick={
+                                                            (event: any) => {
+                                                                handleClick(event);
+                                                            }} size="sm" variant="outline-secondary">{answerOption.valueCoding?.display}</Button>
+                                                })
+                                            }
+                                        </div>
+                                    </div>
 
+                                ) : (
+                                        <div className="other-textbox">
+                                            <input type="text" placeholder="Type here..." onChange={event => receiveTextAnswer(event.target.value)} />
+                                        </div>
+                                    )}
                             </div>
                         ) : (
                                 <div>

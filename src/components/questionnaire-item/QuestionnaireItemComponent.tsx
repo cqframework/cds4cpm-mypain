@@ -10,15 +10,23 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css'
 import parser from 'html-react-parser';
 
-export default class QuestionnaireItemComponent extends React.Component<any, any> {
+interface QuestionnaireItemState {
+  showReview: boolean,
+  questionnaireResponse: QuestionnaireResponseItem
+}
+export default class QuestionnaireItemComponent extends React.Component<any, QuestionnaireItemState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      activeId: null
+      showReview: false,
+      questionnaireResponse: {
+        linkId: props.QuestionnaireItem.linkId,
+        text: props.QuestionnaireItem.prefix,
+        item: [],
+      }
     }
   }
   questionnaireItemRef: any = createRef();
-  showReview: boolean = false;
 
   handleNextQuestionScroll(linkId: number) {
     if (this.questionnaireItemRef.current.id === linkId) {
@@ -34,8 +42,10 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
 
     }
     if (this.questionnaireItemRef.current.nextSibling == null) {
-      this.showReview = true;
-      this.props.receivingCallback(this.showReview);
+      this.setState({ showReview: true }, () => {
+        this.props.receivingCallback(this.state.showReview);
+      });
+      // this.props.receivingCallback(this.state.showReview);
     }
   }
   handlePreviousQuestionScroll(linkId: number) {
@@ -145,7 +155,42 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
 
 
     let receiveData = (childData: QuestionnaireItem, answer: string) => {
-      props.onChange(childData, [{ valueCoding: JSON.parse(answer) }])
+      let childResponse: QuestionnaireResponseItem = {
+        linkId: childData.linkId,
+        text: childData.text,
+        answer: JSON.parse(answer)
+      };
+
+      let joined = this.state.questionnaireResponse.item;
+
+      // const updateItem = (array: any, response: any) => {
+
+      // }
+      const addItem = (response: any) => {
+        this.setState(state => {
+          const questionnaireResponse = {
+            linkId: state.questionnaireResponse.linkId,
+            item: state.questionnaireResponse.item!.concat(response)
+          };
+
+          return {
+            showReview: this.state.showReview,
+            questionnaireResponse
+          }
+        })
+      }
+
+      if (joined!.length > 0) {
+        for (let i = 0; i < joined!.length; i++) {
+
+        }
+      } else {
+        addItem(childResponse);
+      }
+
+      console.log('joined: ', joined);
+
+      props.onChange(this.state.questionnaireResponse, [{ valueCoding: JSON.parse(answer) }])
     }
 
     return (
@@ -154,24 +199,57 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
     );
   }
 
-  // public populateGroupType(props: { QuestionnaireItem: QuestionnaireItem, onChange: (item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]) => void }) {
   public populateGroupType(props: any) {
 
-    let responseItem: QuestionnaireResponseItem = {
-      definition: props.QuestionnaireItem.prefix,
-      text: props.QuestionnaireItem.text,
-      linkId: props.QuestionnaireItem.linkId,
-      item: []
-    }
+    let receiveData = (childData: QuestionnaireResponseItem, answer: any) => {
+      let childResponse: QuestionnaireResponseItem = {
+        linkId: childData.linkId,
+        text: childData.text,
+        answer: JSON.parse(answer)
+      };
 
-    let receiveData = (childData: QuestionnaireResponseItem, answer: string) => {
-      // if(responseItem.item.includes(childData)) {
+      const checkResponseArray = (obj: QuestionnaireResponseItem) => obj.linkId === childResponse.linkId;
+      const stateQuestionnaireResponse = this.state.questionnaireResponse;
+
+      if (!stateQuestionnaireResponse.item!.some(checkResponseArray)) {
+        this.setState(state => {
+          const questionnaireResponse = {
+            linkId: state.questionnaireResponse.linkId,
+            item: state.questionnaireResponse.item!.concat(childResponse)
+          };
+          return {
+            showReview: this.state.showReview,
+            questionnaireResponse
+          }
+
+        }, () => {
+          console.log('added item: ', this.state.questionnaireResponse);
+          props.onChange(this.state.questionnaireResponse);
+        })
+      } else if (stateQuestionnaireResponse.item!.some(checkResponseArray)) {
         
-      // }
-      responseItem.item?.push(childData)
-      console.log('childData: ', responseItem)
-      // props.onChange(responseItem, [{ valueCoding: JSON.parse(answer) }])
-      props.onChange(childData, [{ valueCoding: JSON.parse(answer) }])
+        this.setState(state => {
+          for (let i in stateQuestionnaireResponse.item!) {
+            if (stateQuestionnaireResponse.item[i].linkId === childResponse.linkId) {
+              stateQuestionnaireResponse.item[i].answer = childResponse.answer
+            }
+          }
+          // const questionnaireResponse = {
+          //   linkId: state.questionnaireResponse.linkId,
+          //   item: state.questionnaireResponse.item!.concat(childResponse)
+          // };
+          // return {
+          //   showReview: this.state.showReview,
+          //   questionnaireResponse
+          // }
+
+        }, () => {
+          console.log('updated item: ', this.state.questionnaireResponse);
+          props.onChange(this.state.questionnaireResponse);
+        })
+      }
+
+      // props.onChange(this.state.questionnaireResponse)
     }
 
     if (props.QuestionnaireItem.code![0].code === 'pain-location' || props.QuestionnaireItem.code![0].code === 'about-my-treatments') {
@@ -180,7 +258,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, any
           {
             props.QuestionnaireItem.item?.map((item: any) => {
               return (
-                <MultiSelectButtonComponent code={props.QuestionnaireItem.code![0].code} parentCallback={receiveData} key={JSON.stringify(item)}  {...item}>{item.answerOption}</MultiSelectButtonComponent>
+                <MultiSelectButtonComponent sectionCode={props.QuestionnaireItem.code![0].code} parentCallback={receiveData} key={JSON.stringify(item)}  {...item}>{item.answerOption}</MultiSelectButtonComponent>
               )
             })
           }

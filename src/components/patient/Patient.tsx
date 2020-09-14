@@ -25,7 +25,8 @@ export default class Patient extends React.Component<PatientProps, PatientState>
           <p className='tagline-text'>Just what your doctor ordered, My Pain Assessment and Information Needs (MyPAIN).</p>
         </div>
         <div className="welcome">
-          <h4>Welcome to MyPain, {this.props.item?.name[0].given[0]}.</h4>
+          {/* , {this.props.item?.name[0].given[0]} */}
+          <h4>Welcome to MyPain.</h4>
           <p className="intro-text mb-5">MyPAIN is a secure tool to help you are your provider make the best decisions about managing your pain.</p>
         </div>
         <div className="intro-container">

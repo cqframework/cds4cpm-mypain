@@ -2,8 +2,8 @@ import React, { createRef } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuestionnaireComponent from './components/questionnaire/QuestionnaireComponent';
-import { QuestionnaireResponse, QuestionnaireItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
-import ContentMyPain from './content/mypain-formtool.json';  //mypain-opioid.json';
+import { QuestionnaireResponseItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
+import ContentMyPain from './content/mypain-formtool-2.json';  //mypain-opioid.json';
 import { submitQuestionnaireResponse } from './utils/fhirFacadeHelper';
 // TODO: add import of  getQuestionnaire 
 import PatientContainer from './components/patient/PatientContainer';
@@ -17,8 +17,9 @@ interface AppProps {
 
 // TODO: remember to assure that it is a proper questionnaire type
 interface AppState {
+  Status: string,
   SelectedQuestionnaire?: any,
-  QuestionnaireResponse: QuestionnaireResponse
+  QuestionnaireResponse: any
 }
 
 export default class App extends React.Component<AppProps, AppState> {
@@ -28,6 +29,7 @@ export default class App extends React.Component<AppProps, AppState> {
     super(props);
     this.state =
     {
+      Status: 'not-started',
       SelectedQuestionnaire: undefined,
       QuestionnaireResponse: {
         resourceType: "QuestionnaireResponse",
@@ -38,19 +40,21 @@ export default class App extends React.Component<AppProps, AppState> {
     this.handleChange = this.handleChange.bind(this);
     this.submitAnswers = this.submitAnswers.bind(this);
   }
-
+  ptRef: string | undefined;
+  ptDisplay: any;
+  
   componentDidMount() {
-    let ptRef: string;
-    let ptDisplay;
+    // let ptRef: string;
+    // let ptDisplay;
     // TODO: re-enable getQuestionnaire 
     // getQuestionnaire()
     // .then(questionnaire => {
     FHIR.oauth2.ready()
       .then((client: Client) => client.patient.read())
       .then((patient) => {
-        patient.id ? ptRef = patient.id : ptRef = " ";
-        ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
-        return this.selectQuestionnaire(ContentMyPain, ptRef, ptDisplay);
+        patient.id ? this.ptRef = patient.id : this.ptRef = " ";
+        this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
+        return this.selectQuestionnaire(ContentMyPain, this.ptRef, this.ptDisplay);
       });
     // })
   }
@@ -70,38 +74,34 @@ export default class App extends React.Component<AppProps, AppState> {
     });
   }
 
-  handleChange(item: QuestionnaireItem, answer?: QuestionnaireResponseItemAnswer[]): void {
+  handleChange(item: QuestionnaireResponseItem, answer?: QuestionnaireResponseItemAnswer[]): void {
     console.log('item: ', item);
-    console.log('answer: ', answer)
+
     let newQuestionnaireResponse = this.state.QuestionnaireResponse;
-    if (!newQuestionnaireResponse.item) {
-      newQuestionnaireResponse.item = [];
-    }
-    let existingResponseIndex = newQuestionnaireResponse.item.findIndex((responseItem) => responseItem.linkId === item.linkId);
-    if (existingResponseIndex >= 0) {
-      console.log('existing response index: ', existingResponseIndex);
-      newQuestionnaireResponse.item[existingResponseIndex].answer = answer;
-      newQuestionnaireResponse.item[existingResponseIndex].text = item.text;
-      // newQuestionnaireResponse.item[existingResponseIndex].prefix = item.prefix;
-      if (newQuestionnaireResponse.item[existingResponseIndex].answer) {
-        // @ts-ignore
-        if (newQuestionnaireResponse.item[existingResponseIndex].answer[0].type === 'valueCoding') {
-          // @ts-ignore
-          newQuestionnaireResponse.item[existingResponseIndex].answer[0].coding.code.system = answer.coding.code.system;
-        }
+    newQuestionnaireResponse.item!.concat(item);
+    
+    for(let i in this.state.QuestionnaireResponse.item) {
+      if(this.state.QuestionnaireResponse.item[i].linkId === item.linkId) {
+        console.log('same: ', this.state.QuestionnaireResponse.item[i].linkId === item.linkId)
       }
     }
-    else {
-      newQuestionnaireResponse.item.push({
-        linkId: item.linkId,
-        answer: answer,
-        text: item.text,
-      });
-    }
 
-    this.setState({
-      QuestionnaireResponse: newQuestionnaireResponse
-    });
+    this.setState(state => {
+      const QuestionnaireResponse = {
+        questionnaire: ContentMyPain.id,
+        subject: {
+          reference: 'Patient/' + this.ptRef,
+          display: this.ptDisplay
+        },
+        item: state.QuestionnaireResponse.item!.concat(item)
+      };
+      return {
+        QuestionnaireResponse
+      }
+
+    }, () => {
+      console.log('Questionnaire RESPONSE: ', this.state.QuestionnaireResponse);
+    })
   }
 
   formatDateItem(dateItem: number) {
@@ -123,13 +123,15 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   startQuestionnaire = () => {
-    if (this.questionnaireContainer.current) {
-      this.questionnaireContainer.current.firstChild.firstChild.nextSibling.classList.add('active');
-      this.questionnaireContainer.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest'
-      })
-    }
+    this.setState({ Status: 'in-progress' }, () => {
+      if (this.questionnaireContainer.current) {
+        this.questionnaireContainer.current.firstChild.firstChild.nextSibling.classList.add('active');
+        this.questionnaireContainer.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest'
+        })
+      }
+    });
   }
 
   submitAnswers(): void {
@@ -137,7 +139,6 @@ export default class App extends React.Component<AppProps, AppState> {
     returnQuestionnaireResponse.authored = this.getCurrentDate();
     returnQuestionnaireResponse.status = "completed";
     submitQuestionnaireResponse(returnQuestionnaireResponse);
-    //window.location.reload();
   }
 
   setTheme(color: string) {
@@ -153,19 +154,21 @@ export default class App extends React.Component<AppProps, AppState> {
               MyPain Development Branch v2
                       </p>
           </header>
-          {/* Testing out themes. // TODO: implement them being passed in via the URL */}
-          {/* <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('0, 0, 255')}}>blue theme</Button>
-          <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('0,0,0')}}>black theme</Button>
-          <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('24,128,56')}}>green theme</Button>
-          <Button variant="outline-secondary" size='sm' className="next-button" onClick={() => {this.setTheme('128,0,128')}}>purple theme</Button> */}
-          <PatientContainer />
-          <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
-          <hr />
-          <div ref={this.questionnaireContainer}>
-            <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
-              questionnaireResponse={this.state.QuestionnaireResponse}
-              onChange={this.handleChange} onSubmit={this.submitAnswers} />
-          </div>
+          {this.state.Status !== 'in-progress' ? (
+            <div>
+
+              <PatientContainer />
+              <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
+            </div>
+          ) : (
+            <div ref={this.questionnaireContainer}>
+              <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
+                questionnaireResponse={this.state.QuestionnaireResponse}
+                onChange={this.handleChange} onSubmit={this.submitAnswers} />
+              <hr />
+            </div>
+          )}
+
           <hr />
           {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
         </div>

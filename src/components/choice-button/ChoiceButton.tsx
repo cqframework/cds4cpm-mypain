@@ -2,10 +2,12 @@ import React, { createRef} from 'react';
 import './ChoiceButton.css';
 import { ButtonGroup, Button } from 'react-bootstrap';
 
+// push/receive STATE on parent component
+
 export default class ChoiceButton extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
-        
+        // console.log('item props:', props)
         this.state = {
             activeButton: false,
             value: ''
