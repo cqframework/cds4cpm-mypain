@@ -21,7 +21,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
       showReview: false,
       questionnaireResponse: {
         linkId: props.QuestionnaireItem.linkId,
-        text: props.QuestionnaireItem.prefix,
+        text: props.QuestionnaireItem.prefix + ": " + props.QuestionnaireItem.text,
         item: [],
       }
     }
@@ -170,6 +170,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
         this.setState(state => {
           const questionnaireResponse = {
             linkId: state.questionnaireResponse.linkId,
+            text: state.questionnaireResponse.text,
             item: state.questionnaireResponse.item!.concat(response)
           };
 
@@ -215,6 +216,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
         this.setState(state => {
           const questionnaireResponse = {
             linkId: state.questionnaireResponse.linkId,
+            text: state.questionnaireResponse.text,
             item: state.questionnaireResponse.item!.concat(childResponse)
           };
           return {
@@ -234,14 +236,6 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
               stateQuestionnaireResponse.item[i].answer = childResponse.answer
             }
           }
-          // const questionnaireResponse = {
-          //   linkId: state.questionnaireResponse.linkId,
-          //   item: state.questionnaireResponse.item!.concat(childResponse)
-          // };
-          // return {
-          //   showReview: this.state.showReview,
-          //   questionnaireResponse
-          // }
 
         }, () => {
           console.log('updated item: ', this.state.questionnaireResponse);

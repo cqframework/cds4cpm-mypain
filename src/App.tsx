@@ -42,7 +42,7 @@ export default class App extends React.Component<AppProps, AppState> {
   }
   ptRef: string | undefined;
   ptDisplay: any;
-  
+
   componentDidMount() {
     // let ptRef: string;
     // let ptDisplay;
@@ -75,18 +75,13 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   handleChange(item: QuestionnaireResponseItem, answer?: QuestionnaireResponseItemAnswer[]): void {
-    console.log('item: ', item);
-
-    let newQuestionnaireResponse = this.state.QuestionnaireResponse;
-    newQuestionnaireResponse.item!.concat(item);
-    
-    for(let i in this.state.QuestionnaireResponse.item) {
-      if(this.state.QuestionnaireResponse.item[i].linkId === item.linkId) {
-        console.log('same: ', this.state.QuestionnaireResponse.item[i].linkId === item.linkId)
-      }
-    }
-
     this.setState(state => {
+      for (let i = 0; i < state.QuestionnaireResponse.item.length; i++) {
+        if(item.linkId === state.QuestionnaireResponse.item[i].linkId) {
+          state.QuestionnaireResponse.item[i] = item;
+          state.QuestionnaireResponse.item.splice(i, 1)
+        }
+      }
       const QuestionnaireResponse = {
         questionnaire: ContentMyPain.id,
         subject: {
@@ -161,13 +156,13 @@ export default class App extends React.Component<AppProps, AppState> {
               <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
             </div>
           ) : (
-            <div ref={this.questionnaireContainer}>
-              <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
-                questionnaireResponse={this.state.QuestionnaireResponse}
-                onChange={this.handleChange} onSubmit={this.submitAnswers} />
-              <hr />
-            </div>
-          )}
+              <div ref={this.questionnaireContainer}>
+                <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
+                  questionnaireResponse={this.state.QuestionnaireResponse}
+                  onChange={this.handleChange} onSubmit={this.submitAnswers} />
+                <hr />
+              </div>
+            )}
 
           <hr />
           {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
