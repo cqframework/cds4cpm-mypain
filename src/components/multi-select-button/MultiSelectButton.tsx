@@ -44,7 +44,7 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
             console.log('text: ', text)
             if (text.length > 0) {
                 questionnaireItem.text = questionnaireItem.prefix + ': ' + questionnaireItem.text;
-                this.props.parentCallback(questionnaireItem, JSON.stringify({ display: text }));
+                this.props.parentCallback(questionnaireItem, JSON.stringify({ valueString: text }));
             }
         }
 
@@ -82,8 +82,8 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
                                             {
                                                 this.props.answerOption?.map((answerOption: any) => {
                                                     return <Button
-                                                        key={JSON.stringify(answerOption.valueCoding)}
-                                                        value={JSON.stringify(answerOption.valueCoding)}
+                                                        key={JSON.stringify(answerOption)}
+                                                        value={JSON.stringify(answerOption)}
                                                         onClick={
                                                             (event: any) => {
                                                                 handleClick(event);
@@ -108,11 +108,11 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
                                                 <ButtonGroup ref={activeChoiceButton}>
                                                     {
                                                         this.props.answerOption?.map((answerOption: any) => {
-                                                            return <Button key={JSON.stringify(answerOption.valueCoding)}
+                                                            return <Button key={JSON.stringify(answerOption)}
                                                                 size="sm"
                                                                 aria-required="true"
                                                                 variant="outline-secondary"
-                                                                value={JSON.stringify(answerOption.valueCoding)}
+                                                                value={JSON.stringify(answerOption)}
                                                                 onClick={(event: any) =>
                                                                     handleClick(event)
                                                                 }>

@@ -48,11 +48,11 @@ export default class ChoiceButton extends React.Component<any, any> {
                 <ButtonGroup ref={activeChoiceButton}>
                     {
                         questionnaireItem.answerOption?.map((answerOption: any) => {
-                            return <Button key={JSON.stringify(answerOption.valueCoding)}
+                            return <Button key={JSON.stringify(answerOption)}
                                 size="sm"
                                 aria-required="true"
                                 variant="outline-secondary"
-                                value={JSON.stringify(answerOption.valueCoding)}
+                                value={JSON.stringify(answerOption)}
                                 onClick={(event: any) =>
                                     handleClick(event)
                                 }>

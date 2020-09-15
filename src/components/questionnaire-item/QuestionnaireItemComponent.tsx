@@ -1,5 +1,5 @@
 import React, { createRef } from 'react';
-import { QuestionnaireItem, QuestionnaireItemAnswerOption, QuestionnaireResponseItem } from '../../fhir-types/fhir-r4';
+import { QuestionnaireItem, QuestionnaireItemAnswerOption, QuestionnaireResponseItem, QuestionnaireResponseItemAnswer } from '../../fhir-types/fhir-r4';
 import './QuestionnaireItemComponent.css';
 import { Card, Button } from 'react-bootstrap';
 import MultiSelectButtonComponent from '../multi-select-button/MultiSelectButton';
@@ -155,10 +155,11 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
 
 
     let receiveData = (childData: QuestionnaireItem, answer: string) => {
+      let responseAnswer: QuestionnaireResponseItemAnswer = JSON.parse(answer)
       let childResponse: QuestionnaireResponseItem = {
         linkId: childData.linkId,
         text: childData.text,
-        answer: JSON.parse(answer)
+        answer: [responseAnswer]
       };
 
       let joined = this.state.questionnaireResponse.item;
@@ -178,6 +179,9 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
             showReview: this.state.showReview,
             questionnaireResponse
           }
+        }, () => {
+          console.log('updated: ', this.state.questionnaireResponse);
+          props.onChange(this.state.questionnaireResponse);
         })
       }
 
@@ -191,7 +195,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
 
       console.log('joined: ', joined);
 
-      props.onChange(this.state.questionnaireResponse, [{ valueCoding: JSON.parse(answer) }])
+      
     }
 
     return (
@@ -206,7 +210,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
       let childResponse: QuestionnaireResponseItem = {
         linkId: childData.linkId,
         text: childData.text,
-        answer: JSON.parse(answer)
+        answer: [JSON.parse(answer)]
       };
 
       const checkResponseArray = (obj: QuestionnaireResponseItem) => obj.linkId === childResponse.linkId;
@@ -217,7 +221,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
           const questionnaireResponse = {
             linkId: state.questionnaireResponse.linkId,
             text: state.questionnaireResponse.text,
-            item: state.questionnaireResponse.item!.concat(childResponse)
+            item: state.questionnaireResponse.item!.concat([childResponse])
           };
           return {
             showReview: this.state.showReview,
