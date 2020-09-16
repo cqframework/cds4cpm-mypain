@@ -1,0 +1,11 @@
+.question-response-container {
+    margin-top: 15px;
+    border-top: 1px solid lightgray;
+    padding-top: 15px;
+    /* text-align: left; */
+    padding: 15px 8px;
+}
+
+.question-response-container>h6 {
+    text-align: left;
+}

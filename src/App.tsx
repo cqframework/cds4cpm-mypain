@@ -2,10 +2,10 @@ import React, { createRef } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuestionnaireComponent from './components/questionnaire/QuestionnaireComponent';
-import { QuestionnaireResponseItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
+import { Questionnaire, QuestionnaireResponse, QuestionnaireResponseItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
 // import ContentMyPain from './content/mypain-formtool-2.json';  //mypain-opioid.json';
 import ContentMyPain from './content/mypain-formtool-2.json';  //mypain-opioid.json';
-import { submitQuestionnaireResponse } from './utils/fhirFacadeHelper';
+// import { submitQuestionnaireResponse } from './utils/fhirFacadeHelper';
 // TODO: add import of  getQuestionnaire 
 import PatientContainer from './components/patient/PatientContainer';
 import FHIR from "fhirclient";
@@ -19,8 +19,8 @@ interface AppProps {
 // TODO: remember to assure that it is a proper questionnaire type
 interface AppState {
   Status: string,
-  SelectedQuestionnaire?: any,
-  QuestionnaireResponse: any
+  SelectedQuestionnaire?: Questionnaire,
+  QuestionnaireResponse: QuestionnaireResponse
 }
 
 export default class App extends React.Component<AppProps, AppState> {
@@ -50,19 +50,25 @@ export default class App extends React.Component<AppProps, AppState> {
     // TODO: re-enable getQuestionnaire 
     // getQuestionnaire()
     // .then(questionnaire => {
+      const processQuestionnaire = (p: any) => {
+          return (p as Questionnaire)        
+      }
+      let questionnaire = processQuestionnaire(ContentMyPain);
+      console.log('questionnaire: ', questionnaire);
+      
     FHIR.oauth2.ready()
       .then((client: Client) => client.patient.read())
       .then((patient) => {
         patient.id ? this.ptRef = patient.id : this.ptRef = " ";
         this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
-        return this.selectQuestionnaire(ContentMyPain, this.ptRef, this.ptDisplay);
+        return this.selectQuestionnaire(questionnaire, this.ptRef, this.ptDisplay);
       });
     // })
   }
 
-  selectQuestionnaire(selectedQuestionnaire: any, ptRef: string, ptDisplay: string): void {
+  selectQuestionnaire(selectedQuestionnaire: Questionnaire, ptRef: string, ptDisplay: string): void {
     this.setState({
-      SelectedQuestionnaire: ContentMyPain,
+      SelectedQuestionnaire: selectedQuestionnaire,
       QuestionnaireResponse: {
         ...this.state.QuestionnaireResponse,
         questionnaire: ContentMyPain.id,
@@ -77,21 +83,19 @@ export default class App extends React.Component<AppProps, AppState> {
 
   handleChange(item: QuestionnaireResponseItem, answer?: QuestionnaireResponseItemAnswer[]): void {
     this.setState(state => {
-      for (let i = 0; i < state.QuestionnaireResponse.item.length; i++) {
-        if(item.linkId === state.QuestionnaireResponse.item[i].linkId) {
-          state.QuestionnaireResponse.item[i] = item;
-          state.QuestionnaireResponse.item.splice(i, 1)
+      for (let i = 0; i < state.QuestionnaireResponse.item!.length; i++) {
+        if (item.linkId === state.QuestionnaireResponse.item![i].linkId) {
+          state.QuestionnaireResponse.item![i] = item;
+          state.QuestionnaireResponse.item!.splice(i, 1)
         }
       }
       const QuestionnaireResponse = {
-        questionnaire: ContentMyPain.id,
-        subject: {
-          reference: 'Patient/' + this.ptRef,
-          display: this.ptDisplay
-        },
+        resourceType: state.QuestionnaireResponse.resourceType,
+        status: state.QuestionnaireResponse.status,
         item: state.QuestionnaireResponse.item!.concat(item)
       };
       return {
+
         QuestionnaireResponse
       }
 
@@ -131,10 +135,21 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   submitAnswers(): void {
-    let returnQuestionnaireResponse = this.state.QuestionnaireResponse;
-    returnQuestionnaireResponse.authored = this.getCurrentDate();
-    returnQuestionnaireResponse.status = "completed";
-    submitQuestionnaireResponse(returnQuestionnaireResponse);
+    // let returnQuestionnaireResponse = this.state.QuestionnaireResponse;
+    this.setState(state => {
+      const QuestionnaireResponse = {
+        resourceType: state.QuestionnaireResponse.resourceType,
+        authored: this.getCurrentDate(),
+        status: "completed",
+        item: state.QuestionnaireResponse.item
+      };
+      return {
+        QuestionnaireResponse
+      }
+    }, () => {
+      console.log('submitted questionnaire: ', this.state.QuestionnaireResponse)
+      // submitQuestionnaireResponse(this.state.QuestionnaireResponse);
+    })
   }
 
   setTheme(color: string) {

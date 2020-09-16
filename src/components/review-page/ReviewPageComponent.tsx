@@ -27,10 +27,10 @@ export default class ReviewPageComponent extends React.Component<any, any> {
             //         {JSON.stringify(question)}
             //     </div>)
             return (
-                <div key={question.linkId}>
+                <div className='question-response-container' key={question.linkId}>
                     <h6>{parser(text)}</h6>
                     {
-                        <Table responsive bordered striped>
+                        <Table responsive bordered striped size="sm">
                             <thead>
                                 <tr>
                                     <th>Question</th>
