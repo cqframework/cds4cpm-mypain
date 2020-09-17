@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import QuestionnaireComponent from './components/questionnaire/QuestionnaireComponent';
 import { Questionnaire, QuestionnaireResponse, QuestionnaireResponseItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
 // import ContentMyPain from './content/mypain-formtool-2.json';  //mypain-opioid.json';
-import ContentMyPain from './content/mypain-formtool-2.json';  //mypain-opioid.json';
 import { submitQuestionnaireResponse, getQuestionnaire } from './utils/fhirFacadeHelper';
 // TODO: add import of  getQuestionnaire 
 import PatientContainer from './components/patient/PatientContainer';
@@ -68,7 +67,7 @@ export default class App extends React.Component<AppProps, AppState> {
       SelectedQuestionnaire: selectedQuestionnaire,
       QuestionnaireResponse: {
         ...this.state.QuestionnaireResponse,
-        questionnaire: ContentMyPain.id,
+        questionnaire: selectedQuestionnaire.id,
         subject: {
           reference: 'Patient/' + ptRef,
           display: ptDisplay
