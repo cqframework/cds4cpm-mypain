@@ -5,7 +5,7 @@ import QuestionnaireComponent from './components/questionnaire/QuestionnaireComp
 import { Questionnaire, QuestionnaireResponse, QuestionnaireResponseItem, QuestionnaireResponseItemAnswer } from './fhir-types/fhir-r4';
 // import ContentMyPain from './content/mypain-formtool-2.json';  //mypain-opioid.json';
 import ContentMyPain from './content/mypain-formtool-2.json';  //mypain-opioid.json';
-// import { submitQuestionnaireResponse } from './utils/fhirFacadeHelper';
+import { submitQuestionnaireResponse, getQuestionnaire } from './utils/fhirFacadeHelper';
 // TODO: add import of  getQuestionnaire 
 import PatientContainer from './components/patient/PatientContainer';
 import FHIR from "fhirclient";
@@ -45,15 +45,12 @@ export default class App extends React.Component<AppProps, AppState> {
   ptDisplay: any;
 
   componentDidMount() {
-    // let ptRef: string;
-    // let ptDisplay;
-    // TODO: re-enable getQuestionnaire 
-    // getQuestionnaire()
-    // .then(questionnaire => {
+    getQuestionnaire()
+    .then(questionnaire => {
       const processQuestionnaire = (p: any) => {
           return (p as Questionnaire)        
       }
-      let questionnaire = processQuestionnaire(ContentMyPain);
+      let updatedQuestionnaire = processQuestionnaire(questionnaire);
       console.log('questionnaire: ', questionnaire);
       
     FHIR.oauth2.ready()
@@ -61,9 +58,9 @@ export default class App extends React.Component<AppProps, AppState> {
       .then((patient) => {
         patient.id ? this.ptRef = patient.id : this.ptRef = " ";
         this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
-        return this.selectQuestionnaire(questionnaire, this.ptRef, this.ptDisplay);
+        return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);
       });
-    // })
+    })
   }
 
   selectQuestionnaire(selectedQuestionnaire: Questionnaire, ptRef: string, ptDisplay: string): void {
@@ -148,7 +145,7 @@ export default class App extends React.Component<AppProps, AppState> {
       }
     }, () => {
       console.log('submitted questionnaire: ', this.state.QuestionnaireResponse)
-      // submitQuestionnaireResponse(this.state.QuestionnaireResponse);
+      submitQuestionnaireResponse(this.state.QuestionnaireResponse);
     })
   }
 
