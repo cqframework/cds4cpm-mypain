@@ -1,21 +1,21 @@
 {
   "resourceType": "Bundle",
   "identifier": {
-    "value": "QuestionnaireResponse/2"
+    "value": "QuestionnaireResponse/1555"
   },
   "type": "transaction",
   "entry": [
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.1",
+        "id": "qr1555.1.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "1"
+                "valueString": "1.1"
               }
             ]
           }
@@ -44,90 +44,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueString": "lower left hip",
-        "derivedFrom": [
-          {
-            "reference": "QuestionnaireResponse/2"
-          }
-        ]
-      },
-      "request": {
-        "method": "PUT",
-        "url": "Observation/2.1"
-      }
-    },+
-    {
-      "resource": {
-        "resourceType": "Observation",
-        "id": "2.2",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
-            "extension": [
-              {
-                "url": "text",
-                "valueString": "2"
-              }
-            ]
-          }
-        ],
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/observation-category",
-                "code": "survey"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
-          "display": "Brenda Jackson"
-        },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-              "code": "mpqr-1006",
-              "display": "Severe"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1013",
+              "display": "Stabbing"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.2"
+        "url": "Observation/qr1555.1.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.3",
+        "id": "qr1555.1.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "3"
+                "valueString": "1.2"
               }
             ]
           }
@@ -156,11 +104,963 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1014",
+              "display": "Burning"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.2"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.3",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.3"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1015",
+              "display": "Aching"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.3"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.4",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.4"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1016",
+              "display": "Tingling"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.4"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.5",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.5"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1017",
+              "display": "Prickling"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.5"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.6",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.6"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1018",
+              "display": "Throbbing"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.6"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.7",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.7"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1013",
+              "display": "Stabbing"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.7"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.8",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.8"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1014",
+              "display": "Burning"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.8"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.9",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.9"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1015",
+              "display": "Aching"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.9"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.10",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.10"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1016",
+              "display": "Tingling"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.11",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.11"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1017",
+              "display": "Prickling"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.11"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.12",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.12"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1018",
+              "display": "Throbbing"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.13",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.13"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1013",
+              "display": "Stabbing"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.13"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.14",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.14"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1014",
+              "display": "Burning"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.14"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.15",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.15"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1015",
+              "display": "Aching"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.1.16",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "1.16"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueString": "pain location, type other",
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.1.16"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.2.1",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "2.1"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1003",
+              "display": "Had no pain"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.2.1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.2.2",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "2.2"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
               "code": "mpqr-1004",
               "display": "Mild"
             }
@@ -168,26 +1068,26 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.3"
+        "url": "Observation/qr1555.2.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.4",
+        "id": "qr1555.2.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "4"
+                "valueString": "2.3"
               }
             ]
           }
@@ -216,38 +1116,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-              "code": "mpqr-1004",
-              "display": "Mild"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1005",
+              "display": "Moderate"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.4"
+        "url": "Observation/qr1555.2.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.5",
+        "id": "qr1555.3.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "5"
+                "valueString": "3.1"
               }
             ]
           }
@@ -276,38 +1176,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-              "code": "mpqr-1010",
-              "display": "Somewhat"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpq-1008",
+              "display": "Not at all"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.5"
+        "url": "Observation/qr1555.3.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.6",
+        "id": "qr1555.3.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "6"
+                "valueString": "3.2"
               }
             ]
           }
@@ -336,38 +1236,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-              "code": "mpqr-1009",
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpq-1009",
               "display": "A little bit"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.6"
+        "url": "Observation/qr1555.3.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.7",
+        "id": "qr1555.3.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "7"
+                "valueString": "3.3"
               }
             ]
           }
@@ -396,98 +1296,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-              "code": "mpqr-1009",
-              "display": "A little bit"
-            }
-          ]
-        },
-        "derivedFrom": [
-          {
-            "reference": "QuestionnaireResponse/2"
-          }
-        ]
-      },
-      "request": {
-        "method": "PUT",
-        "url": "Observation/2.7"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Observation",
-        "id": "2.8",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
-            "extension": [
-              {
-                "url": "text",
-                "valueString": "8"
-              }
-            ]
-          }
-        ],
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/observation-category",
-                "code": "survey"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
-          "display": "Brenda Jackson"
-        },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-              "code": "mpqr-1010",
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpq-1010",
               "display": "Somewhat"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.8"
+        "url": "Observation/qr1555.3.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.9",
+        "id": "qr1555.3.4",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "9"
+                "valueString": "3.4"
               }
             ]
           }
@@ -516,30 +1356,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpq-1011",
+              "display": "Quite a bit"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.9"
+        "url": "Observation/qr1555.3.4"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.10",
+        "id": "qr1555.6.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "10"
+                "valueString": "6.1"
               }
             ]
           }
@@ -568,30 +1416,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1000",
+              "display": "Never"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.10"
+        "url": "Observation/qr1555.6.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.11",
+        "id": "qr1555.5.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "11"
+                "valueString": "5.2"
               }
             ]
           }
@@ -620,30 +1476,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1001",
+              "display": "Sometimes"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.11"
+        "url": "Observation/qr1555.5.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.12",
+        "id": "qr1555.5.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "12"
+                "valueString": "5.3"
               }
             ]
           }
@@ -672,30 +1536,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1002",
+              "display": "Always"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.12"
+        "url": "Observation/qr1555.5.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.13",
+        "id": "qr1555.5.4",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "13"
+                "valueString": "5.4"
               }
             ]
           }
@@ -724,30 +1596,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1000",
+              "display": "Never"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.13"
+        "url": "Observation/qr1555.5.4"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.14",
+        "id": "qr1555.5.5",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "14"
+                "valueString": "5.5"
               }
             ]
           }
@@ -776,30 +1656,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": true,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1001",
+              "display": "Sometimes"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.14"
+        "url": "Observation/qr1555.5.5"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.14a",
+        "id": "qr1555.5.6",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "14a"
+                "valueString": "5.6"
               }
             ]
           }
@@ -828,30 +1716,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": true,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1002",
+              "display": "Always"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.14a"
+        "url": "Observation/qr1555.5.6"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.15",
+        "id": "qr1555.5.7",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "15"
+                "valueString": "5.7"
               }
             ]
           }
@@ -880,30 +1776,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1000",
+              "display": "Never"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.15"
+        "url": "Observation/qr1555.5.7"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.16",
+        "id": "qr1555.5.8",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "16"
+                "valueString": "5.8"
               }
             ]
           }
@@ -932,30 +1836,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1001",
+              "display": "Sometimes"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.16"
+        "url": "Observation/qr1555.5.8"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.17",
+        "id": "qr1555.6.8",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "17"
+                "valueString": "6.8"
               }
             ]
           }
@@ -984,30 +1896,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1002",
+              "display": "Always"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.17"
+        "url": "Observation/qr1555.6.8"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.18",
+        "id": "qr1555.5.10",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "18"
+                "valueString": "5.10"
               }
             ]
           }
@@ -1036,30 +1956,30 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": true,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueString": "treatments other text",
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.18"
+        "url": "Observation/qr1555.5.10"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.18a",
+        "id": "qr1555.6.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "18a"
+                "valueString": "6.1"
               }
             ]
           }
@@ -1088,30 +2008,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": true,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1000",
+              "display": "Never"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.18a"
+        "url": "Observation/qr1555.6.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.19",
+        "id": "qr1555.6.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "19"
+                "valueString": "6.2"
               }
             ]
           }
@@ -1140,30 +2068,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1001",
+              "display": "Sometimes"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.19"
+        "url": "Observation/qr1555.6.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.20",
+        "id": "qr1555.6.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "20"
+                "valueString": "6.3"
               }
             ]
           }
@@ -1192,30 +2128,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1002",
+              "display": "Always"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.20"
+        "url": "Observation/qr1555.6.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.21",
+        "id": "qr1555.7.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "21"
+                "valueString": "7.1"
               }
             ]
           }
@@ -1244,30 +2188,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1000",
+              "display": "Never"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.21"
+        "url": "Observation/qr1555.7.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.22",
+        "id": "qr1555.7.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "22"
+                "valueString": "7.2"
               }
             ]
           }
@@ -1296,30 +2248,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1001",
+              "display": "Sometimes"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.22"
+        "url": "Observation/qr1555.7.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.23",
+        "id": "qr1555.7.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "23"
+                "valueString": "7.3"
               }
             ]
           }
@@ -1348,30 +2308,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1002",
+              "display": "Always"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.23"
+        "url": "Observation/qr1555.7.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.24",
+        "id": "qr1555.7.4",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "24"
+                "valueString": "7.4"
               }
             ]
           }
@@ -1400,30 +2368,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1000",
+              "display": "Never"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.24"
+        "url": "Observation/qr1555.7.4"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.25",
+        "id": "qr1555.7.5",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "25"
+                "valueString": "7.5"
               }
             ]
           }
@@ -1452,30 +2428,30 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueString": "treatments drugs. other",
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.25"
+        "url": "Observation/qr1555.7.5"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.26",
+        "id": "qr1555.8.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "26"
+                "valueString": "8.1"
               }
             ]
           }
@@ -1504,30 +2480,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1000",
+              "display": "Never"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.26"
+        "url": "Observation/qr1555.8.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.27",
+        "id": "qr1555.8.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "27"
+                "valueString": "8.2"
               }
             ]
           }
@@ -1556,30 +2540,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1001",
+              "display": "Sometimes"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.27"
+        "url": "Observation/qr1555.8.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.28",
+        "id": "qr1555.8.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "28"
+                "valueString": "8.3"
               }
             ]
           }
@@ -1608,30 +2600,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1001",
+              "display": "Sometimes"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.28"
+        "url": "Observation/qr1555.8.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.29",
+        "id": "qr1555.8.4",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "29"
+                "valueString": "8.4"
               }
             ]
           }
@@ -1660,30 +2660,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1002",
+              "display": "Always"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.29"
+        "url": "Observation/qr1555.8.4"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.30",
+        "id": "qr1555.8.5",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "30"
+                "valueString": "8.5"
               }
             ]
           }
@@ -1712,30 +2720,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1000",
+              "display": "Never"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.30"
+        "url": "Observation/qr1555.8.5"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.31",
+        "id": "qr1555.8.6",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "31"
+                "valueString": "8.6"
               }
             ]
           }
@@ -1764,30 +2780,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1001",
+              "display": "Sometimes"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.31"
+        "url": "Observation/qr1555.8.6"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.32",
+        "id": "qr1555.8.7",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "32"
+                "valueString": "8.7"
               }
             ]
           }
@@ -1816,30 +2840,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1002",
+              "display": "Always"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.32"
+        "url": "Observation/qr1555.8.7"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.33",
+        "id": "qr1555.7.8",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "33"
+                "valueString": "7.8"
               }
             ]
           }
@@ -1868,30 +2900,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1000",
+              "display": "Never"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.33"
+        "url": "Observation/qr1555.7.8"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.34",
+        "id": "qr1555.8.9",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "34"
+                "valueString": "8.9"
               }
             ]
           }
@@ -1920,30 +2960,30 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueString": "new therapies, other text",
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.34"
+        "url": "Observation/qr1555.8.9"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.35",
+        "id": "qr1555.9.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "35"
+                "valueString": "9.1"
               }
             ]
           }
@@ -1972,30 +3012,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueBoolean": false,
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1000",
+              "display": "Never"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.35"
+        "url": "Observation/qr1555.9.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.36",
+        "id": "qr1555.9.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "36"
+                "valueString": "9.2"
               }
             ]
           }
@@ -2024,30 +3072,38 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueString": "life without pain",
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1001",
+              "display": "Sometimes"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.36"
+        "url": "Observation/qr1555.9.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "2.37",
+        "id": "qr1555.9.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
             "extension": [
               {
                 "url": "text",
-                "valueString": "37"
+                "valueString": "9.3"
               }
             ]
           }
@@ -2076,17 +3132,257 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-07-13T08:02:57-06:00",
-        "valueString": "Following through.",
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1002",
+              "display": "Always"
+            }
+          ]
+        },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/2"
+            "reference": "QuestionnaireResponse/1555"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/2.37"
+        "url": "Observation/qr1555.9.3"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.9.4",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "9.4"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1000",
+              "display": "Never"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.9.4"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.9.5",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "9.5"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+              "code": "mpqr-1001",
+              "display": "Sometimes"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.9.5"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.9.6",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "9.6"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueString": "aromatherapy, et al other text",
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.9.6"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qr1555.14.1",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "14.1"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74465-6",
+              "display": "Questionnaire response Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-12T12:01:10-06:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://loinc.org/LL1606-4/",
+              "code": "LA15238-1",
+              "display": "Disagree a lot"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/1555"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qr1555.14.1"
       }
     }
   ]
