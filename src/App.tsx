@@ -86,6 +86,7 @@ export default class App extends React.Component<AppProps, AppState> {
         }
       }
       const QuestionnaireResponse = {
+        ...this.state.QuestionnaireResponse,
         resourceType: state.QuestionnaireResponse.resourceType,
         status: state.QuestionnaireResponse.status,
         item: state.QuestionnaireResponse.item!.concat(item)
@@ -134,6 +135,7 @@ export default class App extends React.Component<AppProps, AppState> {
     // let returnQuestionnaireResponse = this.state.QuestionnaireResponse;
     this.setState(state => {
       const QuestionnaireResponse = {
+        ...this.state.QuestionnaireResponse,
         resourceType: state.QuestionnaireResponse.resourceType,
         authored: this.getCurrentDate(),
         status: "completed",

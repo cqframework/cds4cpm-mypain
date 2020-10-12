@@ -56,7 +56,7 @@
         "method": "PUT",
         "url": "Observation/2.1"
       }
-    },
+    },+
     {
       "resource": {
         "resourceType": "Observation",
