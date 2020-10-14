@@ -1720,7 +1720,7 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "6.1",
+                    "linkId": "5.1",
                     "text": "Did it work?",
                     "prefix": "Exercises at home (such as those assigned by a therapist) or outside (such as walking, jogging, swimming)",
                     "answerOption": [
@@ -2136,7 +2136,7 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "6.8",
+                    "linkId": "5.9",
                     "text": "Did it work?",
                     "prefix": "Chiropractic treatment",
                     "answerOption": [
@@ -3004,7 +3004,7 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "7.8",
+                    "linkId": "8.8",
                     "text": "Did it work?",
                     "prefix": "Sleep management (such as a sleep study or CPAP)",
                     "answerOption": [
@@ -3359,7 +3359,7 @@
                 }
             ],
             "required": false,
-            "linkId": "11",
+            "linkId": "10",
             "text": "We’d like to know more about you and your goals. What are your most important activity goals? For example: I’d like to be able to walk without pain.",
             "prefix": "About My Goals"
         },
@@ -3382,7 +3382,7 @@
                 }
             ],
             "required": false,
-            "linkId": "12",
+            "linkId": "11",
             "text": "What are the biggest barriers to achieving your activity goals? For example: I have a lot of stress from work which makes my pain worse.",
             "prefix": "About My Goals"
         },
@@ -3539,7 +3539,7 @@
                 }
             ],
             "required": false,
-            "linkId": "16",
+            "linkId": "15",
             "text": "Do you have any other feedback or thoughts to share on your use of MyPAIN?",
             "prefix": "MyPAIN Feedback"
         }

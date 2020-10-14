@@ -1,10 +1,10 @@
 {
   "resourceType": "QuestionnaireResponse",
-  "id": "2",
+  "id": "1555a",
   "meta": {
     "versionId": "1",
-    "lastUpdated": "2020-07-13T14:02:57.209-06:00",
-    "source": "#MGSVzLI9WeChyJBh"
+    "lastUpdated": "2020-10-12T18:01:11.112+00:00",
+    "source": "#fEP96f4R2aY1a451"
   },
   "questionnaire": "mypain-questionnaire",
   "status": "completed",
@@ -12,386 +12,794 @@
     "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
     "display": "Brenda Jackson"
   },
-  "authored": "2020-07-13T08:02:57-06:00",
+  "authored": "2020-10-12T12:01:10-06:00",
   "item": [
     {
       "linkId": "1",
-      "text": "Please describe the location(s) of any pain you have had in the past 7 days (e.g., lower back and left hip):",
-      "answer": [
+      "text": "My Pain Location: We’d like to ask you a few questions about your pain and how it is affecting your life. Please describe the location(s) of any pain you have had in the past 7 days.",
+      "item": [
         {
-          "valueString": "lower left hip"
+          "linkId": "1.1",
+          "text": "Head: What type of HEAD pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1013",
+                "display": "Stabbing"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.2",
+          "text": "Neck: What type of NECK pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1014",
+                "display": "Burning"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.3",
+          "text": "Shoulders: What type of SHOULDERS pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1015",
+                "display": "Aching"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.4",
+          "text": "Arms: What type of ARMS pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1016",
+                "display": "Tingling"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.5",
+          "text": "Upper Back: What type of UPPER BACK pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1017",
+                "display": "Prickling"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.6",
+          "text": "Lower Back: What type of LOWER BACK pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1018",
+                "display": "Throbbing"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.7",
+          "text": "Hands: What type of HANDS pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1013",
+                "display": "Stabbing"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.8",
+          "text": "Abdomen: What type of ABDOMEN pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1014",
+                "display": "Burning"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.9",
+          "text": "Pelvis: What type of PELVIS pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1015",
+                "display": "Aching"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.10",
+          "text": "Hips: What type of HIPS pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1016",
+                "display": "Tingling"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.11",
+          "text": "Upper Legs: What type of UPPER LEGS pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1017",
+                "display": "Prickling"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.12",
+          "text": "Knees: What type of KNEES pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1018",
+                "display": "Throbbing"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.13",
+          "text": "Lower Legs: What type of LOWER LEGS pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1013",
+                "display": "Stabbing"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.14",
+          "text": "Feet: What type of FEET pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1014",
+                "display": "Burning"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.15",
+          "text": "Everywhere: What type of EVERYWHERE pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1015",
+                "display": "Aching"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.16",
+          "text": "Other, please describe: Other, please describe",
+          "answer": [
+            {
+              "valueString": "pain location, type other"
+            }
+          ]
         }
       ]
     },
     {
       "linkId": "2",
-      "text": "In the  past 7 days -  How intense was your pain at its worst?",
-      "answer": [
+      "text": "My Pain Intensity: Thinking about your overall pain, in the past 7 days, please respond to the questions below:",
+      "item": [
         {
-          "valueCoding": {
-            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-            "code": "mpqr-1006",
-            "display": "Severe"
-          }
+          "linkId": "2.1",
+          "text": "How intense was your pain at its worst?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1003",
+                "display": "Had no pain"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "2.2",
+          "text": "How intense was your average pain?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1004",
+                "display": "Mild"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "2.3",
+          "text": "What is your level of pain right now?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1005",
+                "display": "Moderate"
+              }
+            }
+          ]
         }
       ]
     },
     {
       "linkId": "3",
-      "text": "How intense was your average pain?",
-      "answer": [
+      "text": "My Pain Interference: Thinking about your overall pain, in the past 7 days, please respond to the questions below:",
+      "item": [
         {
-          "valueCoding": {
-            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-            "code": "mpqr-1004",
-            "display": "Mild"
-          }
-        }
-      ]
-    },
-    {
-      "linkId": "4",
-      "text": "What is your level of pain right now?",
-      "answer": [
+          "linkId": "3.1",
+          "text": "How much did pain interfere with your day to day activities?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpq-1008",
+                "display": "Not at all"
+              }
+            }
+          ]
+        },
         {
-          "valueCoding": {
-            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-            "code": "mpqr-1004",
-            "display": "Mild"
-          }
+          "linkId": "3.2",
+          "text": "How much did pain interfere with your work around the home?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpq-1009",
+                "display": "A little bit"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.3",
+          "text": "How much did pain interfere with your ability to participate in social activities?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpq-1010",
+                "display": "Somewhat"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.4",
+          "text": "How much did pain interfere with your household chores?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpq-1011",
+                "display": "Quite a bit"
+              }
+            }
+          ]
         }
       ]
     },
     {
       "linkId": "5",
-      "text": "How much did pain interfere with your day to day activities?",
-      "answer": [
+      "text": "About My Treatments: What have you tried in the <strong>past 6 months</strong> to help you with your pain? Select all answers that apply. We also want to know if it worked for you.",
+      "item": [
         {
-          "valueCoding": {
-            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-            "code": "mpqr-1010",
-            "display": "Somewhat"
-          }
+          "linkId": "6.1",
+          "text": "Exercises at home (such as those assigned by a therapist) or outside (such as walking, jogging, swimming): Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1000",
+                "display": "Never"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.2",
+          "text": "Sleep positioners or devices (such as additional pillows, padding, etc.): Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1001",
+                "display": "Sometimes"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.3",
+          "text": "Stretching: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1002",
+                "display": "Always"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.4",
+          "text": "Weight loss or changes in your diet: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1000",
+                "display": "Never"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.5",
+          "text": "Setting and reaching activity goals: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1001",
+                "display": "Sometimes"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.6",
+          "text": "Ice or Heat Therapy: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1002",
+                "display": "Always"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.7",
+          "text": "Physical Therapy: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1000",
+                "display": "Never"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.8",
+          "text": "Acupuncture: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1001",
+                "display": "Sometimes"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "6.8",
+          "text": "Chiropractic treatment: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1002",
+                "display": "Always"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.10",
+          "text": "Other, please describe: Other, please describe",
+          "answer": [
+            {
+              "valueString": "treatments other text"
+            }
+          ]
         }
       ]
     },
     {
       "linkId": "6",
-      "text": "How much did pain interfere with your work?",
-      "answer": [
+      "text": "About My Treatments: Have you used any of the following <strong>items you can buy without a prescription from your doctor</strong> to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
+      "item": [
         {
-          "valueCoding": {
-            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-            "code": "mpqr-1009",
-            "display": "A little bit"
-          }
+          "linkId": "6.1",
+          "text": "Pain relievers (such as Advil, Aleve, Aspirin, Ibuprofen, Motrin, Tylenol): Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1000",
+                "display": "Never"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "6.2",
+          "text": "Herbal or nutritional pain relievers (such as ginseng or kava kava): Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1001",
+                "display": "Sometimes"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "6.3",
+          "text": "Cremes, lotions, gels or patches applied to the skin (for example BENGAY®, TIGER BALM® or BiOFREEZE®): Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1002",
+                "display": "Always"
+              }
+            }
+          ]
         }
       ]
     },
     {
       "linkId": "7",
-      "text": "How much did pain interfere with your ability to participate in social activities?",
-      "answer": [
+      "text": "About My Treatments: Have you used any of the following  <strong>prescription medications</strong> to help with your pain in the <strong>last 6 months</strong>?",
+      "item": [
         {
-          "valueCoding": {
-            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-            "code": "mpqr-1009",
-            "display": "A little bit"
-          }
+          "linkId": "7.1",
+          "text": "Opioid medications (such as hydrocodone, oxycodone, codeine, morphine and fentanyl): Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1000",
+                "display": "Never"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "7.2",
+          "text": "Procedure or Injection (such as a shot to relieve inflammation): Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1001",
+                "display": "Sometimes"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "7.3",
+          "text": "Non-opioid medications as prescribed by a doctor (such as Celebrex or Cymbalta): Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1002",
+                "display": "Always"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "7.4",
+          "text": "Medical marijuana: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1000",
+                "display": "Never"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "7.5",
+          "text": "Other, please describe: Other, please describe",
+          "answer": [
+            {
+              "valueString": "treatments drugs. other"
+            }
+          ]
         }
       ]
     },
     {
       "linkId": "8",
-      "text": "How much did pain interfere with your household chores?",
-      "answer": [
+      "text": "About My Treatments: Have you tried any of the following <strong>new therapies</strong> to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
+      "item": [
         {
-          "valueCoding": {
-            "system": "http://rti.com/fhir/rti/CodeSystem/mypain-questionnaireResponse",
-            "code": "mpqr-1010",
-            "display": "Somewhat"
-          }
+          "linkId": "8.1",
+          "text": "Yoga: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1000",
+                "display": "Never"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "8.2",
+          "text": "Massage: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1001",
+                "display": "Sometimes"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "8.3",
+          "text": "Meditation: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1001",
+                "display": "Sometimes"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "8.4",
+          "text": "Relaxation or mindfulness-based training: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1002",
+                "display": "Always"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "8.5",
+          "text": "Group or individual therapy for pain: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1000",
+                "display": "Never"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "8.6",
+          "text": "Cognitive behavioral therapy: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1001",
+                "display": "Sometimes"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "8.7",
+          "text": "Acceptance or commitment therapy: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1002",
+                "display": "Always"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "7.8",
+          "text": "Sleep management (such as a sleep study or CPAP): Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1000",
+                "display": "Never"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "8.9",
+          "text": "Other, please describe: Other, please describe",
+          "answer": [
+            {
+              "valueString": "new therapies, other text"
+            }
+          ]
         }
       ]
     },
     {
       "linkId": "9",
-      "text": "Exercises at home (such as those assigned by a therapist) or outside (such as walking, jogging, swimming)?",
-      "answer": [
+      "text": "About My Treatments: Have you tried any of the following <strong>new therapies</strong> to help with your pain in the <strong>last 6 months</strong> (select all that apply)?",
+      "item": [
         {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "10",
-      "text": "Sleep positioners or devices (such as additional pillows, padding, etc.)?",
-      "answer": [
+          "linkId": "9.1",
+          "text": "Aromatherapy: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1000",
+                "display": "Never"
+              }
+            }
+          ]
+        },
         {
-          "valueBoolean": false
+          "linkId": "9.2",
+          "text": "Crystals: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1001",
+                "display": "Sometimes"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "9.3",
+          "text": "Essential oils: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1002",
+                "display": "Always"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "9.4",
+          "text": "CBD oil: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1000",
+                "display": "Never"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "9.5",
+          "text": "Music therapy: Did it work?",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
+                "code": "mpqr-1001",
+                "display": "Sometimes"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "9.6",
+          "text": "Other, please describe: Other, please describe",
+          "answer": [
+            {
+              "valueString": "aromatherapy, et al other text"
+            }
+          ]
         }
       ]
     },
     {
       "linkId": "11",
-      "text": "Stretching?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
+      "text": "We’d like to know more about you and your goals. What are your most important activity goals? For example: I’d like to be able to walk without pain."
     },
     {
       "linkId": "12",
-      "text": "Weight loss or changes in  your diet?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "13",
-      "text": "Setting and reaching activity goals?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
+      "text": "What are the biggest barriers to achieving your activity goals? For example: I have a lot of stress from work which makes my pain worse."
     },
     {
       "linkId": "14",
-      "text": "Ice or heat therapy?",
-      "answer": [
+      "text": "MyPAIN Feedback: Please indicate your level of agreement with the following statement:",
+      "item": [
         {
-          "valueBoolean": true
-        }
-      ]
-    },
-    {
-      "linkId": "14a",
-      "text": "Did it work?",
-      "answer": [
-        {
-          "valueBoolean": true
-        }
-      ]
-    },
-    {
-      "linkId": "15",
-      "text": "Physical therapy?",
-      "answer": [
-        {
-          "valueBoolean": false
+          "linkId": "14.1",
+          "text": "Using the MyPAIN tool has helped me begin preparing for a conversation with my provider about managing my pain.",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "https://loinc.org/LL1606-4/",
+                "code": "LA15238-1",
+                "display": "Disagree a lot"
+              }
+            }
+          ]
         }
       ]
     },
     {
       "linkId": "16",
-      "text": "Acupuncture?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "17",
-      "text": "Chiropractic treatment?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "18",
-      "text": "Pain relievers (such as Advil, Aleve, Aspirin, Ibuprofen, Motrin, Tylenol)?",
-      "answer": [
-        {
-          "valueBoolean": true
-        }
-      ]
-    },
-    {
-      "linkId": "18a",
-      "text": "Did it work?",
-      "answer": [
-        {
-          "valueBoolean": true
-        }
-      ]
-    },
-    {
-      "linkId": "19",
-      "text": "Herbal or nutritional pain relievers (such as ginseng or kava kava)?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "20",
-      "text": "Cremes, lotions, gels or patches applied to the skin (for example Bengay, Tiger Balm or BioFreeze)?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "21",
-      "text": "Opioid medications (such as hydrocodone, oxycodone, codeine, morphine and fentanyl)?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "22",
-      "text": "Cortisone injection (a shot to relieve inflammation)?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "23",
-      "text": "Non-opioid medications as prescribed by a doctor (such as Celebrex, Cymbalta)?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "24",
-      "text": "Yoga?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "25",
-      "text": "Massage?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "26",
-      "text": "Meditation?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "27",
-      "text": "Relaxation or mindfulness-based training?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "28",
-      "text": "Group or individual therapy for pain?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "29",
-      "text": "Acceptance and commitment therapy?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "30",
-      "text": "Sleep management (such as a sleep study or CPAP)?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "31",
-      "text": "Aromatherapy?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "32",
-      "text": "Crystals?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "33",
-      "text": "Essential oils?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "34",
-      "text": "Music therapy?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "35",
-      "text": "Other?",
-      "answer": [
-        {
-          "valueBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "36",
-      "text": "We’d like to know more about you and your goals.  What are your most important  activity goals?  For example: I’d like to be able to walk without pain.",
-      "answer": [
-        {
-          "valueString": "life without pain"
-        }
-      ]
-    },
-    {
-      "linkId": "37",
-      "text": "What are the biggest barriers to achieving your activity goals?  For example: I have a lot of stress from work which makes my pain worse.",
-      "answer": [
-        {
-          "valueString": "Following through."
-        }
-      ]
+      "text": "Do you have any other feedback or thoughts to share on your use of MyPAIN?"
     }
   ]
 }
