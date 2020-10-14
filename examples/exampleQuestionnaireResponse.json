@@ -1,10 +1,10 @@
 {
   "resourceType": "QuestionnaireResponse",
-  "id": "1555a",
+  "id": "allResponses",
   "meta": {
     "versionId": "1",
-    "lastUpdated": "2020-10-12T18:01:11.112+00:00",
-    "source": "#fEP96f4R2aY1a451"
+    "lastUpdated": "2020-10-13T20:31:21.455+00:00",
+    "source": "#PyBTzQerT9BDt817"
   },
   "questionnaire": "mypain-questionnaire",
   "status": "completed",
@@ -12,7 +12,7 @@
     "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
     "display": "Brenda Jackson"
   },
-  "authored": "2020-10-12T12:01:10-06:00",
+  "authored": "2020-10-13T14:20:27-06:00",
   "item": [
     {
       "linkId": "1",
@@ -218,7 +218,7 @@
           "text": "Other, please describe: Other, please describe",
           "answer": [
             {
-              "valueString": "pain location, type other"
+              "valueString": "pain location other text"
             }
           ]
         }
@@ -332,7 +332,16 @@
       "text": "About My Treatments: What have you tried in the <strong>past 6 months</strong> to help you with your pain? Select all answers that apply. We also want to know if it worked for you.",
       "item": [
         {
-          "linkId": "6.1",
+          "linkId": "5.10",
+          "text": "Other, please describe: Other, please describe",
+          "answer": [
+            {
+              "valueString": "Basic therapies text box"
+            }
+          ]
+        },
+        {
+          "linkId": "5.1",
           "text": "Exercises at home (such as those assigned by a therapist) or outside (such as walking, jogging, swimming): Did it work?",
           "answer": [
             {
@@ -436,7 +445,7 @@
           ]
         },
         {
-          "linkId": "6.8",
+          "linkId": "5.9",
           "text": "Chiropractic treatment: Did it work?",
           "answer": [
             {
@@ -445,15 +454,6 @@
                 "code": "mpqr-1002",
                 "display": "Always"
               }
-            }
-          ]
-        },
-        {
-          "linkId": "5.10",
-          "text": "Other, please describe: Other, please describe",
-          "answer": [
-            {
-              "valueString": "treatments other text"
             }
           ]
         }
@@ -565,7 +565,7 @@
           "text": "Other, please describe: Other, please describe",
           "answer": [
             {
-              "valueString": "treatments drugs. other"
+              "valueString": "medications other text box"
             }
           ]
         }
@@ -608,8 +608,8 @@
             {
               "valueCoding": {
                 "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-                "code": "mpqr-1001",
-                "display": "Sometimes"
+                "code": "mpqr-1002",
+                "display": "Always"
               }
             }
           ]
@@ -621,8 +621,8 @@
             {
               "valueCoding": {
                 "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-                "code": "mpqr-1002",
-                "display": "Always"
+                "code": "mpqr-1000",
+                "display": "Never"
               }
             }
           ]
@@ -634,8 +634,8 @@
             {
               "valueCoding": {
                 "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-                "code": "mpqr-1000",
-                "display": "Never"
+                "code": "mpqr-1001",
+                "display": "Sometimes"
               }
             }
           ]
@@ -647,8 +647,8 @@
             {
               "valueCoding": {
                 "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-                "code": "mpqr-1001",
-                "display": "Sometimes"
+                "code": "mpqr-1002",
+                "display": "Always"
               }
             }
           ]
@@ -660,21 +660,21 @@
             {
               "valueCoding": {
                 "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-                "code": "mpqr-1002",
-                "display": "Always"
+                "code": "mpqr-1000",
+                "display": "Never"
               }
             }
           ]
         },
         {
-          "linkId": "7.8",
+          "linkId": "8.8",
           "text": "Sleep management (such as a sleep study or CPAP): Did it work?",
           "answer": [
             {
               "valueCoding": {
                 "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-                "code": "mpqr-1000",
-                "display": "Never"
+                "code": "mpqr-1001",
+                "display": "Sometimes"
               }
             }
           ]
@@ -684,7 +684,7 @@
           "text": "Other, please describe: Other, please describe",
           "answer": [
             {
-              "valueString": "new therapies, other text"
+              "valueString": "yoga et. al. other text box"
             }
           ]
         }
@@ -764,18 +764,18 @@
           "text": "Other, please describe: Other, please describe",
           "answer": [
             {
-              "valueString": "aromatherapy, et al other text"
+              "valueString": "aromatherapy et al other text box"
             }
           ]
         }
       ]
     },
     {
-      "linkId": "11",
+      "linkId": "10",
       "text": "We’d like to know more about you and your goals. What are your most important activity goals? For example: I’d like to be able to walk without pain."
     },
     {
-      "linkId": "12",
+      "linkId": "11",
       "text": "What are the biggest barriers to achieving your activity goals? For example: I have a lot of stress from work which makes my pain worse."
     },
     {
@@ -798,7 +798,7 @@
       ]
     },
     {
-      "linkId": "16",
+      "linkId": "15",
       "text": "Do you have any other feedback or thoughts to share on your use of MyPAIN?"
     }
   ]
