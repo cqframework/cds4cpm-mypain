@@ -19,7 +19,8 @@ interface AppProps {
 interface AppState {
   Status: string,
   SelectedQuestionnaire?: Questionnaire,
-  QuestionnaireResponse: QuestionnaireResponse
+  QuestionnaireResponse: QuestionnaireResponse,
+  ServerUrl:[]
 }
 
 export default class App extends React.Component<AppProps, AppState> {
@@ -35,7 +36,8 @@ export default class App extends React.Component<AppProps, AppState> {
         resourceType: "QuestionnaireResponse",
         status: "in-progress",
         item: []
-      }
+      },
+      ServerUrl:[]
     };
     this.handleChange = this.handleChange.bind(this);
     this.submitAnswers = this.submitAnswers.bind(this);
@@ -44,20 +46,20 @@ export default class App extends React.Component<AppProps, AppState> {
   ptDisplay: any;
 
   componentDidMount() {
-    getQuestionnaire()
+    getQuestionnaire(this.state.ServerUrl)
     .then(questionnaire => {
       const processQuestionnaire = (p: any) => {
           return (p as Questionnaire)        
       }
       let updatedQuestionnaire = processQuestionnaire(questionnaire);
       console.log('questionnaire: ', questionnaire);
-      
+
     FHIR.oauth2.ready()
       .then((client: Client) => client.patient.read())
       .then((patient) => {
         patient.id ? this.ptRef = patient.id : this.ptRef = " ";
         this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
-        return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);
+        return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);;
       });
     })
   }
@@ -67,7 +69,7 @@ export default class App extends React.Component<AppProps, AppState> {
       SelectedQuestionnaire: selectedQuestionnaire,
       QuestionnaireResponse: {
         ...this.state.QuestionnaireResponse,
-        questionnaire: selectedQuestionnaire.id,
+        questionnaire: this.state.ServerUrl.pop(),
         subject: {
           reference: 'Patient/' + ptRef,
           display: ptDisplay
