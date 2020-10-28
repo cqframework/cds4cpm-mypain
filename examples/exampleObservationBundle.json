@@ -1,14 +1,14 @@
 {
   "resourceType": "Bundle",
   "identifier": {
-    "value": "QuestionnaireResponse/allResponses"
+    "value": "QuestionnaireResponse/newQWithResponses"
   },
   "type": "transaction",
   "entry": [
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.1",
+        "id": "qrnewQWithResponses.1.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -34,9 +34,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1038",
+              "display": "What type of HEAD pain have you had in the last 7 days?"
             }
           ]
         },
@@ -44,31 +44,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1013",
+              "system": "http://snomed.info/sct",
+              "code": "55145008",
               "display": "Stabbing"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.1"
+        "url": "Observation/qrnewQWithResponses.1.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.2",
+        "id": "qrnewQWithResponses.1.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -94,9 +94,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1039",
+              "display": "What type of NECK pain have you had in the last 7 days?"
             }
           ]
         },
@@ -104,31 +104,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1014",
+              "system": "http://snomed.info/sct",
+              "code": "36349006",
               "display": "Burning"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.2"
+        "url": "Observation/qrnewQWithResponses.1.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.3",
+        "id": "qrnewQWithResponses.1.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -154,9 +154,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1040",
+              "display": "What type of SHOULDERS pain have you had in the last 7 days?"
             }
           ]
         },
@@ -164,31 +164,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1015",
+              "system": "http://snomed.info/sct",
+              "code": "27635008",
               "display": "Aching"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.3"
+        "url": "Observation/qrnewQWithResponses.1.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.4",
+        "id": "qrnewQWithResponses.1.4",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -214,9 +214,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1041",
+              "display": "What type of ARMS pain have you had in the last 7 days?"
             }
           ]
         },
@@ -224,31 +224,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1016",
+              "system": "http://snomed.info/sct",
+              "code": "786837007",
               "display": "Tingling"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.4"
+        "url": "Observation/qrnewQWithResponses.1.4"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.5",
+        "id": "qrnewQWithResponses.1.5",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -274,9 +274,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1042",
+              "display": "What type of UPPER BACK pain have you had in the last 7 days?"
             }
           ]
         },
@@ -284,31 +284,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1017",
+              "system": "http://snomed.info/sct",
+              "code": "162506004",
               "display": "Prickling"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.5"
+        "url": "Observation/qrnewQWithResponses.1.5"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.6",
+        "id": "qrnewQWithResponses.1.6",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -334,9 +334,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1043",
+              "display": "What type of LOWER BACK pain have you had in the last 7 days?"
             }
           ]
         },
@@ -344,31 +344,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1018",
+              "system": "http://snomed.info/sct",
+              "code": "29695002",
               "display": "Throbbing"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.6"
+        "url": "Observation/qrnewQWithResponses.1.6"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.7",
+        "id": "qrnewQWithResponses.1.7",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -394,9 +394,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1044",
+              "display": "What type of HANDS pain have you had in the last 7 days?"
             }
           ]
         },
@@ -404,31 +404,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1013",
+              "system": "http://snomed.info/sct",
+              "code": "55145008",
               "display": "Stabbing"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.7"
+        "url": "Observation/qrnewQWithResponses.1.7"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.8",
+        "id": "qrnewQWithResponses.1.8",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -454,9 +454,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1045",
+              "display": "What type of ABDOMEN pain have you had in the last 7 days?"
             }
           ]
         },
@@ -464,31 +464,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1014",
+              "system": "http://snomed.info/sct",
+              "code": "36349006",
               "display": "Burning"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.8"
+        "url": "Observation/qrnewQWithResponses.1.8"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.9",
+        "id": "qrnewQWithResponses.1.9",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -514,9 +514,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1046",
+              "display": "What type of PELVIS pain have you had in the last 7 days?"
             }
           ]
         },
@@ -524,31 +524,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1015",
+              "system": "http://snomed.info/sct",
+              "code": "27635008",
               "display": "Aching"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.9"
+        "url": "Observation/qrnewQWithResponses.1.9"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.10",
+        "id": "qrnewQWithResponses.1.10",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -574,9 +574,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1047",
+              "display": "What type of HIPS pain have you had in the last 7 days?"
             }
           ]
         },
@@ -584,31 +584,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1016",
+              "system": "http://snomed.info/sct",
+              "code": "786837007",
               "display": "Tingling"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.10"
+        "url": "Observation/qrnewQWithResponses.1.10"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.11",
+        "id": "qrnewQWithResponses.1.11",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -634,9 +634,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1048",
+              "display": "What type of UPPER LEGS pain have you had in the last 7 days?"
             }
           ]
         },
@@ -644,31 +644,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1017",
+              "system": "http://snomed.info/sct",
+              "code": "162506004",
               "display": "Prickling"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.11"
+        "url": "Observation/qrnewQWithResponses.1.11"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.12",
+        "id": "qrnewQWithResponses.1.12",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -694,9 +694,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1049",
+              "display": "What type of KNEES pain have you had in the last 7 days?"
             }
           ]
         },
@@ -704,31 +704,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1018",
+              "system": "http://snomed.info/sct",
+              "code": "29695002",
               "display": "Throbbing"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.12"
+        "url": "Observation/qrnewQWithResponses.1.12"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.13",
+        "id": "qrnewQWithResponses.1.13",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -754,9 +754,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1050",
+              "display": "What type of LOWER LEGS pain have you had in the last 7 days?"
             }
           ]
         },
@@ -764,31 +764,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1013",
+              "system": "http://snomed.info/sct",
+              "code": "55145008",
               "display": "Stabbing"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.13"
+        "url": "Observation/qrnewQWithResponses.1.13"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.14",
+        "id": "qrnewQWithResponses.1.14",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -814,9 +814,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1051",
+              "display": "What type of FEET pain have you had in the last 7 days?"
             }
           ]
         },
@@ -824,31 +824,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1014",
+              "system": "http://snomed.info/sct",
+              "code": "36349006",
               "display": "Burning"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.14"
+        "url": "Observation/qrnewQWithResponses.1.14"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.15",
+        "id": "qrnewQWithResponses.1.15",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -874,9 +874,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1052",
+              "display": "What type of EVERYWHERE pain have you had in the last 7 days?"
             }
           ]
         },
@@ -884,31 +884,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1015",
+              "system": "http://snomed.info/sct",
+              "code": "27635008",
               "display": "Aching"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.15"
+        "url": "Observation/qrnewQWithResponses.1.15"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.1.16",
+        "id": "qrnewQWithResponses.1.16",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -934,9 +934,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1053",
+              "display": "What OTHER pain have you had in the last 7 days? Please describe"
             }
           ]
         },
@@ -944,23 +944,23 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
-        "valueString": "pain location other text",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
+        "valueString": "pain location other text box answer",
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.1.16"
+        "url": "Observation/qrnewQWithResponses.1.16"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.2.1",
+        "id": "qrnewQWithResponses.2.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -987,8 +987,8 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "code": "75262-6",
+              "display": "How intense was your pain at its worse in the past 7 days [PROMIS]"
             }
           ]
         },
@@ -996,31 +996,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1003",
+              "system": "http://loinc.org",
+              "code": "LA13879-4",
               "display": "Had no pain"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.2.1"
+        "url": "Observation/qrnewQWithResponses.2.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.2.2",
+        "id": "qrnewQWithResponses.2.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1047,8 +1047,8 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "code": "75261-8",
+              "display": "How intense was your average pain in the past 7 days [PROMIS]"
             }
           ]
         },
@@ -1056,31 +1056,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1004",
+              "system": "http://loinc.org",
+              "code": "LA6752-5",
               "display": "Mild"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.2.2"
+        "url": "Observation/qrnewQWithResponses.2.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.2.3",
+        "id": "qrnewQWithResponses.2.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1107,8 +1107,8 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "code": "75260-0",
+              "display": "What is your level of pain right now [PROMIS]"
             }
           ]
         },
@@ -1116,31 +1116,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1005",
+              "system": "http://loinc.org",
+              "code": "LA6751-7",
               "display": "Moderate"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.2.3"
+        "url": "Observation/qrnewQWithResponses.2.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.3.1",
+        "id": "qrnewQWithResponses.3.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1167,8 +1167,8 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "code": "61758-9",
+              "display": "How much did pain interfere with your day to day activities in past 7 days [PROMIS]"
             }
           ]
         },
@@ -1176,31 +1176,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpq-1008",
+              "system": "http://loinc.org",
+              "code": "LA6568-5",
               "display": "Not at all"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.3.1"
+        "url": "Observation/qrnewQWithResponses.3.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.3.2",
+        "id": "qrnewQWithResponses.3.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1227,8 +1227,8 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "code": "61769-6",
+              "display": "How much did pain interfere with work around the home in past 7 days [PROMIS]"
             }
           ]
         },
@@ -1236,31 +1236,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpq-1009",
+              "system": "http://loinc.org",
+              "code": "LA13863-8",
               "display": "A little bit"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.3.2"
+        "url": "Observation/qrnewQWithResponses.3.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.3.3",
+        "id": "qrnewQWithResponses.3.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1287,8 +1287,8 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "code": "61773-8",
+              "display": "How much did pain interfere with your ability to participate in social activities in past 7 days [PROMIS]"
             }
           ]
         },
@@ -1296,31 +1296,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpq-1010",
+              "system": "http://loinc.org",
+              "code": "LA13909-9",
               "display": "Somewhat"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.3.3"
+        "url": "Observation/qrnewQWithResponses.3.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.3.4",
+        "id": "qrnewQWithResponses.3.4",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1347,8 +1347,8 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "code": "61775-3",
+              "display": "How much did pain interfere with your household chores in past 7 days [PROMIS]"
             }
           ]
         },
@@ -1356,83 +1356,31 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpq-1011",
+              "system": "http://loinc.org",
+              "code": "LA13902-4",
               "display": "Quite a bit"
             }
           ]
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.3.4"
+        "url": "Observation/qrnewQWithResponses.3.4"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.5.10",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
-            "extension": [
-              {
-                "url": "text",
-                "valueString": "5.10"
-              }
-            ]
-          }
-        ],
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/observation-category",
-                "code": "survey"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
-          "display": "Brenda Jackson"
-        },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
-        "valueString": "Basic therapies text box",
-        "derivedFrom": [
-          {
-            "reference": "QuestionnaireResponse/allResponses"
-          }
-        ]
-      },
-      "request": {
-        "method": "PUT",
-        "url": "Observation/qrallResponses.5.10"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Observation",
-        "id": "qrallResponses.5.1",
+        "id": "qrnewQWithResponses.5.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1458,9 +1406,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1008",
+              "display": "How often have Exercises at home (such as those assigned by a therapist) or outside (such as walking, jogging, swimming) you have tried in the past 6 months helped you with your pain?"
             }
           ]
         },
@@ -1468,7 +1416,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -1480,19 +1428,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.5.1"
+        "url": "Observation/qrnewQWithResponses.5.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.5.2",
+        "id": "qrnewQWithResponses.5.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1518,9 +1466,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1009",
+              "display": "How often have Sleep positioners or devices (such as additional pillows, padding, etc.) you have tried in the past 6 months helped you with your pain?"
             }
           ]
         },
@@ -1528,7 +1476,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -1540,19 +1488,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.5.2"
+        "url": "Observation/qrnewQWithResponses.5.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.5.3",
+        "id": "qrnewQWithResponses.5.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1578,9 +1526,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1010",
+              "display": "How often has Stretching you have tried in the past 6 months helped you with your pain?"
             }
           ]
         },
@@ -1588,7 +1536,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -1600,19 +1548,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.5.3"
+        "url": "Observation/qrnewQWithResponses.5.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.5.4",
+        "id": "qrnewQWithResponses.5.4",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1638,9 +1586,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1011",
+              "display": "How often has Weight loss or changes in your diet you have tried in the past 6 months helped you with your pain?"
             }
           ]
         },
@@ -1648,7 +1596,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -1660,19 +1608,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.5.4"
+        "url": "Observation/qrnewQWithResponses.5.4"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.5.5",
+        "id": "qrnewQWithResponses.5.5",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1698,9 +1646,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1012",
+              "display": "How often has Setting and reaching activity goals you have tried in the past 6 months helped you with your pain?"
             }
           ]
         },
@@ -1708,7 +1656,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -1720,19 +1668,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.5.5"
+        "url": "Observation/qrnewQWithResponses.5.5"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.5.6",
+        "id": "qrnewQWithResponses.5.6",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1758,9 +1706,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1013",
+              "display": "How often has Ice or heat therapy you have tried in the past 6 months helped you with your pain?"
             }
           ]
         },
@@ -1768,7 +1716,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -1780,19 +1728,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.5.6"
+        "url": "Observation/qrnewQWithResponses.5.6"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.5.7",
+        "id": "qrnewQWithResponses.5.7",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1818,9 +1766,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1014",
+              "display": "How often has Physical therapy you have tried in the past 6 months helped you with your pain?"
             }
           ]
         },
@@ -1828,7 +1776,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -1840,19 +1788,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.5.7"
+        "url": "Observation/qrnewQWithResponses.5.7"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.5.8",
+        "id": "qrnewQWithResponses.5.8",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1878,9 +1826,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1015",
+              "display": "How often has Acupuncture you have tried in the past 6 months helped you with your pain?"
             }
           ]
         },
@@ -1888,7 +1836,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -1900,19 +1848,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.5.8"
+        "url": "Observation/qrnewQWithResponses.5.8"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.5.9",
+        "id": "qrnewQWithResponses.5.9",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1938,9 +1886,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1016",
+              "display": "How often has Chiropractic treatment you have tried in the past 6 months helped you with your pain?"
             }
           ]
         },
@@ -1948,7 +1896,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -1960,19 +1908,71 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.5.9"
+        "url": "Observation/qrnewQWithResponses.5.9"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.6.1",
+        "id": "qrnewQWithResponses.5.10",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
+            "extension": [
+              {
+                "url": "text",
+                "valueString": "5.10"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1054",
+              "display": "How often have Other strategies or methods you have tried in the last 6 months helped with your pain? Please describe"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
+          "display": "Brenda Jackson"
+        },
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
+        "valueString": "physical treatments other text box answer",
+        "derivedFrom": [
+          {
+            "reference": "QuestionnaireResponse/newQWithResponses"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/qrnewQWithResponses.5.10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "qrnewQWithResponses.6.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -1998,9 +1998,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1017",
+              "display": "How often have Pain relievers (such as Advil, Aleve, Aspirin, Ibuprofen, Motrin, Tylenol) you can buy without a prescription from your doctor that you have used in the last 6 months helped with your pain?"
             }
           ]
         },
@@ -2008,7 +2008,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2020,19 +2020,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.6.1"
+        "url": "Observation/qrnewQWithResponses.6.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.6.2",
+        "id": "qrnewQWithResponses.6.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2058,9 +2058,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1018",
+              "display": "How often have Herbal or nutritional pain relievers (such as ginseng or kava kava) that you have used in the last 6 months helped with your pain?"
             }
           ]
         },
@@ -2068,7 +2068,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2080,19 +2080,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.6.2"
+        "url": "Observation/qrnewQWithResponses.6.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.6.3",
+        "id": "qrnewQWithResponses.6.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2118,9 +2118,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1055",
+              "display": "Have you used any Other items you can buy without a prescription from your doctor to help with your pain in the last 6 months? Please describe"
             }
           ]
         },
@@ -2128,31 +2128,23 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
-        "valueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes",
-              "code": "mpqr-1002",
-              "display": "Always"
-            }
-          ]
-        },
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
+        "valueString": "OTC other text box answer",
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.6.3"
+        "url": "Observation/qrnewQWithResponses.6.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.7.1",
+        "id": "qrnewQWithResponses.7.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2178,9 +2170,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1020",
+              "display": "How often have prescription Opioid medications (such as hydrocodone, oxycodone, codeine, morphine and fentanyl) helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -2188,7 +2180,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2200,19 +2192,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.7.1"
+        "url": "Observation/qrnewQWithResponses.7.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.7.2",
+        "id": "qrnewQWithResponses.7.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2238,9 +2230,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1021",
+              "display": "How often have prescription Cortisone injections (a shot to relieve inflammation) helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -2248,7 +2240,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2260,19 +2252,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.7.2"
+        "url": "Observation/qrnewQWithResponses.7.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.7.3",
+        "id": "qrnewQWithResponses.7.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2298,9 +2290,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1022",
+              "display": "How often have prescription Non-opioid medications as prescribed by a doctor (such as Celebrex, Cymbalta) helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -2308,7 +2300,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2320,19 +2312,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.7.3"
+        "url": "Observation/qrnewQWithResponses.7.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.7.4",
+        "id": "qrnewQWithResponses.7.4",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2358,9 +2350,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1056",
+              "display": "How often has Medical marijuana helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -2368,7 +2360,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2380,19 +2372,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.7.4"
+        "url": "Observation/qrnewQWithResponses.7.4"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.7.5",
+        "id": "qrnewQWithResponses.7.5",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2418,9 +2410,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1057",
+              "display": "Have you used any Other prescription medications to help with your pain in the last 6 months?: Please describe"
             }
           ]
         },
@@ -2428,23 +2420,23 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
-        "valueString": "medications other text box",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
+        "valueString": "prescription pain meds other text box answer",
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.7.5"
+        "url": "Observation/qrnewQWithResponses.7.5"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.8.1",
+        "id": "qrnewQWithResponses.8.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2470,9 +2462,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1023",
+              "display": "How often has Yoga helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -2480,7 +2472,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2492,19 +2484,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.8.1"
+        "url": "Observation/qrnewQWithResponses.8.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.8.2",
+        "id": "qrnewQWithResponses.8.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2530,9 +2522,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1024",
+              "display": "How often has Massage helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -2540,7 +2532,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2552,19 +2544,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.8.2"
+        "url": "Observation/qrnewQWithResponses.8.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.8.3",
+        "id": "qrnewQWithResponses.8.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2590,9 +2582,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1025",
+              "display": "How often has Meditation helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -2600,7 +2592,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2612,19 +2604,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.8.3"
+        "url": "Observation/qrnewQWithResponses.8.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.8.4",
+        "id": "qrnewQWithResponses.8.4",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2650,9 +2642,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1026",
+              "display": "How often has Relaxation or mindfulness-based training helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -2660,7 +2652,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2672,19 +2664,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.8.4"
+        "url": "Observation/qrnewQWithResponses.8.4"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.8.5",
+        "id": "qrnewQWithResponses.8.5",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2710,9 +2702,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1027",
+              "display": "How often has Group or individual therapy for pain helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -2720,7 +2712,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2732,19 +2724,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.8.5"
+        "url": "Observation/qrnewQWithResponses.8.5"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.8.6",
+        "id": "qrnewQWithResponses.8.6",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2770,9 +2762,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1058",
+              "display": "How often has Cognitive behavioral therapy helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -2780,7 +2772,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2792,19 +2784,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.8.6"
+        "url": "Observation/qrnewQWithResponses.8.6"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.8.7",
+        "id": "qrnewQWithResponses.8.7",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2830,9 +2822,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1028",
+              "display": "How often has Acceptance and commitment therapy helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -2840,7 +2832,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2852,19 +2844,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.8.7"
+        "url": "Observation/qrnewQWithResponses.8.7"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.8.8",
+        "id": "qrnewQWithResponses.8.8",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2890,9 +2882,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1029",
+              "display": "How often has Sleep management (such as a sleep study or CPAP) helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -2900,7 +2892,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -2912,19 +2904,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.8.8"
+        "url": "Observation/qrnewQWithResponses.8.8"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.8.9",
+        "id": "qrnewQWithResponses.8.9",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -2950,9 +2942,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1059",
+              "display": "Have you tried any Other mind-body techniques or therapies to help with your pain in the last 6 months? Please describe"
             }
           ]
         },
@@ -2960,23 +2952,23 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
-        "valueString": "yoga et. al. other text box",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
+        "valueString": "new other text box (yoga) answer",
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.8.9"
+        "url": "Observation/qrnewQWithResponses.8.9"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.9.1",
+        "id": "qrnewQWithResponses.9.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -3002,9 +2994,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1030",
+              "display": "How often has Aromatherapy helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -3012,7 +3004,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -3024,19 +3016,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.9.1"
+        "url": "Observation/qrnewQWithResponses.9.1"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.9.2",
+        "id": "qrnewQWithResponses.9.2",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -3062,9 +3054,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1031",
+              "display": "How often have Crystals helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -3072,7 +3064,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -3084,19 +3076,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.9.2"
+        "url": "Observation/qrnewQWithResponses.9.2"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.9.3",
+        "id": "qrnewQWithResponses.9.3",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -3122,9 +3114,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1032",
+              "display": "How often have Essential oils helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -3132,7 +3124,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -3144,19 +3136,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.9.3"
+        "url": "Observation/qrnewQWithResponses.9.3"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.9.4",
+        "id": "qrnewQWithResponses.9.4",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -3182,9 +3174,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1060",
+              "display": "How often has CBD oil helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -3192,7 +3184,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -3204,19 +3196,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.9.4"
+        "url": "Observation/qrnewQWithResponses.9.4"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.9.5",
+        "id": "qrnewQWithResponses.9.5",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -3242,9 +3234,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1033",
+              "display": "How often has Music therapy helped with your pain in the last 6 months?"
             }
           ]
         },
@@ -3252,7 +3244,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -3264,19 +3256,19 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.9.5"
+        "url": "Observation/qrnewQWithResponses.9.5"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.9.6",
+        "id": "qrnewQWithResponses.9.6",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -3302,9 +3294,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1034",
+              "display": "Have you tried any Other new treatments to help with your pain in the last 6 months? Please describe"
             }
           ]
         },
@@ -3312,23 +3304,23 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
-        "valueString": "aromatherapy et al other text box",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
+        "valueString": "new age (aromatherapy) treatment other text box answer",
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.9.6"
+        "url": "Observation/qrnewQWithResponses.9.6"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "qrallResponses.14.1",
+        "id": "qrnewQWithResponses.14.1",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/derivedFromLinkId",
@@ -3354,9 +3346,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "74465-6",
-              "display": "Questionnaire response Document"
+              "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+              "code": "mpq-1063",
+              "display": "Please indicate your level of agreement with the following statement: Using the MyPAIN tool has helped me begin preparing for a conversation with my provider about managing my pain."
             }
           ]
         },
@@ -3364,7 +3356,7 @@
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2",
           "display": "Brenda Jackson"
         },
-        "effectiveDateTime": "2020-10-13T14:20:27-06:00",
+        "effectiveDateTime": "2020-10-28T07:30:48-06:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -3376,13 +3368,13 @@
         },
         "derivedFrom": [
           {
-            "reference": "QuestionnaireResponse/allResponses"
+            "reference": "QuestionnaireResponse/newQWithResponses"
           }
         ]
       },
       "request": {
         "method": "PUT",
-        "url": "Observation/qrallResponses.14.1"
+        "url": "Observation/qrnewQWithResponses.14.1"
       }
     }
   ]
