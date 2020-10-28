@@ -130,7 +130,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
 
                     : this.props.QuestionnaireItem.type === "text" ?
                       <div className="text-type">
-                        <textarea placeholder="Your most important activity goals..."
+                        <textarea placeholder="Type your answer here......"
                           onChange={(event) => this.props.onChange(this.props.QuestionnaireItem, [{ valueString: event.target.value }])}
                         />
                       </div>
