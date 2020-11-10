@@ -82,6 +82,20 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
       }
     }
 
+    let processTextResponse = (questionItem: QuestionnaireItem, answer: any) => {
+      console.log('question text info', questionItem, answer);
+      let responseAnswer: QuestionnaireResponseItemAnswer = JSON.parse(answer);
+      let childResponse: QuestionnaireResponseItem = {
+        linkId: questionItem.linkId,
+        text: questionItem.text,
+        answer: [responseAnswer]
+      };
+
+      console.log('response: ', childResponse)
+
+      this.props.onChange(childResponse);
+    }
+
 
     return (
       <Card ref={this.questionnaireItemRef} className={"questionnaire-item"} id={this.props.QuestionnaireItem.linkId}>
@@ -131,7 +145,10 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
                     : this.props.QuestionnaireItem.type === "text" ?
                       <div className="text-type">
                         <textarea placeholder="Type your answer here......"
-                          onChange={(event) => this.props.onChange(this.props.QuestionnaireItem, [{ valueString: event.target.value }])}
+                          onChange={(event) => {
+                            console.log('event: ', event.target.value);
+                            processTextResponse(this.props.QuestionnaireItem, JSON.stringify({ valueString: event.target.value }))
+                          }}
                         />
                       </div>
                       : <div></div>
@@ -247,7 +264,6 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
         })
       }
 
-      // props.onChange(this.state.questionnaireResponse)
     }
 
     if (props.QuestionnaireItem.code![0].code === 'pain-location' || props.QuestionnaireItem.code![0].code === 'about-my-treatments') {

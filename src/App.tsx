@@ -83,6 +83,7 @@ export default class App extends React.Component<AppProps, AppState> {
     this.setState(state => {
       for (let i = 0; i < state.QuestionnaireResponse.item!.length; i++) {
         if (item.linkId === state.QuestionnaireResponse.item![i].linkId) {
+          console.log('item info:', item, answer)
           state.QuestionnaireResponse.item![i] = item;
           state.QuestionnaireResponse.item!.splice(i, 1)
         }
