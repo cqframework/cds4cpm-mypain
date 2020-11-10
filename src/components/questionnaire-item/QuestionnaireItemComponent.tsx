@@ -83,15 +83,12 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
     }
 
     let processTextResponse = (questionItem: QuestionnaireItem, answer: any) => {
-      console.log('question text info', questionItem, answer);
       let responseAnswer: QuestionnaireResponseItemAnswer = JSON.parse(answer);
       let childResponse: QuestionnaireResponseItem = {
         linkId: questionItem.linkId,
         text: questionItem.text,
         answer: [responseAnswer]
       };
-
-      console.log('response: ', childResponse)
 
       this.props.onChange(childResponse);
     }
@@ -146,7 +143,6 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
                       <div className="text-type">
                         <textarea placeholder="Type your answer here......"
                           onChange={(event) => {
-                            console.log('event: ', event.target.value);
                             processTextResponse(this.props.QuestionnaireItem, JSON.stringify({ valueString: event.target.value }))
                           }}
                         />
@@ -197,7 +193,6 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
             questionnaireResponse
           }
         }, () => {
-          console.log('updated: ', this.state.questionnaireResponse);
           props.onChange(this.state.questionnaireResponse);
         })
       }
@@ -210,7 +205,6 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
         addItem(childResponse);
       }
 
-      console.log('joined: ', joined);
 
       
     }
@@ -246,7 +240,6 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
           }
 
         }, () => {
-          console.log('added item: ', this.state.questionnaireResponse);
           props.onChange(this.state.questionnaireResponse);
         })
       } else if (stateQuestionnaireResponse.item!.some(checkResponseArray)) {
@@ -259,7 +252,6 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
           }
 
         }, () => {
-          console.log('updated item: ', this.state.questionnaireResponse);
           props.onChange(this.state.questionnaireResponse);
         })
       }

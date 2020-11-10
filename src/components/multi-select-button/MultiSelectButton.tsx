@@ -41,7 +41,6 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
         }
 
         const receiveTextAnswer = (text: string) => {
-            console.log('text: ', text)
             if (text.length > 0) {
                 questionnaireItem.text = questionnaireItem.prefix + ': ' + questionnaireItem.text;
                 this.props.parentCallback(questionnaireItem, JSON.stringify({ valueString: text }));
