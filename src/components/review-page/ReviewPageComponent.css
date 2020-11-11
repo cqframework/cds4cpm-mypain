@@ -3,9 +3,14 @@
     border-top: 1px solid lightgray;
     padding-top: 15px;
     /* text-align: left; */
-    padding: 15px 8px;
+    padding: 1em;
 }
 
-.question-response-container>h6 {
+.question-response-container>h6, .text-response-question {
     text-align: left;
+}
+
+.text-response-answer {
+    border: 1px solid lightgray;
+    background: rgba(0,0,0,.05);
 }

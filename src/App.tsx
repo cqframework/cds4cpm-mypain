@@ -52,7 +52,6 @@ export default class App extends React.Component<AppProps, AppState> {
           return (p as Questionnaire)        
       }
       let updatedQuestionnaire = processQuestionnaire(questionnaire);
-      console.log('questionnaire: ', questionnaire);
 
     FHIR.oauth2.ready()
       .then((client: Client) => client.patient.read())
@@ -83,7 +82,6 @@ export default class App extends React.Component<AppProps, AppState> {
     this.setState(state => {
       for (let i = 0; i < state.QuestionnaireResponse.item!.length; i++) {
         if (item.linkId === state.QuestionnaireResponse.item![i].linkId) {
-          console.log('item info:', item, answer)
           state.QuestionnaireResponse.item![i] = item;
           state.QuestionnaireResponse.item!.splice(i, 1)
         }
@@ -100,7 +98,7 @@ export default class App extends React.Component<AppProps, AppState> {
       }
 
     }, () => {
-      console.log('Questionnaire RESPONSE: ', this.state.QuestionnaireResponse);
+      // console.log('Questionnaire RESPONSE: ', this.state.QuestionnaireResponse);
     })
   }
 
