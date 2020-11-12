@@ -140,6 +140,7 @@ export default class App extends React.Component<AppProps, AppState> {
         resourceType: state.QuestionnaireResponse.resourceType,
         authored: this.getCurrentDate(),
         status: "completed",
+        meta: this.state.SelectedQuestionnaire?.meta,
         item: state.QuestionnaireResponse.item
       };
       return {
