@@ -45,7 +45,6 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
       this.setState({ showReview: true }, () => {
         this.props.receivingCallback(this.state.showReview);
       });
-      // this.props.receivingCallback(this.state.showReview);
     }
   }
   handlePreviousQuestionScroll(linkId: number) {

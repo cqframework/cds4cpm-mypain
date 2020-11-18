@@ -10,6 +10,7 @@ import PatientContainer from './components/patient/PatientContainer';
 import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
 import { Button } from 'react-bootstrap';
+import { InfoModal } from './components/info-modal/InfoModal';
 
 interface AppProps {
 
@@ -17,19 +18,25 @@ interface AppProps {
 
 // TODO: remember to assure that it is a proper questionnaire type
 interface AppState {
+  showModal: Boolean,
+  busy: Boolean,
   Status: string,
   SelectedQuestionnaire?: Questionnaire,
   QuestionnaireResponse: QuestionnaireResponse,
-  ServerUrl:[]
+  ServerUrl: []
 }
 
 export default class App extends React.Component<AppProps, AppState> {
 
   questionnaireContainer: any = createRef();
+  handleModal: any = createRef();
+
   constructor(props: AppProps) {
     super(props);
     this.state =
     {
+      showModal: false,
+      busy: false,
       Status: 'not-started',
       SelectedQuestionnaire: undefined,
       QuestionnaireResponse: {
@@ -37,7 +44,7 @@ export default class App extends React.Component<AppProps, AppState> {
         status: "in-progress",
         item: []
       },
-      ServerUrl:[]
+      ServerUrl: []
     };
     this.handleChange = this.handleChange.bind(this);
     this.submitAnswers = this.submitAnswers.bind(this);
@@ -47,20 +54,20 @@ export default class App extends React.Component<AppProps, AppState> {
 
   componentDidMount() {
     getQuestionnaire(this.state.ServerUrl)
-    .then(questionnaire => {
-      const processQuestionnaire = (p: any) => {
-          return (p as Questionnaire)        
-      }
-      let updatedQuestionnaire = processQuestionnaire(questionnaire);
+      .then(questionnaire => {
+        const processQuestionnaire = (p: any) => {
+          return (p as Questionnaire)
+        }
+        let updatedQuestionnaire = processQuestionnaire(questionnaire);
 
-    FHIR.oauth2.ready()
-      .then((client: Client) => client.patient.read())
-      .then((patient) => {
-        patient.id ? this.ptRef = patient.id : this.ptRef = " ";
-        this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
-        return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);;
-      });
-    })
+        FHIR.oauth2.ready()
+          .then((client: Client) => client.patient.read())
+          .then((patient) => {
+            patient.id ? this.ptRef = patient.id : this.ptRef = " ";
+            this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
+            return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);;
+          });
+      })
   }
 
   selectQuestionnaire(selectedQuestionnaire: Questionnaire, ptRef: string, ptDisplay: string): void {
@@ -128,26 +135,42 @@ export default class App extends React.Component<AppProps, AppState> {
           behavior: 'smooth',
           block: 'nearest'
         })
+      } else {
+        console.log('questionnaire container: ', this.questionnaireContainer);
       }
     });
   }
 
+  handleOpenModal = () => {
+    this.handleModal.current.handleShow();
+  }
+
+
   submitAnswers(): void {
-    // let returnQuestionnaireResponse = this.state.QuestionnaireResponse;
     this.setState(state => {
       const QuestionnaireResponse = {
         ...this.state.QuestionnaireResponse,
         resourceType: state.QuestionnaireResponse.resourceType,
         authored: this.getCurrentDate(),
         status: "completed",
+        meta: this.state.SelectedQuestionnaire?.meta,
         item: state.QuestionnaireResponse.item
       };
       return {
         QuestionnaireResponse
       }
     }, () => {
-      console.log('submitted questionnaire: ', this.state.QuestionnaireResponse)
-      submitQuestionnaireResponse(this.state.QuestionnaireResponse);
+      this.setState({ busy: true });
+      submitQuestionnaireResponse(this.state.QuestionnaireResponse)
+        .then(res => {
+          console.log("res: ", res);
+          this.handleModal.current.handleClose();
+          this.setState({ busy: false })
+        })
+        .catch(error => {
+          this.setState({ busy: false })
+          console.error(error);
+        });
     })
   }
 
@@ -174,7 +197,8 @@ export default class App extends React.Component<AppProps, AppState> {
               <div ref={this.questionnaireContainer}>
                 <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
                   questionnaireResponse={this.state.QuestionnaireResponse}
-                  onChange={this.handleChange} onSubmit={this.submitAnswers} />
+                  onChange={this.handleChange} onSubmit={(event: any) => { this.handleOpenModal() }} />
+                <InfoModal ref={this.handleModal} show={this.state.showModal} onSubmit={this.submitAnswers}></InfoModal>
                 <hr />
               </div>
             )}

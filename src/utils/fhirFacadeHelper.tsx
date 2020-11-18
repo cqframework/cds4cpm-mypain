@@ -7,10 +7,13 @@ import { properties } from './properties';
 
     export function submitQuestionnaireResponse(questionnaireResponse: QuestionnaireResponse){
         return FHIR.oauth2.ready()
-            .then((client: Client) => 
+            .then((client: Client) => {
                 // @ts-ignore
-                client.create(questionnaireResponse)
-            );
+                return client.create(questionnaireResponse)
+            })
+            .then((response) => {
+                return response
+            });
     }
 
     export function getQuestionnaire(serverUrl:any){
