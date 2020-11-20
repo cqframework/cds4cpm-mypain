@@ -11,6 +11,7 @@ import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
 import { Button } from 'react-bootstrap';
 import { InfoModal } from './components/info-modal/InfoModal';
+import { Redirect } from 'react-router-dom';
 
 interface AppProps {
 
@@ -30,7 +31,6 @@ export default class App extends React.Component<AppProps, AppState> {
 
   questionnaireContainer: any = createRef();
   handleModal: any = createRef();
-
   constructor(props: AppProps) {
     super(props);
     this.state =
@@ -157,18 +157,17 @@ export default class App extends React.Component<AppProps, AppState> {
         item: state.QuestionnaireResponse.item
       };
       return {
-        QuestionnaireResponse
+        QuestionnaireResponse,
+        busy: true
       }
     }, () => {
-      this.setState({ busy: true });
       submitQuestionnaireResponse(this.state.QuestionnaireResponse)
         .then(res => {
+          this.setState({Status: 'completed', busy: false})
           console.log("res: ", res);
-          this.handleModal.current.handleClose();
-          this.setState({ busy: false })
         })
         .catch(error => {
-          this.setState({ busy: false })
+          this.setState({Status: 'error', busy: false})
           console.error(error);
         });
     })
@@ -179,6 +178,12 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   public render(): JSX.Element {
+    if(this.state.Status === "completed") {
+      return <Redirect push to="/confirmation"/>;
+    }
+    if(this.state.Status === "error") {
+      return <Redirect push to="/error"/>;
+    }
     if (this.state.SelectedQuestionnaire) {
       return (
         <div className="app">

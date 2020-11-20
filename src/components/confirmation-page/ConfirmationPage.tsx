@@ -1,22 +1,18 @@
 import React from "react";
-import { Button } from 'react-bootstrap';
-
-type ConfPageProps = {
-    title?: string,
-    message?: string,
-    returnButton?: Boolean
-}
+import './ConfirmationPage.css';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-export const ConfirmationPage = ({title, message, returnButton}: ConfPageProps) => {
-    console.log('props: ', title, message)
-   return  <div className="confirmation-page">
-        <h2>{title ? title : 'here is the title'}</h2>
-        <p>{message ? message : 'here is the message'}</p>
 
-        {returnButton ? (
-            <Button type="button">Return to home</Button>
-        ) : ('')}
+export const ConfirmationPage = () => {
+
+    return <div className="confirmation-page">
+        <div className="confirmation-container">
+            <h1> <FontAwesomeIcon icon={faCheckCircle} /></h1>
+            <h2>Congratulations!</h2>
+            <p>Your responses have been successfully recorded. You may now close your browser window.</p>
+        </div>
 
     </div>
 }

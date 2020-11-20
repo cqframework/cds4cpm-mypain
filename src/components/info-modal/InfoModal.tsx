@@ -1,6 +1,8 @@
 import React from 'react';
 import './InfoModal.css';
-import { Button, Modal } from 'react-bootstrap'
+import { Button, Modal } from 'react-bootstrap';
+import { faCheck, faWindowClose } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export class InfoModal extends React.Component<any, any> {
     constructor(props: any, context: any) {
@@ -9,8 +11,11 @@ export class InfoModal extends React.Component<any, any> {
         this.handleClose = this.handleClose.bind(this);
         this.state = {
             show: false,
+            redirect: false
         };
     }
+
+
 
     handleClose() {
         this.setState({ show: false });
@@ -20,9 +25,9 @@ export class InfoModal extends React.Component<any, any> {
         this.setState({ show: true });
     }
 
-    confirm() {
-        // this.props.onSubmit();
-        this.setState({ show: false });
+    confirm = () => {
+        console.log('props:', this.props)
+        this.props.onSubmit();
     }
 
     render() {
@@ -30,16 +35,12 @@ export class InfoModal extends React.Component<any, any> {
             <>
                 <Modal show={this.state.show} onHide={this.handleClose} animation={false}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title></Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Body>Once you are satisfied with your responses, click the submit button below to send this information to your doctor and your care team. Please be sure to check in with your provider to see if they have accessed PainManager to review your MyPAIN materials.</Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={this.handleClose}>
-                            Close
-                        </Button>
-                        <Button variant="primary" onClick={this.props.onSubmit}>
-                            Save Changes
-                        </Button>
+                        <Button variant="danger" className="close-button" onClick={this.handleClose}> <FontAwesomeIcon icon={faWindowClose} /> Cancel </Button>
+                        <Button variant="success" onClick={this.confirm}> <FontAwesomeIcon icon={faCheck} /> Submit </Button>
                     </Modal.Footer>
                 </Modal>
             </>

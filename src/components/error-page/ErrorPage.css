@@ -1,4 +1,4 @@
-.confirmation-page {
+.error-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,11 +10,7 @@
     margin: 3px;
     border-radius: 5px;
 }
-h1 {
-    display: flex;
-    justify-content: center;   
-}
-.fa-check-circle {
-    height: 60px;
-    width: 60px !important;
+
+.error-icon path {
+    fill: red !important;
 }
