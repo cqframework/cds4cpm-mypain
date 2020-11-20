@@ -9,6 +9,7 @@ import ReviewPageComponent from '../review-page/ReviewPageComponent';
 import { Button } from 'react-bootstrap';
 import { faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 // import { ConfirmationPage } from '../confirmation-page/ConfirmationPage';
 
 interface QuestionnaireState {
@@ -25,6 +26,7 @@ export default class QuestionnaireComponent extends React.Component<any, Questio
             showReviewInfo: false,
             showModal: false
         }
+        console.log('props:', props)
     }
 
     questionnaireResponse: QuestionnaireResponse = this.props.questionnaireResponse;
@@ -51,7 +53,10 @@ export default class QuestionnaireComponent extends React.Component<any, Questio
                     <div>
                         <Button className="btn-outline-secondary previous-button"
                             // value={this.props.QuestionnaireItem.linkId}
-                            onClick={(event: any) => this.setState({showReviewInfo: false})}>
+                            onClick={(event: any) => {
+                                this.setState({showReviewInfo: false})
+                                this.props.onEdit()
+                                }}>
                             <FontAwesomeIcon icon={faArrowAltCircleLeft} />
                         </Button>
                         <div>
@@ -59,7 +64,11 @@ export default class QuestionnaireComponent extends React.Component<any, Questio
                             <ReviewPageComponent {...this.props.questionnaireResponse}></ReviewPageComponent>
                         </div>
 
-                        <Button className="submit-button" type="button" onClick={this.props.onSubmit}>Submit</Button>
+                        <div className="submit-confirmation-text">
+                        <p>Once you are satisfied with your responses, click the submit button below to send this information to your doctor and your care team. Please be sure to check in with your provider to see if they have accessed PainManager to review your MyPAIN materials.</p>
+                        </div>
+
+                        <Button className="continue-button" type="button" onClick={this.props.onSubmit}><FontAwesomeIcon icon={faCheck} /> Continue</Button>
                     </div>
                 }
             </div>

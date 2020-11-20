@@ -48,6 +48,7 @@ export default class App extends React.Component<AppProps, AppState> {
     };
     this.handleChange = this.handleChange.bind(this);
     this.submitAnswers = this.submitAnswers.bind(this);
+    this.startQuestionnaire = this.startQuestionnaire.bind(this);
   }
   ptRef: string | undefined;
   ptDisplay: any;
@@ -135,8 +136,6 @@ export default class App extends React.Component<AppProps, AppState> {
           behavior: 'smooth',
           block: 'nearest'
         })
-      } else {
-        console.log('questionnaire container: ', this.questionnaireContainer);
       }
     });
   }
@@ -201,7 +200,7 @@ export default class App extends React.Component<AppProps, AppState> {
           ) : (
               <div ref={this.questionnaireContainer}>
                 <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
-                  questionnaireResponse={this.state.QuestionnaireResponse}
+                  questionnaireResponse={this.state.QuestionnaireResponse} onEdit={this.startQuestionnaire}
                   onChange={this.handleChange} onSubmit={(event: any) => { this.handleOpenModal() }} />
                 <InfoModal ref={this.handleModal} show={this.state.showModal} onSubmit={this.submitAnswers}></InfoModal>
                 <hr />

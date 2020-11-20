@@ -21,7 +21,7 @@ export const ErrorPage = ({ title, message }: ConfPageProps) => {
             <h1> <FontAwesomeIcon size="2x" icon={faWindowClose} className="error-icon"/></h1>
             <h2>OOPS!</h2>
             <p>There was an error submitting your responses. Please return to the beginning and verify your input.</p>
-            <Link to='/'><Button type="button">Return to home</Button></Link>
+            <Link to='/'><Button className="continue-button" type="button">Return to home</Button></Link>
         </div>
 
 

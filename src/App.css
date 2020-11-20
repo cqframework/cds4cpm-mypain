@@ -1,5 +1,7 @@
 html {
     --color-dark: 0, 0, 255;
+    --color-dark: 31,57,61;
+    /* --color-dark: 143,136,63; */
     /* --color-dark: 40, 44, 52; */
     --color-light-text: 255, 255, 255;
 }
@@ -51,7 +53,7 @@ h3 {
     color: var(--color-light-text)
 }
 
-.submit-button {
+.continue-button {
     background-color: rgba(var(--color-dark), .10) !important;
     border-color: var(--color-dark) !important;
     font-size: calc(4px + 2vmin);

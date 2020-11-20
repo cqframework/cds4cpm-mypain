@@ -10,7 +10,7 @@
     margin: 3px;
     border-radius: 5px;
 }
-h1 {
+h1, h2 {
     display: flex;
     justify-content: center;   
 }
