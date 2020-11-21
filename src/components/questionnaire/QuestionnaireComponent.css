@@ -11,3 +11,8 @@
   padding: 1em;
   background: #f2f2f2;
 }
+
+.edit-button {
+  display: flex;
+  position: absolute;
+}

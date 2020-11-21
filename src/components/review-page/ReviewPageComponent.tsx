@@ -1,14 +1,15 @@
 import React from 'react';
 import './ReviewPageComponent.css';
-import { Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
 import parser from 'html-react-parser';
 import { QuestionnaireResponseItem } from '../../fhir-types/fhir-r4';
 
-export default class ReviewPageComponent extends React.Component<any, any> {
-    // constructor(props: any) {
-    //     super(props);
-    // }
 
+export default class ReviewPageComponent extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+        console.log('props: ', props)
+    }
 
     public render(): JSX.Element {
 
@@ -38,6 +39,7 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                                             <tr>
                                                 <th>Question</th>
                                                 <th>Answer</th>
+                                                <th><Button type="button" onClick={this.props.goEdit()}>Edit Response</Button> </th>
                                             </tr>
                                         </thead>
                                         <tbody>

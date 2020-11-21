@@ -37,7 +37,10 @@ export class InfoModal extends React.Component<any, any> {
                     <Modal.Header closeButton>
                         <Modal.Title></Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Once you are satisfied with your responses, click the submit button below to send this information to your doctor and your care team. Please be sure to check in with your provider to see if they have accessed PainManager to review your MyPAIN materials.</Modal.Body>
+                    <Modal.Body> 
+                        <p>Click the submit button below to send this information to your doctor and your care team. Please be sure to check in with your provider to see if they have accessed PainManager to review your MyPAIN materials.</p>
+                        <p>For additional assistance with MyPAIN or questions about your upcoming appointment, please contact your health care provider.</p>
+                    </Modal.Body>
                     <Modal.Footer>
                         <Button variant="danger" className="close-button" onClick={this.handleClose}> <FontAwesomeIcon icon={faWindowClose} /> Cancel </Button>
                         <Button variant="success" className="submit-button" onClick={this.confirm}> <FontAwesomeIcon icon={faCheck} /> Submit </Button>

@@ -26,7 +26,6 @@ export default class QuestionnaireComponent extends React.Component<any, Questio
             showReviewInfo: false,
             showModal: false
         }
-        console.log('props:', props)
     }
 
     questionnaireResponse: QuestionnaireResponse = this.props.questionnaireResponse;
@@ -51,7 +50,7 @@ export default class QuestionnaireComponent extends React.Component<any, Questio
             return <div className="questionnaire">
                 {
                     <div>
-                        <Button className="btn-outline-secondary previous-button"
+                        <Button className="btn-outline-secondary edit-button"
                             // value={this.props.QuestionnaireItem.linkId}
                             onClick={(event: any) => {
                                 this.setState({showReviewInfo: false})
@@ -61,11 +60,11 @@ export default class QuestionnaireComponent extends React.Component<any, Questio
                         </Button>
                         <div>
                             <h4>Review and Submit</h4>
-                            <ReviewPageComponent {...this.props.questionnaireResponse}></ReviewPageComponent>
+                            <ReviewPageComponent goEdit={this.props.onEdit} {...this.props.questionnaireResponse}></ReviewPageComponent>
                         </div>
 
                         <div className="submit-confirmation-text">
-                        <p>Once you are satisfied with your responses, click the submit button below to send this information to your doctor and your care team. Please be sure to check in with your provider to see if they have accessed PainManager to review your MyPAIN materials.</p>
+                        <p>Once you are satisfied with your responses, click the continue button below.</p>
                         </div>
 
                         <Button className="continue-button" type="button" onClick={this.props.onSubmit}><FontAwesomeIcon icon={faCheck} /> Continue</Button>
