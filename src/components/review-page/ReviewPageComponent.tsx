@@ -1,6 +1,6 @@
 import React from 'react';
 import './ReviewPageComponent.css';
-import { Button, Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import parser from 'html-react-parser';
 import { QuestionnaireResponseItem } from '../../fhir-types/fhir-r4';
 
@@ -39,7 +39,7 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                                             <tr>
                                                 <th>Question</th>
                                                 <th>Answer</th>
-                                                <th><Button type="button" onClick={this.props.goEdit()}>Edit Response</Button> </th>
+                                                {/* <th><Button type="button" onClick={this.props.goEdit()}>Edit Response</Button> </th> */}
                                             </tr>
                                         </thead>
                                         <tbody>
