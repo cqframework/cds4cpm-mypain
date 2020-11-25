@@ -9,15 +9,17 @@ import { submitQuestionnaireResponse, getQuestionnaire } from './utils/fhirFacad
 import PatientContainer from './components/patient/PatientContainer';
 import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
+import { fhirclient } from 'fhirclient/lib/types';
 import { Button } from 'react-bootstrap';
 
 interface AppProps {
 
 }
 
-// TODO: remember to assure that it is a proper questionnaire type
 interface AppState {
   Status: string,
+  busy: boolean,
+  Patient?: fhirclient.FHIR.Patient,
   SelectedQuestionnaire?: Questionnaire,
   QuestionnaireResponse: QuestionnaireResponse,
   ServerUrl:[]
@@ -31,6 +33,8 @@ export default class App extends React.Component<AppProps, AppState> {
     this.state =
     {
       Status: 'not-started',
+      busy: true,
+      Patient: undefined,
       SelectedQuestionnaire: undefined,
       QuestionnaireResponse: {
         resourceType: "QuestionnaireResponse",
@@ -56,6 +60,7 @@ export default class App extends React.Component<AppProps, AppState> {
     FHIR.oauth2.ready()
       .then((client: Client) => client.patient.read())
       .then((patient) => {
+        this.setState({ Patient: patient, busy: false})
         patient.id ? this.ptRef = patient.id : this.ptRef = " ";
         this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
         return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);;
@@ -168,7 +173,7 @@ export default class App extends React.Component<AppProps, AppState> {
           {this.state.Status !== 'in-progress' ? (
             <div>
 
-              <PatientContainer />
+              <PatientContainer patient={this.state.Patient} busy={this.state.busy}/>
               <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
             </div>
           ) : (
@@ -192,7 +197,7 @@ export default class App extends React.Component<AppProps, AppState> {
               MyPain Development Branch v2
                       </p>
           </header>
-          <PatientContainer />
+          <PatientContainer patient={this.state.Patient} busy={this.state.busy}/>
           <hr />
           <div>
           </div>
