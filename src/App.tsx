@@ -22,7 +22,6 @@ interface AppState {
   showModal: Boolean,
   busy: Boolean,
   Status: string,
-  busy: boolean,
   Patient?: fhirclient.FHIR.Patient,
   SelectedQuestionnaire?: Questionnaire,
   QuestionnaireResponse: QuestionnaireResponse,
@@ -38,7 +37,6 @@ export default class App extends React.Component<AppProps, AppState> {
     this.state =
     {
       showModal: false,
-      busy: false,
       Status: 'not-started',
       busy: true,
       Patient: undefined,
@@ -136,7 +134,6 @@ export default class App extends React.Component<AppProps, AppState> {
   startQuestionnaire = () => {
     this.setState({ Status: 'in-progress' }, () => {
       if (this.questionnaireContainer.current) {
-        console.log('first child: ', this.questionnaireContainer)
         this.questionnaireContainer.current.firstChild.firstChild.nextSibling.classList.add('active');
         this.questionnaireContainer.current.scrollIntoView({
           behavior: 'smooth',

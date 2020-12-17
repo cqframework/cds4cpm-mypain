@@ -1412,7 +1412,7 @@
             {
               "valueCoding": {
                 "code": "LA131-5",
-                "display": "No pain",
+                "display": "Had no pain",
                 "system": "http://loinc.org"
               }
             },
