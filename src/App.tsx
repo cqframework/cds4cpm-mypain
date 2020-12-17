@@ -9,6 +9,7 @@ import { submitQuestionnaireResponse, getQuestionnaire } from './utils/fhirFacad
 import PatientContainer from './components/patient/PatientContainer';
 import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
+import { fhirclient } from 'fhirclient/lib/types';
 import { Button } from 'react-bootstrap';
 import { InfoModal } from './components/info-modal/InfoModal';
 import { Redirect } from 'react-router-dom';
@@ -17,11 +18,12 @@ interface AppProps {
 
 }
 
-// TODO: remember to assure that it is a proper questionnaire type
 interface AppState {
   showModal: Boolean,
   busy: Boolean,
   Status: string,
+  busy: boolean,
+  Patient?: fhirclient.FHIR.Patient,
   SelectedQuestionnaire?: Questionnaire,
   QuestionnaireResponse: QuestionnaireResponse,
   ServerUrl: []
@@ -38,6 +40,8 @@ export default class App extends React.Component<AppProps, AppState> {
       showModal: false,
       busy: false,
       Status: 'not-started',
+      busy: true,
+      Patient: undefined,
       SelectedQuestionnaire: undefined,
       QuestionnaireResponse: {
         resourceType: "QuestionnaireResponse",
@@ -55,20 +59,21 @@ export default class App extends React.Component<AppProps, AppState> {
 
   componentDidMount() {
     getQuestionnaire(this.state.ServerUrl)
-      .then(questionnaire => {
-        const processQuestionnaire = (p: any) => {
-          return (p as Questionnaire)
-        }
-        let updatedQuestionnaire = processQuestionnaire(questionnaire);
+    .then(questionnaire => {
+      const processQuestionnaire = (p: any) => {
+          return (p as Questionnaire)        
+      }
+      let updatedQuestionnaire = processQuestionnaire(questionnaire);
 
-        FHIR.oauth2.ready()
-          .then((client: Client) => client.patient.read())
-          .then((patient) => {
-            patient.id ? this.ptRef = patient.id : this.ptRef = " ";
-            this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
-            return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);;
-          });
-      })
+    FHIR.oauth2.ready()
+      .then((client: Client) => client.patient.read())
+      .then((patient) => {
+        this.setState({ Patient: patient, busy: false})
+        patient.id ? this.ptRef = patient.id : this.ptRef = " ";
+        this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
+        return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);;
+      });
+    })
   }
 
   selectQuestionnaire(selectedQuestionnaire: Questionnaire, ptRef: string, ptDisplay: string): void {
@@ -210,7 +215,7 @@ export default class App extends React.Component<AppProps, AppState> {
           {this.state.Status !== 'in-progress' ? (
             <div>
 
-              <PatientContainer />
+              <PatientContainer patient={this.state.Patient} busy={this.state.busy}/>
               <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
             </div>
           ) : (
@@ -235,7 +240,7 @@ export default class App extends React.Component<AppProps, AppState> {
               MyPain Development Branch v2
                       </p>
           </header>
-          <PatientContainer />
+          <PatientContainer patient={this.state.Patient} busy={this.state.busy}/>
           <hr />
           <div>
           </div>

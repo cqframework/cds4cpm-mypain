@@ -4,7 +4,8 @@ import { fhirclient } from 'fhirclient/lib/types';
 // import { Button } from 'react-bootstrap';
 
 interface PatientProps {
-  item?: fhirclient.FHIR.Patient;
+  item?: fhirclient.FHIR.Patient
+  busy: boolean
 }
 
 interface PatientState {
