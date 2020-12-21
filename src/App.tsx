@@ -11,6 +11,7 @@ import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
 import { fhirclient } from 'fhirclient/lib/types';
 import { Button } from 'react-bootstrap';
+import pkg from '../package.json'
 
 interface AppProps {
 
@@ -26,23 +27,23 @@ interface AppState {
 }
 
 export default class App extends React.Component<AppProps, AppState> {
-
+  appVersion = pkg.version;
   questionnaireContainer: any = createRef();
   constructor(props: AppProps) {
     super(props);
     this.state =
-    {
-      Status: 'not-started',
-      busy: true,
-      Patient: undefined,
-      SelectedQuestionnaire: undefined,
-      QuestionnaireResponse: {
-        resourceType: "QuestionnaireResponse",
-        status: "in-progress",
-        item: []
-      },
-      ServerUrl:[]
-    };
+        {
+          Status: 'not-started',
+          busy: true,
+          Patient: undefined,
+          SelectedQuestionnaire: undefined,
+          QuestionnaireResponse: {
+            resourceType: "QuestionnaireResponse",
+            status: "in-progress",
+            item: []
+          },
+          ServerUrl:[]
+        };
     this.handleChange = this.handleChange.bind(this);
     this.submitAnswers = this.submitAnswers.bind(this);
   }
@@ -51,21 +52,21 @@ export default class App extends React.Component<AppProps, AppState> {
 
   componentDidMount() {
     getQuestionnaire(this.state.ServerUrl)
-    .then(questionnaire => {
-      const processQuestionnaire = (p: any) => {
-          return (p as Questionnaire)        
-      }
-      let updatedQuestionnaire = processQuestionnaire(questionnaire);
+        .then(questionnaire => {
+          const processQuestionnaire = (p: any) => {
+            return (p as Questionnaire)
+          }
+          let updatedQuestionnaire = processQuestionnaire(questionnaire);
 
-    FHIR.oauth2.ready()
-      .then((client: Client) => client.patient.read())
-      .then((patient) => {
-        this.setState({ Patient: patient, busy: false})
-        patient.id ? this.ptRef = patient.id : this.ptRef = " ";
-        this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
-        return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);;
-      });
-    })
+          FHIR.oauth2.ready()
+              .then((client: Client) => client.patient.read())
+              .then((patient) => {
+                this.setState({ Patient: patient, busy: false})
+                patient.id ? this.ptRef = patient.id : this.ptRef = " ";
+                this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
+                return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);;
+              });
+        })
   }
 
   selectQuestionnaire(selectedQuestionnaire: Questionnaire, ptRef: string, ptDisplay: string): void {
@@ -164,46 +165,46 @@ export default class App extends React.Component<AppProps, AppState> {
   public render(): JSX.Element {
     if (this.state.SelectedQuestionnaire) {
       return (
-        <div className="app">
-          <header className="app-header">
-            <p>
-              MyPain Development Branch v2
-                      </p>
-          </header>
-          {this.state.Status !== 'in-progress' ? (
-            <div>
+          <div className="app">
+            <header className="app-header">
+              <p>
+                MyPain &emsp;&emsp;v {this.appVersion}
+              </p>
+            </header>
+            {this.state.Status !== 'in-progress' ? (
+                <div>
 
-              <PatientContainer patient={this.state.Patient} busy={this.state.busy}/>
-              <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
-            </div>
-          ) : (
-              <div ref={this.questionnaireContainer}>
-                <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
-                  questionnaireResponse={this.state.QuestionnaireResponse}
-                  onChange={this.handleChange} onSubmit={this.submitAnswers} />
-                <hr />
-              </div>
+                  <PatientContainer patient={this.state.Patient} busy={this.state.busy}/>
+                  <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
+                </div>
+            ) : (
+                <div ref={this.questionnaireContainer}>
+                  <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
+                                          questionnaireResponse={this.state.QuestionnaireResponse}
+                                          onChange={this.handleChange} onSubmit={this.submitAnswers} />
+                  <hr />
+                </div>
             )}
 
-          <hr />
-          {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
-        </div>
+            <hr />
+            {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
+          </div>
       );
     } else {
       return (
-        <div className="app">
-          <header className="app-header">
-            <p>
-              MyPain Development Branch v2
-                      </p>
-          </header>
-          <PatientContainer patient={this.state.Patient} busy={this.state.busy}/>
-          <hr />
-          <div>
+          <div className="app">
+            <header className="app-header">
+              <p>
+                MyPain &emsp;&emsp;v {this.appVersion}
+              </p>
+            </header>
+            <PatientContainer patient={this.state.Patient} busy={this.state.busy}/>
+            <hr />
+            <div>
+            </div>
+            <hr />
+            {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
           </div>
-          <hr />
-          {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
-        </div>
       );
     }
   }
