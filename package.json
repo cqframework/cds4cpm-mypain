@@ -1,6 +1,6 @@
 {
     "name": "cds4cpm-mypain",
-    "version": "0.1.2",
+    "version": "0.1.1",
     "private": true,
     "homepage": "https://mypain.rti.alphora.com",
     "dependencies": {
