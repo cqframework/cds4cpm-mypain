@@ -30,7 +30,6 @@
     "devDependencies": {
         "@rescripts/cli": "^0.0.13",
         "@rescripts/utilities": "^0.0.6",
-        "babel-loader": "^8.1.0",
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "gh-pages": "^2.2.0",
