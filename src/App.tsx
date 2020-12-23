@@ -24,6 +24,7 @@ interface AppState {
   busy: Boolean,
   Status: string,
   Patient?: fhirclient.FHIR.Patient,
+  ErrorMessage?: string,
   SelectedQuestionnaire?: Questionnaire,
   QuestionnaireResponse: QuestionnaireResponse,
   ServerUrl: []
@@ -39,6 +40,7 @@ export default class App extends React.Component<AppProps, AppState> {
     {
       showModal: false,
       Status: 'not-started',
+      ErrorMessage: undefined,
       busy: true,
       Patient: undefined,
       SelectedQuestionnaire: undefined,
@@ -71,7 +73,15 @@ export default class App extends React.Component<AppProps, AppState> {
             patient.id ? this.ptRef = patient.id : this.ptRef = " ";
             this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
             return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);;
+          }).catch(error => {
+            this.setState({ busy: false, Status: 'error', ErrorMessage: error.message }, () => {
+              console.log('err: ', error.message)
+            })
           });
+      }).catch(error => {
+        this.setState({ busy: false, Status: 'error', ErrorMessage: error.message }, () => {
+          console.log('err: ', error.message)
+        })
       })
   }
 
@@ -185,7 +195,7 @@ export default class App extends React.Component<AppProps, AppState> {
           console.log("res: ", res);
         })
         .catch(error => {
-          this.setState({ Status: 'error', busy: false })
+          this.setState({ Status: 'error', busy: false, ErrorMessage: error.message })
           console.error(error);
         });
     })
@@ -200,7 +210,12 @@ export default class App extends React.Component<AppProps, AppState> {
       return <Redirect push to="/confirmation" />;
     }
     if (this.state.Status === "error") {
-      return <Redirect push to="/error" />;
+      return <Redirect push to={
+        {
+          pathname: "/error/",
+          state: this.state.ErrorMessage
+        }
+      } />;
     }
     if (this.state.SelectedQuestionnaire) {
       return (
@@ -212,9 +227,11 @@ export default class App extends React.Component<AppProps, AppState> {
           </header>
           {this.state.Status !== 'in-progress' ? (
             <div>
+              <div className="patient-container">
 
-              <PatientContainer patient={this.state.Patient} busy={this.state.busy} />
-              <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
+                <PatientContainer patient={this.state.Patient} busy={this.state.busy} />
+                <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
+              </div>
             </div>
           ) : (
               <div ref={this.questionnaireContainer}>
@@ -226,7 +243,7 @@ export default class App extends React.Component<AppProps, AppState> {
               </div>
             )}
 
-          <hr />
+          {/* <hr /> */}
           {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
         </div>
       );
@@ -238,11 +255,13 @@ export default class App extends React.Component<AppProps, AppState> {
               MyPain &emsp;&emsp;v {this.appVersion}
             </p>
           </header>
-          <PatientContainer patient={this.state.Patient} busy={this.state.busy} />
-          <hr />
+          <div className="patient-container">
+            <PatientContainer patient={this.state.Patient} busy={this.state.busy} />
+          </div>
+          {/* <hr /> */}
           <div>
           </div>
-          <hr />
+          {/* <hr /> */}
           {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
         </div>
       );

@@ -11,6 +11,19 @@
     border-radius: 5px;
 }
 
+/* Ipad specific media queries */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    .error-page {
+        height: 1024px;
+    }
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
+    .error-page {
+      height: 768px;
+    }
+}
+
 .error-icon path {
     fill: #d9534f !important;
 }

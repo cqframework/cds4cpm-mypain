@@ -5,7 +5,6 @@ import { fhirclient } from 'fhirclient/lib/types';
 
 interface PatientProps {
   item?: fhirclient.FHIR.Patient
-  busy: boolean
 }
 
 interface PatientState {

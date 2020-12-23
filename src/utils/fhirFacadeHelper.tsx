@@ -13,6 +13,8 @@ import { properties } from './properties';
             })
             .then((response) => {
                 return response
+            }).catch(error => {
+                console.log('oops: ', error)
             });
     }
 
@@ -26,5 +28,8 @@ import { properties } from './properties';
             .then((questionnaire)=>{
                 serverUrl.push(url + '/Questionnaire/' + questionnaire.id);
                 return questionnaire;
+            }).catch(error => {
+                console.log('error: ', error)
+                return error;
             });
     }
