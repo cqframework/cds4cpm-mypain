@@ -16,7 +16,6 @@ interface PatientContainerState {
 
 export default class PatientContainer extends React.Component<any, PatientContainerState> {
   constructor(props: PatientContainerProps) {
-    console.log('patient container props: ', props)
     super(props);
 
     this.state =
@@ -27,10 +26,8 @@ export default class PatientContainer extends React.Component<any, PatientContai
 
   componentDidUpdate(nextProps: any) {
     const { busy } = this.props;
-    console.log('patient busy: ', busy)
     if (nextProps.busy !== busy) {
         this.setState({busy: busy}, () => {
-          console.log('patient container state', this.state);
         })
     }
   }
