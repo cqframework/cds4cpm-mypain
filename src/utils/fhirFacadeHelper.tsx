@@ -29,7 +29,6 @@ import { properties } from './properties';
                 serverUrl.push(url + '/Questionnaire/' + questionnaire.id);
                 return questionnaire;
             }).catch(error => {
-                console.log('error: ', error)
                 return error;
             });
     }

@@ -38,7 +38,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
           block: 'nearest'
         })
       }
-
+      console.log('video player:', document.getElementById('#player'));
 
     }
     if (this.questionnaireItemRef.current.nextSibling == null) {
