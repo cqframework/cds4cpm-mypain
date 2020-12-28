@@ -38,14 +38,13 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
           block: 'nearest'
         })
       }
-
+      console.log('video player:', document.getElementById('#player'));
 
     }
     if (this.questionnaireItemRef.current.nextSibling == null) {
       this.setState({ showReview: true }, () => {
         this.props.receivingCallback(this.state.showReview);
       });
-      // this.props.receivingCallback(this.state.showReview);
     }
   }
   handlePreviousQuestionScroll(linkId: number) {
@@ -103,7 +102,9 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
               <Button className="btn-outline-secondary previous-button"
                 value={this.props.QuestionnaireItem.linkId}
                 onClick={(event: any) => this.handlePreviousQuestionScroll(event.target.value)}>
-                <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+                <FontAwesomeIcon 
+                icon={faArrowAltCircleLeft} 
+                onClick={(event: any) => this.handlePreviousQuestionScroll(this.props.QuestionnaireItem.linkId)}/>
               </Button>
             )}
           <div className="prefix-text">

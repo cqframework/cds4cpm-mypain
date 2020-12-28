@@ -11,6 +11,8 @@ import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
 import { fhirclient } from 'fhirclient/lib/types';
 import { Button } from 'react-bootstrap';
+import { InfoModal } from './components/info-modal/InfoModal';
+import { Redirect } from 'react-router-dom';
 import pkg from '../package.json'
 
 interface AppProps {
@@ -18,55 +20,69 @@ interface AppProps {
 }
 
 interface AppState {
+  showModal: Boolean,
+  busy: Boolean,
   Status: string,
-  busy: boolean,
   Patient?: fhirclient.FHIR.Patient,
+  ErrorMessage?: string,
   SelectedQuestionnaire?: Questionnaire,
   QuestionnaireResponse: QuestionnaireResponse,
-  ServerUrl:[]
+  ServerUrl: []
 }
 
 export default class App extends React.Component<AppProps, AppState> {
   appVersion = pkg.version;
   questionnaireContainer: any = createRef();
+  handleModal: any = createRef();
   constructor(props: AppProps) {
     super(props);
     this.state =
-        {
-          Status: 'not-started',
-          busy: true,
-          Patient: undefined,
-          SelectedQuestionnaire: undefined,
-          QuestionnaireResponse: {
-            resourceType: "QuestionnaireResponse",
-            status: "in-progress",
-            item: []
-          },
-          ServerUrl:[]
-        };
+    {
+      showModal: false,
+      Status: 'not-started',
+      ErrorMessage: undefined,
+      busy: true,
+      Patient: undefined,
+      SelectedQuestionnaire: undefined,
+      QuestionnaireResponse: {
+        resourceType: "QuestionnaireResponse",
+        status: "in-progress",
+        item: []
+      },
+      ServerUrl: []
+    };
     this.handleChange = this.handleChange.bind(this);
     this.submitAnswers = this.submitAnswers.bind(this);
+    this.startQuestionnaire = this.startQuestionnaire.bind(this);
   }
   ptRef: string | undefined;
   ptDisplay: any;
 
   componentDidMount() {
     getQuestionnaire(this.state.ServerUrl)
-        .then(questionnaire => {
-          const processQuestionnaire = (p: any) => {
-            return (p as Questionnaire)
-          }
-          let updatedQuestionnaire = processQuestionnaire(questionnaire);
+      .then(questionnaire => {
+        const processQuestionnaire = (p: any) => {
+          return (p as Questionnaire)
+        }
+        let updatedQuestionnaire = processQuestionnaire(questionnaire);
 
-          FHIR.oauth2.ready()
-              .then((client: Client) => client.patient.read())
-              .then((patient) => {
-                this.setState({ Patient: patient, busy: false})
-                patient.id ? this.ptRef = patient.id : this.ptRef = " ";
-                this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
-                return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);;
-              });
+        FHIR.oauth2.ready()
+          .then((client: Client) => client.patient.read())
+          .then((patient) => {
+            this.setState({ Patient: patient, busy: false })
+            patient.id ? this.ptRef = patient.id : this.ptRef = " ";
+            this.ptDisplay = patient.name[0].given[0] + ' ' + patient.name[0].family;
+            return this.selectQuestionnaire(updatedQuestionnaire, this.ptRef, this.ptDisplay);;
+          }).catch(error => {
+            this.setState({ busy: false, Status: 'error', ErrorMessage: error.message }, () => {
+              console.log('err: ', error.message)
+            })
+          });
+      }).catch(error => {
+        this.setState({ busy: false, Status: 'error', ErrorMessage: error.message }, () => {
+          console.log('err: ', error.message)
         })
+      })
   }
 
   selectQuestionnaire(selectedQuestionnaire: Questionnaire, ptRef: string, ptDisplay: string): void {
@@ -138,8 +154,27 @@ export default class App extends React.Component<AppProps, AppState> {
     });
   }
 
+  // preparing to be able to go directly to the question to edit the response
+  // this will go in the onEdit property of QuestionnaireComponent
+  // goToEditQuestionnaire = (id: number) => {
+  //   this.setState({ Status: 'in-progress' }, () => {
+  //     if (this.questionnaireContainer.current) {
+  //       this.questionnaireContainer.current.firstElementChild.children[id].classList.add('active');
+  //       this.questionnaireContainer.current.scrollIntoView({
+  //         behavior: 'smooth',
+  //         block: 'nearest'
+  //       })
+  //     }
+
+  //   });
+  // }
+
+  handleOpenModal = () => {
+    this.handleModal.current.handleShow();
+  }
+
+
   submitAnswers(): void {
-    // let returnQuestionnaireResponse = this.state.QuestionnaireResponse;
     this.setState(state => {
       const QuestionnaireResponse = {
         ...this.state.QuestionnaireResponse,
@@ -150,11 +185,19 @@ export default class App extends React.Component<AppProps, AppState> {
         item: state.QuestionnaireResponse.item
       };
       return {
-        QuestionnaireResponse
+        QuestionnaireResponse,
+        busy: true
       }
     }, () => {
-      console.log('submitted questionnaire: ', this.state.QuestionnaireResponse)
-      submitQuestionnaireResponse(this.state.QuestionnaireResponse);
+      submitQuestionnaireResponse(this.state.QuestionnaireResponse)
+        .then(res => {
+          this.setState({ Status: 'completed', busy: false })
+          console.log("res: ", res);
+        })
+        .catch(error => {
+          this.setState({ Status: 'error', busy: false, ErrorMessage: error.message })
+          console.error(error);
+        });
     })
   }
 
@@ -163,48 +206,64 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   public render(): JSX.Element {
+    if (this.state.Status === "completed") {
+      return <Redirect push to="/confirmation" />;
+    }
+    if (this.state.Status === "error") {
+      return <Redirect push to={
+        {
+          pathname: "/error/",
+          state: this.state.ErrorMessage
+        }
+      } />;
+    }
     if (this.state.SelectedQuestionnaire) {
       return (
-          <div className="app">
-            <header className="app-header">
-              <p>
-                MyPain &emsp;&emsp;v {this.appVersion}
-              </p>
-            </header>
-            {this.state.Status !== 'in-progress' ? (
-                <div>
+        <div className="app">
+          <header className="app-header">
+            <p>
+              MyPain &emsp;&emsp;v {this.appVersion}
+            </p>
+          </header>
+          {this.state.Status !== 'in-progress' ? (
+            <div>
+              <div className="patient-container">
 
-                  <PatientContainer patient={this.state.Patient} busy={this.state.busy}/>
-                  <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
-                </div>
-            ) : (
-                <div ref={this.questionnaireContainer}>
-                  <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
-                                          questionnaireResponse={this.state.QuestionnaireResponse}
-                                          onChange={this.handleChange} onSubmit={this.submitAnswers} />
-                  <hr />
-                </div>
+                <PatientContainer patient={this.state.Patient} busy={this.state.busy} />
+                <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
+              </div>
+            </div>
+          ) : (
+              <div ref={this.questionnaireContainer}>
+                <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
+                  questionnaireResponse={this.state.QuestionnaireResponse} onEdit={this.startQuestionnaire}
+                  onChange={this.handleChange} onSubmit={(event: any) => { this.handleOpenModal() }} />
+                <InfoModal ref={this.handleModal} show={this.state.showModal} onSubmit={this.submitAnswers}></InfoModal>
+                <hr />
+              </div>
             )}
 
-            <hr />
-            {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
-          </div>
+          {/* <hr /> */}
+          {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
+        </div>
       );
     } else {
       return (
-          <div className="app">
-            <header className="app-header">
-              <p>
-                MyPain &emsp;&emsp;v {this.appVersion}
-              </p>
-            </header>
-            <PatientContainer patient={this.state.Patient} busy={this.state.busy}/>
-            <hr />
-            <div>
-            </div>
-            <hr />
-            {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
+        <div className="app">
+          <header className="app-header">
+            <p>
+              MyPain &emsp;&emsp;v {this.appVersion}
+            </p>
+          </header>
+          <div className="patient-container">
+            <PatientContainer patient={this.state.Patient} busy={this.state.busy} />
           </div>
+          {/* <hr /> */}
+          <div>
+          </div>
+          {/* <hr /> */}
+          {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
+        </div>
       );
     }
   }

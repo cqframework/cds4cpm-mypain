@@ -11,7 +11,7 @@ interface PatientContainerProps {
 
 interface PatientContainerState {
   patient?: any
-  busy: boolean
+  busy?: boolean
 }
 
 export default class PatientContainer extends React.Component<any, PatientContainerState> {
@@ -20,13 +20,16 @@ export default class PatientContainer extends React.Component<any, PatientContai
 
     this.state =
     {
-      busy: true,
-      patient: undefined
+      
     };
   }
 
-  componentDidMount() {
-    this.setState({busy: this.props.busy, patient: this.props.patient})
+  componentDidUpdate(nextProps: any) {
+    const { busy } = this.props;
+    if (nextProps.busy !== busy) {
+        this.setState({busy: busy}, () => {
+        })
+    }
   }
 
   public render(): JSX.Element {
