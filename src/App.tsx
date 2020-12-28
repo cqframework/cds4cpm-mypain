@@ -206,6 +206,10 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   public render(): JSX.Element {
+    // if (window.MSCompatibleInfo != null) {
+    //   alert('IE is not allowed please use Chrome!')
+    //   throw new Error('IE is not allowed please use Chrome!');
+    // }
     if (this.state.Status === "completed") {
       return <Redirect push to="/confirmation" />;
     }
