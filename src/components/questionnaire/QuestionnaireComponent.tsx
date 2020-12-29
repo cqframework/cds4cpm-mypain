@@ -41,21 +41,20 @@ export default class QuestionnaireComponent extends React.Component<any, Questio
     }
 
     render(): JSX.Element {
-        // console.log('questionnaire: ', this.props.questionnaire);
-        if (this.state.showConfirmation) {
-            // return <ConfirmationPage></ConfirmationPage>
-            return <div></div>
-        }
-        else if (this.state.showReviewInfo) {
-            return <div className="questionnaire">
+        return <div className="questionnaire">
+            <div>{this.props.questionnaire.title}</div>
+            {this.props.questionnaire.item.map((item: QuestionnaireItem, key: any) => {
+                return <QuestionnaireItemComponent receivingCallback={this.receiveData} length={this.props.questionnaire.item?.length} QuestionnaireItem={item} key={key} onChange={this.props.onChange} />
+            })}
+            <div className={!this.state.showReviewInfo ? 'hidden' : ''}>
                 {
                     <div>
                         <Button className="btn-outline-secondary edit-button"
                             // value={this.props.QuestionnaireItem.linkId}
                             onClick={(event: any) => {
-                                this.setState({showReviewInfo: false})
+                                this.setState({ showReviewInfo: false })
                                 this.props.onEdit()
-                                }}>
+                            }}>
                             <FontAwesomeIcon icon={faArrowAltCircleLeft} />
                         </Button>
                         <div>
@@ -64,23 +63,15 @@ export default class QuestionnaireComponent extends React.Component<any, Questio
                         </div>
 
                         <div className="submit-confirmation-text">
-                        <p>Once you are satisfied with your responses, click the continue button below.</p>
+                            <p>Once you are satisfied with your responses, click the continue button below.</p>
                         </div>
 
                         <Button className="continue-button" type="button" onClick={this.props.onSubmit}><FontAwesomeIcon icon={faCheck} /> Continue</Button>
                     </div>
                 }
             </div>
-        } else {
-            return <div className="questionnaire">
-                <div>{this.props.questionnaire.title}</div>
-                {this.props.questionnaire.item.map((item: QuestionnaireItem, key: any) => {
-                    return <QuestionnaireItemComponent receivingCallback={this.receiveData} length={this.props.questionnaire.item?.length} QuestionnaireItem={item} key={key} onChange={this.props.onChange} />
-                })}
-            </div>
 
-
-        }
+        </div>
 
     }
 

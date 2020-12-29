@@ -33,13 +33,10 @@
 }
 
 .welcome {
-    /* @media screen only and (max-width: 480px) { */
-    /* height: 80vh; */
     display: flex;
     text-align: left;
     flex-direction: column;
     justify-content: center;
-    /* } */
 }
 
 .btn-outline-secondary {
@@ -49,12 +46,8 @@
 }
 
 .next-button {
-    /* @media screen only and (max-width: 480px) { */
     width: 30%;
     align-self: center;
     color: #000000 !important;
     margin-top: 1rem;
-    /* } */
-    /* padding-left:30px;  */
-    /* padding-right:30px;  */
 }

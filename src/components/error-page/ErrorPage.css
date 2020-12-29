@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 99vh;
+    min-height: 99vh;
     margin: 0 10px;
     color: var(--color-dark);
     border: 1px solid #000000;

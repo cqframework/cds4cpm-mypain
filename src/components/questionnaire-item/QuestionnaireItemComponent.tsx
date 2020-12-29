@@ -38,10 +38,8 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
           block: 'nearest'
         })
       }
-      console.log('video player:', document.getElementById('#player'));
-
     }
-    if (this.questionnaireItemRef.current.nextSibling == null) {
+    if (!this.questionnaireItemRef.current.nextSibling.classList.contains('questionnaire-item')) {
       this.setState({ showReview: true }, () => {
         this.props.receivingCallback(this.state.showReview);
       });
