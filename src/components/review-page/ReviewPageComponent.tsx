@@ -6,10 +6,6 @@ import { QuestionnaireResponseItem } from '../../fhir-types/fhir-r4';
 
 
 export default class ReviewPageComponent extends React.Component<any, any> {
-    constructor(props: any) {
-        super(props);
-        console.log('props: ', props)
-    }
 
     public render(): JSX.Element {
 

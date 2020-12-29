@@ -156,18 +156,18 @@ export default class App extends React.Component<AppProps, AppState> {
 
   // preparing to be able to go directly to the question to edit the response
   // this will go in the onEdit property of QuestionnaireComponent
-  // goToEditQuestionnaire = (id: number) => {
-  //   this.setState({ Status: 'in-progress' }, () => {
-  //     if (this.questionnaireContainer.current) {
-  //       this.questionnaireContainer.current.firstElementChild.children[id].classList.add('active');
-  //       this.questionnaireContainer.current.scrollIntoView({
-  //         behavior: 'smooth',
-  //         block: 'nearest'
-  //       })
-  //     }
+  goToEditQuestionnaire = () => {
+    this.setState({ Status: 'in-progress' }, () => {
+      if (this.questionnaireContainer.current) {
+        this.questionnaireContainer.current.firstElementChild.children[this.state.SelectedQuestionnaire?.item?.length || 0].classList.add('active');
+        this.questionnaireContainer.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest'
+        })
+      }
 
-  //   });
-  // }
+    });
+  }
 
   handleOpenModal = () => {
     this.handleModal.current.handleShow();
@@ -240,10 +240,10 @@ export default class App extends React.Component<AppProps, AppState> {
           ) : (
               <div ref={this.questionnaireContainer}>
                 <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
-                  questionnaireResponse={this.state.QuestionnaireResponse} onEdit={this.startQuestionnaire}
+                  questionnaireResponse={this.state.QuestionnaireResponse} onEdit={this.goToEditQuestionnaire}
                   onChange={this.handleChange} onSubmit={(event: any) => { this.handleOpenModal() }} />
                 <InfoModal ref={this.handleModal} show={this.state.showModal} onSubmit={this.submitAnswers}></InfoModal>
-                <hr />
+                {/* <hr /> */}
               </div>
             )}
 
