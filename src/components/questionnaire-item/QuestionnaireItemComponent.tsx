@@ -6,9 +6,10 @@ import MultiSelectButtonComponent from '../multi-select-button/MultiSelectButton
 import { faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ChoiceButton from '../choice-button/ChoiceButton';
+import YouTube from 'react-youtube';
+import parser from 'html-react-parser';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css'
-import parser from 'html-react-parser';
 
 interface QuestionnaireItemState {
   showReview: boolean,
@@ -90,6 +91,41 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
       this.props.onChange(childResponse);
     }
 
+    let renderYouTube = () => {
+      const vidOptions = {
+        width: "100%",
+        height: "200",
+        playerVars: {
+        }
+      }
+      return (
+        <YouTube
+          videoId="QWcr9J3MLfo"
+          opts={vidOptions}
+          onEnd={recordWebsiteVisit}
+        />)
+    }
+
+    let recordWebsiteVisit = (event: any) => {
+      let timeStamp: any = new Date().toISOString();
+      console.log('temeStamo', timeStamp)
+      processTextResponse(this.props.QuestionnaireItem, JSON.stringify({ valueDateTime: timeStamp }))
+    }
+
+    const options = {
+      replace: (domNode: any) => {
+        if (domNode?.next?.attribs?.id === 'replace' && domNode?.next?.attribs?.value === 'video') {
+          return <iframe title="Flat Tire Video" width="100%" height="200" src="https://www.youtube.com/embed/QWcr9J3MLfo" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" onEnded={recordWebsiteVisit} allowFullScreen></iframe>
+          // return <YouTube
+          //   videoId="QWcr9J3MLfo"
+          //   onEnd={recordWebsiteVisit}
+          // />
+        } else if (domNode?.next?.attribs?.id === 'replace' && domNode?.next?.attribs?.value === 'pain-link') {
+          return <a id="replace" className="d-flex justify-content-center mt-1" target="_blank" rel="noopener noreferrer" href="https://uspainfoundation.org/living-with-pain/" ><button onClick={recordWebsiteVisit} className="btn btn-outline-secondary">Visit Pain Foundation Site</button></a>
+        }
+      }
+    }
+
 
     return (
       <Card ref={this.questionnaireItemRef} className={"questionnaire-item"} id={this.props.QuestionnaireItem.linkId}>
@@ -100,9 +136,9 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
               <Button className="btn-outline-secondary previous-button"
                 value={this.props.QuestionnaireItem.linkId}
                 onClick={(event: any) => this.handlePreviousQuestionScroll(event.target.value)}>
-                <FontAwesomeIcon 
-                icon={faArrowAltCircleLeft} 
-                onClick={(event: any) => this.handlePreviousQuestionScroll(this.props.QuestionnaireItem.linkId)}/>
+                <FontAwesomeIcon
+                  icon={faArrowAltCircleLeft}
+                  onClick={(event: any) => this.handlePreviousQuestionScroll(this.props.QuestionnaireItem.linkId)} />
               </Button>
             )}
           <div className="prefix-text">
@@ -113,7 +149,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
           </div>
         </div>
         <div className="description-text">
-          <p> {parser(text)}</p></div>
+          <p> {parser(text, options)}</p></div>
         <div>
           {
             this.props.QuestionnaireItem.type === "boolean" ?
@@ -205,7 +241,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
       }
 
 
-      
+
     }
 
     return (
@@ -242,7 +278,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
           props.onChange(this.state.questionnaireResponse);
         })
       } else if (stateQuestionnaireResponse.item!.some(checkResponseArray)) {
-        
+
         this.setState(state => {
           for (let i in stateQuestionnaireResponse.item!) {
             if (stateQuestionnaireResponse.item[i].linkId === childResponse.linkId) {
