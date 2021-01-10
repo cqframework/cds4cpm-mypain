@@ -6,8 +6,8 @@ import MultiSelectButtonComponent from '../multi-select-button/MultiSelectButton
 import { faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ChoiceButton from '../choice-button/ChoiceButton';
-import YouTube from 'react-youtube';
 import parser from 'html-react-parser';
+import YouTube from 'react-youtube';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css'
 
@@ -28,9 +28,13 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
     }
   }
   questionnaireItemRef: any = createRef();
+  vidRef: any = createRef();
 
   handleNextQuestionScroll(linkId: number) {
     if (this.questionnaireItemRef.current.id === linkId) {
+      if (this.vidRef.current !== null) {
+        this.stopVideos();
+      }
       if (this.questionnaireItemRef.current.nextSibling) {
         this.questionnaireItemRef.current.nextSibling.classList.add('active')
         this.questionnaireItemRef.current.classList.remove('active')
@@ -38,6 +42,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
           behavior: 'smooth',
           block: 'nearest'
         })
+        // console.log('current ref: ', this.questionnaireItemRef.current.children)
       }
     }
     if (!this.questionnaireItemRef.current.nextSibling.classList.contains('questionnaire-item')) {
@@ -48,6 +53,9 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
   }
   handlePreviousQuestionScroll(linkId: number) {
     if (this.questionnaireItemRef.current.id === linkId) {
+      if (this.vidRef.current !== null) {
+        this.stopVideos();
+      }
       this.questionnaireItemRef.current.previousSibling.classList.add('active')
       this.questionnaireItemRef.current.classList.remove('active')
       this.questionnaireItemRef.current.previousSibling.scrollIntoView({
@@ -56,6 +64,17 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
       })
     }
 
+  }
+  stopVideos() {
+    let videos = document.querySelectorAll('iframe, video');
+    Array.prototype.forEach.call(videos, function (video) {
+      if (video.tagName.toLowerCase() === 'video') {
+        video.pause();
+      } else {
+        var src = video.src;
+        video.src = src;
+      }
+    });
   }
 
   public render(): JSX.Element {
@@ -91,20 +110,6 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
       this.props.onChange(childResponse);
     }
 
-    // let renderYouTube = () => {
-    //   const vidOptions = {
-    //     width: "100%",
-    //     height: "200",
-    //     playerVars: {
-    //     }
-    //   }
-    //   return (
-    //     <YouTube
-    //       videoId="QWcr9J3MLfo"
-    //       opts={vidOptions}
-    //       onEnd={recordWebsiteVisit}
-    //     />)
-    // }
 
     let recordWebsiteVisit = (event: any) => {
       let timeStamp: any = new Date().toISOString();
@@ -118,11 +123,14 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
       }
     }
 
+
     const options = {
       replace: (domNode: any) => {
         if (domNode?.next?.attribs?.id === 'replace' && domNode?.next?.attribs?.value === 'video') {
-          // return <iframe title="Flat Tire Video" width="100%" height="200" src="https://www.youtube.com/embed/QWcr9J3MLfo" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" onEnded={recordWebsiteVisit} allowFullScreen></iframe>
+          // return <iframe title="Flat Tire Video" ref={this.vidRef} width="100%" height="200" src="https://www.youtube.com/embed/QWcr9J3MLfo" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" onEnded={recordWebsiteVisit} allowFullScreen></iframe>
           return <YouTube
+            id="youtube-video"
+            ref={this.vidRef}
             videoId="QWcr9J3MLfo"
             opts={vidOptions}
             onEnd={recordWebsiteVisit}
@@ -157,7 +165,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
         </div>
         <div className="description-text">
           <div> {parser(text, options)}</div>
-          </div>
+        </div>
         <div>
           {
             this.props.QuestionnaireItem.type === "boolean" ?
