@@ -114,7 +114,6 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
 
     let recordWebsiteVisit = (event: any) => {
       let timeStamp: any = moment().format('MMMM Do YYYY, h:mm:ss a');
-      console.log('timeStamp', timeStamp)
       processTextResponse(this.props.QuestionnaireItem, JSON.stringify({ valueDateTime: timeStamp }))
     }
     const vidOptions = {
