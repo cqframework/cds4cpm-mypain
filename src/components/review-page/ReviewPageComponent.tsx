@@ -19,8 +19,25 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                     if (question.answer) {
                         return (<div className='question-response-container' key={question.linkId}>
                             <div className="text-response-container">
-                                <h6 className="text-response-question">{parser(text)}</h6>
-                                <p className="text-response-answer">{question.answer[0].valueString}</p>
+                                <h5>Question:</h5>
+                                <h6 className="text-response-question">{parser(text, {
+                                    // eslint-disable-next-line 
+                                    replace: ({ attribs }) => attribs && attribs.id === '\\\"replace\\\"' && <React.Fragment />
+                                })}</h6>
+                                {/* <p className="text-response-answer">Answer: {question.answer[0].valueString || question.answer[0].valueDateTime}</p> */}
+                                <Table responsive bordered striped size="sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Answer</th>
+                                            {/* <th><Button type="button" onClick={this.props.goEdit()}>Edit Response</Button> </th> */}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{question.answer[0].valueString || question.answer[0].valueDateTime}</td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
                             </div>
                         </div>)
 
@@ -56,6 +73,13 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                                                             <tr key={item.linkId}>
                                                                 <td>{parser(JSON.stringify(item.text))}</td>
                                                                 <td>{item.answer![0].valueString}</td>
+                                                            </tr>
+                                                        )
+                                                    } else if (item.answer![0].valueDateTime!.length > 0) {
+                                                        return (
+                                                            <tr key={item.linkId}>
+                                                                <td>{parser(JSON.stringify(item.text))}</td>
+                                                                <td>{item.answer![0].valueDateTime}</td>
                                                             </tr>
                                                         )
                                                     } else {

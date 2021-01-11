@@ -9,6 +9,7 @@ import ChoiceButton from '../choice-button/ChoiceButton';
 import parser from 'html-react-parser';
 import YouTube from 'react-youtube';
 import { CircularProgressbar } from 'react-circular-progressbar';
+import moment from 'moment';
 import 'react-circular-progressbar/dist/styles.css'
 
 interface QuestionnaireItemState {
@@ -112,8 +113,8 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
 
 
     let recordWebsiteVisit = (event: any) => {
-      let timeStamp: any = new Date().toISOString();
-      console.log('temeStamo', timeStamp)
+      let timeStamp: any = moment().format('MMMM Do YYYY, h:mm:ss a');
+      console.log('timeStamp', timeStamp)
       processTextResponse(this.props.QuestionnaireItem, JSON.stringify({ valueDateTime: timeStamp }))
     }
     const vidOptions = {
