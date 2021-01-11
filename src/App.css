@@ -24,6 +24,8 @@ h3 {
 
 .app {
     text-align: center;
+    -webkit-overflow-scrolling:touch; 
+    overflow:auto;
 }
 
 .app-logo {
