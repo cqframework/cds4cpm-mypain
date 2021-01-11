@@ -35,7 +35,6 @@ export default class QuestionnaireComponent extends React.Component<any, Questio
                 showReviewInfo: true,
                 showConfirmation: false
             }, () => {
-                console.log('show review: ', this.state.showReviewInfo)
             })
         }
     }

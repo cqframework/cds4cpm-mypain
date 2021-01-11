@@ -3853,13 +3853,13 @@
     {
       "type": "display",
       "linkId": "13",
-      "text": "Below is a link to a video produced by the American Chronic Pain Association about living with chronic pain. We’d like to suggest you watch the video to help you prepare for your upcoming visit. This video can help you prepare to ask questions that are important to you when you visit with your provider. <br/> <br/> <iframe width=\"100%\" height=\"200\" src=\"https://www.youtube.com/embed/QWcr9J3MLfo\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "text": "Below is a link to a video produced by the American Chronic Pain Association about living with chronic pain. We’d like to suggest you watch the video to help you prepare for your upcoming visit. This video can help you prepare to ask questions that are important to you when you visit with your provider. <br/> <br/> <a id=\"replace\" value=\"video\"></a>",
       "prefix": "Managing Chronic Pain"
     },
     {
       "type": "display",
       "linkId": "14",
-      "text": "The website linked below provides some information from the U.S. Pain Foundation about the causes and diagnosis of pain in general, treatment options and self management and well-being when living with pain. This information can help you prepare to ask questions that are important to you when you visit with your provider.<br/> <br/> <a target=\"_blank\" href=\"https://uspainfoundation.org/living-with-pain/\"><img width=\"100%\" src=\"https://uspainfoundation.org//wp-content/uploads/2017/07/Woman-holding-neck-1024x682.jpg\"/></a>",
+      "text": "The website linked below provides some information from the U.S. Pain Foundation about the causes and diagnosis of pain in general, treatment options and self management and well-being when living with pain. This information can help you prepare to ask questions that are important to you when you visit with your provider.<br/> <br/> <img width=\"100%\" src=\"https://uspainfoundation.org//wp-content/uploads/2017/07/Woman-holding-neck-1024x682.jpg\"/> <a id=\"replace\" value=\"pain-link\"></a> ",
       "prefix": "Managing Chronic Pain"
     },
     {
