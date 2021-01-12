@@ -15,12 +15,16 @@
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
     .error-page {
         height: 1024px;
+        overflow: scroll;
+        -webkit-overflow-scrolling:touch; 
     }
 }
 
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
     .error-page {
       height: 768px;
+      overflow: scroll;
+      -webkit-overflow-scrolling:touch; 
     }
 }
 

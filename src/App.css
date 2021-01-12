@@ -22,8 +22,20 @@ h1, h2, h3 {
 
 .app {
     text-align: center;
-    -webkit-overflow-scrolling: touch;
-    overflow: scroll;
+}
+/* Ipad specific media queries */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
+    .app {
+      overflow: scroll;
+      -webkit-overflow-scrolling:touch; 
+    }
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
+    .app {
+      overflow: scroll;
+      -webkit-overflow-scrolling:touch; 
+    }
 }
 
 .app-logo {
