@@ -11,13 +11,13 @@
 /* Ipad specific media queries */
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
     .patient-view {
-      height: 1024px;
+      max-height: 1024px;
     }
 }
 
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
     .patient-view {
-      height: 768px;
+      max-height: 768px;
     }
 }
 .patient-view p {

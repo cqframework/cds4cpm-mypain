@@ -142,13 +142,13 @@ textarea {
 /* Ipad specific media queries */
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
     .questionnaire-item {
-      min-height: 1024px;
+      max-height: 1024px;
     }
 }
 
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
     .questionnaire-item {
-      height: 768px;
+      max-height: 768px;
     }
 }
 .questionnaire-item p {
