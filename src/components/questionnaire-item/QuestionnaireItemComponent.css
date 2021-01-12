@@ -145,12 +145,16 @@ textarea {
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
     .questionnaire-item {
       height: 1024px;
+      overflow: scroll;
+      -webkit-overflow-scrolling:touch; 
     }
 }
 
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
     .questionnaire-item {
       height: 768px;
+      overflow: scroll;
+      -webkit-overflow-scrolling:touch; 
     }
 }
 .questionnaire-item p {

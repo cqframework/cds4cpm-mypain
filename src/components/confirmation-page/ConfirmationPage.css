@@ -16,12 +16,14 @@
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
     .confirmation-page {
         height: 1024px;
+        overflow: scroll;
     }
 }
 
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
     .confirmation-page {
       height: 768px;
+      overflow: scroll
     }
   }
 
