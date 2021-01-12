@@ -4,6 +4,8 @@
     padding-top: 15px;
     /* text-align: left; */
     padding: 1em;
+    -webkit-overflow-scrolling:touch; 
+    overflow: auto;
 }
 
 .question-response-container>h6, .text-response-question {

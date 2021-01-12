@@ -1,5 +1,6 @@
 .questionnaire {
   text-align: center;
+  /* overflow: auto; */
 }
 
 .submit-confirmation-text {

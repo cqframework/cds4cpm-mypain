@@ -3,6 +3,8 @@
     border: 1px solid #000000;
     padding: 10px;
     margin: 3px;
+    overflow: auto;
+    -webkit-overflow-scrolling:touch; 
 }
 
 .questionnaire-item.card {
@@ -142,13 +144,13 @@ textarea {
 /* Ipad specific media queries */
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
     .questionnaire-item {
-      max-height: 1024px;
+      height: 1024px;
     }
 }
 
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
     .questionnaire-item {
-      max-height: 768px;
+      height: 768px;
     }
 }
 .questionnaire-item p {
