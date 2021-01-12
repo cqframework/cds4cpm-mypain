@@ -1,7 +1,7 @@
 .questionnaire {
   text-align: center;
   -webkit-overflow-scrolling: touch;
-  overflow: auto;
+  overflow: scroll;
 }
 
 .submit-confirmation-text {

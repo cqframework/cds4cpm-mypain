@@ -1,14 +1,12 @@
 html {
     --color-dark: 0, 0, 255;
-    --color-dark: 31,57,61;
+    --color-dark: 31, 57, 61;
     /* --color-dark: 143,136,63; */
     /* --color-dark: 40, 44, 52; */
     --color-light-text: 255, 255, 255;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -24,8 +22,8 @@ h3 {
 
 .app {
     text-align: center;
-    -webkit-overflow-scrolling:touch; 
-    overflow:auto;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
 }
 
 .app-logo {
@@ -70,8 +68,7 @@ h3 {
     justify-content: center;
 }
 
-.app .options,
-.app .options button {
+.app .options, .app .options button {
     margin: 5px;
 }
 
@@ -88,7 +85,7 @@ svg path {
     fill: rgba(var(--color-dark), 1) !important;
 }
 
-.patient-container { 
+.patient-container {
     color: var(--color-dark);
     border: 1px solid #000000;
     padding: 10px;
