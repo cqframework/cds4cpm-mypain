@@ -3,6 +3,7 @@ import './ReviewPageComponent.css';
 import { Table } from 'react-bootstrap';
 import parser from 'html-react-parser';
 import { QuestionnaireResponseItem } from '../../fhir-types/fhir-r4';
+import moment from 'moment';
 
 
 export default class ReviewPageComponent extends React.Component<any, any> {
@@ -34,7 +35,7 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{question.answer[0].valueString || question.answer[0].valueDateTime}</td>
+                                            <td>{question.answer[0].valueString ||  moment(question.answer[0].valueDateTime).format('MMMM Do YYYY, h:mm:ss a')}</td>
                                         </tr>
                                     </tbody>
                                 </Table>
