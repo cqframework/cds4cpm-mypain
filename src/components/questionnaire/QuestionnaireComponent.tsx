@@ -41,7 +41,7 @@ export default class QuestionnaireComponent extends React.Component<any, Questio
 
     render(): JSX.Element {
         return <div className="questionnaire">
-            <div>{this.props.questionnaire.title}</div>
+            {/* <div>{this.props.questionnaire.title}</div> */}
             {this.props.questionnaire.item.map((item: QuestionnaireItem, key: any) => {
                 return <QuestionnaireItemComponent receivingCallback={this.receiveData} length={this.props.questionnaire.item?.length} QuestionnaireItem={item} key={key} onChange={this.props.onChange} />
             })}

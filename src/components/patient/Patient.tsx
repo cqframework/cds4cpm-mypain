@@ -21,12 +21,12 @@ export default class Patient extends React.Component<PatientProps, PatientState>
     return (
       <div className="patient-view">
         <div className="app-title-container">
-          <h2>MyPAIN</h2>
+          <h2 className="mypain-title">MyPAIN</h2>
           <p className='tagline-text'>Just what your doctor ordered, My Pain Assessment and Information Needs (MyPAIN).</p>
         </div>
         <div className="welcome">
           {/* , {this.props.item?.name[0].given[0]} */}
-          <h4>Welcome to MyPain.</h4>
+          <h4>Welcome to MyPain!</h4>
           <p className="intro-text mb-5">MyPAIN is a secure tool to help you are your provider make the best decisions about managing your pain.</p>
         </div>
         <div className="intro-container">

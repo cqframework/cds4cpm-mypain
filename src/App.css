@@ -52,16 +52,20 @@ h1, h2, h3 {
 .app-header {
     background-color: rgba(var(--color-dark), 1);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* flex-direction: column; */
+    align-items:flex-end; 
+    justify-content: flex-start;
     font-size: calc(10px + 2vmin);
     color: rgba(var(--color-light-text), 1);
-    height: 45px;
+    height: 60px;
 }
-
+.app-header .mypain-header-logo {
+    height: 100%;
+}
 .app-header p {
     margin: 0;
+    margin-left: 5px;
+    font-size: smaller;
     color: var(--color-light-text)
 }
 

@@ -225,9 +225,11 @@ export default class App extends React.Component<AppProps, AppState> {
       return (
         <div className="app">
           <header className="app-header">
-            <p>
+            {/* <p>
               MyPain &emsp;&emsp;v {this.appVersion}
-            </p>
+            </p> */}
+            <img className="mypain-header-logo" src={`${process.env.PUBLIC_URL}/assets/images/My_Pain_LOGO_FINAL.jpg`} alt=""/><p>v{this.appVersion}</p>
+
           </header>
           {this.state.Status !== 'in-progress' ? (
             <div>
