@@ -32,6 +32,10 @@
     text-align: left !important;
 }
 
+.app-title-container .mypain-title {
+    justify-content: flex-start;
+}
+
 .welcome {
     display: flex;
     text-align: left;
