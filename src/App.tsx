@@ -145,7 +145,7 @@ export default class App extends React.Component<AppProps, AppState> {
   startQuestionnaire = () => {
     this.setState({ Status: 'in-progress' }, () => {
       if (this.questionnaireContainer.current) {
-        this.questionnaireContainer.current.firstChild.firstChild.nextSibling.classList.add('active');
+        this.questionnaireContainer.current.firstChild.firstChild.classList.add('active');
         this.questionnaireContainer.current.scrollIntoView({
           behavior: 'smooth',
           block: 'nearest'
