@@ -135,7 +135,7 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
             onEnd={recordWebsiteVisit}
           />
         } else if (domNode?.next?.attribs?.id === 'replace' && domNode?.next?.attribs?.value === 'pain-link') {
-          return <a id="replace" className="d-flex justify-content-center mt-1" target="_blank" rel="noopener noreferrer" href="https://uspainfoundation.org/living-with-pain/" ><button onClick={recordWebsiteVisit} className="btn btn-outline-secondary">Visit Pain Foundation Site</button></a>
+          return <a id="replace" className="d-flex justify-content-center mt-1" target="_blank" rel="noopener noreferrer" href="https://uspainfoundation.org/pain/" ><button onClick={recordWebsiteVisit} className="btn btn-outline-secondary">Visit Pain Foundation Site</button></a>
         }
       }
     }
