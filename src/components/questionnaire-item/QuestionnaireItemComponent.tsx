@@ -152,18 +152,18 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
                 onClick={(event: any) => this.handlePreviousQuestionScroll(event.target.value)}>
                 <FontAwesomeIcon
                   icon={faArrowAltCircleLeft}
-                  onClick={(event: any) => this.handlePreviousQuestionScroll(this.props.QuestionnaireItem.linkId)} />
-              </Button>
+                  onClick={(event: any) => this.handlePreviousQuestionScroll(this.props.QuestionnaireItem.linkId)} /> <span className="back-text">Back</span>
+              </Button> 
             )}
           <div className="prefix-text">
-            <h3>{this.props.QuestionnaireItem.prefix}</h3>
+            <h3 tabIndex={0}>{this.props.QuestionnaireItem.prefix}</h3>
           </div>
           <div className="progress-circle">
             <CircularProgressbar value={percentage(this.props.QuestionnaireItem.linkId, this.props.length)} text={percentage(this.props.QuestionnaireItem.linkId, this.props.length) + '%'} />
           </div>
         </div>
         <div className="description-text">
-          <div> {parser(text, options)}</div>
+          <div tabIndex={0}> {parser(text, options)}</div>
         </div>
         <div>
           {

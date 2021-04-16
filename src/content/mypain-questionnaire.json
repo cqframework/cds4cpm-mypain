@@ -14,28 +14,36 @@
             }
         ]
     },
-    "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueString": "shareable"
-    }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueString": "publishable"
-    }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueString": "narrative"
-    }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueString": "computable"
-    }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueString": "structured"
-    }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueString": "executable"
-    }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueString": "executable"
-    } ],
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+            "valueString": "shareable"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+            "valueString": "publishable"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+            "valueString": "narrative"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+            "valueString": "computable"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+            "valueString": "structured"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+            "valueString": "executable"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+            "valueString": "executable"
+        }
+    ],
     "status": "active",
     "title": "MyPain Questionnaire",
     "resourceType": "Questionnaire",
@@ -2145,7 +2153,7 @@
                             "valueCoding": {
                                 "code": "mpqr-1000",
                                 "display": "Never",
-                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnairreresponse-codes"
+                                "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaireresponse-codes"
                             }
                         },
                         {
@@ -2764,7 +2772,7 @@
                         }
                     ],
                     "required": false,
-                    "linkId": "7.3",
+                    "linkId": "7.4",
                     "text": "Other, please describe",
                     "prefix": "Other items you can buy without a prescription from your doctor, please describe"
                 }
@@ -3852,14 +3860,28 @@
         },
         {
             "type": "display",
+            "code": [
+                {
+                    "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+                    "code": "mpq-1061",
+                    "display": "Did the patient view the 4 flat tires video"
+                }
+            ],
             "linkId": "13",
             "text": "Below is a link to a video produced by the American Chronic Pain Association about living with chronic pain. We’d like to suggest you watch the video to help you prepare for your upcoming visit. This video can help you prepare to ask questions that are important to you when you visit with your provider. <br/> <br/> <a id=\"replace\" value=\"video\"></a>",
             "prefix": "Managing Chronic Pain"
         },
         {
             "type": "display",
+            "code": [
+                {
+                    "system": "http://fhir.org/guides/cqf/cds4cpm/CodeSystem/mypain-questionnaire-codes",
+                    "code": "mpq-1062",
+                    "display": "Did the patient access the US Chronic Pain website"
+                }
+            ],
             "linkId": "14",
-            "text": "The website linked below provides some information from the U.S. Pain Foundation about the causes and diagnosis of pain in general, treatment options and self management and well-being when living with pain. This information can help you prepare to ask questions that are important to you when you visit with your provider.<br/> <br/> <img width=\"100%\" src=\"https://uspainfoundation.org//wp-content/uploads/2017/07/Woman-holding-neck-1024x682.jpg\"/> <a id=\"replace\" value=\"pain-link\"></a> ",
+            "text": "The website linked below provides some information from the U.S. Pain Foundation about the causes and diagnosis of pain in general, treatment options and self management and well-being when living with pain. This information can help you prepare to ask questions that are important to you when you visit with your provider.<br/> <br/> <img width=\"100%\" src=\"https://uspainfoundation.org//wp-content/uploads/2017/07/Woman-holding-neck-1024x682.jpg\" alt=\"Woman holding neck\"/> <a id=\"replace\" value=\"pain-link\"></a> ",
             "prefix": "Managing Chronic Pain"
         },
         {

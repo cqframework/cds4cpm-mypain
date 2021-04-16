@@ -32,7 +32,7 @@
     text-align: left !important;
 }
 
-.app-title-container .mypain-title {
+.app-title-container .mypain-title, .welcome>h2 {
     justify-content: flex-start;
 }
 
@@ -40,7 +40,7 @@
     display: flex;
     text-align: left;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .btn-outline-secondary {

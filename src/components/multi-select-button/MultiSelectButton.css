@@ -1,33 +1,39 @@
-.multi-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .multi-button {
-    /* min-width: 120px; */
     width: 100%;
     min-height: 30px;
-    border: 1px solid #000;
     border-radius: 10px;
-    margin: 5px 0 5px;
     display: flex;
     justify-content: center;
-}
-
-.multi-button>label {
-    margin-bottom: 0;
-    width: 100%;
-}
-
-.multi-button label input {
-    display: none;
 }
 
 .multi-button.selected {
+    flex-direction: column;
+}
+
+.multi-button>input[type="checkbox"]:focus+label {
+    border: 2px solid red;
+}
+
+.multi-button>label {
+    min-width: 120px;
+    margin-bottom: 0;
+    width: 100%;
+    min-height: 30px;
+    margin: 5px 0 5px;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+
+.multi-button input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.multi-button.selected label {
     background-color: #000000;
+    border: 1px solid #000;
     color: #ffffff;
+    min-height: 30px;
     z-index: 10;
     border-radius: 10px 10px 0 0
 }
@@ -73,9 +79,6 @@
     padding: 0 10px;
 }
 
-.button-box Button:focus {
-    color: rgba(var(--color-dark), 1);
-}
 
 .input-group .input-group-prepend .input-group-text {
     border: 1px solid rgba(var(--color-dark), 1) !important;
@@ -90,12 +93,8 @@
     border-bottom-right-radius: 10px !important;
 }
 
-.input-group input:focus,
-input {
-    outline: 0;
-    box-shadow: none;
-}
 
 .other-textbox input {
     width: 100%;
+    min-width: 120px;
 }
