@@ -13,8 +13,8 @@ export const ErrorPage = (props: any) => {
         <div className="confirmation-container">
             <h1> <FontAwesomeIcon size="2x" icon={faWindowClose} className="error-icon"/></h1>
             <h2>OOPS!</h2>
-            <p>{props.location.state}</p>
-            <Link to='/'><Button className="continue-button" type="button">Return to home</Button></Link>
+            <p tabIndex={0}>{props.location.state}</p>
+            <Link to='/'><Button className="continue-button" type="button" aria-label="return to home page">Return to home</Button></Link>
         </div>
 
 
