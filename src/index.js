@@ -8,6 +8,12 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ErrorPage } from './components/error-page/ErrorPage';
 
+// disable StrictMode to use this feature for Accessibilty testing
+// if (process.env.NODE_ENV !== 'production') {
+//     const axe = require('@axe-core/react');
+//     axe(React, ReactDOM, 1000);
+// }
+
 ReactDOM.render(
     <React.StrictMode >
         <BrowserRouter>
@@ -17,7 +23,7 @@ ReactDOM.render(
                 <Route exact path='/error' component={ErrorPage} />
                 <Route component={ErrorPage} />
             </Switch>
-        </BrowserRouter>
+        </BrowserRouter>,
         {/* <App basename={process.env.PUBLIC_URL} /> */}
     </React.StrictMode>,
     document.getElementById('root')

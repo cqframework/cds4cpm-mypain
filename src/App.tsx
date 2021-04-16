@@ -225,21 +225,20 @@ export default class App extends React.Component<AppProps, AppState> {
       return (
         <div className="app">
           <header className="app-header">
-            {/* <p>
-              MyPain &emsp;&emsp;v {this.appVersion}
-            </p> */}
-            <img className="mypain-header-logo" src={`${process.env.PUBLIC_URL}/assets/images/My_Pain_LOGO_FINAL.jpg`} alt=""/><p>v{this.appVersion}</p>
+            <img className="mypain-header-logo" src={`${process.env.PUBLIC_URL}/assets/images/My_Pain_LOGO_FINAL.jpg`} alt="My Pain Logo" /><p>v{this.appVersion}</p>
 
           </header>
-          {this.state.Status !== 'in-progress' ? (
-            <div>
-              <div className="patient-container">
+          <main role="main">
 
-                <PatientContainer patient={this.state.Patient} busy={this.state.busy} />
-                <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
+            {this.state.Status !== 'in-progress' ? (
+              <div>
+                <div className="patient-container">
+
+                  <PatientContainer patient={this.state.Patient} busy={this.state.busy} />
+                  <Button variant="outline-secondary" size='lg' className="next-button" onClick={this.startQuestionnaire}>Next</Button>
+                </div>
               </div>
-            </div>
-          ) : (
+            ) : (
               <div ref={this.questionnaireContainer}>
                 <QuestionnaireComponent questionnaire={this.state.SelectedQuestionnaire}
                   questionnaireResponse={this.state.QuestionnaireResponse} onEdit={this.goToEditQuestionnaire}
@@ -248,6 +247,7 @@ export default class App extends React.Component<AppProps, AppState> {
                 {/* <hr /> */}
               </div>
             )}
+          </main>
 
           {/* <hr /> */}
           {/* <div className="response-container">QuestionnaireResponse: {JSON.stringify(this.state.QuestionnaireResponse)}</div> */}
@@ -261,9 +261,11 @@ export default class App extends React.Component<AppProps, AppState> {
               MyPain &emsp;&emsp;v {this.appVersion}
             </p>
           </header>
-          <div className="patient-container">
-            <PatientContainer patient={this.state.Patient} busy={this.state.busy} />
-          </div>
+          <main role="main">
+            <div className="patient-container">
+              <PatientContainer patient={this.state.Patient} busy={this.state.busy} />
+            </div>
+          </main>
           {/* <hr /> */}
           <div>
           </div>

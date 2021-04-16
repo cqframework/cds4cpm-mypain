@@ -118,8 +118,8 @@ export default class QuestionnaireItemComponent extends React.Component<any, Que
     const vidOptions = {
       width: "100%",
       height: "200",
-      playerVars: {
-      }
+      playerVars: {},
+      controls: 2
     }
 
 

@@ -57,12 +57,12 @@ export default class QuestionnaireComponent extends React.Component<any, Questio
                             <FontAwesomeIcon icon={faArrowAltCircleLeft} />
                         </Button>
                         <div>
-                            <h4>Review and Submit</h4>
+                            <h4 tabIndex={0}>Review and Submit</h4>
                             <ReviewPageComponent goEdit={this.props.onEdit} {...this.props.questionnaireResponse}></ReviewPageComponent>
                         </div>
 
                         <div className="submit-confirmation-text">
-                            <p>Once you are satisfied with your responses, click the continue button below.</p>
+                            <p tabIndex={0}>Once you are satisfied with your responses, click the continue button below.</p>
                         </div>
 
                         <Button className="continue-button" type="button" onClick={this.props.onSubmit}><FontAwesomeIcon icon={faCheck} /> Continue</Button>

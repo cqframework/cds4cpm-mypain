@@ -20,8 +20,8 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                     if (question.answer) {
                         return (<div className='question-response-container' key={question.linkId}>
                             <div className="text-response-container">
-                                <h5>Question:</h5>
-                                <h6 className="text-response-question">{parser(text, {
+                                <h5 tabIndex={0}>Question:</h5>
+                                <h6  tabIndex={0} className="text-response-question">{parser(text, {
                                     // eslint-disable-next-line 
                                     replace: ({ attribs }) => attribs && attribs.id === '\\\"replace\\\"' && <React.Fragment />
                                 })}</h6>
@@ -29,13 +29,13 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                                 <Table responsive bordered striped size="sm">
                                     <thead>
                                         <tr>
-                                            <th>Answer</th>
+                                            <th tabIndex={0}>Answer</th>
                                             {/* <th><Button type="button" onClick={this.props.goEdit()}>Edit Response</Button> </th> */}
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{question.answer[0].valueString ||  moment(question.answer[0].valueDateTime).format('MMMM Do YYYY, h:mm:ss a')}</td>
+                                            <td tabIndex={0}>{question.answer[0].valueString ||  moment(question.answer[0].valueDateTime).format('MMMM Do YYYY, h:mm:ss a')}</td>
                                         </tr>
                                     </tbody>
                                 </Table>
@@ -46,13 +46,13 @@ export default class ReviewPageComponent extends React.Component<any, any> {
 
                         return (
                             <div className='question-response-container' key={question.linkId}>
-                                <h6>{parser(text)}</h6>
+                                <h6 tabIndex={0}>{parser(text)}</h6>
                                 {
                                     <Table responsive bordered striped size="sm">
                                         <thead>
                                             <tr>
-                                                <th>Question</th>
-                                                <th>Answer</th>
+                                                <th tabIndex={0}>Question</th>
+                                                <th tabIndex={0}>Answer</th>
                                                 {/* <th><Button type="button" onClick={this.props.goEdit()}>Edit Response</Button> </th> */}
                                             </tr>
                                         </thead>
@@ -62,8 +62,8 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                                                     if (item.answer![0].valueCoding) {
                                                         return (
                                                             <tr key={item.linkId}>
-                                                                <td>{parser(JSON.stringify(item.text))}</td>
-                                                                <td>{item.answer![0].valueCoding?.display}</td>
+                                                                <td  tabIndex={0}>{parser(JSON.stringify(item.text))}</td>
+                                                                <td  tabIndex={0}>{item.answer![0].valueCoding?.display}</td>
                                                             </tr>
                                                         )
 
@@ -72,21 +72,21 @@ export default class ReviewPageComponent extends React.Component<any, any> {
 
                                                         return (
                                                             <tr key={item.linkId}>
-                                                                <td>{parser(JSON.stringify(item.text))}</td>
-                                                                <td>{item.answer![0].valueString}</td>
+                                                                <td tabIndex={0}>{parser(JSON.stringify(item.text))}</td>
+                                                                <td tabIndex={0}>{item.answer![0].valueString}</td>
                                                             </tr>
                                                         )
                                                     } else if (item.answer![0].valueDateTime!.length > 0) {
                                                         return (
                                                             <tr key={item.linkId}>
-                                                                <td>{parser(JSON.stringify(item.text))}</td>
-                                                                <td>{item.answer![0].valueDateTime}</td>
+                                                                <td tabIndex={0}>{parser(JSON.stringify(item.text))}</td>
+                                                                <td tabIndex={0}>{item.answer![0].valueDateTime}</td>
                                                             </tr>
                                                         )
                                                     } else {
                                                         return <tr key={item.linkId}>
-                                                            <td>{parser(JSON.stringify(item.text))}</td>
-                                                            <td>Not answered.</td>
+                                                            <td tabIndex={0}>{parser(JSON.stringify(item.text))}</td>
+                                                            <td tabIndex={0}>Not answered.</td>
                                                         </tr>
                                                     }
                                                 }

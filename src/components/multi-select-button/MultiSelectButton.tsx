@@ -1,8 +1,6 @@
 import React, { createRef } from 'react';
 import './MultiSelectButton.css';
 import { ButtonGroup, Button } from 'react-bootstrap';
-// import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { QuestionnaireItem } from '../../fhir-types/fhir-r4';
 
 
@@ -52,31 +50,30 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
         }
 
         return (
-            <div className="multi-container">
 
-                <div className={`multi-button ${this.state.checked ? "selected" : ""}`}>
-                    <label>
+            <div className={`multi-button ${this.state.checked ? "selected" : ""}`}>
+                <input
+                    value={questionnaireItem.prefix}
+                    id={`check-${this.props.linkId}`}
+                    aria-checked={this.state.checked}
+                    type="checkbox"
+                    checked={this.state.checked}
+                    onChange={event => {
+                        let checked = event.target.checked
+                        this.setState({ checked: checked, value: questionnaireItem.prefix })
+                    }
+                    } />
+                <label htmlFor={`check-${this.props.linkId}`}>
 
-                        <input
-                            value={questionnaireItem.prefix}
-                            type="checkbox"
-                            checked={this.state.checked}
-                            onChange={event => {
-                                let checked = event.target.checked
-                                this.setState({ checked: checked, value: questionnaireItem.prefix })
-                            }
-                            } /> <span>{questionnaireItem.prefix}</span>
-                    </label>
-
-                </div>
-
+                    <span>{questionnaireItem.prefix}</span>
+                </label>
                 <div className={`additional-info-box ${this.state.checked ? null : 'hidden'}`} >
                     {
                         this.props.sectionCode === 'pain-location' ? (
                             <div>
                                 {this.props.type === 'choice' ? (
                                     <div>
-                                        <p>{questionnaireItem.text}</p>
+                                        <p tabIndex={0} aria-label={questionnaireItem.text}>{questionnaireItem.text}</p>
                                         <div className="button-box" ref={activeChoiceButton} >
                                             {
                                                 this.props.answerOption?.map((answerOption: any) => {
@@ -93,44 +90,46 @@ export default class MultiSelectButtonComponent extends React.Component<any, any
                                     </div>
 
                                 ) : (
-                                        <div className="other-textbox">
-                                            <input type="text" placeholder="Type here..." onChange={event => receiveTextAnswer(event.target.value)} />
-                                        </div>
-                                    )}
+                                    <div className="other-textbox">
+                                        <input type="text" placeholder="Type here..." onChange={event => receiveTextAnswer(event.target.value)} />
+                                    </div>
+                                )}
                             </div>
                         ) : (
-                                <div>
-                                    {this.props.type === 'choice' ? (
-                                        <div>
-                                            <p className="follow-up-question">{questionnaireItem.text}</p>
-                                            <div className="button-box">
-                                                <ButtonGroup ref={activeChoiceButton}>
-                                                    {
-                                                        this.props.answerOption?.map((answerOption: any) => {
-                                                            return <Button key={JSON.stringify(answerOption)}
-                                                                size="sm"
-                                                                aria-required="true"
-                                                                variant="outline-secondary"
-                                                                value={JSON.stringify(answerOption)}
-                                                                onClick={(event: any) =>
-                                                                    handleClick(event)
-                                                                }>
-                                                                {answerOption.valueCoding?.display}
-                                                            </Button>
-                                                        })
-                                                    }
-                                                </ButtonGroup>
-                                            </div>
+                            <div>
+                                {this.props.type === 'choice' ? (
+                                    <div>
+                                        <p tabIndex={0} className="follow-up-question">{questionnaireItem.text}</p>
+                                        <div className="button-box">
+                                            <ButtonGroup ref={activeChoiceButton}>
+                                                {
+                                                    this.props.answerOption?.map((answerOption: any) => {
+                                                        return <Button key={JSON.stringify(answerOption)}
+                                                            size="sm"
+                                                            aria-required="true"
+                                                            variant="outline-secondary"
+                                                            value={JSON.stringify(answerOption)}
+                                                            onClick={(event: any) =>
+                                                                handleClick(event)
+                                                            }>
+                                                            {answerOption.valueCoding?.display}
+                                                        </Button>
+                                                    })
+                                                }
+                                            </ButtonGroup>
                                         </div>
-                                    ) : (
-                                            <div className="other-textbox">
-                                                <input type="text" placeholder="Type here..." onChange={event => receiveTextAnswer(event.target.value)} />
-                                            </div>
-                                        )}
-                                </div>
-                            )}
+                                    </div>
+                                ) : (
+                                    <div className="other-textbox">
+                                        <input type="text" placeholder="Type here..." onChange={event => receiveTextAnswer(event.target.value)} />
+                                    </div>
+                                )}
+                            </div>
+                        )}
                 </div>
             </div>
+
+
         )
     }
 
