@@ -59,7 +59,7 @@
             ],
             "required": false,
             "linkId": "1",
-            "text": "We’d like to ask you a few questions about your pain and how it is affecting your life. Please describe the location(s) of any pain you have had in the past 7 days.",
+            "text": "We’d like to ask you a few questions about your pain and how it is affecting your life. Please describe the location(s) of any pain you have had in the past 7 days. Please select only one pain type per location.",
             "prefix": "My Pain Location",
             "item": [
                 {
