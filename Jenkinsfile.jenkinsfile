@@ -13,9 +13,6 @@ pipeline {
             environment = env.GIT_BRANCH.split("/")[1]
           }
 
-          env.NODEJS_HOME = "${tool 'NodeJsv15.0.0'}"
-          env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
-
           env.ENVIRONMENT_NAME = environment  
           println("Environment: ${env.ENVIRONMENT_NAME}");
 
