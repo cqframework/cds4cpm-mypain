@@ -2,7 +2,7 @@
     "name": "cds4cpm-mypain",
     "version": "0.1.6",
     "private": true,
-    "homepage": "https://mypain.rti.alphora.com",
+    "homepage": "http://cloud.alphora.com/rti/my-pain",
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.29",
         "@fortawesome/free-regular-svg-icons": "^5.13.1",
