@@ -26,7 +26,7 @@ pipeline {
             env.CLOUDFRONT_DISTRIBUTION = 'E241WF4QIREH4O'
             env.DOCKER_LABEL = 'develop'
           } 
-
+            println("nodejs used: ${nodejs}");
           println("CloudFront Distribution: ${env.CLOUDFRONT_DISTRIBUTION}");
           println("Docker Label: ${env.DOCKER_LABEL}");
         }
