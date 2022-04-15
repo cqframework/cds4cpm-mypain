@@ -14,6 +14,7 @@ import { Button } from 'react-bootstrap';
 import { InfoModal } from './components/info-modal/InfoModal';
 import { Redirect } from 'react-router-dom';
 import pkg from '../package.json'
+import pathPrefix from './helpers/pathPrefix'
 
 interface AppProps {
 
@@ -211,7 +212,7 @@ export default class App extends React.Component<AppProps, AppState> {
     //   throw new Error('IE is not allowed please use Chrome!');
     // }
     if (this.state.Status === "completed") {
-      return <Redirect push to="/confirmation" />;
+      return <Redirect push to={`${pathPrefix}/confirmation`} />;
     }
     if (this.state.Status === "error") {
       return <Redirect push to={

@@ -7,20 +7,15 @@ import { ConfirmationPage } from './components/confirmation-page/ConfirmationPag
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ErrorPage } from './components/error-page/ErrorPage';
-
-let pathPrefix = '';
-if (process.env.REACT_APP_PUBLIC_URL) {
-    const publicUrl = new URL(process.env.REACT_APP_PUBLIC_URL);
-    pathPrefix = publicUrl.pathname;
-}
+import pathPrefix from './helpers/pathPrefix';
 
 ReactDOM.render(
     <React.StrictMode >
         <BrowserRouter>
             <Switch>
-                <Route exact path={pathPrefix + '/'} component={App} />
-                <Route exact path={pathPrefix + '/confirmation'} component={ConfirmationPage} />
-                <Route exact path={pathPrefix + '/error'} component={ErrorPage} />
+                <Route exact path={`${pathPrefix}/`} component={App} />
+                <Route exact path={`${pathPrefix}/confirmation`} component={ConfirmationPage} />
+                <Route exact path={`${pathPrefix}/error`} component={ErrorPage} />
                 <Route component={ErrorPage} />
             </Switch>
         </BrowserRouter>
