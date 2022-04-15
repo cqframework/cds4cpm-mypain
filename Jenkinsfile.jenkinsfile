@@ -1,7 +1,7 @@
 pipeline {
   agent any
     
-  tools {nodejs "node11"}
+  tools {nodejs "node15"}
     
   stages {
 
@@ -12,6 +12,7 @@ pipeline {
           if (env.GIT_BRANCH != 'origin/master') {
             environment = env.GIT_BRANCH.split("/")[1]
           }
+
           env.ENVIRONMENT_NAME = environment  
           println("Environment: ${env.ENVIRONMENT_NAME}");
 
@@ -25,7 +26,6 @@ pipeline {
             env.CLOUDFRONT_DISTRIBUTION = 'E241WF4QIREH4O'
             env.DOCKER_LABEL = 'develop'
           } 
-
           println("CloudFront Distribution: ${env.CLOUDFRONT_DISTRIBUTION}");
           println("Docker Label: ${env.DOCKER_LABEL}");
         }

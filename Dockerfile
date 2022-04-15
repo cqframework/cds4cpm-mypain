@@ -1,4 +1,6 @@
+
 FROM node:14 as builder
+
 
 RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
 WORKDIR /home/node/app
