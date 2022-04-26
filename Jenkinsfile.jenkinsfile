@@ -1,8 +1,5 @@
 pipeline {
   agent any
-    
-  tools {nodejs "node15"}
-    
   stages {
 
     stage('Set environment') {
