@@ -28,22 +28,6 @@ pipeline {
         }
       }
     }
-     
-    stage('Build') {
-      steps {
-        sh 'yarn install'
-        sh 'yarn build'
-      }
-    }  
-
-    stage('Publish') {
-        steps {
-            withAWS(region:'us-west-2', credentials:'jasonevans') {
-                s3Upload(bucket: "cds4cpm-mypain-${env.ENVIRONMENT_NAME}", path: 'cds4cpm-mypain', workingDir: 'build', includePathPattern: '**/*')
-                cfInvalidate(distribution:"${env.CLOUDFRONT_DISTRIBUTION}", paths:['/*'], waitForCompletion: true)
-            }
-        }
-    }
 
     stage('Docker Build') {
       steps {
