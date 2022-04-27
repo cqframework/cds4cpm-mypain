@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
 export const ErrorPage = (props: any) => {
     
 
@@ -14,7 +13,7 @@ export const ErrorPage = (props: any) => {
             <h1> <FontAwesomeIcon size="2x" icon={faWindowClose} className="error-icon"/></h1>
             <h2>OOPS!</h2>
             <p>{props.location.state}</p>
-            <Link to='/'><Button className="continue-button" type="button">Return to home</Button></Link>
+            <Link to="/"><Button className="continue-button" type="button">Return to home</Button></Link>
         </div>
 
 
