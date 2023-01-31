@@ -1,57 +1,72 @@
-.patient-view {
-    min-height: 80vh;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: left;
-    line-height: 1.3;
+.bg-lightgreen{
+    background-color:var(--color-light-green);
 }
 
-/* Ipad specific media queries */
-@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
-    .patient-view {
-      max-height: 1024px;
-    }
+.bg-lightgray{
+    background-color: var(--color-light-gray);
+}
+.translate-middle {
+    transform: translate(-50%,-50%)!important;
+}
+.start-0 {
+    left: 0!important;
 }
 
-@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
-    .patient-view {
-      max-height: 768px;
-    }
-}
-.patient-view p {
-    font-size: 1rem;
+.start-100 {
+    left: 100%!important;
 }
 
-.patient-view .tagline-text {
-    font-style: italic;
+.top-50 {
+    top: 50%!important;
 }
 
-.app-title-container {
-    text-align: left !important;
+.continue-icon-bg, .exit-icon-bg{
+    width:64px;
+    height:64px;
+    background-color: white;
+    border-radius: 50%;
 }
 
-.app-title-container .mypain-title {
-    justify-content: flex-start;
+.continue-icon-bg{
+    border: 2px solid var(--color-light-green);
 }
 
-.welcome {
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-    justify-content: center;
+.continue-icon path {
+    fill: var(--color-light-green) !important;
 }
 
-.btn-outline-secondary {
-    color: #000;
-    border-color: #000;
-    background-color: lightgray;
+.exit-icon-bg{
+    border: 2px solid var(--color-light-gray);
+
 }
 
-.next-button {
-    width: 30%;
-    align-self: center;
-    color: #000000 !important;
-    margin-top: 1rem;
+.exit-icon path {
+    fill: var(--color-light-gray) !important;
+}
+
+.card-btn:hover{
+    cursor: pointer;
+}
+.card-btn-continue:hover{
+    background-color: var(--color-dark-green) !important;
+}
+ 
+.card-btn-continue:hover .continue-icon path {
+    fill:  var(--color-dark-green) !important;
+}
+
+.card-btn-continue:hover .continue-icon-bg{
+    border: 2px solid var(--color-dark-green) !important;
+}
+
+.card-btn-exit:hover{
+    background-color: var(--color-dark-gray) !important;
+}
+
+.card-btn-exit:hover .exit-icon path {
+    fill:  var(--color-dark-gray) !important;
+}
+
+.card-btn-exit:hover .exit-icon-bg{
+    border: 2px solid var(--color-dark-gray) !important;
 }

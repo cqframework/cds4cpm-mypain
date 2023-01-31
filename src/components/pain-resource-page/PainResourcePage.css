@@ -1,0 +1,9 @@
+.pain-resource-page a:link, .pain-resource-page a:visited, .resource-card span {
+    color: var(--color-light-green);
+    font-weight: bold;
+
+  }
+  
+  .pain-resource-page a:hover, .pain-resource-page a:active, .resource-card:hover span {
+    color: var(--color-dark-green);
+  }

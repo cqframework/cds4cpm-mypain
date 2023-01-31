@@ -1,34 +1,30 @@
-import React from 'react';
+import React from "react";
 // import FHIR from 'fhirclient';
-import Patient from './Patient';
-import BusySpinner from '../busy-spinner/BusySpinner';
-import BusyGroup from '../busy-spinner/BusyGroup';
-// import Client from 'fhirclient/lib/Client';
-// import { fhirclient } from 'fhirclient/lib/types';
+import Patient from "./Patient";
+import BusySpinner from "../busy-spinner/BusySpinner";
+import BusyGroup from "../busy-spinner/BusyGroup";
 
-interface PatientContainerProps {
-}
+interface PatientContainerProps {}
 
 interface PatientContainerState {
-  patient?: any
-  busy?: boolean
+  patient?: any;
+  busy?: boolean;
 }
 
-export default class PatientContainer extends React.Component<any, PatientContainerState> {
+export default class PatientContainer extends React.Component<
+  PatientContainerProps,
+  PatientContainerState
+> {
   constructor(props: PatientContainerProps) {
     super(props);
 
-    this.state =
-    {
-      
-    };
+    this.state = {};
   }
 
   componentDidUpdate(nextProps: any) {
     const { busy } = this.props;
     if (nextProps.busy !== busy) {
-        this.setState({busy: busy}, () => {
-        })
+      this.setState({ busy: busy }, () => {});
     }
   }
 
@@ -36,7 +32,12 @@ export default class PatientContainer extends React.Component<any, PatientContai
     return (
       <BusyGroup>
         <BusySpinner busy={this.state.busy} />
-        <Patient {...this.state} >{this.state.patient}</Patient>
+        <Patient
+          {...this.state}
+          startQuestionnaire={this.props.startQuestionnaire}
+        >
+          {this.state.patient}
+        </Patient>
       </BusyGroup>
     );
   }
