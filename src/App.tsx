@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import QuestionnaireComponent from "./components/questionnaire/QuestionnaireComponent";
@@ -16,6 +16,7 @@ import {
 } from "./utils/fhirFacadeHelper";
 // TODO: add import of  getQuestionnaire
 import PatientContainer from "./components/patient/PatientContainer";
+import Patient from "./components/patient/Patient";
 import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
 import { fhirclient } from "fhirclient/lib/types";
@@ -26,7 +27,7 @@ interface AppProps {}
 
 interface AppState {
   showModal: Boolean;
-  busy: Boolean;
+  busy: boolean;
   Status: string;
   Patient?: fhirclient.FHIR.Patient;
   ErrorMessage?: string;
@@ -38,8 +39,8 @@ interface AppState {
 
 export default class App extends React.Component<AppProps, AppState> {
   appVersion = pkg.version;
-  questionnaireContainer = React.createRef();
-  handleModal = React.createRef();
+  questionnaireContainer: any = createRef();
+  handleModal =  React.createRef();
   ptRef: string | undefined;
   ptDisplay: string | undefined;
 
@@ -118,7 +119,7 @@ export default class App extends React.Component<AppProps, AppState> {
   ): void {
     // Sort questionnaire answer option alphabetically (Pain Locations)
     let sortedAnswerOptions = { ...selectedQuestionnaire.item };
-    sortedAnswerOptions[0].item?.map((question: QuestionnaireItem) => {
+    sortedAnswerOptions?.[0]?.item?.map((question: QuestionnaireItem) => {
       return question.answerOption?.sort(
         (a: QuestionnaireItemAnswerOption, b: QuestionnaireItemAnswerOption) =>
           a.valueCoding!.display!.toLowerCase() >
@@ -207,8 +208,8 @@ export default class App extends React.Component<AppProps, AppState> {
 
   startQuestionnaire = () => {
     this.setState({ Status: "in-progress" }, () => {
-      if (this.questionnaireContainer.current) {
-        this.questionnaireContainer.current.firstChild.firstChild.classList.add(
+      if (this.questionnaireContainer.current) { 
+        this.questionnaireContainer?.current?.firstChild?.firstChild?.classList?.add(
           "active"
         );
         this.questionnaireContainer.current.scrollIntoView({
@@ -292,8 +293,8 @@ export default class App extends React.Component<AppProps, AppState> {
                 <div>
                   <div className="patient-container">
                     <PatientContainer
-                      patient={this.state.Patient}
-                      busy={this.state.busy}
+                      patient={this.state.Patient} 
+                      busy={this.state.busy} 
                       startQuestionnaire={this.startQuestionnaire}
                     />
                   </div>

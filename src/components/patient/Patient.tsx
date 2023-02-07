@@ -8,6 +8,9 @@ import { IconProp, SizeProp } from "@fortawesome/fontawesome-svg-core";
 
 interface PatientProps {
   item?: fhirclient.FHIR.Patient;
+  patient?: any;
+  busy?: boolean;
+  startQuestionnaire : Function;
 }
 
 interface PatientState {}
@@ -25,6 +28,7 @@ export default class Patient extends React.Component<
     window.close();
   };
   public render(): JSX.Element {
+    
     return (
       // Internal content on start page
       <div className="pt-5 px-3">
@@ -32,7 +36,7 @@ export default class Patient extends React.Component<
           <div className="col-8 mb-3">
             <div
               className="card position-relative bg-lightgreen border-0 card-btn card-btn-continue"
-              onClick={() => this.props.startQuestionnaire()}
+              onClick={()=>this.props.startQuestionnaire()}
             >
               <div className="card-body d-flex flex-column text-center text-light">
                 <p className="fw-bold px-3">

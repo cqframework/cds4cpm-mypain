@@ -3,12 +3,19 @@ import React from "react";
 import Patient from "./Patient";
 import BusySpinner from "../busy-spinner/BusySpinner";
 import BusyGroup from "../busy-spinner/BusyGroup";
+import FHIR from "fhirclient";
+import { fhirclient } from "fhirclient/lib/types";
 
-interface PatientContainerProps {}
+interface PatientContainerProps {
+  startQuestionnaire : Function;
+  busy?: boolean;
+  patient?: fhirclient.FHIR.Patient;
+}
 
 interface PatientContainerState {
   patient?: any;
   busy?: boolean;
+
 }
 
 export default class PatientContainer extends React.Component<
