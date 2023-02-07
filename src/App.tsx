@@ -120,6 +120,8 @@ export default class App extends React.Component<AppProps, AppState> {
   ): void {
     // Sort questionnaire answer option alphabetically (Pain Locations)
     let sortedAnswerOptions = { ...selectedQuestionnaire.item };
+    sortedAnswerOptions =   Object.values(sortedAnswerOptions) as QuestionnaireItem[];
+    console.log(  sortedAnswerOptions )
     sortedAnswerOptions?.[0]?.item?.map((question: QuestionnaireItem) => {
       return question.answerOption?.sort(
         (a: QuestionnaireItemAnswerOption, b: QuestionnaireItemAnswerOption) =>

@@ -1,9 +1,9 @@
 import React from "react";
 import "./PainResponsePage.css";
 import ReviewPageComponent from "../review-page/ReviewPageComponent";
-import { withRouter } from "react-router-dom";
+//import { withRouter } from "react-router-dom";
 
-class PainResponsePage extends React.Component<any, any> {
+export default class PainResponsePage extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -59,4 +59,4 @@ class PainResponsePage extends React.Component<any, any> {
     );
   }
 }
-export default withRouter(PainResponsePage);
+//export default withRouter(PainResponsePage);
