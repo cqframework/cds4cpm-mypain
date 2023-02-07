@@ -234,7 +234,6 @@ export default class MultiSelectButtonComponent extends React.Component<
                               placeholder="Type here..."
                               className="form-control"
                               onChange={(event) =>
-                                // receiveTextAnswer(event.target.value)
                                 collectResp<string>(event.target.value)
                               }
                             />
@@ -258,13 +257,15 @@ export default class MultiSelectButtonComponent extends React.Component<
                   className="form-check-input"
                   type="checkbox"
                   value={questionnaireItem.prefix}
-                  id="answerCheckbox"
-                  onChange={
-                    (event) => collectResp<boolean>(event.target.checked)
-                    // receiveBooleanAnswer(event.target.checked)
+                  id={"answerCheckbox" + questionnaireItem.linkId}
+                  onChange={(event) =>
+                    collectResp<boolean>(event.target.checked)
                   }
                 />
-                <label className="form-check-label">
+                <label
+                  htmlFor={"answerCheckbox" + questionnaireItem.linkId}
+                  className="form-check-label"
+                >
                   {questionnaireItem.prefix}
                 </label>
               </div>

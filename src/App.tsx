@@ -1,6 +1,7 @@
 import React, { createRef } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.js";
 import QuestionnaireComponent from "./components/questionnaire/QuestionnaireComponent";
 import {
   Questionnaire,
@@ -40,7 +41,7 @@ interface AppState {
 export default class App extends React.Component<AppProps, AppState> {
   appVersion = pkg.version;
   questionnaireContainer: any = createRef();
-  handleModal =  React.createRef();
+  handleModal = React.createRef();
   ptRef: string | undefined;
   ptDisplay: string | undefined;
 
@@ -208,7 +209,7 @@ export default class App extends React.Component<AppProps, AppState> {
 
   startQuestionnaire = () => {
     this.setState({ Status: "in-progress" }, () => {
-      if (this.questionnaireContainer.current) { 
+      if (this.questionnaireContainer.current) {
         this.questionnaireContainer?.current?.firstChild?.firstChild?.classList?.add(
           "active"
         );
@@ -293,8 +294,8 @@ export default class App extends React.Component<AppProps, AppState> {
                 <div>
                   <div className="patient-container">
                     <PatientContainer
-                      patient={this.state.Patient} 
-                      busy={this.state.busy} 
+                      patient={this.state.Patient}
+                      busy={this.state.busy}
                       startQuestionnaire={this.startQuestionnaire}
                     />
                   </div>
