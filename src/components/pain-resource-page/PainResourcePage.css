@@ -7,3 +7,7 @@
   .pain-resource-page a:hover, .pain-resource-page a:active, .resource-card:hover span {
     color: var(--color-dark-green);
   }
+
+  .pain-resource-page{
+    color: var(--color-dark-gray);
+  }

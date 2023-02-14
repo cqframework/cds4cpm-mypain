@@ -8,7 +8,6 @@ import { useHistory } from "react-router-dom";
 
 export const PainResourcePage = () => {
   const history = useHistory();
-  //should i use a static link? what are the implications?
 
   return (
     <div className="app container pain-resource-page">

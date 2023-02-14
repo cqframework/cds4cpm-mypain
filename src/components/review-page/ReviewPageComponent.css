@@ -1,19 +1,12 @@
-@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
-    .question-response-container {
-      overflow: scroll;
-      -webkit-overflow-scrolling:touch; 
-    }
-  }
-  
-  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
-    .question-response-container {
-      overflow: scroll;
-      -webkit-overflow-scrolling:touch; 
-    }
-  }
-
-.question-response-container>h6, .text-response-question {
+/* .question-response-container>h6, .text-response-question {
     text-align: left;
+} */
+.review-page-container {
+  color: var(--color-dark-gray);
+}
+
+.confirmation-page .card-body {
+  font-size: 13px;
 }
 
 .text-response-answer {

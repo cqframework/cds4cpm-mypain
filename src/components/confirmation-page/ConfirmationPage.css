@@ -7,3 +7,7 @@
   .confirmation-page a:hover, .confirmation-page a:active {
     color: var(--color-dark-green);
   }
+
+  .confirmation-page{
+    color: var(--color-dark-gray);
+  }

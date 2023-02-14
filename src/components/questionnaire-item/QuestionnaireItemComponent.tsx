@@ -99,19 +99,16 @@ export default class QuestionnaireItemComponent extends React.Component<
         id={this.props.QuestionnaireItem.linkId}
       >
         <div className="questionnaire-section-header">
-          <div className="d-flex justify-content-between align-items-center">
-            <div className="prefix-text">
-              <h3 className="m-0">{this.props.QuestionnaireItem.prefix}</h3>
+          <div className="d-flex justify-content-between my-3">
+            <div className="description-text">
+              <p className="m-0"> {parser(text)}</p>
             </div>
-            <div className="">
-              <p className="m-0 text-green">
+            <div style={{ minWidth: "80px" }}>
+              <p className="m-0 text-green text-end">
                 {this.props.QuestionnaireItem.linkId} of {this.props.length}
               </p>
             </div>
           </div>
-        </div>
-        <div className="description-text my-3">
-          <p> {parser(text)}</p>
         </div>
         <div>
           {this.props.QuestionnaireItem.type === "boolean" ? (

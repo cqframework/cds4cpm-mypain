@@ -21,7 +21,7 @@ export default class ChoiceButton extends React.Component<any, any> {
       type: this.props.type,
       prefix: this.props.prefix,
       answerOption: this.props.answerOption,
-      text: this.props.text ,
+      text: this.props.text,
     };
 
     const handleClick = (event: any) => {
@@ -46,7 +46,7 @@ export default class ChoiceButton extends React.Component<any, any> {
     return (
       <div className="card mb-2 shadow-sm border-0">
         <div className="card-body">
-          <p>{parser(questionnaireItem.text ?? '')}</p>
+          <p>{parser(questionnaireItem.text ?? "")}</p>
           <div className="choice-button-group mt-3">
             <div ref={activeChoiceButton} className="btn-group d-flex">
               {questionnaireItem.answerOption?.map((answerOption: any) => {

@@ -9,14 +9,12 @@ import {
   QuestionnaireItemAnswerOption,
   QuestionnaireResponse,
   QuestionnaireResponseItem,
-  QuestionnaireResponseItemAnswer,
 } from "./fhir-types/fhir-r4";
 import {
   submitQuestionnaireResponse,
   getQuestionnaire,
 } from "./utils/fhirFacadeHelper";
 // TODO: add import of  getQuestionnaire
-import PatientContainer from "./components/patient/PatientContainer";
 import Patient from "./components/patient/Patient";
 import FHIR from "fhirclient";
 import Client from "fhirclient/lib/Client";
@@ -120,8 +118,9 @@ export default class App extends React.Component<AppProps, AppState> {
   ): void {
     // Sort questionnaire answer option alphabetically (Pain Locations)
     let sortedAnswerOptions = { ...selectedQuestionnaire.item };
-    sortedAnswerOptions =   Object.values(sortedAnswerOptions) as QuestionnaireItem[];
-    console.log(  sortedAnswerOptions )
+    sortedAnswerOptions = Object.values(
+      sortedAnswerOptions
+    ) as QuestionnaireItem[];
     sortedAnswerOptions?.[0]?.item?.map((question: QuestionnaireItem) => {
       return question.answerOption?.sort(
         (a: QuestionnaireItemAnswerOption, b: QuestionnaireItemAnswerOption) =>
@@ -145,10 +144,7 @@ export default class App extends React.Component<AppProps, AppState> {
     });
   }
 
-  handleChange(
-    item: QuestionnaireResponseItem,
-    answer?: QuestionnaireResponseItemAnswer[]
-  ): void {
+  handleChange(item: QuestionnaireResponseItem): void {
     this.setState(
       (state) => {
         for (let i = 0; i < state.QuestionnaireResponse.item!.length; i++) {
@@ -295,11 +291,12 @@ export default class App extends React.Component<AppProps, AppState> {
               {this.state.Status !== "in-progress" ? (
                 <div>
                   <div className="patient-container">
-                    <PatientContainer
-                      patient={this.state.Patient}
-                      busy={this.state.busy}
+                    <Patient
+                      {...this.state}
                       startQuestionnaire={this.startQuestionnaire}
-                    />
+                    >
+                      {this.state.Patient}
+                    </Patient>
                   </div>
                 </div>
               ) : (

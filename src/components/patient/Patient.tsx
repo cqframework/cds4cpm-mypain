@@ -10,7 +10,7 @@ interface PatientProps {
   item?: fhirclient.FHIR.Patient;
   patient?: any;
   busy?: boolean;
-  startQuestionnaire : Function;
+  startQuestionnaire: Function;
 }
 
 interface PatientState {}
@@ -28,7 +28,6 @@ export default class Patient extends React.Component<
     window.close();
   };
   public render(): JSX.Element {
-    
     return (
       // Internal content on start page
       <div className="pt-5 px-3">
@@ -36,7 +35,7 @@ export default class Patient extends React.Component<
           <div className="col-8 mb-3">
             <div
               className="card position-relative bg-lightgreen border-0 card-btn card-btn-continue"
-              onClick={()=>this.props.startQuestionnaire()}
+              onClick={() => this.props.startQuestionnaire()}
             >
               <div className="card-body d-flex flex-column text-center text-light">
                 <p className="fw-bold px-3">
@@ -72,8 +71,8 @@ export default class Patient extends React.Component<
             </div>
           </div>
         </div>
-        <div className="intro-container ">
-          <p>
+        <div className="px-3">
+          <p className="text-center">
             NOTE: if you do not log off or close your browser after you complete
             the survey, your information may be available to other people that
             use this computer for up to 1 hour.

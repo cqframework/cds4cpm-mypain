@@ -1,7 +1,6 @@
 import React from "react";
 import "./PainResponsePage.css";
 import ReviewPageComponent from "../review-page/ReviewPageComponent";
-//import { withRouter } from "react-router-dom";
 
 export default class PainResponsePage extends React.Component<any, any> {
   constructor(props: any) {
@@ -16,7 +15,6 @@ export default class PainResponsePage extends React.Component<any, any> {
   };
 
   public render(): JSX.Element {
-    console.log(this.state.response);
     return (
       <div className="app container confirmation-page">
         <div className="row justify-content-center">
@@ -59,4 +57,3 @@ export default class PainResponsePage extends React.Component<any, any> {
     );
   }
 }
-//export default withRouter(PainResponsePage);
