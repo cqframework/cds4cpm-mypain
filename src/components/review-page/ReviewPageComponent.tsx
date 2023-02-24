@@ -198,7 +198,8 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                             </div>
                           </div>
                         );
-                      } else if (item.answer![0].valueDateTime!.length > 0) {
+                      } 
+                      else if (item.answer![0].valueDateTime!.length > 0) {
                         return (
                           <div
                             key={item.linkId}
@@ -222,7 +223,8 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                             </div>
                           </div>
                         );
-                      } else {
+                      } 
+                      else {
                         return (
                           <div
                             key={item.linkId}

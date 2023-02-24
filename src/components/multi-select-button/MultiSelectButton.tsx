@@ -52,28 +52,6 @@ export default class MultiSelectButtonComponent extends React.Component<
       collectAnswer(questionnaireItem, selectedAnswers);
     };
 
-    // myFunc<T> () {}
-
-    // const receiveTextAnswer = (text: string) => {
-    //   if (text.length > 0) {
-    //     // questionnaireItem.text =
-    //     //   questionnaireItem.prefix + ": " + questionnaireItem.text;
-    //     this.props.parentCallback(
-    //       questionnaireItem,
-    //       JSON.stringify({ valueString: text })
-    //     );
-    //   }
-    // };
-
-    // const receiveBooleanAnswer = (boolAns: boolean) => {
-    //   // questionnaireItem.text =
-    //   //   questionnaireItem.prefix + ": " + questionnaireItem.text;
-    //   this.props.parentCallback(
-    //     questionnaireItem,
-    //     JSON.stringify({ valueBoolean: boolAns })
-    //   );
-    // };
-
     const collectAnswer = (QuestionnaireItem: any, answer: any[]) => {
       this.props.parentCallback(QuestionnaireItem, JSON.stringify(answer));
     };
@@ -175,7 +153,6 @@ export default class MultiSelectButtonComponent extends React.Component<
                                       handleClick(event);
                                     }}
                                     className="mt-3 btn btn-outline-secondary-custom btn-sm"
-                                    // variant="outline-secondary"
                                   >
                                     {answerOption.valueCoding?.display}
                                   </button>
@@ -191,7 +168,6 @@ export default class MultiSelectButtonComponent extends React.Component<
                             placeholder="Type here..."
                             className="form-control"
                             onChange={(event) =>
-                              // receiveTextAnswer(event.target.value)
                               collectResp<string>(event.target.value)
                             }
                           />

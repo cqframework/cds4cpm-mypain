@@ -1,33 +1,36 @@
-.bg-lightgreen{
-    background-color:var(--color-light-green);
+.bg-lightgreen {
+    background-color: var(--color-light-green);
 }
 
-.bg-lightgray{
+.bg-lightgray {
     background-color: var(--color-light-gray);
 }
+
 .translate-middle {
-    transform: translate(-50%,-50%)!important;
+    transform: translate(-50%, -50%) !important;
 }
+
 .start-0 {
-    left: 0!important;
+    left: 0 !important;
 }
 
 .start-100 {
-    left: 100%!important;
+    left: 100% !important;
 }
 
 .top-50 {
-    top: 50%!important;
+    top: 50% !important;
 }
 
-.continue-icon-bg, .exit-icon-bg{
-    width:64px;
-    height:64px;
+.continue-icon-bg,
+.exit-icon-bg {
+    width: 64px;
+    height: 64px;
     background-color: white;
     border-radius: 50%;
 }
 
-.continue-icon-bg{
+.continue-icon-bg {
     border: 2px solid var(--color-light-green);
 }
 
@@ -35,7 +38,7 @@
     fill: var(--color-light-green) !important;
 }
 
-.exit-icon-bg{
+.exit-icon-bg {
     border: 2px solid var(--color-light-gray);
 
 }
@@ -44,29 +47,47 @@
     fill: var(--color-light-gray) !important;
 }
 
-.card-btn:hover{
+.card-btn:hover {
     cursor: pointer;
 }
-.card-btn-continue:hover{
+
+.card-btn-continue:hover {
     background-color: var(--color-dark-green) !important;
 }
- 
+
 .card-btn-continue:hover .continue-icon path {
-    fill:  var(--color-dark-green) !important;
+    fill: var(--color-dark-green) !important;
 }
 
-.card-btn-continue:hover .continue-icon-bg{
+.card-btn-continue:hover .continue-icon-bg {
     border: 2px solid var(--color-dark-green) !important;
 }
 
-.card-btn-exit:hover{
+.card-btn-exit:hover {
     background-color: var(--color-dark-gray) !important;
 }
 
 .card-btn-exit:hover .exit-icon path {
-    fill:  var(--color-dark-gray) !important;
+    fill: var(--color-dark-gray) !important;
 }
 
-.card-btn-exit:hover .exit-icon-bg{
+.card-btn-exit:hover .exit-icon-bg {
     border: 2px solid var(--color-dark-gray) !important;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 250px;
+    z-index: 999;
+    margin-top: 100px;
+    /* transform: translate(-50%,-50%)!important; */
+    /* left: 0!important; */
+    /* top: 50%!important; */
+}
+
+.img-offset {
+    top: 0;
+    left: 100%;
+    margin-left: 50px;
 }

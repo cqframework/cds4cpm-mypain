@@ -340,6 +340,18 @@ export default class QuestionnaireItemComponent extends React.Component<
     ) {
       return (
         <div className="position-relative">
+          {props.QuestionnaireItem.code![0].code === "pain-location" && (
+            // <div className="fixed">Hello</div>
+            <div className="position-absolute img-offset d-none d-md-block h-100">
+              {/* add body here and update position with custom style */}
+              <div className="sticky">
+                <img
+                    src={`${process.env.PUBLIC_URL}/assets/images/person.jpg`}
+                    alt="MyPain Logo"
+                  />
+              </div>
+            </div>
+          )}
           {/* <div className="accordion" id="questionnairePanels"> */}
           {props.QuestionnaireItem.item?.map((item: any) => {
             return (
@@ -354,11 +366,7 @@ export default class QuestionnaireItemComponent extends React.Component<
             );
           })}
           {/* </div> */}
-          {props.QuestionnaireItem.code![0].code === "pain-location" && (
-            <div className="position-absolute top-50 start-100 translate-middle d-none d-md-block">
-              {/* add body here and update position with custom style */}
-            </div>
-          )}
+          
         </div>
       );
     } else {
