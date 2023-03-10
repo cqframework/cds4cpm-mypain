@@ -82,7 +82,7 @@ export default class QuestionnaireItemComponent extends React.Component<
       answer: any
     ) => {
       let responseAnswer: QuestionnaireResponseItemAnswer = JSON.parse(answer);
-      console.log(responseAnswer);
+      // console.log(responseAnswer);
       let childResponse: QuestionnaireResponseItem = {
         linkId: questionItem.linkId,
         text: questionItem.text,

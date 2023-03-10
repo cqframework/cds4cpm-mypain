@@ -243,7 +243,7 @@ export default class App extends React.Component<AppProps, AppState> {
         submitQuestionnaireResponse(this.state.QuestionnaireResponse)
           .then((res) => {
             this.setState({ Status: "completed", busy: false });
-            console.log("res: ", res);
+            // console.log("res: ", res);
           })
           .catch((error) => {
             this.setState({
