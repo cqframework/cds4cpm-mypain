@@ -24,7 +24,7 @@ export class InfoModal extends React.Component<any, any> {
   }
 
   confirm = () => {
-    console.log("props:", this.props);
+    // console.log("props:", this.props);
     this.props.onSubmit();
   };
   // Removed from flow

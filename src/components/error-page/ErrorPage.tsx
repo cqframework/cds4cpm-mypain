@@ -1,6 +1,5 @@
 import React from "react";
 import "./ErrorPage.css";
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

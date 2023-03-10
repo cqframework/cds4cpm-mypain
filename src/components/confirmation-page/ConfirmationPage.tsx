@@ -33,7 +33,7 @@ export const ConfirmationPage = () => {
               </div>
               <div className="py-3 flex-grow-1">
                 <p className="m-0">
-                  Your responses have been sent to your doctor.
+                  Your responses are now available to your doctor.
                 </p>
               </div>
             </div>

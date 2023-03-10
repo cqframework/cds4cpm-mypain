@@ -71,11 +71,9 @@ export default class Patient extends React.Component<
             </div>
           </div>
         </div>
-        <div className="px-3">
+        <div className="px-2">
           <p className="text-center">
-            NOTE: if you do not log off or close your browser after you complete
-            the survey, your information may be available to other people that
-            use this computer for up to 1 hour.
+          <strong>IF USING PUBLIC DEVICE:</strong> If you do not log off or close your browser after you complete the survey, your information may be available to other people that use this computer for up to 1 hour.
           </p>
         </div>
       </div>

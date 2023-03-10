@@ -2,7 +2,6 @@ import React from "react";
 import "./ReviewPageComponent.css";
 import parser from "html-react-parser";
 import {
-  QuestionnaireItem,
   QuestionnaireResponseItem,
 } from "../../fhir-types/fhir-r4";
 import moment from "moment";
@@ -39,7 +38,7 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                   key={question.linkId}
                 >
                   {prevLabel.text?.split(":")[0] !==
-                    question.text?.split(":")[0] || index == 0 ? (
+                    question.text?.split(":")[0] || index === 0 ? (
                     <p className="mt-3 mb-2 fw-bold">
                       {question.text
                         ?.split(":")[0]
@@ -85,7 +84,7 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                   key={question.linkId}
                 >
                   {prevLabel.text?.split(":")[0] !==
-                    question.text?.split(":")[0] || index == 0 ? (
+                    question.text?.split(":")[0] || index === 0 ? (
                     <p className="fw-bold mt-3 mb-2">
                       {question.text?.split(":")[0]}
                     </p>
