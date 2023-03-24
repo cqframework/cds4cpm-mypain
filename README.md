@@ -68,8 +68,17 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 ## Docker
+### To run an image from dockerhub
+The images for PainManger version are stored at [dockerhub](https://hub.docker.com/r/alphora/pain-manager). They may be used by running docker and specifying
+   ```
+   docker pull alphora/pain-manager:v0.10.0 
+   ```
 
-To build with docker run:
+This image may be used by
+   ```
+   docker run -p 80:80 pain-manager:v0.10.0 
+   ``` 
+### To build with docker run:
 
 `docker build .`
 
