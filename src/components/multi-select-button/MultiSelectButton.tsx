@@ -63,13 +63,12 @@ export default class MultiSelectButtonComponent extends React.Component<
           JSON.stringify({ valueString: arg })
         );
       } else if (typeof arg === "boolean") {
-        console.log("Input is a boolean");
         this.props.parentCallback(
           questionnaireItem,
           JSON.stringify({ valueBoolean: arg })
         );
       } else {
-        console.log("Input is not a valid type");
+        console.error("Input is not a valid type");
       }
       return arg;
     };

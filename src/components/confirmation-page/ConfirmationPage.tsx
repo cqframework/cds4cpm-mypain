@@ -1,6 +1,6 @@
 import React from "react";
 import "./ConfirmationPage.css";
-import { faUserDoctor, faAt } from "@fortawesome/free-solid-svg-icons";
+import { faUserDoctor, faAt, faClipboardList, faLink } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp, SizeProp } from "@fortawesome/fontawesome-svg-core";
@@ -63,14 +63,32 @@ export const ConfirmationPage = () => {
                 style={{ minWidth: "64px" }}
               >
                 <FontAwesomeIcon
-                  icon={faAt as IconProp}
+                  icon={faLink as IconProp}
                   size={"2x" as SizeProp}
                 />
               </div>
               <div className="py-3 flex-grow-1">
                 <p className="m-0">
-                  Lookout for a MyUFHealth message with{" "}
-                  <Link to="/pain-resource">pain resources</Link> and a{" "}
+                  View {" "}
+                  <Link to="/pain-resource">helpful pain resources.</Link>
+                </p>
+              </div>
+            </div>
+
+            <div className="d-flex pt-2">
+              <div
+                className="d-flex justify-content-center align-items-center"
+                style={{ minWidth: "64px" }}
+              >
+                <FontAwesomeIcon
+                  className=""
+                  icon={faClipboardList as IconProp}
+                  size={"2x" as SizeProp}
+                />
+              </div>
+              <div className="py-3 flex-grow-1">
+              <p className="m-0">
+                  View a{" "}
                   <Link to="/pain-response">copy of your responses</Link>.
                 </p>
               </div>
