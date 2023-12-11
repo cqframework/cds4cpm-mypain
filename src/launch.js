@@ -1,5 +1,6 @@
 import FHIR from 'fhirclient';
-fetch(`${process.env.PUBLIC_URL}/launch-context.json`)
+
+fetch(`${process.env.PUBLIC_URL}/my-pain-config/launch-context.json`)
     .then((response)      => {
         return response.json()
     })

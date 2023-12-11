@@ -1,6 +1,0 @@
-{
-  "clientId": "1e4187fe-c2e6-4738-8fda-b000fc9e65dc",
-  "scope": "patient/*.read patient/QuestionnaireResponse.write launch launch/patient",
-  "completeInTarget": true
-}
-  
