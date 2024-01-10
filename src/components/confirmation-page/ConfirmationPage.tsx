@@ -1,6 +1,6 @@
 import React from "react";
 import "./ConfirmationPage.css";
-import { faUserDoctor, faAt, faClipboardList, faLink } from "@fortawesome/free-solid-svg-icons";
+import { faUserDoctor, faClipboardList, faLink } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp, SizeProp } from "@fortawesome/fontawesome-svg-core";

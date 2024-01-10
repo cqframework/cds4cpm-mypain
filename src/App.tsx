@@ -117,7 +117,8 @@ export default class App extends React.Component<AppProps, AppState> {
     ptDisplay: string
   ): void {
     // Sort questionnaire answer option alphabetically (Pain Locations)
-    let sortedAnswerOptions = { ...selectedQuestionnaire.item };
+    let sortedAnswerOptions: { [key: string]: any } = { ...selectedQuestionnaire.item };
+    console.log(selectedQuestionnaire.item);
     sortedAnswerOptions = Object.values(
       sortedAnswerOptions
     ) as QuestionnaireItem[];

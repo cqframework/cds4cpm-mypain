@@ -96,7 +96,9 @@ export default class ReviewPageComponent extends React.Component<any, any> {
                           if (answer.valueCoding) {
                             return answer.valueCoding?.display;
                           }
+                          return ''
                         })
+                        .filter(Boolean) // Remove any empty values from the array
                         .join(", ");
                       if (multiChoiceAnswer) {
                         return (
